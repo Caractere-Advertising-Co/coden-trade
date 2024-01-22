@@ -4,7 +4,7 @@
   "description": "Template site web 2024",
   "main": "index.js",
   "scripts": {
-    "test": "build"
+    "build": "webpack"
   },
   "keywords": [
     "WordPress"
@@ -12,6 +12,15 @@
   "author": "Caractere (Benoit Londero)",
   "license": "ISC",
   "dependencies": {
-    "webpack": "^5.89.0"
+    "css-loader": "^6.9.1",
+    "fslightbox": "^3.4.1",
+    "in-view": "^0.6.1",
+    "lodash": "^4.17.21",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.0.0",
+    "style-loader": "^3.3.4",
+    "swiper": "^11.0.5",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }
