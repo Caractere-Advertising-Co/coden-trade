@@ -1,0 +1,17 @@
+{
+  "name": "afiesca",
+  "version": "1.0.0",
+  "description": "Template site web 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "build"
+  },
+  "keywords": [
+    "WordPress"
+  ],
+  "author": "Caractere (Benoit Londero)",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.89.0"
+  }
+}
