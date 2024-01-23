@@ -1,0 +1,83 @@
+#hero-container {
+  height: 90vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  .swiper {
+    .swiper-wrapper {
+      overflow: hidden;
+
+      .swiper-slide {
+        height: 90vh;
+
+        img {
+          position: absolute;
+          z-index: 0;
+          filter: brightness(60%);
+          width: 100%;
+        }
+
+        .content {
+          left: 5vw;
+          z-index: 1;
+
+          p {
+            text-transform: uppercase;
+            color: $light;
+            letter-spacing: 3px;
+          }
+
+          h1 {
+            color: $light;
+            text-transform: uppercase;
+
+            strong {
+              font-weight: 800;
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-button {
+      color: $light;
+      position: absolute;
+      right: 5vw;
+      left: auto;
+      border: 1px solid $light;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      text-align: center;
+
+      &::after {
+        font-size: 1.2rem;
+        margin: auto;
+      }
+    }
+
+    .swiper-button-prev {
+      margin-top: -80px;
+    }
+  }
+}
+
+#aboutus {
+  background-color: $light-gray;
+
+  .grid {
+    position: relative;
+    top: -100px;
+    z-index: 10;
+    display: flex;
+    gap: 40px;
+    height: 300px;
+
+    .card {
+      width: 33%;
+      overflow: hidden;
+      height: 400px;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.header {
+  background: none;
+  position: absolute;
+  top: 40px;
+  left: 5vw;
+  width: 90vw;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+
+  .col-g {
+    width: 30%;
+
+    .logo {
+      max-width: 350px;
+    }
+  }
+
+  .col-d {
+    .secondary-navigation {
+      display: flex;
+
+      .menu-top-header_menu-container ul {
+        display: flex;
+        list-style: none;
+
+        li {
+          text-transform: uppercase;
+          font-family: "Sofia";
+          letter-spacing: 10px;
+          font-weight: 300;
+          font-size: 0.7rem;
+        }
+
+        li + li::before {
+          content: "•";
+          color: $primary-color;
+          padding: 30px;
+        }
+      }
+    }
+  }
+}

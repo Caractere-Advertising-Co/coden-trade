@@ -1,0 +1,61 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: "sofia-pro", sans-serif;
+  font-style: normal;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 6rem;
+}
+
+h2 {
+  font-size: 3.75rem;
+}
+
+h3 {
+  font-size: 2.35rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+.light {
+  font-weight: 300;
+  font-style: normal;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.cap {
+  text-transform: capitalize;
+}
