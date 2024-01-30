@@ -9,9 +9,16 @@
         <div class="secondary-navigation">
             <?php wp_nav_menu(array(
                 'menu' => 'top-header_menu',
-                'theme_location' => 'primary'
+                'theme_location' => 'topheader',
+                'menu_class' => 'nav'
             ));?>
         </div>
-        <div class="primary-navigation"></div>
+        <div class="primary-navigation">
+        <?php wp_nav_menu(array(
+                'menu' => 'Navigation principale',
+                'theme_location' => 'main',
+                'menu_class' => 'semi-bold nav'
+            ));?>
+        </div>
     </div>
 </div>
