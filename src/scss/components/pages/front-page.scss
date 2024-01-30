@@ -96,9 +96,9 @@
 
       h4 {
         color: $light;
-        position: relative;
+        position: absolute;
         z-index: 10;
-        bottom: 0;
+        bottom: 40px;
         top: auto;
         font-size: 2rem;
         font-weight: 600;
@@ -452,5 +452,5 @@
 }
 
 #contact {
-  background-color: $light-gray;
+  background-color: $light-gray !important;
 }
