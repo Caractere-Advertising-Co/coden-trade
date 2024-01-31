@@ -187,7 +187,9 @@
             <?php echo $txtBanner;?>
         </div>
         <div class="cold">
+            <?php if($img):?>
             <img src="<?php echo $imgBanner['url'];?>" alt="<?php echo $imgBanner['title'];?>" />
+            <?php endif;?>
             <a href="<?php echo $ctaBanner['url'];?>" class="cta bgBlue"><?php echo $ctaBanner['title'];?></a>
         </div>
     </div>
