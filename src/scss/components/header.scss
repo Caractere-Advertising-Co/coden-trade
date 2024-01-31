@@ -32,6 +32,12 @@
           letter-spacing: 10px;
           font-weight: 300;
           font-size: 0.7rem;
+
+          a {
+            &:hover {
+              color: $primary-color;
+            }
+          }
         }
 
         li + li::before {
@@ -58,6 +64,16 @@
         letter-spacing: 3px;
         font-size: 0.9rem;
         padding-top: 10px;
+        position: relative;
+
+        a {
+          color: $light;
+          transition: all ease-out 300ms;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
       }
 
       .cta {
@@ -75,21 +91,62 @@
         }
 
         &:hover {
+          height: 400px;
+
           .sub-menu {
             display: block;
-            position: relative;
+            position: absolute;
             background-color: $light;
             border-bottom: 2px solid $primary-color;
+            top: 45px;
+            min-width: 300px;
 
             li {
               color: $primary-color;
               list-style: none;
-              width: 100%;
               display: block;
-              padding: 5px 10px;
+              padding: 10px 20px;
+              border-bottom: 1px solid $light-gray;
+              position: relative;
+              max-height: 20px;
 
               a {
-                color: $primary-color;
+                color: $secondary-color;
+                text-transform: none;
+                letter-spacing: 0;
+              }
+
+              &:hover {
+                background-color: $primary-color;
+                border-color: $primary-color;
+
+                a {
+                  color: $light;
+                }
+
+                .sub-menu {
+                  display: block;
+                }
+              }
+
+              .sub-menu {
+                display: none;
+                position: absolute;
+                right: -300px;
+                top: 0;
+
+                li {
+                  a {
+                    color: $secondary-color;
+                    text-transform: none;
+                    font-size: 0.8rem;
+                    font-weight: 300;
+
+                    &:hover {
+                      color: $light;
+                    }
+                  }
+                }
               }
             }
           }

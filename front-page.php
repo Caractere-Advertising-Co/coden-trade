@@ -8,6 +8,8 @@
             <?php if(have_rows('slides')):
                 while(have_rows('slides')) : the_row();?>
             <?php $bg = get_sub_field('background_image');?>
+
+            <?php if($bg):?>
             <div class="swiper-slide">
                 <img src="<?php echo $bg['url'];?>" alt="bg_slider" />
                 <div class="content">
@@ -16,6 +18,7 @@
                     <a href="#" class="cta">NOS SOLUTIONS</a>
                 </div>
             </div>
+            <?php endif;?>
             <?php endwhile;
             endif;?>
         </div>
@@ -36,7 +39,7 @@
 
             <a href="<?php echo $link['url'];?>">
                 <div class="card from-bottom"
-                    style="background:url(<?php echo $img['url'];?>) center;background-size:cover;">
+                    style="background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">
                     <h4><?php echo get_sub_field('nom_service');?></h4>
                 </div>
             </a>
@@ -48,36 +51,25 @@
     </div>
 </section>
 
-<section id="mot_president">
+<section id="section_nosproduits">
     <div class="container">
-
         <?php get_template_part( 'templates-parts/section-nosproduits' );?>
 
-        <div class="columns">
-            <div class="col-g">
-                <?php $img = get_field('image_nossolutions');?>
-                <?php if($img):?>
-                <img src="<?php echo $img['url'];?>" alt="<?php echo $img['name'];?>" class="from-left" />
-                <?php endif;?>
-            </div>
-            <div class="col-d from-right">
-                <?php echo get_field('texte_du_president');?>
-            </div>
-        </div>
     </div>
-
-    <div class="separator"></div>
 </section>
+
+
+<?php get_template_part( 'templates-parts/section-mots-president' );?>
 
 <section id="confiance">
     <div class="container">
-        <?php echo get_field('titre_conf');?>
-        <?php echo get_field('introduction_conf');?>
+        <?php echo get_field('titre_conf','options');?>
+        <?php echo get_field('introduction_conf','options');?>
 
         <div class="table_qualite">
             <?php 
-            if(have_rows('qualites')) :
-                while(have_rows('qualites')): the_row();?>
+            if(have_rows('qualites','options')) :
+                while(have_rows('qualites','options')): the_row();?>
             <div class="card_qualite">
                 <?php 
                         $img = get_sub_field('icone');
@@ -232,8 +224,6 @@
     </div>
 </section>
 
-
 <?php get_template_part( 'templates-parts/contact' );?>
-
 
 <?php get_footer();?>

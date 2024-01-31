@@ -9,26 +9,31 @@ $linkf = get_field('link_to_form');?>
 <?php get_template_part( 'templates-parts/header-nav');?>
 
 
-<header id="header" style="background:url('<?php echo $bg_header['url'];?>');">
+<header id="header" style="background:url('<?php if($bg_header): echo $bg_header['url']; endif;?>');">
 </header>
 
 <section id="intro_service">
     <div class="container">
         <div class="block_title"
             style="background:url('<?php echo get_template_directory_uri();?>/assets/img/background_titre_service.jpg;">
-            <?php echo $title_header;?>
-            <a href="<?php echo $linkf['url'];?>"><?php echo $linkf['title'];?></a>
+            <?php if($title_header): echo $title_header; endif;?>
+            <a
+                href="<?php if($linkf): echo $linkf['url'];endif;?>"><?php if($linkf) : echo $linkf['title']; endif;?></a>
         </div>
         <?php
             $title_page = get_field('titre_service');
             $content_intro = get_field('introduction');
         ?>
         <div class="colg">
-            <?php echo $title_page;?>
+            <?php if($title_page):
+                echo $title_page;
+            endif;?>
         </div>
 
         <div class="cold">
-            <?php echo $content_intro;?>
+            <?php if($content_intro):
+                echo $content_intro;
+            endif;?>
         </div>
     </div>
 </section>

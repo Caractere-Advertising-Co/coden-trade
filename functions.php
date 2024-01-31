@@ -1,4 +1,6 @@
 <?php
+
+
 // Menu 
 register_nav_menus( array(
     'megamenu' => 'Mega Menu',

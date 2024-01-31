@@ -1,6 +1,6 @@
 <?php $color_bg = get_field('arriere_plan-color');?>
 
-<div class="main-content" <?php echo $color_bg ? "style='background:#f7f8f9;'" : '';?>>
+<div class="main-content" <?php if($color_bg): echo $color_bg ? "style='background:#f7f8f9;'" : '';endif;?>>
     <div class="col-g">
         <?php 
         $img = get_field('image_about','options');
@@ -15,6 +15,6 @@
 
         <?php $btn = get_field('lien_about','options');?>
 
-        <a href="<?php $btn['url'];?>" class="cta from-bottom"><?php echo $btn['title'];?></a>
+        <a href="<?php if($btn) : $btn['url'];?>" class="cta from-bottom"><?php echo $btn['title']; endif;?></a>
     </div>
 </div>

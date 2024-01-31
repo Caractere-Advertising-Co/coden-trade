@@ -134,3 +134,19 @@ a {
   margin: auto;
   margin-top: 10s0px;
 }
+
+.oblic_line {
+  margin: 150px auto;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    display: block;
+    height: 1px;
+    background-color: $primary-color;
+    width: 200px;
+    transform: rotate(-60deg);
+  }
+}
