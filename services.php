@@ -12,24 +12,6 @@ $linkf = get_field('link_to_form');?>
 <header id="header" style="background:url('<?php echo $bg_header['url'];?>');">
 </header>
 
-<section id="aboutus">
-    <div class="container">
-        <div class="grid">
-            <?php if(have_rows('services')): 
-                while(have_rows('services')): the_row();?>
-            <?php $img = get_sub_field('background_service') ;?>
-            <div class="card from-bottom"
-                style="background:url(<?php echo $img['url'];?>) center;background-size:cover;">
-                <h4><?php echo get_sub_field('nom_service');?></h4>
-            </div>
-            <?php endwhile;
-            endif;?>
-        </div>
-
-        <?php get_template_part( 'templates-parts/section-assurance' );?>
-    </div>
-</section>
-
 <section id="intro_service">
     <div class="container">
         <div class="block_title"

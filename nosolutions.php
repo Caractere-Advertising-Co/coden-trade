@@ -10,26 +10,6 @@ $title_header = get_field('titre_page');?>
 <header id="header" style="background:url('<?php echo $bg_header['url'];?>');">
 </header>
 
-<section id="intro_service">
-    <div class="container">
-        <div class="block_title"
-            style="background:url('<?php echo get_template_directory_uri();?>/assets/img/background_titre_service.jpg;">
-            <?php echo $title_header;?>
-        </div>
-        <?php
-            $title_page = get_field('titre_service');
-            $content_intro = get_field('introduction');
-        ?>
-        <div class="colg">
-            <?php echo $title_page;?>
-        </div>
-
-        <div class="cold">
-            <?php echo $content_intro;?>
-        </div>
-    </div>
-</section>
-
 <section id="aboutus" class="aboutsolutions">
     <div class="container">
         <div class="grid">
@@ -46,6 +26,45 @@ $title_header = get_field('titre_page');?>
             </a>
             <?php endwhile;
             endif;?>
+        </div>
+    </div>
+</section>
+
+<section id="intro_service">
+    <div class="container">
+        <?php
+            $title_page = get_field('titre_service');
+            $subtitle = get_field('subtitle');
+            $content_intro = get_field('introduction');
+        ?>
+        <div class="colg title_nos">
+            <h2><?php echo $subtitle;?></h2>
+            <?php echo $title_page;?>
+        </div>
+
+        <div class="cold">
+            <?php echo $content_intro;?>
+        </div>
+    </div>
+</section>
+
+<section id="presa_product">
+    <div class="container">
+        <div class="content_service">
+            <?php if(have_rows('liste_service')):
+        while(have_rows('liste_service')) : the_row();
+        
+        $link = get_sub_field('document');
+        $icone = get_sub_field('icone');?>
+
+            <a href="<?php echo $link['url'];?>" target="_blank">
+                <div class="document_ddl">
+                    <img src="<?php echo $icone['url'];?>" alt="icone_ddl" />
+                    <p><?php echo $link['title'];?></p>
+                </div>
+            </a><?php 
+endwhile;
+endif;?>
         </div>
     </div>
 </section>
