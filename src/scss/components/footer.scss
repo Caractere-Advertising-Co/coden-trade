@@ -26,9 +26,16 @@ footer {
         ul {
           list-style: none;
           li {
+            margin-bottom: 0;
+            line-height: 1.2rem;
+            text-align: left;
             a {
               font-size: 0.8rem;
               letter-spacing: 1px;
+
+              &:hover {
+                color: $primary-color;
+              }
             }
           }
         }

@@ -1,4 +1,5 @@
 import inView from "in-view";
+import gsap from "gsap";
 
 $(document).ready(function () {
   //IN-VIEW
@@ -41,5 +42,27 @@ $(document).ready(function () {
 
   inView(".from-top").on("enter", (el) => {
     makeMagic(el, "fade-in-top");
+  });
+
+  inView(".animate-number").on("enter", function (element) {
+    var targetNumber = Math.round(
+      parseFloat(element.querySelector("h3").getAttribute("data-number"))
+    );
+
+    gsap
+      .from(element.querySelector("h3"), {
+        textContent: 0,
+        duration: 4, // Ajuste la durée de l'animation
+        ease: "power4.easeIn",
+        onUpdate: function () {
+          this.targets()[0].innerHTML = Math.round(
+            this.targets()[0].textContent
+          );
+        },
+        onComplete: function () {
+          this.targets()[0].innerHTML = targetNumber;
+        },
+      })
+      .delay(0.5); // Ajuste le délai avant le démarrage de l'animation
   });
 });

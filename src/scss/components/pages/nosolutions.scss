@@ -1,12 +1,9 @@
-// .aboutsolutions {
-//   .container {
-//     .grid {
-//       top: 150px !important;
-//       height: 350px !important;
-//     }
-//   }
-// }
 .page-template-nosolutions {
+  .aboutsolutions {
+    #aboutus {
+      background-color: $light !important;
+    }
+  }
   #assurance_nos {
     .container {
       padding: 100px;

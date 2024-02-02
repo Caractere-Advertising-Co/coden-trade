@@ -1,0 +1,75 @@
+#simple-page {
+  .container {
+    .colg {
+      position: relative;
+      z-index: 10;
+      h1 {
+        font-size: 3rem;
+        color: $secondary-color;
+        font-weight: 300;
+        line-height: 3.5rem;
+        margin-top: 100px;
+      }
+
+      &::before {
+        content: "";
+        width: 50px;
+        height: 5px;
+        display: block;
+        background: $primary-color;
+        margin: -2.5px 0 50px 0;
+      }
+    }
+    .cold {
+      padding-left: 20%;
+      margin: 100px 0 150px;
+
+      h2 {
+        font-size: 1rem;
+        color: $primary-color;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        &::before {
+          content: "→";
+        }
+      }
+
+      a {
+        color: $secondary-color;
+        font-weight: 600;
+      }
+
+      .intro,
+      .par_cta {
+        &::after {
+          content: "";
+          width: 50px;
+          height: 5px;
+          display: block;
+          background: $primary-color;
+          margin: 50px 0;
+        }
+
+        ul {
+          border-left: 5px solid $primary-color;
+          padding-left: 20px;
+        }
+
+        li {
+          margin-left: 20px;
+          margin-bottom: 0;
+        }
+      }
+
+      .cta {
+        color: $light;
+        font-weight: 200;
+        font-size: 0.8rem;
+        margin: 30px 0;
+        display: inline-block;
+      }
+    }
+  }
+}

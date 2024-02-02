@@ -28,28 +28,7 @@
     </div>
 </section>
 
-<section id="aboutus">
-    <div class="container">
-        <div class="grid">
-            <?php if(have_rows('services')): 
-                while(have_rows('services')): the_row();?>
-            <?php 
-            $img = get_sub_field('background_service');
-            $link = get_sub_field('lien_service');?>
-
-            <a href="<?php echo $link['url'];?>">
-                <div class="card from-bottom"
-                    style="background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">
-                    <h4><?php echo get_sub_field('nom_service');?></h4>
-                </div>
-            </a>
-            <?php endwhile;
-            endif;?>
-        </div>
-
-        <?php get_template_part( 'templates-parts/section-assurance' );?>
-    </div>
-</section>
+<?php get_template_part( 'templates-parts/section-card-services' );?>
 
 <section id="section_nosproduits">
     <div class="container">
@@ -61,40 +40,7 @@
 
 <?php get_template_part( 'templates-parts/section-mots-president' );?>
 
-<section id="confiance">
-    <div class="container">
-        <?php echo get_field('titre_conf','options');?>
-        <?php echo get_field('introduction_conf','options');?>
-
-        <div class="table_qualite">
-            <?php 
-            if(have_rows('qualites','options')) :
-                while(have_rows('qualites','options')): the_row();?>
-            <div class="card_qualite">
-                <?php 
-                        $img = get_sub_field('icone');
-                        $title = get_sub_field('titre');
-                        $texte = get_sub_field('description');
-                        ?>
-
-                <?php if($img):?>
-                <img src="<?php echo $img['url'];?>" alt="<?php echo $img['name'];?>" />
-                <?php endif;?>
-                <?php if($title):?>
-                <h4><?php echo $title;?></h4>
-                <?php endif;?>
-                <?php if($texte):?>
-                <p><?php echo $texte;?></p>
-                <?php endif;?>
-            </div>
-            <?php endwhile;
-            endif;?>
-        </div>
-
-        <?php $clink = get_field('cta_conf');?>
-        <a href="<?php echo $clink['url'];?>" class="cta"><?php echo $clink['title'];?></a>
-    </div>
-</section>
+<?php get_template_part( 'templates-parts/section-confiance' );?>
 
 <section id="disclaimer">
     <?php 
@@ -166,26 +112,7 @@
 
 <?php get_template_part('templates-parts/section-cta-contact');?>
 
-<section id="disclaimer_banner">
-    <?php 
-    $bgBanner = get_field('arriere-plan_banner','options');
-    $txtBanner = get_field('texte_banner','options');
-    $imgBanner = get_field('image_banner','options');
-    $ctaBanner = get_field('cta_banner','options');
-    ?>
-
-    <div class="container" style="background:url('<?php echo $bgBanner['url'];?>') no-repeat;background-size:cover;">
-        <div class="colg">
-            <?php echo $txtBanner;?>
-        </div>
-        <div class="cold">
-            <?php if($img):?>
-            <img src="<?php echo $imgBanner['url'];?>" alt="<?php echo $imgBanner['title'];?>" />
-            <?php endif;?>
-            <a href="<?php echo $ctaBanner['url'];?>" class="cta bgBlue"><?php echo $ctaBanner['title'];?></a>
-        </div>
-    </div>
-</section>
+<?php get_template_part('templates-parts/disclaimer-banner');?>
 
 <section id="actualites">
     <div class="container">

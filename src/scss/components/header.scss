@@ -79,7 +79,7 @@
       .cta {
         border-radius: 0;
         &::after {
-          content: ">";
+          content: "→";
           height: 30px;
           color: $light;
         }
@@ -108,7 +108,8 @@
               padding: 10px 20px;
               border-bottom: 1px solid $light-gray;
               position: relative;
-              max-height: 20px;
+              max-height: 30px;
+              margin: 0;
 
               a {
                 color: $secondary-color;
