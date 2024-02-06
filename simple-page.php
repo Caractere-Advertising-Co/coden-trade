@@ -41,12 +41,18 @@ get_template_part( 'templates-parts/header-nav');?>
 </section>
 <section id="section_bleue">
     <div class="container">
-        <?php if($section_bleue) : echo $section_bleue;endif;?>
+        <div class="colg"></div>
+        <div class="cold">
+            <?php if($section_bleue) : echo $section_bleue;endif;?>
+        </div>
     </div>
 </section>
 <section id="outro">
     <div class="container">
-        <div class="outro"><?php if($outro) : echo $outro;endif;?></div>
+        <div class="colg"></div>
+        <div class="cold">
+            <div class="outro"><?php if($outro) : echo $outro;endif;?></div>
+        </div>
     </div>
 </section>
 
