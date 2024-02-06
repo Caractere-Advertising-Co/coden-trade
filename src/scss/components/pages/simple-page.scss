@@ -72,4 +72,12 @@
       }
     }
   }
+
+  #section_bleue {
+    background-color: $secondary-color;
+
+    p {
+      color: $light;
+    }
+  }
 }

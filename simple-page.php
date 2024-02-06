@@ -5,6 +5,7 @@ get_header();
 
 $titre = get_field('titre_page');
 $intro = get_field('introduction');
+$section_bleue = get_field('section_bleue');
 $textCta = get_field('texte_cta');
 $cta = get_field('cta');
 $outro = get_field('outro');
@@ -35,9 +36,17 @@ get_template_part( 'templates-parts/header-nav');?>
                 <?php if($cta) : echo '<a href="'.$cta['url'].'" class="cta bgBlue">'. $cta['title'] .'</a>';endif;?>
             </div>
             <?php endif;?>
-            <div class="outro"><?php if($outro) : echo $outro;endif;?></div>
-
         </div>
+    </div>
+</section>
+<section id="section_bleue">
+    <div class="container">
+        <?php if($section_bleue) : echo $section_bleue;endif;?>
+    </div>
+</section>
+<section id="outro">
+    <div class="container">
+        <div class="outro"><?php if($outro) : echo $outro;endif;?></div>
     </div>
 </section>
 
