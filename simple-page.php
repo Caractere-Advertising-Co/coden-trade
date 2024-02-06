@@ -3,6 +3,7 @@
 
 get_header();
 
+$subtitle = get_field('subtitle');
 $titre = get_field('titre_page');
 $intro = get_field('introduction');
 $section_bleue = get_field('section_bleue');
@@ -27,7 +28,10 @@ get_template_part( 'templates-parts/header-nav');?>
 <section id="simple-page">
     <div class="container">
         <div class="colg">
-            <div class="intro"><?php if($titre) : echo $titre;endif;?></div>
+            <div class="intro">
+                <h2><?php if($subtitle) : echo $subtitle;endif;?></h2>
+                <?php if($titre) : echo $titre;endif;?>
+            </div>
         </div>
         <div class="cold">
             <div class="intro"><?php if($intro) : echo $intro;endif;?></div>
@@ -55,5 +59,11 @@ get_template_part( 'templates-parts/header-nav');?>
         </div>
     </div>
 </section>
+
+<?php get_template_part( 'templates-parts/line-separator' );?>
+<?php get_template_part( 'templates-parts/section-nosproduits' );?>
+<?php get_template_part( 'templates-parts/line-separator' );?>
+<?php get_template_part('templates-parts/disclaimer-banner');?>
+<?php get_template_part( 'templates-parts/section-confiance' );?>
 
 <?php get_footer();
