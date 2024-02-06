@@ -78,8 +78,10 @@
 
 #section_bleue {
   background-color: $secondary-color;
+  padding-bottom: 50px;
 
-  p {
+  p,
+  li {
     color: $light;
   }
 }
