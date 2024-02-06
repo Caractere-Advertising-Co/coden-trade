@@ -40,7 +40,6 @@ get_template_part( 'templates-parts/header-nav');?>
 
 <section id="section_bleue">
     <div class="container">
-        <div class="colg"></div>
         <div class="cold">
             <?php if($section_bleue) : echo $section_bleue;endif;?>
         </div>
@@ -48,7 +47,6 @@ get_template_part( 'templates-parts/header-nav');?>
 </section>
 <section id="outro">
     <div class="container">
-        <div class="colg"></div>
         <div class="cold">
             <div class="outro"><?php if($outro) : echo $outro;endif;?></div>
         </div>
