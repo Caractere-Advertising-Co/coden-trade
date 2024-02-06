@@ -24,7 +24,7 @@
         $document = get_sub_field('document');
         $libelle = get_sub_field('libelle');?>
 
-    <a href="<?php echo $document['link'];?>" target="_blank">
+    <a href="<?php echo $document['url'];?>" target="_blank">
         <div class="document_ddl">
             <img src="<?php echo get_template_directory_uri(  );?>/assets/img/icone_pdf.svg" alt="icone_ddl" />
             <p><?php echo $libelle;?></p>

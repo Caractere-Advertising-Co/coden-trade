@@ -1,0 +1,174 @@
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    border: 10px solid red;
+  }
+}
+
+/* CSS Mobile */
+@media screen and (max-width: 768px) {
+  body {
+    border: 5px solid green;
+  }
+
+  .container {
+    width: 80vw;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .header {
+    .col-g,
+    .col-d {
+      width: 50%;
+    }
+    .col-d {
+      .secondary-navigation,
+      .primary-navigation {
+        display: none;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+    }
+  }
+
+  // FRONT-PAGE
+
+  #hero-container {
+    height: 75vh;
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          position: relative;
+          img {
+            width: auto;
+            max-width: inherit;
+            height: 100%;
+          }
+
+          .content {
+            position: absolute;
+            left: 10vw;
+            right: auto;
+            margin-top: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  #aboutus {
+    padding-bottom: 100px;
+    .grid {
+      display: none;
+    }
+
+    .swiper-mobile {
+      display: block;
+      position: relative;
+      margin-top: -50px;
+      z-index: 10;
+      min-height: 200px;
+      margin-bottom: 100px;
+
+      .swiper-resp {
+        margin-left: 5vw;
+
+        .swiper-slide {
+          width: 75vw !important;
+          margin: auto;
+          min-height: 320px;
+          position: relative;
+          overflow-y: hidden;
+
+          h4 {
+            color: $light;
+            position: absolute;
+            z-index: 10;
+            bottom: 30px;
+            left: 30px;
+            top: auto;
+            font-size: 2rem;
+            font-weight: 600;
+            text-shadow: 0px 0px 10px #000000a3;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            background-color: transparent;
+            transition: all ease-in-out 200ms;
+            height: 400px;
+          }
+
+          &:hover {
+            &::before {
+              background-color: $hover-transparent;
+            }
+          }
+        }
+
+        .swiper-slide + .swiper-slide {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .main-content {
+      flex-direction: column;
+      .col-g {
+        width: 100%;
+        img {
+          margin-left: -15vw;
+          height: 300px;
+          min-height: auto;
+          width: auto;
+          max-width: inherit;
+          bottom: -60px;
+        }
+      }
+
+      .col-d {
+        width: 100%;
+        padding-top: 60px;
+      }
+    }
+  }
+
+  #section_nosproduits {
+    padding-top: 150px;
+
+    h3 {
+      letter-spacing: 10px;
+    }
+  }
+
+  #mot_president {
+    .columns {
+      flex-direction: column;
+
+      .col-d,
+      .col-g {
+        width: 100%;
+      }
+
+      .col-g {
+        img {
+          margin-left: -15vw;
+        }
+      }
+
+      .col-d {
+        h3 {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}

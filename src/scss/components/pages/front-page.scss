@@ -74,6 +74,10 @@
 #aboutus {
   background-color: $light-gray;
 
+  .swiper-mobile {
+    display: none;
+  }
+
   .grid {
     position: relative;
     width: 70vw;

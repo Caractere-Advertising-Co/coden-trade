@@ -11,3 +11,11 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+const swiperResp = new Swiper(".swiper-resp", {
+  slidesPerView: "auto",
+  loop: true,
+  slidesPerGroup: 1,
+  cssMode: true,
+  slidesPerView: 1,
+});
