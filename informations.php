@@ -51,12 +51,13 @@ get_template_part( 'templates-parts/header-nav');?>
             <div class="outro"><?php if($outro) : echo $outro;endif;?></div>
         </div>
     </div>
+</section>
 
-    <?php get_template_part( 'templates-parts/line-separator' );?>
-    <?php get_template_part( 'templates-parts/section-nosproduits' );?>
-    <?php get_template_part( 'templates-parts/line-separator' );?>
-    <?php get_template_part('templates-parts/disclaimer-banner');?>
-    <?php get_template_part( 'templates-parts/section-confiance' );?>
+<?php get_template_part( 'templates-parts/line-separator' );?>
+<?php get_template_part( 'templates-parts/section-nosproduits' );?>
+<?php get_template_part( 'templates-parts/line-separator' );?>
+<?php get_template_part('templates-parts/disclaimer-banner');?>
+<?php get_template_part( 'templates-parts/section-confiance' );?>
 
-    <?php
+<?php
 get_footer();
