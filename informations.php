@@ -8,7 +8,7 @@ $titre = get_field('titre');
 $surtitre = get_field('surtitre');
 $intro = get_field('introduction');
 $section_bleue = get_field('section_bleue');
-$outro = get_field('outro');
+$outro = get_field('outro-infos');
 
 $def = get_field('liste_expli');
 
