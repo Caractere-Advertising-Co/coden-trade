@@ -91,8 +91,6 @@
         }
 
         &:hover {
-          height: 400px;
-
           .sub-menu {
             display: block;
             position: absolute;
@@ -109,6 +107,7 @@
               position: relative;
               max-height: 50px;
               padding: 0;
+              margin: 0;
 
               a {
                 color: $secondary-color;
