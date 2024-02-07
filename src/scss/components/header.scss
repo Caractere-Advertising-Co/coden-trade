@@ -91,6 +91,8 @@
         }
 
         &:hover {
+          min-height: 400px;
+
           .sub-menu {
             display: block;
             position: absolute;
