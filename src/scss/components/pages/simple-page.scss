@@ -73,6 +73,11 @@
         li {
           margin-left: 20px;
           margin-bottom: 0;
+
+          ul {
+            border-left: none;
+            padding-left: 5px;
+          }
         }
       }
 
