@@ -7,7 +7,7 @@ $bg_header = get_field('bg_header');
 $titre = get_field('titre');
 $surtitre = get_field('surtitre');
 $intro = get_field('introduction');
-$section_bleue = get_field('section_bleue');
+$section_bleue = get_field('section_bleue-infos');
 $outro = get_field('outro-infos');
 
 $def = get_field('liste_expli');
