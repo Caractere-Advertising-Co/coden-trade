@@ -45,6 +45,7 @@ get_template_part( 'templates-parts/header-nav');?>
         </div>
     </div>
 </section>
+
 <section id="outro">
     <div class="container">
         <div class="cold">
