@@ -6,20 +6,22 @@
       position: relative;
       z-index: 10;
 
-      h2 {
-        text-transform: uppercase;
-        color: $secondary-color;
-        font-size: 1rem;
-        letter-spacing: 10px;
-        font-weight: 400;
-      }
+      .intro {
+        h2 {
+          text-transform: uppercase;
+          color: $secondary-color;
+          font-size: 1rem;
+          letter-spacing: 10px;
+          font-weight: 400;
+        }
 
-      h1 {
-        font-size: 3rem;
-        color: $secondary-color;
-        font-weight: 300;
-        line-height: 3.5rem;
-        margin-top: 100px;
+        h1 {
+          font-size: 3rem;
+          color: $secondary-color;
+          font-weight: 300;
+          line-height: 3.5rem;
+          margin-top: 100px;
+        }
       }
 
       &::before {

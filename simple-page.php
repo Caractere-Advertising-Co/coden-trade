@@ -3,7 +3,7 @@
 
 get_header();
 
-$subtitle = get_field('subtitle');
+$subtitle = get_field('subtitle-sm');
 $titre = get_field('titre_page');
 $intro = get_field('introduction');
 $section_bleue = get_field('section_bleue');
