@@ -171,4 +171,39 @@
       }
     }
   }
+
+  #confiance {
+    padding: 150px 0;
+    .container {
+      .table_qualite {
+        flex-direction: column;
+
+        .card_qualite {
+          width: 100%;
+        }
+
+        .card_qualite + .card_qualite {
+          border-left: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  #disclaimer {
+    top: -50px;
+
+    .container {
+      width: 100vw;
+
+      .box-content {
+        top: 30%;
+        background-color: #233342;
+        width: 70%;
+        height: auto;
+        padding: 30px;
+        left: 20px;
+      }
+    }
+  }
 }
