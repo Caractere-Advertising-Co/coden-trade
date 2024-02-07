@@ -12,13 +12,13 @@ $title_header = get_field('titre_page');?>
 
 
 
-<div class="aboutsolutions">
+<section id="aboutus">
     <?php /*get_template_part( 'templates-parts/section-card-services' );*/?>
     <div class="container">
 
         <div class="grid">
-            <?php if(have_rows('services','options')): 
-                    while(have_rows('services','options')): the_row();?>
+            <?php if(have_rows('services')): 
+                    while(have_rows('services')): the_row();?>
             <?php 
                 $img = get_sub_field('background_service');
                 $link = get_sub_field('lien_service');?>
@@ -33,7 +33,7 @@ $title_header = get_field('titre_page');?>
                 endif;?>
         </div>
     </div>
-</div>
+</section>
 
 <section id="intro_service">
     <div class="container">
@@ -99,7 +99,7 @@ $title_header = get_field('titre_page');?>
 
     <div class="container" style="background:url('<?php echo $bgBanner['url'];?>') no-repeat;background-size:cover;">
         <div class="colg">
-            <?php echo $txtBanner;?>
+            <?php if($txtBanner): echo $txtBanner;endif;?>
         </div>
         <div class="cold">
             <?php if($img):?>
@@ -141,7 +141,8 @@ $title_header = get_field('titre_page');?>
         </div>
 
         <?php $clink = get_field('cta_conf','options');?>
-        <a href="<?php echo $clink['url'];?>" class="cta"><?php echo $clink['title'];?></a>
+        <?php if($clink):?><a href="<?php echo $clink['url'];?>"
+            class="cta"><?php echo $clink['title'];?></a><?php endif;?>
     </div>
     </div>
 </section>

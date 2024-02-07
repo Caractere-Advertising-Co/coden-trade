@@ -105,16 +105,19 @@
               color: $primary-color;
               list-style: none;
               display: block;
-              padding: 10px 20px;
               border-bottom: 1px solid $light-gray;
               position: relative;
-              max-height: 30px;
-              margin: 0;
+              max-height: 50px;
+              padding: 0;
 
               a {
                 color: $secondary-color;
                 text-transform: none;
                 letter-spacing: 0;
+                width: 90%;
+                display: block;
+                padding: 2% 5%;
+                margin: 0;
               }
 
               &:hover {
@@ -156,5 +159,7 @@
     }
   }
 
-  .hamburger-menu{display: none;}
+  .hamburger-menu {
+    display: none;
+  }
 }
