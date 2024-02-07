@@ -43,22 +43,28 @@ get_template_part( 'templates-parts/header-nav');?>
         </div>
     </div>
 </section>
+
+<?php if($section_bleue):?>
 <section id="section_bleue">
     <div class="container">
         <div class="colg"></div>
         <div class="cold">
-            <?php if($section_bleue) : echo $section_bleue;endif;?>
+            <?php echo $section_bleue;?>
         </div>
     </div>
 </section>
+<?php endif;?>
+
+<?php if($outro):?>
 <section id="outro">
     <div class="container">
         <div class="colg"></div>
         <div class="cold">
-            <div class="outro"><?php if($outro) : echo $outro;endif;?></div>
+            <div class="outro"><?php echo $outro;?></div>
         </div>
     </div>
 </section>
+<?php endif;?>
 
 <?php get_template_part( 'templates-parts/line-separator' );?>
 <?php get_template_part( 'templates-parts/section-nosproduits' );?>
