@@ -10,8 +10,29 @@ $title_header = get_field('titre_page');?>
 <header id="header" style="background:url('<?php echo $bg_header['url'];?>');">
 </header>
 
+
+
 <div class="aboutsolutions">
-    <?php get_template_part( 'templates-parts/section-card-services' );?>
+    <?php /*get_template_part( 'templates-parts/section-card-services' );*/?>
+    <div class="container">
+
+        <div class="grid">
+            <?php if(have_rows('services','options')): 
+                    while(have_rows('services','options')): the_row();?>
+            <?php 
+                $img = get_sub_field('background_service');
+                $link = get_sub_field('lien_service');?>
+
+            <a href="<?php echo $link['url'];?>">
+                <div class="card from-bottom"
+                    style="background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">
+                    <h4><?php echo get_sub_field('nom_service');?></h4>
+                </div>
+            </a>
+            <?php endwhile;
+                endif;?>
+        </div>
+    </div>
 </div>
 
 <section id="intro_service">
