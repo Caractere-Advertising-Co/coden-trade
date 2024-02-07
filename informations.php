@@ -48,7 +48,7 @@ get_template_part( 'templates-parts/header-nav');?>
 <section id="outro">
     <div class="container">
         <div class="cold">
-            <div class="outro"><?php if($outro) : echo $outro;endif;?></div>
+            <?php if($outro) : echo $outro;endif;?>
         </div>
     </div>
 </section>
