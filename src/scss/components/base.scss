@@ -128,7 +128,7 @@ a {
   &:hover {
     color: #fff;
     &::before {
-      transform: scale(1);
+      transform: scaleX(1);
       transform-origin: right;
     }
   }
