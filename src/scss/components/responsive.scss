@@ -105,6 +105,12 @@
 
   .active {
     transform: translateX(0);
+    opacity: 1;
+  }
+
+  .fixed {
+    position: fixed;
+    z-index: 16;
   }
 
   // COMMUN
@@ -483,9 +489,7 @@
     }
   }
 
-  //
-
-  // SERVICES
+  // NOS SOLUTIONS
 
   .page-template-nosolutions {
     #intro_service {
