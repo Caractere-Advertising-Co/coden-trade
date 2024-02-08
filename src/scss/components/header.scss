@@ -9,7 +9,7 @@
   justify-content: space-between;
 
   .col-g {
-    width: 30%;
+    width: 20%;
 
     .logo {
       max-width: 350px;
@@ -17,7 +17,7 @@
   }
 
   .col-d {
-    width: 70%;
+    width: 80%;
 
     .hamburger-menu {
       display: none;
@@ -46,10 +46,16 @@
           font-size: 0.7rem;
 
           a {
-            display: block !important;
+            display: inline !important;
+            text-shadow: 0px 1px 5px rgb(0 0 0 / 84%);
             &:hover {
               color: $primary-color;
             }
+          }
+
+          .wpml-ls-current-language {
+            color: $primary-color;
+            font-weight: 600;
           }
 
           &:last-child::before {
