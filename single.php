@@ -22,8 +22,6 @@ endif;
 get_template_part( 'templates-parts/header-nav');?>
 <header id="header" style="background:url('<?php echo $bg_url;?>');"></header>
 
-<?php get_template_part( 'templates-parts/section-card-services');?>
-
 <section id="information">
     <div class="container">
         <div class="colg">
