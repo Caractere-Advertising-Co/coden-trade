@@ -119,6 +119,7 @@ a {
     background-color: #7f1f2f;
     transform-origin: left bottom;
     transform: scaleX(0);
+    transform-origin: right;
     transition: all ease-in-out 300ms;
     color: #fff;
     left: 0;
@@ -129,7 +130,8 @@ a {
     color: #fff;
     &::before {
       transform: scaleX(1);
-      transform-origin: right;
+      transform-origin: left;
+      transition: all ease-in 300ms;
     }
   }
 }
