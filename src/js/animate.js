@@ -64,11 +64,7 @@ $(document).ready(function () {
             setTimeout(animate, 2);
           }
         } else {
-          if (value > 1000) {
-            counter.innerText = value / 1000 + " K";
-          } else {
-            counter.innerTexte = value;
-          }
+          counter.innerTexte = value;
         }
       };
 
