@@ -32,6 +32,12 @@
         display: flex;
         list-style: none;
 
+        li + li::before {
+          content: "•";
+          color: $primary-color;
+          padding: 30px;
+        }
+
         li {
           text-transform: uppercase;
           font-family: "Sofia";
@@ -40,16 +46,16 @@
           font-size: 0.7rem;
 
           a {
+            display: block !important;
             &:hover {
               color: $primary-color;
             }
           }
-        }
 
-        li + li::before {
-          content: "•";
-          color: $primary-color;
-          padding: 30px;
+          &:last-child::before {
+            content: "|";
+            padding: 5px;
+          }
         }
       }
     }
