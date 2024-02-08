@@ -55,9 +55,9 @@ get_template_part( 'templates-parts/header-nav');?>
 
                     $libelle = get_sub_field('libelle');?>
 
-            <div class="block_stat animate-number from-bottom">
+            <div class="block_stat from-bottom">
                 <?php
-                    echo '<h3 data-number="'.$number.'" class="from-left">'.$numbRW.'</h3>';
+                    echo '<h3 data-number="'.$number.'" class="from-left animate-number">'.$numbRW.'</h3>';
                     echo '<p>'.$libelle.'</p>';
                 ?>
             </div><?php

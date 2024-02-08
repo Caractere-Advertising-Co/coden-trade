@@ -63,7 +63,7 @@
     transform: translateX(100vw);
     transition: all ease-in 300ms;
     position: fixed;
-    z-index: 3;
+    z-index: 15;
     display: block;
 
     .primary-navigation {
@@ -105,6 +105,70 @@
 
   .active {
     transform: translateX(0);
+  }
+
+  // COMMUN
+
+  footer {
+    .container {
+      .footer-top {
+        flex-direction: column;
+
+        .col {
+          width: 100%;
+          padding-bottom: 30px;
+        }
+
+        .col + .col {
+          border-left: 0;
+        }
+
+        .rs_footer {
+          display: flex;
+
+          a + a {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .footer_bottom {
+      .desktop {
+        display: none;
+      }
+
+      .mobile {
+        display: block;
+
+        .links {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  #presa_product {
+    .content_service {
+      padding-left: 0;
+
+      p {
+        text-align: left;
+        line-height: 1.5rem;
+      }
+    }
+    .list-btn {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        line-height: 1.5rem;
+        white-space: pre-wrap;
+      }
+    }
   }
 
   // FRONT-PAGE
@@ -401,6 +465,29 @@
   #contact {
     .container {
       width: 80vw;
+    }
+  }
+
+  //
+
+  // SERVICES
+
+  .page-template-nosolutions {
+    #intro_service {
+      .container {
+        .title_nos {
+          width: 100%;
+
+          h2 {
+            font-size: 1rem;
+          }
+
+          h1 {
+            font-size: 2.8rem;
+            line-height: 3rem;
+          }
+        }
+      }
     }
   }
 }
