@@ -43,15 +43,3 @@ function fix_svg() {
 }
   add_filter( 'upload_mimes', 'cc_mime_types' );
   add_action( 'admin_head', 'fix_svg' );
-
-  foreach (['fr', 'en'] as $lang) {
-
-    acf_add_options_sub_page([
-        'page_title' => "Page name ${$lang}",
-        'menu_title' => __("Page name ${$lang}", 'textdomain'),
-        'menu_slug' => "page-name-${lang}",
-        'post_id' => $lang,
-        'parent' => 'parent-slug'
-    ]);
-
-}
