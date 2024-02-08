@@ -6,7 +6,8 @@
     $ctaBanner = get_field('cta_banner','options');
     ?>
 
-    <div class="container" style="background:url('<?php echo $bgBanner['url'];?>') no-repeat;background-size:cover;">
+    <div class="container from-left"
+        style="background:url('<?php echo $bgBanner['url'];?>') no-repeat;background-size:cover;">
         <div class="colg">
             <?php echo $txtBanner;?>
         </div>

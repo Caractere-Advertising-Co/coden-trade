@@ -10,7 +10,7 @@
             <?php 
             if(have_rows('qualites','options')) :
                 while(have_rows('qualites','options')): the_row();?>
-            <div class="card_qualite">
+            <div class="card_qualite from-bottom">
                 <?php 
                         $img = get_sub_field('icone');
                         $title = get_sub_field('titre');

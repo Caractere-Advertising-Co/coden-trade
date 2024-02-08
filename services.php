@@ -14,17 +14,14 @@ else :
     $bg_url = $bg_header['url'];
 endif;?>
 
-
-
 <?php get_template_part( 'templates-parts/header-nav');?>
-
 
 <header id="header" style="background:url('<?php if($bg_url): echo $bg_url; endif;?>');">
 </header>
 
 <section id="intro_service">
     <div class="container">
-        <div class="block_title"
+        <div class="block_title from-bottom"
             style="background:url('<?php echo get_template_directory_uri();?>/assets/img/background_titre_service.jpg;">
             <?php if($title_header): echo $title_header; endif;?>
             <a

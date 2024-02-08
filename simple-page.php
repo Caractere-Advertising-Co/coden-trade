@@ -28,13 +28,13 @@ get_template_part( 'templates-parts/header-nav');?>
 <section id="simple-page">
     <div class="container">
         <div class="colg">
-            <div class="intro">
+            <div class="intro from-bottom">
                 <h2><?php if($subtitle) : echo $subtitle;endif;?></h2>
                 <?php if($titre) : echo $titre;endif;?>
             </div>
         </div>
         <div class="cold">
-            <div class="intro"><?php if($intro) : echo $intro;endif;?></div>
+            <div class="intro from-bottom"><?php if($intro) : echo $intro;endif;?></div>
             <?php if($textCta) :?>
             <div class="par_cta"><?php if($textCta) : echo $textCta;endif;?>
                 <?php if($cta) : echo '<a href="'.$cta['url'].'" class="cta bgBlue">'. $cta['title'] .'</a>';endif;?>
@@ -48,7 +48,7 @@ get_template_part( 'templates-parts/header-nav');?>
 <section id="section_bleue">
     <div class="container">
         <div class="colg"></div>
-        <div class="cold">
+        <div class="cold from-right">
             <?php echo $section_bleue;?>
         </div>
     </div>
@@ -60,7 +60,7 @@ get_template_part( 'templates-parts/header-nav');?>
     <div class="container">
         <div class="colg"></div>
         <div class="cold">
-            <div class="outro"><?php echo $outro;?></div>
+            <div class="outro from-right"><?php echo $outro;?></div>
         </div>
     </div>
 </section>

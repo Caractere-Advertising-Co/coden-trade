@@ -8,7 +8,6 @@
                         $img = get_sub_field('background_service');
                         $link = get_sub_field('lien_service');?>
 
-
                 <div class="swiper-slide card from-bottom"
                     style="background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">
                     <a href="<?php if($link):echo $link['url'];endif;?>">

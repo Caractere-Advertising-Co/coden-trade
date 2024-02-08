@@ -1,5 +1,5 @@
 const swiper = new Swiper(".swiper", {
-  loop: false,
+  loop: true,
   autoplay: true,
   cssMode: true,
 

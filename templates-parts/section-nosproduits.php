@@ -12,7 +12,7 @@ $links = get_field('liens_vosp');
     echo '<div class="list-btn from-bottom">';
     if($links):
         foreach ($links as $link):
-            echo '<a href="' . $link->post_guid. '" class="cta-border">' . $link->post_title . '</a>';
+            echo '<a href="' . $link->post_guid. '" class="cta-border from-bottom">' . $link->post_title . '</a>';
         endforeach;
     endif;?>
 </div>

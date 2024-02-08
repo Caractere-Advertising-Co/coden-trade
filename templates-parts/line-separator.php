@@ -1,3 +1,3 @@
-<div class="oblic_line">
+<div class="oblic_line from-right">
     <span></span>
 </div>
