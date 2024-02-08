@@ -134,7 +134,9 @@
                 while($query->have_posts()): $query->the_post();?>
             <div class="card_article">
                 <?php if ( has_post_thumbnail() ):?>
-                <?php the_post_thumbnail();?>
+                <div class="home-thumbnail">
+                    <?php the_post_thumbnail();?>
+                </div>
                 <?php endif;?>
                 <h3><?php the_title();?></h3>
 
