@@ -47,7 +47,7 @@ get_template_part( 'templates-parts/header-nav');?>
             if($query->have_posts()):
                 while($query->have_posts()): $query->the_post();?>
             <a href="<?php the_permalink();?>" class="red">
-                <div class="card_article"
+                <div class="card_article from-bottom"
                     style="background:url('<?php if(has_post_thumbnail()) : the_post_thumbnail_url(); endif;?>');   ">
 
                     <h3><?php the_title();?></h3>
