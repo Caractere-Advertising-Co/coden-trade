@@ -59,8 +59,10 @@
           }
         }
         .wpml-ls-current-language {
-          color: $primary-color;
-          font-weight: 600;
+          a {
+            color: $primary-color;
+            font-weight: 600;
+          }
         }
       }
     }
