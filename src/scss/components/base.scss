@@ -159,6 +159,26 @@ a {
   }
 }
 
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #b52b43;
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  z-index: 999;
+  transition: all ease-in 300ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    height: 25px;
+  }
+}
+
 /* Formulaire */
 
 form {
