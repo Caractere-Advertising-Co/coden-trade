@@ -45,19 +45,19 @@ get_template_part( 'templates-parts/header-nav');?>
                 while(have_rows('stats')) : the_row();
                     $number = get_sub_field('valeurs');
                     
-                    if($number) :
-                        if(strlen((string)$number) > 4) :
-                            $numbRW = substr_replace((string)$number,".",2,0);
-                        else : 
-                            $numbRW = $number;
-                        endif;
-                    endif;
+                    // if($number) :
+                    //     if(strlen((string)$number) > 4) :
+                    //         $numbRW = substr_replace((string)$number,".",2,0);
+                    //     else : 
+                    //         $numbRW = $number;
+                    //     endif;
+                    // endif;
 
                     $libelle = get_sub_field('libelle');?>
 
             <div class="block_stat from-bottom">
                 <?php
-                    echo '<h3 data-number="'.$number.'" class="from-left animate-number">'.$numbRW.'</h3>';
+                    echo '<h3 data-number="'.$number.'" class="from-left animate-number">0</h3>';
                     echo '<p>'.$libelle.'</p>';
                 ?>
             </div><?php

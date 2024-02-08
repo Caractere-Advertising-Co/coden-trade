@@ -51,7 +51,7 @@ $(document).ready(function () {
   inView(".grid_stats").on("enter", (e) => {
     counters.forEach((counter) => {
       const animate = () => {
-        const value = +counter.data("number");
+        const value = +counter.dataset.number;
         const data = +counter.innerText;
 
         const time = value / speed;
