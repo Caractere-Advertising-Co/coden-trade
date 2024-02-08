@@ -8,7 +8,7 @@ $links = get_field('liens_vosp');
 
 <div class="section_vosp">
     <?php 
-    echo '<span class="from-bottom">'. if($title):$title;endif; . '</span><span class="balls from-bottom"></span><h3 class="from-bottom">'.if($baseline):$baseline;endif.'</span></h3>';
+    if($title && $baseline): echo '<span class="from-bottom">'. $title . '</span><span class="balls from-bottom"></span><h3 class="from-bottom">'.$baseline.'</span></h3>';endif;
     echo '<div class="list-btn from-bottom">';
     if($links):
         foreach ($links as $link):
