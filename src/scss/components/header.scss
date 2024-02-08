@@ -53,15 +53,14 @@
             }
           }
 
-          .wpml-ls-current-language {
-            color: $primary-color;
-            font-weight: 600;
-          }
-
           &:last-child::before {
             content: "|";
             padding: 5px;
           }
+        }
+        .wpml-ls-current-language {
+          color: $primary-color;
+          font-weight: 600;
         }
       }
     }
