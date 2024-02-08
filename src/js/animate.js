@@ -71,23 +71,4 @@ $(document).ready(function () {
       animate();
     });
   });
-
-  // inView(".animate-number").on("enter", function (element) {
-
-  //   gsap
-  //     .from(element.querySelector("h3"), {
-  //       textContent: 0,
-  //       duration: 4, // Ajuste la durée de l'animation
-  //       ease: "power4.easeIn",
-  //       onUpdate: function () {
-  //         this.targets()[0].innerHTML = Math.round(
-  //           this.targets()[0].textContent
-  //         );
-  //       },
-  //       onComplete: function () {
-  //         this.targets()[0].innerHTML = targetNumber;
-  //       },
-  //     })
-  //     .delay(0.5); // Ajuste le délai avant le démarrage de l'animation
-  // });
 });

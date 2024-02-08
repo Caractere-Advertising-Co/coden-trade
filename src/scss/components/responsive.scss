@@ -103,7 +103,7 @@
     }
   }
 
-  .active {
+  .active-menu {
     transform: translateX(0);
     opacity: 1;
   }
@@ -192,10 +192,16 @@
     }
   }
 
+  #simple-page .container .cold,
+  #section_bleue .container .cold,
+  #outro .container .cold {
+    padding-left: 10%;
+  }
+
   // FRONT-PAGE
 
   #hero-container {
-    height: 75vh;
+    height: 80vh;
     .swiper {
       .swiper-wrapper {
         .swiper-slide {
@@ -510,9 +516,62 @@
     }
   }
 
+  // SERVICES
+  #intro_service {
+    .container {
+      .block_title {
+        min-width: inherit;
+        padding: 15px 30px;
+
+        h1 {
+          font-size: 2rem;
+          line-height: 2.3rem;
+        }
+      }
+
+      .colg {
+        width: 100%;
+      }
+
+      .cold {
+        padding-left: 10%;
+      }
+    }
+  }
+
+  #nos_points_fort {
+    .container {
+      .content_service {
+        padding: 100px 0 100px 10%;
+
+        .card_pf {
+          h4 {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+
+          p {
+            text-align: left;
+            line-height: 1.5rem;
+          }
+          ul {
+            li {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #section-cta-contact {
+    padding-top: 100px;
+  }
+
   // A PROPOS
   #assurance {
     padding-top: 50px !important;
+    padding-bottom: 50px;
     .container {
       .main-content {
         flex-direction: column;
@@ -590,5 +649,15 @@
       font-size: 2.7rem !important;
       line-height: 3.2rem !important;
     }
+  }
+
+  #contact-service {
+    margin-top: 50px;
+  }
+
+  .page-template-informations #information .cold,
+  .page-template-informations #section_bleue .cold,
+  .page-template-informations #outro .cold {
+    padding-left: 10%;
   }
 }
