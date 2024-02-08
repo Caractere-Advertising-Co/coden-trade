@@ -11,7 +11,7 @@
 
                 <div class="swiper-slide card from-bottom"
                     style="background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">
-                    <a href="<?php echo $link['url'];?>">
+                    <a href="<?php if($link):echo $link['url'];endif;?>">
                         <h4><?php echo get_sub_field('nom_service');?></h4>
                     </a>
                 </div>
