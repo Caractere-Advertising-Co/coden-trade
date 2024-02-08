@@ -60,6 +60,12 @@ p {
 a {
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    cursor: pointer;
+  }
 }
 
 .cta {
