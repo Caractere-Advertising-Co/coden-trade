@@ -109,6 +109,10 @@
 
   // COMMUN
 
+  #header {
+    max-height: 300px;
+  }
+
   footer {
     .container {
       .footer-top {
@@ -148,6 +152,17 @@
           margin-bottom: 20px;
         }
       }
+    }
+  }
+
+  .section_vosp .list-btn {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      white-space: pre-wrap;
+      line-height: 1rem;
+      padding: 10px 20px;
     }
   }
 
@@ -488,6 +503,88 @@
           }
         }
       }
+    }
+  }
+
+  // A PROPOS
+  #assurance {
+    padding-top: 50px !important;
+    .container {
+      .main-content {
+        flex-direction: column;
+
+        .col-g,
+        .col-d {
+          width: 100%;
+        }
+
+        .col-g {
+          img {
+            margin-top: 50px;
+            bottom: 0;
+            min-height: inherit;
+          }
+        }
+
+        .col-d {
+          padding-top: 50px;
+        }
+      }
+    }
+  }
+
+  #statistiques {
+    padding-top: 100px !important;
+
+    h2 {
+      margin: 50px auto !important;
+      font-size: 2rem !important;
+      line-height: 2.5rem;
+    }
+
+    .descr {
+      padding-left: 0 !important;
+    }
+
+    .grid_stats {
+      flex-wrap: wrap;
+      .block_stat {
+        width: calc((100% - 60px) / 2) !important;
+      }
+    }
+  }
+
+  #mot_president {
+    .container {
+      .columns {
+        .col-d {
+          margin-top: 180px !important;
+        }
+      }
+    }
+  }
+
+  #contact {
+    padding-top: 150px !important;
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+  }
+
+  //Contact
+
+  #modif {
+    padding: 100px 0 !important;
+  }
+
+  #contact-content {
+    padding-top: 200px !important;
+
+    h1 {
+      font-size: 2.7rem !important;
+      line-height: 3.2rem !important;
     }
   }
 }
