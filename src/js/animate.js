@@ -56,7 +56,7 @@ $(document).ready(function () {
 
         const time = value / speed;
         if (data < value) {
-          counter.innerText = data + time;
+          counter.innerText = Math.ceil(data + time);
 
           if (value < 100) {
             setTimeout(animate, 40);
