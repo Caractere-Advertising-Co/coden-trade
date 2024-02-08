@@ -48,7 +48,7 @@ $(document).ready(function () {
   const counters = document.querySelectorAll(".animate-number");
   const speed = 100;
 
-  inView(".grid-stats").on("enter", (e) => {
+  inView(".grid_stats").on("enter", (e) => {
     counters.forEach((counter) => {
       const animate = () => {
         const value = +counter.data("number");
