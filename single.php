@@ -1,16 +1,17 @@
 <?php 
-/* Template Name: informations */
+/* Template Name: simple-page */
 
 get_header();
 
-$bg_header = get_field('bg_header');
-$titre = get_field('titre');
-$surtitre = get_field('surtitre');
+$subtitle = get_field('subtitle-sm');
+$titre = get_field('titre_page');
 $intro = get_field('introduction');
-$section_bleue = get_field('section_bleue-infos');
-$outro = get_field('outro-infos');
+$section_bleue = get_field('section_bleue');
+$textCta = get_field('texte_cta');
+$cta = get_field('cta');
+$outro = get_field('outro');
 
-$def = get_field('liste_expli');
+$bg_header = get_field('bg_header');
 
 if(!$bg_header):
     $bg_url = get_template_directory_uri(  ).'/assets/img/bg-default.jpg';
@@ -20,37 +21,50 @@ else :
 endif;
 
 get_template_part( 'templates-parts/header-nav');?>
-<header id="header" style="background:url('<?php echo $bg_url;?>');"></header>
 
-<section id="information">
+<header id="header" style="background:url('<?php echo $bg_url;?>');">
+</header>
+
+<section id="simple-page">
     <div class="container">
         <div class="colg">
-            <?php if($surtitre): echo '<h2>'.$surtitre.'</h2>';endif;?>
-            <?php if($titre): echo $titre;endif;?>
+            <div class="intro from-bottom">
+                <h2><?php if($subtitle) : echo $subtitle;endif;?></h2>
+                <?php if($titre) : echo $titre;endif;?>
+            </div>
         </div>
         <div class="cold">
-            <?php if($intro) : echo '<span class="intro">'.$intro.'</span>';endif;?>
-            <?php if($def) : echo '<span class="def">'.$def.'</span>';endif;?>
+            <div class="intro from-bottom"><?php if($intro) : echo $intro;endif;?></div>
+            <?php if($textCta) :?>
+            <div class="par_cta"><?php if($textCta) : echo $textCta;endif;?>
+                <?php if($cta) : echo '<a href="'.$cta['url'].'" class="cta bgBlue">'. $cta['title'] .'</a>';endif;?>
+            </div>
+            <?php endif;?>
         </div>
     </div>
 </section>
 
-
+<?php if($section_bleue):?>
 <section id="section_bleue">
     <div class="container">
-        <div class="cold">
-            <?php if($section_bleue) : echo $section_bleue;endif;?>
+        <div class="colg"></div>
+        <div class="cold from-right">
+            <?php echo $section_bleue;?>
         </div>
     </div>
 </section>
+<?php endif;?>
 
+<?php if($outro):?>
 <section id="outro">
     <div class="container">
+        <div class="colg"></div>
         <div class="cold">
-            <?php if($outro) : echo $outro;endif;?>
+            <div class="outro from-right"><?php echo $outro;?></div>
         </div>
     </div>
 </section>
+<?php endif;?>
 
 <?php get_template_part( 'templates-parts/line-separator' );?>
 <?php get_template_part( 'templates-parts/section-nosproduits' );?>
@@ -58,5 +72,4 @@ get_template_part( 'templates-parts/header-nav');?>
 <?php get_template_part('templates-parts/disclaimer-banner');?>
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
-<?php
-get_footer();
+<?php get_footer();
