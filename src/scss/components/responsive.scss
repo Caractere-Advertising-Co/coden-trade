@@ -2,6 +2,29 @@
   body {
     border: 10px solid red;
   }
+
+  #hero-container {
+    height: 75vh;
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          position: relative;
+          img {
+            width: auto;
+            max-width: inherit;
+            height: 100%;
+          }
+
+          .content {
+            position: absolute;
+            left: 10vw;
+            right: auto;
+            margin-top: 200px;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* CSS Mobile */
@@ -32,8 +55,64 @@
 
       .hamburger-menu {
         display: block;
+        width: 40px;
+        margin-left: auto;
+        margin-right: 0;
       }
     }
+  }
+
+  .megamenu {
+    width: 100vw;
+    height: 100vh;
+    background-color: $primary-color;
+    color: $light;
+    transform-origin: right;
+    transform: translateX(100vw);
+    transition: all ease-in 300ms;
+    position: fixed;
+    z-index: 3;
+    display: block;
+
+    .primary-navigation {
+      position: absolute;
+      bottom: 10vh;
+      left: 10vw;
+
+      ul {
+        list-style: none;
+
+        li {
+          a {
+            font-weight: 300;
+            font-size: 2.5rem;
+          }
+
+          .sub-menu {
+            display: none;
+          }
+        }
+
+        li + li {
+          margin-top: 30px;
+        }
+
+        .cta {
+          background-color: #b52b43;
+          border-radius: 30px;
+          padding: 0;
+          color: #fff;
+          text-decoration: none;
+          text-transform: capitalize;
+          font-weight: 300;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+
+  .active {
+    transform: translateX(0);
   }
 
   // FRONT-PAGE

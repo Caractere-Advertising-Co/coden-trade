@@ -18,6 +18,11 @@
 
   .col-d {
     width: 70%;
+
+    .hamburger-menu {
+      display: none;
+    }
+
     .secondary-navigation {
       display: flex;
       justify-content: flex-end;
@@ -166,4 +171,8 @@
   .hamburger-menu {
     display: none;
   }
+}
+
+.megamenu {
+  display: none;
 }
