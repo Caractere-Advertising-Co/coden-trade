@@ -122,6 +122,11 @@
         li {
           color: $light;
         }
+
+        a {
+          color: $light !important;
+          text-decoration: none;
+        }
       }
     }
   }
