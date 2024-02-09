@@ -100,9 +100,17 @@
     background-color: $secondary-color;
     padding-bottom: 30px;
 
-    p,
-    li {
-      color: $light;
+    .container {
+      .cold {
+        p,
+        li {
+          color: $light;
+        }
+        + a {
+          color: $light !important;
+          text-decoration: none;
+        }
+      }
     }
   }
 
