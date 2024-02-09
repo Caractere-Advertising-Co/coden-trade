@@ -50,9 +50,9 @@
         $linkdis = get_field('link_disclaimer');
     ?>
 
-    <div class="container">
+    <div class="container from-bottom">
         <img src="<?php echo $disbg['url'];?>" />
-        <div class="box-content">
+        <div class="box-content from-right">
             <?php echo $title;?>
             <?php echo $disdesc;?>
         </div>
@@ -71,7 +71,7 @@
                     $txt = get_sub_field('texte_produits');
 
             ?>
-            <div class="product_front"><?php
+            <div class="product_front from-left"><?php
                     if($icon):?>
                 <img src="<?php echo $icon['url'];?>" alt="<?php echo $icon['title'];?>" />
                 <?php endif;
@@ -95,15 +95,15 @@
             <div class="block_stats">
 
                 <?php if($imgStats):?>
-                <img src="<?php echo $imgStats['url'];?>" alt="<?php echo $imgStats['title'];?>" />
+                <img class="from-right" src="<?php echo $imgStats['url'];?>" alt="<?php echo $imgStats['title'];?>" />
                 <?php endif;?>
 
-                <span>
+                <span class="from-right">
                     <?php echo $descStats;?>
                 </span>
             </div>
 
-            <div class="getOffre">
+            <div class="getOffre from-right">
                 <?php echo $dmdOffre;?>
             </div>
         </div>
@@ -117,8 +117,8 @@
 <section id="actualites">
     <div class="container">
         <div class="intro_actu">
-            <?php echo get_field('titre_actus');?>
-            <?php echo get_field('texte_actus');?>
+            <span class="from-left"><?php echo get_field('titre_actus');?></span>
+            <span class="from-left"><?php echo get_field('texte_actus');?></span>
         </div>
         <div class="grid_articles">
             <?php 
@@ -132,7 +132,7 @@
 
             if($query->have_posts()):
                 while($query->have_posts()): $query->the_post();?>
-            <div class="card_article">
+            <div class="card_article from-bottom">
                 <?php if ( has_post_thumbnail() ):?>
                 <div class="home-thumbnail">
                     <?php the_post_thumbnail();?>
@@ -140,7 +140,7 @@
                 <?php endif;?>
                 <h3><?php the_title();?></h3>
 
-                <a href="<?php the_permalink();?>" class="red">Découvrir</a>
+                <a href="<?php the_permalink();?>" class="red from-bottom">Découvrir</a>
             </div><?php
                 endwhile;
             endif;
@@ -148,7 +148,7 @@
             wp_reset_postdata();?>
         </div>
         <div class="view_more">
-            <a href="#" class="cta bgBlue">Voir tout</a>
+            <a href="#" class="cta bgBlue from-bottom">Voir tout</a>
         </div>
     </div>
 </section>
