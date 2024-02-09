@@ -25,6 +25,9 @@
 
 .contact-form,
 .wpcf7-form {
+  li {
+    margin-left: 0;
+  }
   .moitier {
     width: 48%;
   }
