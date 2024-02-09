@@ -46,5 +46,21 @@
       min-height: inherit;
       background: none;
     }
+
+    .liInfo {
+      a {
+        color: $secondary-color;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $primary-color;
+        top: 0px;
+        position: relative;
+        transition: all ease-out 200ms;
+
+        &:hover {
+          border-bottom: 5px solid $primary-color;
+          top: -5px;
+        }
+      }
+    }
   }
 }
