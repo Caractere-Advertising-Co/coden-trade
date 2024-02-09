@@ -98,10 +98,15 @@
 
       .cta {
         border-radius: 0;
+
         &::after {
           content: "→";
           height: 30px;
           color: $light;
+        }
+
+        &::before {
+          border-radius: 0 !important;
         }
       }
 
