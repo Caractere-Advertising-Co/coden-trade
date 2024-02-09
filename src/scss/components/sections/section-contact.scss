@@ -36,7 +36,8 @@
       float: right;
     }
 
-    .liCheck input[type="checkbox"] {
+    .liCheck input[type="checkbox"],
+    .liRadio input[type="radio"] {
       min-width: auto;
       width: auto;
       max-width: auto;
