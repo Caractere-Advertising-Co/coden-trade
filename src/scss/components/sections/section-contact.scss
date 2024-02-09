@@ -44,13 +44,13 @@
   .liCheck input[type="checkbox"],
   .liRadio input[type="radio"],
   .liRadio input[type="checkbox"] {
-    min-width: auto;
-    width: auto;
-    max-width: auto;
-    border: none;
+    min-width: auto !important;
+    width: auto !important;
+    max-width: auto !important;
+    border: none !important;
     border-bottom: 1px solid #b0b0b0;
     min-height: inherit;
-    background: none;
+    background: none !important;
   }
 
   .liInfo {
