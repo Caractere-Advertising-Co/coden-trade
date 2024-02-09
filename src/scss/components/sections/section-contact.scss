@@ -42,7 +42,8 @@
   }
 
   .liCheck input[type="checkbox"],
-  .liRadio input[type="radio"] {
+  .liRadio input[type="radio"],
+  .liRadio input[type="checkbox"] {
     min-width: auto;
     width: auto;
     max-width: auto;
