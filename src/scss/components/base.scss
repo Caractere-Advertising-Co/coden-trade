@@ -92,6 +92,7 @@ a {
     transform-origin: left;
     transition: transform ease-in-out 300ms;
     z-index: -1;
+    border-radius: 30px;
   }
 
   &:hover {
@@ -170,6 +171,7 @@ a {
     transform-origin: left;
     transition: transform ease-in-out 300ms;
     z-index: -1;
+    border-radius: 30px;
   }
 
   &:hover {
