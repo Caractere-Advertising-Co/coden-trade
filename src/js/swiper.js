@@ -13,7 +13,6 @@ const swiper = new Swiper(".swiper", {
 });
 
 const swiperResp = new Swiper(".swiper-resp", {
-  slidesPerView: "auto",
   loop: true,
   autoplay: false,
   slidesPerGroup: 1,
