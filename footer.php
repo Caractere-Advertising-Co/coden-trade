@@ -40,19 +40,28 @@
         </div>
     </div>
     <div class="footer_middle">
-        <?php $query = new WP_Query(
-                    array(
-                        'post_type' => 'page',
-                        'posts_per_page' => -1
-                    ));
-            $allLinks = $query->posts;
+        <?php 
+        $keywords = get_field('keywords','options');
+
+        if($keywords):
+            echo $keywords;
+        endif;
+        
+        //  $query = new WP_Query(
+        //             array(
+        //                 'post_type' => 'page',
+        //                 'posts_per_page' => -1
+        //             ));
+        //     $allLinks = $query->posts;
 
 
-            foreach ($allLinks as $links):
-             echo '<a href="#">'.$links->post_title.'</a>';
-            endforeach;
+        //     foreach ($allLinks as $links):
+        //      echo '<a href="#">'.$links->post_title.'</a>';
+        //     endforeach;
 
-            wp_reset_postdata();?>
+        //     wp_reset_postdata();
+
+        ?>
 
     </div>
     <div class="footer_bottom">
