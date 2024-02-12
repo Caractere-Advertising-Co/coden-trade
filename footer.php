@@ -44,7 +44,7 @@
         $keywords = get_field('keywords','options');
 
         if($keywords):
-            echo $keywords;
+            echo '<span class="keywords">'.$keywords.'</span>';
         endif;
         
         //  $query = new WP_Query(

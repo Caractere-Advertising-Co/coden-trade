@@ -83,11 +83,13 @@ footer {
     padding: 30px 0;
     width: 70vw;
     margin: auto;
-    p {
+    .keywords {
       color: $primary-color;
       font-size: 0.6rem;
       font-weight: 800;
+      line-height: 0.9rem;
       margin-right: 10px;
+      text-align: center;
     }
   }
 
