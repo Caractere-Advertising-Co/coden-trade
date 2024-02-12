@@ -8,6 +8,7 @@
             <?php if(have_rows('slides')):
                 while(have_rows('slides')) : the_row();?>
             <?php $bg = get_sub_field('background_image');?>
+            <?php $cta = get_sub_field('liens');?>
 
             <?php if($bg):?>
             <div class="swiper-slide">
@@ -15,7 +16,7 @@
                 <div class="content">
                     <p class="baseline"><?php echo get_sub_field('sous-titre');?></p>
                     <?php echo get_sub_field('titre');?>
-                    <a href="#" class="cta">NOS SOLUTIONS</a>
+                    <a href="<?php echo $cta['url'];?>" class="cta">NOS SOLUTIONS</a>
                 </div>
             </div>
             <?php endif;?>
