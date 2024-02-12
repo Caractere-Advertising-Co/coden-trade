@@ -58,12 +58,12 @@ get_template_part( 'templates-parts/header-nav');?>
 $title_vosp = get_field('titre-vosp');
 
 if($title_vosp):?>
-
+<span> test </span>
 <?php get_template_part( 'templates-parts/line-separator' );?>
 <?php get_template_part( 'templates-parts/section-nosproduits' );?>
 <?php get_template_part( 'templates-parts/line-separator' );?>
-
 <?php endif;?>
+
 <?php get_template_part('templates-parts/disclaimer-banner');?>
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
