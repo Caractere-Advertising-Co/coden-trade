@@ -10,8 +10,6 @@ $title_header = get_field('titre_page');?>
 <header id="header" style="background:url('<?php echo $bg_header['url'];?>');">
 </header>
 
-
-
 <section id="aboutus">
     <?php /*get_template_part( 'templates-parts/section-card-services' );*/?>
     <div class="container">
