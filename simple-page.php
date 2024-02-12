@@ -66,9 +66,15 @@ get_template_part( 'templates-parts/header-nav');?>
 </section>
 <?php endif;?>
 
-<?php get_template_part( 'templates-parts/line-separator' );?>
-<?php get_template_part( 'templates-parts/section-nosproduits' );?>
-<?php get_template_part( 'templates-parts/line-separator' );?>
+<?php 
+$title_vosp = get_field('titre-vosp');
+
+if($title_vosp):
+    get_template_part( 'templates-parts/line-separator' );
+    get_template_part( 'templates-parts/section-nosproduits' );
+    get_template_part( 'templates-parts/line-separator' );
+endif;?>
+
 <?php get_template_part('templates-parts/disclaimer-banner');?>
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
