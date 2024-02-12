@@ -16,18 +16,18 @@ const swiperResp = new Swiper(".swiper-resp", {
   loop: true,
   autoplay: false,
   slidesPerGroup: 1,
+  centeredSlides: false,
   cssMode: true,
-  slidesPerView: 1,
+  slidesPerView: 1.3,
   spaceBetween: 30,
-  pagination: ".swiper-pagination",
-  paginationClickable: true,
 });
 
 const swiperRespNos = new Swiper(".swiper-nos", {
   loop: true,
   autoplay: false,
   slidesPerGroup: 1,
+  centeredSlides: false,
   cssMode: true,
-  slidesPerView: 1,
+  slidesPerView: 1.3,
   spaceBetween: 30,
 });
