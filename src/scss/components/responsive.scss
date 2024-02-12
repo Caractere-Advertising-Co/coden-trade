@@ -237,6 +237,10 @@
       min-height: 200px;
       margin-bottom: 100px;
 
+      .swiper-horizontal {
+        touch-action: pan-x;
+      }
+
       .swiper-resp {
         margin-left: 5vw;
 
