@@ -3,7 +3,7 @@
 <?php get_template_part( 'templates-parts/header-nav');?>
 
 <section id="hero-container">
-    <div class="swiper">
+    <div class="swiper swiper-hero">
         <div class="swiper-wrapper">
             <?php if(have_rows('slides')):
                 while(have_rows('slides')) : the_row();?>

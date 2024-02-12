@@ -4,7 +4,7 @@
   left: 0;
   overflow: hidden;
 
-  .swiper {
+  .swiper-hero {
     .swiper-wrapper {
       overflow: hidden;
 
@@ -76,56 +76,58 @@
 #aboutus {
   background-color: $light-gray;
 
-  .swiper-mobile {
-    display: none;
-  }
+  .container {
+    .swiper-mobile {
+      display: none;
+    }
 
-  .grid {
-    position: relative;
-    width: 70vw;
-    margin: auto;
-    top: -100px;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 30px;
-    grid-row-gap: 0px;
-    height: 300px;
-    margin-bottom: 250px;
+    .grid {
+      position: relative;
+      width: 70vw;
+      margin: auto;
+      top: -100px;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 30px;
+      grid-row-gap: 0px;
+      height: 300px;
+      margin-bottom: 250px;
 
-    .card {
-      overflow: hidden;
-      height: 320px;
-      padding: 40px;
-      cursor: pointer;
+      .card {
+        overflow: hidden;
+        height: 320px;
+        padding: 40px;
+        cursor: pointer;
 
-      h4 {
-        color: $light;
-        position: absolute;
-        z-index: 10;
-        bottom: 40px;
-        top: auto;
-        font-size: 2rem;
-        font-weight: 600;
-        text-shadow: 0px 0px 10px #000000a3;
-      }
+        h4 {
+          color: $light;
+          position: absolute;
+          z-index: 10;
+          bottom: 40px;
+          top: auto;
+          font-size: 2rem;
+          font-weight: 600;
+          text-shadow: 0px 0px 10px #000000a3;
+        }
 
-      &::before {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 100%;
-        background-color: transparent;
-        transition: all ease-in-out 200ms;
-        height: 400px;
-        margin-left: -40px;
-        margin-top: -40px;
-      }
-
-      &:hover {
         &::before {
-          background-color: $hover-transparent;
+          content: "";
+          position: absolute;
+          display: block;
+          width: 100%;
+          background-color: transparent;
+          transition: all ease-in-out 200ms;
+          height: 400px;
+          margin-left: -40px;
+          margin-top: -40px;
+        }
+
+        &:hover {
+          &::before {
+            background-color: $hover-transparent;
+          }
         }
       }
     }

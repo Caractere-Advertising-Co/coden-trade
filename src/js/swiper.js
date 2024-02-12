@@ -1,4 +1,4 @@
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".swiper-hero", {
   loop: true,
   autoplay: false,
   cssMode: true,
@@ -18,6 +18,9 @@ const swiperResp = new Swiper(".swiper-resp", {
   slidesPerGroup: 1,
   cssMode: true,
   slidesPerView: 1,
+  spaceBetween: 30,
+  pagination: ".swiper-pagination",
+  paginationClickable: true,
 });
 
 const swiperRespNos = new Swiper(".swiper-nos", {
@@ -26,4 +29,5 @@ const swiperRespNos = new Swiper(".swiper-nos", {
   slidesPerGroup: 1,
   cssMode: true,
   slidesPerView: 1,
+  spaceBetween: 30,
 });
