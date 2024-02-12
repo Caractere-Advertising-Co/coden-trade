@@ -83,16 +83,11 @@ footer {
     padding: 30px 0;
     width: 70vw;
     margin: auto;
-    a {
+    p {
       color: $primary-color;
       font-size: 0.6rem;
       font-weight: 800;
       margin-right: 10px;
-    }
-
-    a + a {
-      border-left: 1px solid $primary-color;
-      padding-left: 10px;
     }
   }
 
