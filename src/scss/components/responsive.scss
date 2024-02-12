@@ -247,6 +247,13 @@
           position: relative;
           overflow-y: hidden;
 
+          a {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: block;
+          }
+
           h4 {
             color: $light;
             position: absolute;

@@ -1,6 +1,6 @@
 const swiper = new Swiper(".swiper", {
   loop: true,
-  autoplay: true,
+  autoplay: false,
   cssMode: true,
 
   pagination: {
@@ -15,7 +15,7 @@ const swiper = new Swiper(".swiper", {
 const swiperResp = new Swiper(".swiper-resp", {
   slidesPerView: "auto",
   loop: true,
-  autoplay: true,
+  autoplay: false,
   slidesPerGroup: 1,
   cssMode: true,
   slidesPerView: 1,

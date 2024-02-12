@@ -2,11 +2,11 @@
     <div class="swiper-mobile">
         <div class="swiper-resp">
             <div class="swiper-wrapper">
-                <?php if(have_rows('services','options')): while(have_rows('services','options')): the_row();?>
-
+                <?php if(have_rows('services','options')): 
+                        while(have_rows('services','options')): the_row();?>
                 <?php 
-                        $img = get_sub_field('background_service');
-                        $link = get_sub_field('lien_service');?>
+                    $img = get_sub_field('background_service');
+                    $link = get_sub_field('lien_service');?>
 
                 <div class="swiper-slide card from-bottom"
                     style="background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">

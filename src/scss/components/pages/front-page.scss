@@ -40,9 +40,11 @@
           }
 
           .cta {
-            line-height: 10rem;
+            margin-top: 4rem;
             letter-spacing: 3px;
             font-size: 0.9rem;
+            display: block;
+            max-width: fit-content;
           }
         }
       }
