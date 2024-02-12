@@ -34,7 +34,7 @@ $title_header = get_field('titre_page');?>
         </div>
 
         <div class="swiper-mobile">
-            <div class="swiper-resp">
+            <div class="swiper-nos">
                 <div class="swiper-wrapper">
                     <?php if(have_rows('services','options')): while(have_rows('services','options')): the_row();?>
 
