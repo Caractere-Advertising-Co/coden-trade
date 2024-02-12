@@ -234,10 +234,10 @@
       .swiper-mobile {
         display: block;
         position: relative;
-        margin-top: -50px;
+        margin: -50px auto 100px -10vw;
         z-index: 10;
         min-height: 200px;
-        margin-bottom: 100px;
+        width: 100vw;
 
         .swiper-horizontal {
           touch-action: pan-x;
