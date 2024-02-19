@@ -7,20 +7,20 @@
         <div class="swiper-wrapper">
             <?php if(have_rows('slides')):
                 while(have_rows('slides')) : the_row();?>
-            <?php $bg = get_sub_field('background_image');?>
-            <?php $cta = get_sub_field('liens');?>
+                    <?php $bg = get_sub_field('background_image');?>
+                    <?php $cta = get_sub_field('liens');?>
 
-            <?php if($bg):?>
-            <div class="swiper-slide">
-                <img src="<?php echo $bg['url'];?>" alt="bg_slider" />
-                <div class="content">
-                    <p class="baseline"><?php echo get_sub_field('sous-titre');?></p>
-                    <?php echo get_sub_field('titre');?>
-                    <a href="<?php echo $cta['url'];?>" class="cta">NOS SOLUTIONS</a>
-                </div>
-            </div>
-            <?php endif;?>
-            <?php endwhile;
+                    <?php if($bg):?>
+                    <div class="swiper-slide">
+                        <img src="<?php echo $bg['url'];?>" alt="bg_slider" />
+                        <div class="content">
+                            <p class="baseline"><?php echo get_sub_field('sous-titre');?></p>
+                            <?php echo get_sub_field('titre');?>
+                            <a href="<?php echo $cta['url'];?>" class="cta">NOS SOLUTIONS</a>
+                        </div>
+                    </div>
+                    <?php endif;
+                endwhile;
             endif;?>
         </div>
 
@@ -34,13 +34,10 @@
 <section id="section_nosproduits">
     <div class="container">
         <?php get_template_part( 'templates-parts/section-nosproduits' );?>
-
     </div>
 </section>
 
-
 <?php get_template_part( 'templates-parts/section-mots-president' );?>
-
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
 <section id="disclaimer">
@@ -73,8 +70,8 @@
 
             ?>
             <div class="product_front from-left"><?php
-                    if($icon):?>
-                <img src="<?php echo $icon['url'];?>" alt="<?php echo $icon['title'];?>" />
+                if($icon):?>
+                    <img src="<?php echo $icon['url'];?>" alt="<?php echo $icon['title'];?>" />
                 <?php endif;
                 
                 ?><div class="txt"><?php
