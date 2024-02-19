@@ -76,11 +76,11 @@
 #aboutus {
   background-color: $light-gray;
 
-  .container {
-    .swiper-mobile {
-      display: none;
-    }
+  .swiper-mobile {
+    display: none;
+  }
 
+  .container {
     .grid {
       position: relative;
       width: 70vw;
