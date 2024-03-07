@@ -81,13 +81,11 @@
 // Loop
 
 @keyframes up-and-down {
-  0% {
-    top: 1px;
+  0%,
+  100% {
+    bottom: -3px;
   }
   50% {
-    top: -1px;
-  }
-  100% {
-    top: 1px;
+    bottom: 3px;
   }
 }

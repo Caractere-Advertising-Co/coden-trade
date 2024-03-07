@@ -5,29 +5,49 @@ const swiper = new Swiper(".swiper-hero", {
 
   pagination: {
     el: ".swiper-pagination",
+    clickable: true,
   },
+});
+
+const swiperFrontPage = new Swiper(".swiper-resp", {
+  cssMode: true,
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 30,
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 });
 
-const swiperResp = new Swiper(".swiper-resp", {
-  loop: true,
-  autoplay: false,
-  slidesPerGroup: 1,
-  centeredSlides: false,
+const swiperAbout = new Swiper(".swiper-about", {
   cssMode: true,
-  slidesPerView: 1.3,
-  spaceBetween: 30,
+  loop: true,
+  slidesPerView: 1,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
 
-const swiperRespNos = new Swiper(".swiper-nos", {
-  loop: true,
-  autoplay: false,
-  slidesPerGroup: 1,
-  centeredSlides: false,
+/* WOOCOMMERCE */
+
+const swipThumbs = new Swiper(".swiper-thumbs", {
+  spaceBetween: 15,
+  slidesPerView: 3,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+
+const swipProduct = new Swiper(".swiper-product", {
   cssMode: true,
-  slidesPerView: 1.3,
-  spaceBetween: 30,
+  thumbs: {
+    swiper: swipThumbs,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });

@@ -70,64 +70,104 @@
     .swiper-button-prev {
       margin-top: -80px;
     }
+
+    .swiper-pagination {
+      position: absolute;
+      right: 0;
+      left: auto;
+      top: 50%;
+      width: 40px;
+      gap: 10px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+
+      .swiper-pagination-bullet {
+        border: 2px solid $light;
+        background: none;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: $light;
+      }
+    }
   }
 }
 
 #aboutus {
-  background-color: $light-gray;
-
-  .swiper-mobile {
-    display: none;
-  }
-
   .container {
-    .grid {
+    .swiper-content {
       position: relative;
-      width: 70vw;
-      margin: auto;
-      top: -100px;
       z-index: 10;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 1fr;
-      grid-column-gap: 30px;
-      grid-row-gap: 0px;
-      height: 300px;
-      margin-bottom: 250px;
+      min-height: 200px;
+      margin: auto;
+      top: -150px;
+      margin-bottom: 50px;
 
-      .card {
-        overflow: hidden;
-        height: 320px;
-        padding: 40px;
-        cursor: pointer;
+      .swiper-horizontal {
+        touch-action: pan-x;
+      }
 
-        h4 {
-          color: $light;
-          position: absolute;
-          z-index: 10;
-          bottom: 40px;
-          top: auto;
-          font-size: 2rem;
-          font-weight: 600;
-          text-shadow: 0px 0px 10px #000000a3;
-        }
+      .swiper-resp {
+        .swiper-slide {
+          overflow: hidden;
+          height: 320px;
+          width: calc((100% - 300px) / 3) !important;
+          padding: 40px;
+          cursor: pointer;
 
-        &::before {
-          content: "";
-          position: absolute;
-          display: block;
-          width: 100%;
-          background-color: transparent;
-          transition: all ease-in-out 200ms;
-          height: 400px;
-          margin-left: -40px;
-          margin-top: -40px;
-        }
-
-        &:hover {
-          &::before {
-            background-color: $hover-transparent;
+          h4 {
+            color: $light;
+            position: absolute;
+            z-index: 10;
+            bottom: 40px;
+            top: auto;
+            font-size: 2rem;
+            font-weight: 600;
+            text-shadow: 0px 0px 10px #000000a3;
           }
+
+          &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            background-color: transparent;
+            transition: all ease-in-out 200ms;
+            height: 400px;
+            margin-left: -40px;
+            margin-top: -40px;
+          }
+
+          &:hover {
+            &::before {
+              background-color: $hover-transparent;
+            }
+          }
+        }
+      }
+
+      .section_nav {
+        position: relative;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          position: absolute;
+          left: 0;
+          top: 40px;
+          height: 40px;
+          width: 40px;
+          background-color: $dark-gray;
+          color: #fff;
+
+          &::after {
+            font-size: 1rem;
+          }
+        }
+
+        .swiper-button-next {
+          left: 40px;
+          background-color: $primary-color;
         }
       }
     }
@@ -136,15 +176,109 @@
 
 #section_nosproduits {
   padding-top: 350px;
+
+  button {
+    background-color: $light;
+    font-family: "sofia-pro", sans-serif;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $light;
+    }
+  }
+
+  button + button {
+    margin-left: 20px;
+  }
+
+  .table_product {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 50px;
+    padding: 100px 0;
+
+    .card_product {
+      position: relative;
+
+      .bubble {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -25px;
+        left: 10px;
+        border-radius: 25px;
+        background: $primary-color;
+
+        p {
+          color: $light;
+          text-align: center;
+          line-height: 50px;
+          font-weight: 600;
+          margin: 0;
+          font-size: 0.7rem;
+          text-transform: uppercase;
+        }
+
+        &.-black {
+          background: $dark-dark-gray;
+        }
+
+        &.-white {
+          background: $light-gray;
+
+          p {
+            color: $primary-color;
+          }
+        }
+      }
+
+      h4 {
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-size: 0.8rem;
+        color: $middle-gray;
+        text-align: left;
+      }
+
+      .title {
+        h3 {
+          text-align: left;
+          color: $dark-dark-gray;
+          font-size: 1.8rem;
+          letter-spacing: 1px;
+          line-height: 1.8rem;
+          display: block;
+          min-height: 50px;
+        }
+        &::after {
+          content: "";
+          width: 50px;
+          height: 1px;
+          background: $middle-gray;
+          display: block;
+          margin-top: 30px;
+        }
+      }
+
+      .price {
+        color: $primary-color;
+        font-weight: 600;
+        margin-top: 20px;
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
 
 #mot_president {
   background-color: $light;
   width: 100vw;
   animation: slide-to-top 500ms;
+  padding-bottom: 150px;
+  border-bottom: 1px solid $light-gray;
 
   .container {
-    .col-d {
+    .col-g {
       h3 {
         color: $secondary-color;
         margin: 250px auto 50px auto;
@@ -168,9 +302,72 @@
   }
 }
 
+#big_categories {
+  padding: 150px 0;
+  .container {
+    display: flex;
+    gap: 50px;
+
+    .colg,
+    .cold {
+      width: 50%;
+    }
+
+    .colg {
+      ul {
+        list-style: none;
+
+        .outline {
+          text-transform: uppercase;
+          color: transparent;
+          font-size: 5rem;
+          line-height: 4rem;
+          font-weight: 800;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: $primary-color;
+          cursor: pointer;
+        }
+
+        .outline.active {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .cold {
+      padding-top: 250px;
+      .panel {
+        display: none;
+        list-style: none;
+
+        li {
+          font-size: 2rem;
+          cursor: pointer;
+
+          &:hover {
+            font-weight: 800;
+          }
+        }
+      }
+
+      .panel1 {
+        display: block;
+      }
+    }
+
+    .cta {
+      border-radius: 0;
+      margin-top: 80px;
+      display: block;
+      max-width: 150px;
+      text-align: center;
+    }
+  }
+}
+
 #confiance {
-  @include liGray-to-white;
-  padding: 150px 0 550px 0;
+  background-color: $secondary-color;
+  padding: 250px 0 150px 0;
 
   .container {
     text-align: center;
@@ -205,16 +402,21 @@
           font-weight: 700;
           font-size: 1.5rem;
           line-height: 1.8rem;
-          color: $secondary-color;
+          color: $light;
+        }
+
+        img {
+          color: $primary-color;
         }
 
         p {
           margin: 30px auto 10px auto;
           display: block;
+          color: $light;
 
           &::after {
             content: "→";
-            color: $primary-color;
+            color: $light;
             display: block;
             margin-top: 10px;
           }
@@ -228,13 +430,13 @@
       }
 
       .card_qualite + .card_qualite {
-        border-left: 1px solid #eaeaea;
+        border-left: 1px solid $dark-gray;
         padding-left: 50px;
       }
     }
 
     .cta {
-      border-radius: 20px;
+      border-radius: 0px;
       letter-spacing: 5px;
       font-size: 0.9rem;
       text-align: center;
@@ -285,6 +487,35 @@
   }
 }
 
+#nos_connaissances {
+  .columns {
+    .colg,
+    .cold {
+      width: 50%;
+    }
+
+    .colg {
+      padding-top: 120px;
+
+      img {
+        position: relative;
+        bottom: -100px;
+        z-index: 10;
+      }
+    }
+
+    .cold {
+      p {
+        margin: 50px 0;
+
+        &:first-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
 #actualites {
   background-color: $light-gray;
   .container {
@@ -300,24 +531,38 @@
     .intro_actu {
       margin-bottom: 100px;
 
-      h2,
-      p {
+      span {
         width: 50%;
-      }
 
-      h2 {
-        color: $secondary-color;
-      }
-      p {
-        padding-top: 60px;
+        h2 {
+          color: $secondary-color;
+        }
+        p {
+          padding-top: 60px;
+        }
       }
     }
 
     .grid_articles {
       .card_article {
         width: 50%;
+
+        .metaData {
+          .puntSep {
+            color: $primary-color;
+            margin: 0 20px;
+          }
+
+          a,
+          p {
+            color: $middle-gray;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+          }
+        }
         h3 {
-          font-weight: 300;
+          font-weight: 800;
           color: $secondary-color;
           margin-bottom: 30px;
         }
@@ -430,43 +675,47 @@
 #disclaimer_banner {
   background-color: $light;
   min-height: 400px;
-  padding-top: 350px;
+  padding-top: 150px;
 
   .container {
     min-height: 0px;
-    display: flex;
     width: 80vw;
 
     position: relative;
     z-index: 2;
+    color: $light;
+    padding: 40px 100px;
 
-    .colg {
-      width: 55%;
+    h3,
+    p {
       color: $light;
-      padding: 25px 40px;
-
-      h3,
-      p {
-        color: $light;
-        margin-bottom: 0;
-      }
-
-      h3 {
-        font-size: 2.3rem;
-        line-height: 2.5rem;
-        margin-bottom: 10px;
-      }
+      margin-bottom: 0;
     }
 
-    .cold {
-      width: 50%;
-      position: relative;
+    h3 {
+      font-size: 2.3rem;
+      line-height: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-      .cta {
-        position: absolute;
-        top: calc((100% - 44px) / 2);
-        left: -50px;
-        z-index: 10;
+    h4 {
+      text-transform: uppercase;
+      color: $primary-color;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 10px;
+    }
+
+    .cta {
+      position: absolute;
+      top: calc((100% - 44px) / 2);
+      left: 50%;
+      z-index: 10;
+      background: $primary-color;
+      border: $primary-color;
+
+      &:hover {
+        border-color: $secondary-color;
       }
     }
   }

@@ -71,4 +71,37 @@ $(document).ready(function () {
       animate();
     });
   });
+
+  // Outline
+
+  // Sélection de tous les éléments avec la classe .outline
+  const menu = document.querySelectorAll(".outline");
+
+  // Parcours de chaque élément .outline
+  menu.forEach(function (el) {
+    el.addEventListener("click", function () {
+      // Supprimer la classe .active de tous les éléments .outline
+      menu.forEach(function (item) {
+        item.classList.remove("active");
+      });
+
+      // Ajouter la classe .active à l'élément actuellement cliqué
+      el.classList.add("active");
+
+      const panelId = el.id.replace("cat-", "");
+      const panels = document.querySelectorAll(".cold .panel");
+
+      panels.forEach(function (panel) {
+        panel.style.display = "none";
+      });
+
+      // Afficher le panneau correspondant
+      const activePanel = document.querySelector(
+        ".cold .panel.panel" + panelId
+      );
+      if (activePanel) {
+        activePanel.style.display = "block";
+      }
+    });
+  });
 });

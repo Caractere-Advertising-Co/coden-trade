@@ -21,12 +21,34 @@ header {
 .content,
 .container {
   width: 70vw;
+  max-width: 1400px;
   margin: auto;
 }
 
 .columns {
   display: flex;
   gap: 50px;
+}
+
+.top_content {
+  text-align: center;
+  margin: 100px auto;
+
+  h2 {
+    color: $dark-gray;
+
+    em {
+      color: $primary-color;
+    }
+  }
+
+  h3 {
+    text-transform: uppercase;
+    margin: 30px auto;
+    font-size: 0.8rem;
+    color: $middle-gray;
+    letter-spacing: 10px;
+  }
 }
 
 *::before,
@@ -104,7 +126,8 @@ a {
 }
 
 .cta-border {
-  background-color: none;
+  font-family: "Sofia-pro", sans-serif;
+  background: none;
   border: 1px solid $primary-color;
   border-radius: 30px;
   color: $dark-gray;
@@ -117,10 +140,6 @@ a {
   text-align: center;
   position: relative;
   overflow: hidden;
-
-  .cta-border + .cta-border {
-    margin-left: 30px;
-  }
 
   &::before {
     content: "";
@@ -147,6 +166,11 @@ a {
       transform-origin: left;
     }
   }
+}
+
+.cta-border + .cta-border {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .cta-blue {
@@ -216,12 +240,20 @@ a {
   }
 }
 
+.btn-arrow {
+  width: 30px;
+  height: 30px;
+  margin: 70px auto;
+  border-radius: 45px;
+  padding: 30px;
+  background-color: #a42f2c;
+}
+
 #scrollToTop {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #b52b43;
-  border-radius: 30px;
+  background-color: $primary-color;
   color: #fff;
   height: 50px;
   width: 50px;
@@ -235,7 +267,7 @@ a {
   svg {
     height: 25px;
     position: relative;
-    animation: up-and-down 5s ease-in-out infinite;
+    animation: up-and-down 0.8s linear infinite;
   }
 }
 
@@ -297,5 +329,75 @@ form {
       font-size: 0.7rem;
       padding: 5px 25px;
     }
+  }
+}
+
+.card_product {
+  position: relative;
+
+  .bubble {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    border-radius: 25px;
+    background: $primary-color;
+
+    p {
+      color: $light;
+      text-align: center;
+      line-height: 50px;
+      font-weight: 600;
+      margin: 0;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    &.-black {
+      background: $dark-dark-gray;
+    }
+
+    &.-white {
+      background: $light-gray;
+
+      p {
+        color: $primary-color;
+      }
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 0.8rem;
+    color: $middle-gray;
+    text-align: left;
+  }
+
+  .title {
+    h3 {
+      text-align: left;
+      color: $dark-dark-gray;
+      font-size: 1.8rem !important;
+      letter-spacing: 1px;
+      line-height: 1.8rem !important;
+      display: block;
+      min-height: 50px;
+    }
+    &::after {
+      content: "";
+      width: 50px;
+      height: 1px;
+      background: $middle-gray;
+      display: block;
+    }
+  }
+
+  .price {
+    color: $primary-color !important;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 1.5rem !important;
   }
 }

@@ -5,70 +5,239 @@ get_header();
 
 $bg_header = get_field('bg_header');
 
-if(!$bg_header):
-    $bg_url = get_template_directory_uri(  ).'/assets/img/bg-default.jpg';
-else :
-    $bg_header = get_field('bg_header');
+if($bg_header):
     $bg_url = $bg_header['url'];
 endif;
 
-get_template_part( 'templates-parts/header-nav');?>
-<header id="header" style="background:url('<?php echo $bg_url;?>');">
-</header>
+$titre = get_field('titre');
+$intro = get_field('introduction');
+$txtNaissance = get_field('txt_naissance');
+$ctaNaiss = get_field('cta_naissance');
+$galerie = get_field('galerie_naiss');
 
-<section id="assurance">
+$titreService = get_field('titre_service');
+$txtService = get_field('texte_service');
+$galerie_ser = get_field('galerie_service');
+$cta_ser = get_field('cta_service');
+$bgService = get_field('background_service');
+$img = get_field('img-separator');
+
+$titreExpert = get_field('Titre-expert');
+$txtExpert = get_field('texte-expert');
+$ctaExpert = get_field('cta-expert');
+
+$titrRefs = get_field('titre-refs');
+$surRefs = get_field('surtitre-refs');
+$ctaRefs = get_field('cta-refs');
+?>
+
+<header id="header" <?php if($bg_header):?> style="background:url('<?php echo $bg_url;?>');"<?php endif;?>></header>
+
+<section id="introduction">
     <div class="container">
-        <?php get_template_part( 'templates-parts/section-assurance' );?>
+        <div class="colg">
+            <div class="intro from-bottom">
+                <?php if($titre) : echo $titre;endif;?>
+            </div>
+        </div>
+        <div class="cold">
+            <div class="intro from-bottom"><?php if($intro) : echo $intro;endif;?></div>
+        </div>
     </div>
 </section>
 
-<section id="statistiques">
-    <div class="container">
-        <?php 
-        $title = get_field('titre');
-        $subtitle = get_field('subtitle');
-        $textExp = get_field('texte_explicatif');
-        $cta = get_field('cta-contact');
-        ?>
+<section id="begin_entreprise">
+    <div class="container columns">
+        <div class="colg">
+            <div class="swiper swiper-about">
+                <div class="swiper-wrapper">
+                    <?php if($galerie): 
+                        foreach($galerie as $gal):?>
+                            <div class="swiper-slide">
+                                <img src="<?php echo $gal['url'];?>" alt="<?php $gal['title'];?>"/>
+                            </div>
+                        <?php endforeach;
+                    endif;?>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <div class="cold">
+            <?php if($txtNaissance): echo $txtNaissance; endif;?>
+            <?php if($ctaNaiss):?>
+                <a href="<?php $ctaNaiss['url'];?>" class="cta"><?php $ctaNaiss['title'];?></a>
+            <?php endif;?>
+        </div>
+    </div>
+</section>
 
-        <?php if($subtitle) : echo '<h4>'.$subtitle.'</h4>'; endif;?>
-        <?php if($title) : echo $title; endif;?>
+<section id="section-coprod">
+    <?php get_template_part( 'templates-parts/section-nosproduits' );?>
+</section>
+
+<section id="service_particulier">
+    <div class="container columns">
+        <div class="colg">
+            <?php if($titreService): echo $titreService; endif;?>
+            <?php if($txtService): echo $txtService; endif;?>
+            <?php if($cta_ser):?>
+                <a href="<?php $cta_ser['url'];?>" class="cta"><?php $cta_ser['title'];?></a>
+            <?php endif;?>
+        </div>
+        <div class="cold">
+            <div class="swiper swiper-service">
+                <div class="swiper-wrapper">
+                    <?php if($galerie_ser): 
+                        foreach($galerie as $gal):?>
+                            <div class="swiper-slide">
+                                <img src="<?php echo $gal['url'];?>" alt="<?php $gal['title'];?>"/>
+                            </div>
+                        <?php endforeach;
+                    endif;?>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <?php if($titreService): echo $titreService; endif;?>
+    </div>
+
+    <div class="service-bottom" <?php if($bgService):?>style="background:url('<?php echo $bgService['url'];?>')no-repeat;background-position: left center;"<?php endif;?>>
+        <?php $i = 0;?>
+        <div class="container">
+            <div class="cold">
+                <div class="col col-<?php echo $i;?>">                        
+                    <?php
+                        if(have_rows('liste_services')):
+                            $count = count(get_field('liste_services'));
+
+                            while(have_rows('liste_services')) : the_row();
+                                $card = get_sub_field('carte');
+                                $i++;
+                                
+                                if($card):?>
+                                    <div class="card from-bottom">
+                                        <?php echo $card;?>
+                                    </div>
+                                <?php endif;?>
+
+                                    
+                                <?php if($i == $count /2):?>
+                                    </div><div class="col col-<?php echo $i;?>">
+                                <?php endif;
+                            endwhile;
+                        endif;
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <?php if($img):?>
+            <div class="img-separator">
+                <img src="<?php echo $img['url'];?>" alt="<?php echo $img['url'];?>"/>
+            </div>
+        <?php endif;?>
+    </div>
+</section>
+
+<section id="expert">
+    <div class="container">
+        <?php if($titreExpert): echo $titreExpert; endif;?>
 
         <div class="descr">
-            <?php if($textExp) : echo $textExp;endif;?>
-            <?php if($cta) : echo '<a href="'.$cta['url'].'" class="cta">'.$cta['title'].'</a>';endif;?>
-        </div>
-
-        <div class="grid_stats">
-            <?php 
-            if(have_rows('stats')):
-                while(have_rows('stats')) : the_row();
-                    $number = get_sub_field('valeurs');
-                    
-                    // if($number) :
-                    //     if(strlen((string)$number) > 4) :
-                    //         $numbRW = substr_replace((string)$number,".",2,0);
-                    //     else : 
-                    //         $numbRW = $number;
-                    //     endif;
-                    // endif;
-
-                    $libelle = get_sub_field('libelle');?>
-
-            <div class="block_stat from-bottom">
-                <?php
-                    echo '<h3 data-number="'.$number.'" class="from-left animate-number">0</h3>';
-                    echo '<p>'.$libelle.'</p>';
-                ?>
-            </div><?php
-                endwhile;
-            endif;?>
+            <?php if($txtExpert): echo $txtExpert; endif;?>
+            <?php if($ctaExpert):?>
+                <a href="<?php echo $ctaExpert['url'];?>" class="cta"><?php echo $ctaExpert['title'];?></a>
+            <?php endif;?>
         </div>
     </div>
 </section>
 
-<?php get_template_part( 'templates-parts/section-nosproduits' );?>
-<?php get_template_part( 'templates-parts/section-mots-president' );?>
+<section id="employes">
+    <div class="container">
+        <?php
+
+        // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
+        $args = array(
+            'post_type' => 'employe',
+            'posts_per_page' => -1
+        );
+
+        // 2. On exécute la WP Query
+        $employes = new WP_Query($args);
+        $i = 0;
+
+        // 3. On lance la boucle !
+        if( $employes->have_posts() ) : 
+            while( $employes->have_posts() ) : $employes->the_post();
+                $nom = get_field('nom');
+                $role = get_field('role');
+                $contact = get_field('adresse_email');
+                $bg = get_field('photo');
+    
+                $i++?>
+                
+
+                <div class="card <?php if($i % 3 == 2 ): echo '-center';endif;?> from-bottom" <?php if($bg):echo 'style="background:url('.$bg['url'].')";';endif;?>>
+                    <div class="content-card">
+                        <h4><?php echo $nom;?></h4>
+                        <span class="ballSep"></span>
+                        <p><?php echo $role;?></p>
+
+                        <a href="mailto:<?php echo $contact;?>">Contact</a>
+                    </div>    
+                </div>
+            <?php endwhile;
+        endif;
+
+        // 4. On réinitialise à la requête principale (important)
+        wp_reset_postdata();
+    ?>
+    </div>
+</section>
+
+<section id="references">
+    <div class="container">
+        <h3><?php if($surRefs): echo $surRefs; endif;?></h3>
+        <?php if($titrRefs): echo $titrRefs; endif;?>
+        
+        <?php get_template_part( 'templates-parts/btn-separator' );?>
+    </div>
+
+    <div class="container columns">
+        <?php 
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 2
+            );
+
+            $query = new WP_Query($args);
+            $i = 0;
+
+            if($query->have_posts()):
+                while($query->have_posts()): $query->the_post();
+                    $i++;?>
+
+                    <div class="<?php echo $i == 2 ? '-right' : '';?> from-bottom">
+                        <?php echo the_post_thumbnail();?>
+                    </div>
+                <?php endwhile;
+            endif;
+
+            wp_reset_postdata();
+        ?>
+    </div>
+
+    <div class="container">
+        <a href="<?php echo $ctaRefs['url'];?>" class="cta"><?php echo $ctaRefs['title'];?></a>
+    </div>
+</section>
+
+<?php get_template_part( 'templates-parts/disclaimer-banner' );?>
 <?php get_template_part( 'templates-parts/contact' );?>
 
 <?php get_footer();

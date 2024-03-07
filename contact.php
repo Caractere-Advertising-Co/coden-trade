@@ -10,27 +10,19 @@ $form = get_field('formulaire');
 $contact = get_field('contact');
 $surModif = get_field('surtitre_modif');
 $text_modif = get_field('text_modif');
+$bg_header = get_field('background');?>
 
+<section id="hero">
+    <?php if($bg_header):?><img src="<?php echo $bg_header['url'];?>"><?php endif;?>
+</section>
 
-get_template_part( 'templates-parts/header-nav');?>
+<?php get_template_part( 'templates-parts/contact' );?>
 
-<section id="contact-content">
-    <div class="container">
-        <div class="colg">
-            <?php if($surtitre) : echo '<h2 class="red upp bold">'.$surtitre.'</h2>';endif;?>
-            <?php if($titre) : echo $titre;endif;?>
-        </div>
-        <div class="cold">
-            <?php if($form) : echo do_shortcode($form);endif;?>
-        </div>
-        <?php if($contact) : echo ($contact);endif;?>
+<section id="nos_connaissances">
+    <div class="container top_content">
+        <?php get_template_part( 'templates-parts/section-citation' );?>
     </div>
 </section>
-<section id="modif">
-    <div class="container">
-        <?php if($surModif) : echo '<h2 class="red upp bold">'.$surModif.'</h2>';endif;?>
-        <?php if($text_modif) : echo $text_modif;endif;?>
-    </div>
-</section>
+<?php get_template_part( 'templates-parts/section-confiance' );?>
 
 <?php get_footer();

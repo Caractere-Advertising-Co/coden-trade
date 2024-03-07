@@ -43,3 +43,101 @@ function fix_svg() {
 }
   add_filter( 'upload_mimes', 'cc_mime_types' );
   add_action( 'admin_head', 'fix_svg' );
+
+  
+/*******************************
+Custom Post Type  ---- EMPLOYE
+/*******************************/
+
+function add_custom_post_employe() {
+
+	$labels = array(
+		'name'                  => _x( 'Employé.e.s', 'Post Type General Name', 'custom_post_type' ),
+		'singular_name'         => _x( 'Employé.e', 'Post Type Singular Name', 'custom_post_type' ),
+		'menu_name'             => __( 'Employés', 'custom_post_type' ),
+		'name_admin_bar'        => __( 'Employés', 'custom_post_type' ),
+		'archives'              => __( 'Archives', 'custom_post_type' ),
+		'attributes'            => __( 'Item Attributes', 'custom_post_type' ),
+		'all_items'             => __( 'Tous', 'custom_post_type' ),
+		'add_new_item'          => __( 'Ajouter employé', 'custom_post_type' ),
+		'add_new'               => __( 'Créer employé', 'custom_post_type' ),
+		'new_item'              => __( 'Nouveau', 'custom_post_type' ),
+		'edit_item'             => __( 'Modifier', 'custom_post_type' ),
+		'update_item'           => __( 'Mettre à jour', 'custom_post_type' ),
+		'view_item'             => __( 'Voir', 'custom_post_type' ),
+		'view_items'            => __( 'Voir', 'custom_post_type' ),
+		'search_items'          => __( 'Recherche', 'custom_post_type' ),
+		'not_found'             => __( 'Non trouvé', 'custom_post_type' ),
+		'not_found_in_trash'    => __( 'Non trouvé', 'custom_post_type' ),
+		'featured_image'        => __( 'Photo de profil', 'custom_post_type' ),
+		'set_featured_image'    => __( 'Définir la photo de profil', 'custom_post_type' ),
+		'remove_featured_image' => __( 'Retirer la photo de profil', 'custom_post_type' ),
+		'use_featured_image'    => __( 'Utiliser comme photo de profil', 'custom_post_type' ),
+		'insert_into_item'      => __( 'Insérer', 'custom_post_type' ),
+		'uploaded_to_this_item' => __( 'Uploader', 'custom_post_type' ),
+		'items_list'            => __( 'List', 'custom_post_type' ),
+		'items_list_navigation' => __( 'Items list navigation', 'custom_post_type' ),
+		'filter_items_list'     => __( 'Filtrer', 'custom_post_type' ),
+	);
+	$args = array(
+		'label'                 => __( 'Employés', 'custom_post_type' ),
+		'description'           => __( 'Membres de Coden trade', 'custom_post_type' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title' ),
+		'taxonomies'            => array( 'employe' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-category',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'employe', $args );
+
+}
+add_action( 'init', 'add_custom_post_employe', 0 );
+
+add_filter('woocommerce_resize_images', static function() {
+    return false;
+});
+
+
+/********************
+     WOOCOMMERCE
+*********************/
+
+function mytheme_add_woocommerce_support() {
+	add_theme_support( 'woocommerce', array(
+		'thumbnail_image_width' => 150,
+		'single_image_width'    => 300,
+
+        'product_grid'          => array(
+            'default_rows'    => 3,
+            'min_rows'        => 2,
+            'max_rows'        => 8,
+            'default_columns' => 3,
+            'min_columns'     => 2,
+            'max_columns'     => 5,
+        ),
+	) );
+}
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+/**
+ * Change number of upsells output
+ */
+add_filter( 'woocommerce_upsell_display_args', 'wc_change_number_related_products', 20 );
+
+function wc_change_number_related_products( $args ) {
+ 
+ $args['posts_per_page'] = 3;
+ $args['columns'] = 3; //change number of upsells here
+ return $args;
+}

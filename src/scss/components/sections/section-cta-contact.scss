@@ -1,19 +1,20 @@
-#section-cta-contact {
+#section-cta-contact,
+#section-catalogue {
   color: $light;
-  background: $light-gray;
-  padding-top: 300px;
-  height: 400px;
+  padding-bottom: 10vh;
 
   .container {
     display: flex;
     align-items: flex-start;
+    flex-direction: row-reverse;
     padding: 50px;
+    gap: 0;
     width: 60vw;
     margin: auto;
 
     .bloc_img,
     .content_section-cta {
-      width: 55%;
+      width: 50%;
       max-width: 660px;
       max-height: 550px;
       position: relative;
@@ -29,15 +30,64 @@
       img {
         height: 100%;
         width: 100%;
+        object-fit: cover;
       }
     }
 
     .content_section-cta {
       max-width: 340px;
-      padding: 50px 80px;
+      padding: 50px 120px 50px 60px;
       z-index: 0;
-      margin-left: -5%;
+      margin-right: -5%;
 
+      h3 {
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 2.3rem;
+      }
+
+      p {
+        color: $light;
+        margin: 50px auto;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+#section-catalogue {
+  .container {
+    flex-direction: row;
+
+    .bloc_img,
+    .content_section-cta {
+      width: 53%;
+      max-width: 660px;
+      margin-left: -3%;
+      max-height: 640px;
+      position: relative;
+      background: $primary-color;
+    }
+
+    .bloc_img {
+      z-index: 2;
+      overflow: hidden;
+      margin-top: 100px;
+      background: none;
+      margin-right: 0;
+      height: 600px;
+      max-height: 640px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .content_section-cta {
+      width: calc(53% - 160px);
+      padding: 130px 80px;
       h3 {
         font-size: 2rem;
         font-weight: 300;

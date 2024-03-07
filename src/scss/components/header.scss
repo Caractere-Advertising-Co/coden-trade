@@ -1,12 +1,114 @@
+.top_banner_header {
+  height: 40px;
+  width: 100vw;
+  background-color: $primary-color;
+
+  p {
+    text-align: center;
+    color: $light;
+    line-height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.7rem;
+  }
+}
+
 .header {
   background: none;
   position: absolute;
-  top: 40px;
+  top: 70px;
   left: 5vw;
   width: 90vw;
   z-index: 10;
   display: flex;
   justify-content: space-between;
+
+  &.borBot {
+    border-bottom: 1px solid $light-gray;
+
+    .col-d {
+      .secondary-navigation {
+        .menu-top-header_menu-container ul,
+        .menu-top-header_menu-neerlandais-container ul {
+          li:first-child::before {
+            content: "•";
+            color: $primary-color;
+          }
+
+          li {
+            a {
+              color: $dark-dark-gray;
+
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+
+          .cta {
+            color: $light;
+          }
+          .wpml-ls-current-language {
+            a {
+              color: $primary-color;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+
+    .primary-navigation {
+      margin-top: 20px;
+
+      #menu-navigation-principale,
+      #menu-navigation-principale-neerlandais {
+        li {
+          a {
+            color: $dark-dark-gray;
+            transition: all ease-out 300ms;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+
+        .cta {
+          &::after {
+            content: "→";
+            height: 30px;
+            color: $dark-dark-gray;
+          }
+        }
+
+        .menu-item-has-children {
+          &:hover {
+            min-height: 400px;
+
+            .sub-menu {
+              background-color: $light;
+              border-bottom: 2px solid $primary-color;
+
+              li {
+                color: $primary-color;
+                border-bottom: 1px solid $light-gray;
+
+                a {
+                  color: $secondary-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hamburger-menu {
+      display: none;
+      stroke: #fff;
+    }
+  }
 
   .col-g {
     width: 20%;
@@ -30,12 +132,14 @@
       .menu-top-header_menu-container ul,
       .menu-top-header_menu-neerlandais-container ul {
         display: flex;
+        align-items: center;
         list-style: none;
+        gap: 20px;
 
-        li + li::before {
+        li:first-child::before {
           content: "•";
-          color: $primary-color;
-          padding: 30px;
+          color: $light;
+          margin-right: 10px;
         }
 
         li {
@@ -52,17 +156,16 @@
               color: $primary-color;
             }
           }
-
-          &:last-child::before {
-            content: "|";
-            padding: 5px;
-          }
         }
         .wpml-ls-current-language {
           a {
             color: $primary-color;
             font-weight: 600;
           }
+        }
+
+        li.cta {
+          padding: 5px 20px;
         }
       }
     }

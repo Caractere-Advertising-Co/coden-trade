@@ -4,20 +4,20 @@ footer {
     .footer-top {
       display: flex;
       justify-content: space-around;
-      border-bottom: 1px solid $dark-gray;
+      border-bottom: 1px solid $middle-gray;
       padding-top: 80px;
 
       .col {
-        width: calc((100% - 100px) / 4);
+        width: calc(100% / 3);
         padding-bottom: 50px;
+
         img {
           width: 80px;
-          margin: auto;
         }
 
         h4 {
-          color: $primary-color;
-          font-size: 0.8rem;
+          color: $light;
+          font-size: 0.9rem;
           text-transform: uppercase;
           font-weight: 700;
           letter-spacing: 1px;
@@ -27,10 +27,10 @@ footer {
           list-style: none;
           li {
             margin-bottom: 0;
-            line-height: 1.2rem;
+            line-height: 1.5rem;
             text-align: left;
             a {
-              font-size: 0.8rem;
+              font-size: 0.9rem;
               letter-spacing: 1px;
 
               &:hover {
@@ -42,7 +42,29 @@ footer {
       }
 
       .col + .col {
-        padding-left: 20px;
+        padding-left: 50px;
+        border-left: 1px solid $middle-gray;
+      }
+
+      .general-infos {
+        display: flex;
+        gap: 50px;
+        min-width: 40%;
+        justify-content: center;
+        align-items: center;
+
+        .adresse {
+          margin-top: 20px;
+          p,
+          a {
+            color: $light !important;
+            text-align: left;
+            line-height: 1.5rem;
+          }
+          strong {
+            font-weight: 800;
+          }
+        }
       }
 
       .col_1 {
@@ -56,22 +78,40 @@ footer {
         }
       }
 
-      .col_2,
-      .col_3 {
-        border-left: 1px solid $dark-gray;
-      }
-
       .rs_footer {
-        width: 100px;
-
-        a {
-          width: 30px;
-          height: 30px;
-          display: block;
-          padding-top: 10px;
+        min-width: 30%;
+        p {
+          color: $light;
 
           img {
             width: 30px;
+          }
+        }
+
+        form {
+          margin: 0;
+          padding: 0;
+
+          p {
+            display: flex;
+
+            input {
+              width: 100%;
+              border: none;
+            }
+
+            input[type="submit"] {
+              width: 35%;
+              color: #fff;
+              background-color: $primary-color;
+              border: none;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              font-size: 0.9rem;
+            }
+            .wpcf7-spinner {
+              width: 5%;
+            }
           }
         }
       }
@@ -87,17 +127,23 @@ footer {
     .keywords {
       p {
         color: $primary-color;
-        font-size: 0.6rem;
-        font-weight: 800;
+        font-size: 0.8rem;
+        font-weight: 400;
         line-height: 1.2rem;
         margin-right: 10px;
         text-align: center;
+
+        strong {
+          font-size: 0.9rem;
+          font-weight: 200;
+          letter-spacing: 1px;
+        }
       }
     }
   }
 
   .footer_bottom {
-    background-color: $dark-dark-gray;
+    background-color: $primary-color;
 
     .container {
       display: flex;
@@ -108,23 +154,23 @@ footer {
       a {
         font-weight: 300;
         letter-spacing: 3px;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
       }
 
       p {
         color: $light;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         letter-spacing: 3px;
         margin: 0;
         line-height: 1.2rem;
         text-align: center;
 
         strong {
-          color: #7a7b82;
+          color: $light;
         }
 
         a {
-          color: $primary-color;
+          color: $light;
           font-weight: 600;
         }
       }
