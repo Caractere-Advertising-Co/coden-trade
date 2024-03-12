@@ -8,7 +8,7 @@
 
     <div class="container from-left"
         style="background:url('<?php echo $bgBanner['url'];?>') no-repeat;background-size:cover;">
-            <?php echo $txtBanner;?>
-            <a href="<?php echo $ctaBanner['url'];?>" class="cta"><?php echo $ctaBanner['title'];?></a>
+            <?php if($txtBanner): echo $txtBanner; endif;?>
+            <?php if($ctaBanner):?> <a href="<?php echo $ctaBanner['url'];?>" class="cta"><?php echo $ctaBanner['title'];?></a><?php endif;?>
     </div>
 </section>

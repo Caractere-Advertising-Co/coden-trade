@@ -12,7 +12,7 @@ $form = get_field('formulaire-nl','options');
         <div class="footer-top">
             <div class="col general-infos">
                 <?php $logo = get_field('logo_footer','options');?>
-                <img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" />
+                <?php if($logo):?><img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" /><?php endif;?>
 
                 <div class="adresse">
                     <?php 
@@ -57,7 +57,10 @@ $form = get_field('formulaire-nl','options');
         <div class="container desktop">
             <a href="">Cookies</a>
             <div>
-                <?php echo get_field('copyright','options');?>
+                <?php 
+                    $copyright = get_field('copyright','options');
+                    if($copyright): echo $copyright; endif;
+                ?>
             </div>
             <a href="">Confidentialité</a>
         </div>
@@ -69,7 +72,10 @@ $form = get_field('formulaire-nl','options');
             </div>
 
             <div class="copyright">
-                <?php echo get_field('copyright','options');?>
+            <?php 
+                    $copyright = get_field('copyright','options');
+                    if($copyright): echo $copyright; endif;
+                ?>
             </div>
         </div>
     </div>
