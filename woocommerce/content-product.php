@@ -74,7 +74,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
 
-	 echo '<span class="title"><h3>'.$product->name.'</h3></span>';
+	 echo '<span class="title"><h3>'. get_the_title($pid).'</h3></span>';
 
 	/**
 	 * Hook: woocommerce_after_shop_loop_item_title.

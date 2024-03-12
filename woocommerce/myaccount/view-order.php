@@ -21,20 +21,36 @@ defined( 'ABSPATH' ) || exit;
 
 $notes = $order->get_customer_order_notes();
 ?>
-<p>
-<?php
-printf(
-	/* translators: 1: order number 2: order date 3: order status */
-	esc_html__( 'Order #%1$s was placed on %2$s and is currently %3$s.', 'woocommerce' ),
-	'<mark class="order-number">' . $order->get_order_number() . '</mark>', // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	'<mark class="order-date">' . wc_format_datetime( $order->get_date_created() ) . '</mark>', // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	'<mark class="order-status">' . wc_get_order_status_name( $order->get_status() ) . '</mark>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-);
-?>
-</p>
+<div class="container">
+<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
+
+</div>
+<div class="container columns">
+	<div class="col-g">
+		<?php	
+			$orderColumns = wc_get_account_orders_columns();
+			$labelDate = $orderColumns['order-date'];
+			$labelNumber = $orderColumns['order-number'];
+			$labelStatus = $orderColumns['order-status'];
+			$labelTotal = $orderColumns['order-total'];
+
+			echo '<p>'.$labelDate. ' : '. wc_format_datetime( $order->get_date_created(), "d F Y" ).'</p>';
+			echo '<p>'.$labelStatus.' : '.  $order->get_status() .'</p>';
+			echo '<p>'.$labelNumber.' n° : '.$order->get_order_number().'</p>';
+			echo '<p>'.$labelTotal.' de la commande :' . $order->get_formatted_order_total().'</p>';
+		?>
+	</div>
+
+	<div class="col-d">
+		<a href="<?php echo do_shortcode('[wcpdf_document_link]');?>" action="print()">Imprimer ma facture</a><br>
+		<?php echo do_shortcode( "[wcpdf_download_pdf]" );	?>
+	</div>
+</div>
+
 
 <?php if ( $notes ) : ?>
 	<h2><?php esc_html_e( 'Order updates', 'woocommerce' ); ?></h2>
+
 	<ol class="woocommerce-OrderUpdates commentlist notes">
 		<?php foreach ( $notes as $note ) : ?>
 		<li class="woocommerce-OrderUpdate comment note">

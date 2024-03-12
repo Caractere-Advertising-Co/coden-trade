@@ -113,7 +113,7 @@ add_filter('woocommerce_resize_images', static function() {
      WOOCOMMERCE
 *********************/
 
-function mytheme_add_woocommerce_support() {
+function coden_add_woocommerce_support() {
 	add_theme_support( 'woocommerce', array(
 		'thumbnail_image_width' => 150,
 		'single_image_width'    => 300,
@@ -128,7 +128,7 @@ function mytheme_add_woocommerce_support() {
         ),
 	) );
 }
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+add_action( 'after_setup_theme', 'coden_add_woocommerce_support' );
 
 /**
  * Change number of upsells output
@@ -141,3 +141,48 @@ function wc_change_number_related_products( $args ) {
  $args['columns'] = 3; //change number of upsells here
  return $args;
 }
+
+/**
+ * @snippet       Plus Minus Quantity Buttons @ WooCommerce Single Product Page
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 8
+ * @community     https://businessbloomer.com/club/
+ */
+ 
+ add_action( 'woocommerce_before_quantity_input_field', 'bbloomer_display_quantity_minus' );
+ 
+ function bbloomer_display_quantity_minus() {
+	if ( ! is_product() ) return;
+	echo '<div class="chgQty">
+			<button type="button" class="plus" >▲</button>
+			<button type="button" class="minus" >▼</button>
+		  </div>';
+ }
+ 
+ add_action( 'woocommerce_before_single_product', 'bbloomer_add_cart_quantity_plus_minus' );
+  
+ function bbloomer_add_cart_quantity_plus_minus() {
+	wc_enqueue_js( "
+	   $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+			 var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+			 var val   = parseFloat(qty.val());
+			 var max = parseFloat(qty.attr( 'max' ));
+			 var min = parseFloat(qty.attr( 'min' ));
+			 var step = parseFloat(qty.attr( 'step' ));
+			 if ( $( this ).is( '.plus' ) ) {
+				if ( max && ( max <= val ) ) {
+				   qty.val( max );
+				} else {
+				   qty.val( val + step );
+				}
+			 } else {
+				if ( min && ( min >= val ) ) {
+				   qty.val( min );
+				} else if ( val > 1 ) {
+				   qty.val( val - step );
+				}
+			 }
+		  });
+	" );
+ }

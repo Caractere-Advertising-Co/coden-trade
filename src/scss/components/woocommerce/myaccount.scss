@@ -1,0 +1,129 @@
+#myaccount {
+  padding-top: 300px;
+
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: 300;
+  }
+
+  .woocommerce-MyAccount-navigation {
+    columns: 2;
+    gap: 50px;
+    float: inherit;
+    width: 100%;
+    margin-top: 80px;
+
+    ul {
+      list-style: none;
+
+      li {
+        border: 1px solid $middle-gray;
+        text-align: left;
+        position: relative;
+
+        a {
+          color: $secondary-color;
+          font-weight: 600;
+          width: calc(100% - 2rem);
+          height: 100%;
+          padding: 2rem 1rem;
+          display: block;
+
+          &::after {
+            content: "\f178";
+            font-family: "Font Awesome 6 Free";
+            position: absolute;
+            right: 20px;
+            color: $primary-color;
+          }
+        }
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: $light-gray;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform ease-in 0.5s;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+
+  .woocommerce-MyAccount-content {
+    float: inherit;
+    width: 100%;
+    margin-top: 50px;
+
+    a {
+      color: $primary-color;
+      font-weight: 600;
+    }
+
+    .woocommerce-info {
+      border-top-color: $primary-color;
+      font-family: "sofia-pro", sans-serif;
+
+      &::before {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .order-resume {
+    p {
+      margin-bottom: 0;
+    }
+
+    a {
+      background-color: $primary-color;
+      color: $light;
+      padding: 0.5rem 3rem;
+      text-transform: uppercase;
+      font-weight: 200;
+      letter-spacing: 3px;
+      font-size: 0.9rem;
+      margin-top: 30px;
+      display: block;
+      width: fit-content;
+    }
+
+    .col-d {
+      .order-product {
+        h3 {
+          font-size: 1rem;
+          line-height: 1rem;
+          font-weight: 600;
+        }
+
+        .meta-data {
+          margin-top: 20px;
+        }
+      }
+
+      .order-product + .order-product {
+        margin-top: 50px;
+        padding-top: 50px;
+        border-top: 1px solid $light-gray;
+      }
+    }
+  }
+
+  .order-resume + .order-resume {
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid $light-gray;
+  }
+}

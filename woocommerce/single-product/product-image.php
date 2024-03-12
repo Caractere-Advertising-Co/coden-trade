@@ -55,7 +55,9 @@ endforeach;
 				<?php foreach($imgUrl as $img):?>
 
 					<div class="swiper-slide">
-						<img src="<?php echo $img[0];?>">
+						<a data-fslightbox href="<?php echo $img[0];?>">
+							<img src="<?php echo $img[0];?>">
+						</a>
 					</div>
 				<?php endforeach;?>
 			</div>

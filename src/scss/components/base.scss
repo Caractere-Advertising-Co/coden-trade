@@ -69,8 +69,16 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+button,
+li,
+td,
+input,
+label,
+a {
   text-wrap: balance;
+  font-family: "sofia-pro", sans-serif;
 }
 
 p {

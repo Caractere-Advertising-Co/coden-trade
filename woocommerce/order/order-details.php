@@ -1,20 +1,6 @@
 <?php
 /**
  * Order details
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/order/order-details.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://woo.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 8.5.0
- *
- * @var bool $show_downloads Controls whether the downloads table should be rendered.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -41,9 +27,24 @@ if ( $show_downloads ) {
 }
 ?>
 <section class="woocommerce-order-details">
+	<div class="container columns">
+		<div class="col-1">
+			<?php if ( $show_customer_details ) {
+				wc_get_template( 'order/order-details-customer.php', array( 'order' => $order ) );
+			} ?>
+		</div>
+
+		<div class="col-2">
+
+		</div>
+
+		<div class="col-3">
+
+		</div>
+	</div>
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
+	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Article', 'woocommerce' ); ?></h2>
 
 	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
 
@@ -110,6 +111,3 @@ if ( $show_downloads ) {
  */
 do_action( 'woocommerce_after_order_details', $order );
 
-if ( $show_customer_details ) {
-	wc_get_template( 'order/order-details-customer.php', array( 'order' => $order ) );
-}

@@ -17,8 +17,8 @@
   background: none;
   position: absolute;
   top: 70px;
-  left: 5vw;
-  width: 90vw;
+  left: 7.5vw;
+  width: 85vw;
   z-index: 10;
   display: flex;
   justify-content: space-between;
@@ -31,8 +31,9 @@
         .menu-top-header_menu-container ul,
         .menu-top-header_menu-neerlandais-container ul {
           li:first-child::before {
-            content: "•";
-            color: $primary-color;
+            content: "\f007";
+            font-family: "Font Awesome 6 Free";
+            color: $dark-dark-gray;
           }
 
           li {
@@ -46,7 +47,9 @@
           }
 
           .cta {
-            color: $light;
+            a {
+              color: $light !important;
+            }
           }
           .wpml-ls-current-language {
             a {

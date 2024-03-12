@@ -7,9 +7,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+get_header( 'shop' ); 
 
-	<?php
+$banner = get_field('banniere_produit','options');
+	
+	if($banner):?>
+		<div class="banner" id="hero">
+			<img src="<?php echo $banner['url'];?>" style="background-size:cover;background-repeat:no-repeat;"/>
+		</div>
+	<?php endif;
 		/**
 		 * woocommerce_before_main_content hook.
 		 *
@@ -20,16 +26,11 @@ get_header( 'shop' ); ?>
 	?>
 	<section id="content_product">
 		<div class="container">
-
-			<?php while ( have_posts() ) : ?>
-				<?php the_post(); ?>
-
+			<?php while ( have_posts() ) :the_post(); ?>
 				<?php wc_get_template_part( 'content', 'single-product' ); ?>
-
 			<?php endwhile; // end of the loop. ?>
 		</div>
 	</section>
-
 	<?php do_action( 'woocommerce_after_main_content' );?>
 
 <section id="particuliers">
