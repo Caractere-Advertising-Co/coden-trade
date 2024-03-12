@@ -175,7 +175,12 @@
 }
 
 #section_nosproduits {
-  padding-top: 350px;
+  padding-top: 100px;
+
+  .container {
+    padding-top: 100px;
+    border-top: 1px solid $light-gray;
+  }
 
   button {
     background-color: $light;

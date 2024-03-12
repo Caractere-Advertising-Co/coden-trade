@@ -6,14 +6,14 @@
     $btn = get_field('lien_about','options');
 ?>
 
-<div class="main-content">
-    <div class="col-g">
+<div class="section-introduction">
+    <div class="colg">
         <?php if($intro): echo '<span class="from-bottom">' . $intro . '</span>'; endif;?>
         <?php if($img):?>
             <img src="<?php echo $img['url'];?>" alt="<?php echo $img['name'];?>" class="from-bottom" />
         <?php endif;?>
     </div>
-    <div class="col-d">
+    <div class="cold">
         <?php if($textApropos): echo '<span class="from-bottom">' . $textApropos . '</span>'; endif;?>
         <?php if($btn):?><a href="<?php echo $btn['url'];?>" class="cta from-bottom"><?php echo $btn['title'];?></a><?php endif;?>
     </div>
