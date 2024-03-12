@@ -200,6 +200,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 50px;
+    grid-row-gap: 50px;
     padding: 100px 0;
 
     .card_product {
