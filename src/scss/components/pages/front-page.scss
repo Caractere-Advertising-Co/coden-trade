@@ -313,13 +313,10 @@
   .container {
     display: flex;
     gap: 50px;
-
-    .colg,
-    .cold {
-      width: 50%;
-    }
+    min-height: 800px;
 
     .colg {
+      width: 65%;
       ul {
         list-style: none;
 
@@ -341,7 +338,10 @@
     }
 
     .cold {
-      padding-top: 250px;
+      margin-top: auto;
+      margin-bottom: 0;
+      width: 35%;
+
       .panel {
         display: none;
         list-style: none;
@@ -350,8 +350,15 @@
           font-size: 2rem;
           cursor: pointer;
 
-          &:hover {
-            font-weight: 800;
+          a {
+            font-size: 2rem;
+            color: black;
+            font-weight: 300;
+            transition: all ease-in 300ms;
+
+            &:hover {
+              font-weight: 800;
+            }
           }
         }
       }

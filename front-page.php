@@ -38,43 +38,42 @@
     </div>
 </section>
 
+<?php get_template_part( 'tempaltes-parts/section-bannerfullwidth' );?>
 <?php get_template_part( 'templates-parts/section-mots-president' );?>
 
 <section id="big_categories">
     <div class="container">
-        <div class="colg">
-            <?php $categories = get_field('categories','options');?>
+        <?php $parent_categories = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false, 'parent' => 0]); 
+        
+        if ($parent_categories): ?>
+            <div class="colg">
+                <ul>
+                    <?php $i = 0;
+                    foreach ($parent_categories as $parent_cat):?>
+                        <li class="outline <?php echo $i == 0 ? 'active' : '';?>" id="cat-<?php echo $i;?>"><?php echo $parent_cat->name;?></li>
+                        <?php $i++;
+                    endforeach; ?>
+                </ul>
+            </div>
 
-            <ul>
-                <li class="outline active" id="cat-1">Clotures</li>
-                <li class="outline" id="cat-2">Accès</li>
-                <li class="outline" id="cat-3">Couverture</li>
-                <li class="outline" id="cat-4">Panneaux</li>
-                <li class="outline" id="cat-5">Autres</li>
-            </ul>
-            
-        </div>
-
-        <div class="cold">
-            <ul class="panel panel1">
-                <li>Cloture rigides</li>
-                <li>Cloture souples</li>
-                <li>Cloture en bois</li>
-                <li>Cloture en composite</li>
-                <li>Cloture en béton</li>
-                <li>Cloture pour clotures</li>
-                <li>Accessoires</li>
-                <li>Brise vue / occultation</li>
-                <li>Palissades</li>
-                <li>Gabions</li>
-            </ul>
-            <ul class="panel panel2">
-                <li>Acces</li>
-                <li>Acces</li>
-            </ul>
-
-            <a href="#" class="cta">Découvrir</a>
-        </div>
+            <div class="cold">
+                <?php
+                $i = 0; 
+                foreach ($parent_categories as $parent_cat):
+                    $child_categories = get_term_children($parent_cat->term_id, 'product_cat');
+                    if (!empty($child_categories)) {
+                        echo '<ul class="panel panel' . $i . '">';
+                        foreach ($child_categories as $child_id):
+                            $child_cat = get_term_by('id', $child_id, 'product_cat');
+                            echo '<li><a href="' . get_term_link($child_cat) . '">' . $child_cat->name . '</a></li>';
+                        endforeach;
+                        echo '</ul>';
+                    }
+                    $i++;
+                endforeach;?>
+                <a href="#" class="cta">Découvrir</a>
+            </div>
+        <?php endif;?> 
     </div>
 </section>
 
