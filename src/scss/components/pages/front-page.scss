@@ -379,7 +379,7 @@
 }
 
 #confiance {
-  background-color: $secondary-color;
+  background-color: $dark-dark-gray;
   padding: 250px 0 150px 0;
 
   .container {
@@ -453,6 +453,7 @@
       letter-spacing: 5px;
       font-size: 0.9rem;
       text-align: center;
+      margin: auto;
     }
   }
 }
@@ -529,6 +530,25 @@
   }
 }
 
+#prix-compétitifs {
+  .col-g {
+    img {
+      margin-top: 230px;
+      margin-bottom: -150px;
+    }
+  }
+
+  .col-d {
+    h2 {
+      margin-bottom: 50px;
+    }
+
+    a {
+      margin-top: 50px;
+    }
+  }
+}
+
 #actualites {
   background-color: $light-gray;
   .container {
@@ -588,6 +608,15 @@
     .view_more {
       text-align: center;
       margin-top: 200px;
+
+      .cta {
+        margin: auto;
+        padding: 10px 100px;
+
+        &::before {
+          margin-left: -100px;
+        }
+      }
     }
   }
 }

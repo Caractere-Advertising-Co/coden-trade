@@ -78,48 +78,43 @@
 </section>
 
 <?php get_template_part( 'templates-parts/disclaimer-banner' );?>
-
-<section id="section-cta-contact">
-    <div class="container">
-        <?php
-
-        $imgPdt = get_field('image_saison','options');
-        $txtPdt = get_field('texte_saison','options');
-        $ctaPdt = get_field('cta_saison','options');?>
-
-        
-        <div class="bloc_img from-left">
-            <?php if($imgPdt):?><img src="<?php echo $imgPdt['url'];?>" alt="<?php echo $imgPdt['title'];?>" /><?php endif;?>
-        </div>
-        <div class="content_section-cta from-bottom">
-            <?php if($txtPdt): echo $txtPdt;endif;?>
-            <?php if($ctaPdt):?>
-            <a href="<?php echo $ctaPdt['url'];?>" class="cta-home from-bottom">
-                <?php echo $ctaPdt['title'];?>
-            </a>
-            <?php endif;?>
-        </div>
-    </div>
-</section>
+<?php get_template_part( 'templates-parts/section-cta-contact' );?>
 
 <section id="nos_connaissances">
     <?php get_template_part( 'templates-parts/section-citation' );?>
 </section>
 
 <section id="prix-compétitifs">
-            </section>
+    <?php 
+        $texte = get_field('txt_hyper');
+        $cta = get_field('cta_hyper');
+        $img = get_field('img_hyper');
+    ?>
+    <div class="container columns">
+        <div class="col-g">
+            <?php if($img):?><img src="<?php echo $img['url'];?>" alt="<?php echo $img['title'];?>"/><?php endif;?>
+        </div>
+
+        <div class="col-d">
+            <?php if($texte): echo $texte; endif;?>
+            <?php if($cta): echo '<a href="'.$cta['url'].'" class="cta bgBlue">'.$cta['title'].'</a>'; endif;?>
+        </div>
+    </div>
+</section>
 
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
 <section id="actualites">
     <div class="container">
         <div class="intro_actu">
+            
             <?php 
-            $titre = get_post_field('titre_actus');
-            $texte = get_post_field('texte_actus');
+            $titre = get_field('titre_actus');
+            $texte = get_field('texte_actus');
+            $cta = get_field('cta_actus');
             ?>
             <?php if($titre):?><span class="from-left"><?php echo $titre;?></span><?php endif;?>
-                <?php if($texte):?><span class="from-left"><?php echo $texte?></span><?php endif;?>
+                <?php if($texte):?><span class="from-left"><p><?php echo $texte?></p></span><?php endif;?>
         </div>
         <div class="grid_articles">
             <?php 
@@ -152,7 +147,7 @@
             wp_reset_postdata();?>
         </div>
         <div class="view_more">
-            <a href="#" class="cta from-bottom">TOUT VOIR</a>
+            <a href="<?php echo $cta['url'];?>" class="cta from-bottom"><?php echo $cta['title'];?></a>
         </div>
     </div>
 </section>
