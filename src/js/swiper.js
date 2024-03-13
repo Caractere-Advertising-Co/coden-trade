@@ -32,6 +32,17 @@ const swiperAbout = new Swiper(".swiper-about", {
   },
 });
 
+const swiperBlog = new Swiper(".swiper-blog", {
+  cssMode: true,
+  loop: true,
+  slidesPerView: 1,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 /* WOOCOMMERCE */
 
 const swipThumbs = new Swiper(".swiper-thumbs", {

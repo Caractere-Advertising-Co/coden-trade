@@ -265,6 +265,40 @@ a {
   }
 }
 
+/* Swiper */
+
+.swiper {
+  .swiper-wrapper {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: $dark-gray;
+  color: #fff;
+  top: auto;
+  left: 0;
+  bottom: 0;
+
+  &::after {
+    font-size: 1rem;
+    color: $light;
+  }
+}
+
+.swiper-button-next {
+  left: 50px;
+  background-color: $primary-color;
+}
+
 /* Formulaire */
 
 form {

@@ -16,6 +16,8 @@ $galerie = get_field('galerie_naiss','options');?>
                         <?php endforeach;
                     endif;?>
                 </div>
+
+
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>

@@ -37,7 +37,13 @@ $img = get_field('image-separator');
 <?php get_template_part( 'templates-parts/section-mots-president' );?>
 
 <?php get_template_part( 'templates-parts/section-naissance' );?>
-<?php get_template_part( 'templates-parts/section-tableProduct' );?>
+
+<section id="section_nosproduits">
+    <div class="container from-bottom">
+        <?php get_template_part( 'templates-parts/section-tableProduct' );?>
+    </div>
+</section>
+
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
 <?php get_footer();
