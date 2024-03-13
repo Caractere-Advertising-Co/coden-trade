@@ -1,11 +1,5 @@
 <section id="confiance">
     <div class="container">
-
-        <?php if(is_front_page(  )):?>
-            <span class="from-bottom"><?php echo get_field('titre_conf','options');?></span>
-            <span class="from-bottom"><?php echo get_field('introduction_conf','options');?></span>
-        <?endif;?>
-
         <div class="table_qualite">
             <?php 
             if(have_rows('qualites','options')) :

@@ -77,41 +77,49 @@
     </div>
 </section>
 
-<?php get_template_part('templates-parts/disclaimer-banner');?>
-<?php get_template_part('templates-parts/section-cta-contact');?>
+<?php get_template_part( 'templates-parts/disclaimer-banner' );?>
 
-<section id="nos_connaissances">
-    <div class="container top_content">
+<section id="section-cta-contact">
+    <div class="container">
         <?php
-            $imgCons = get_field('image_cons');
-            $cold_cons = get_field('texte-col-con');
-            $cta_cons = get_field('cta_cons');
-        ?>
 
-        <?php get_template_part( 'templates-parts/section-citation' );?>
+        $imgPdt = get_field('image_saison','options');
+        $txtPdt = get_field('texte_saison','options');
+        $ctaPdt = get_field('cta_saison','options');?>
 
+        
+        <div class="bloc_img from-left">
+            <?php if($imgPdt):?><img src="<?php echo $imgPdt['url'];?>" alt="<?php echo $imgPdt['title'];?>" /><?php endif;?>
         </div>
-        <div class="container columns">
-            <div class="colg">
-                <?php if($imgCons):?><img src="<?php echo $imgCons['url'];?>" alt="<?php echo $imgCons['title'];?>"/><?php endif;?>
-            </div>
-            <div class="cold">
-                <?php if($cold_cons): echo $cold_cons; endif;?>
-                <?php if($cta_cons):?> 
-                    <a href="<?php echo $cta_cons['url'];?>" class="cta bgBlue"><?php echo $cta_cons['title'];?></a>
-                <?php endif;?>
-            </div>
+        <div class="content_section-cta from-bottom">
+            <?php if($txtPdt): echo $txtPdt;endif;?>
+            <?php if($ctaPdt):?>
+            <a href="<?php echo $ctaPdt['url'];?>" class="cta-home from-bottom">
+                <?php echo $ctaPdt['title'];?>
+            </a>
+            <?php endif;?>
         </div>
     </div>
 </section>
+
+<section id="nos_connaissances">
+    <?php get_template_part( 'templates-parts/section-citation' );?>
+</section>
+
+<section id="prix-compétitifs">
+            </section>
 
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
 <section id="actualites">
     <div class="container">
         <div class="intro_actu">
-            <span class="from-left"><?php echo get_field('titre_actus');?></span>
-            <span class="from-left"><?php echo get_field('texte_actus');?></span>
+            <?php 
+            $titre = get_post_field('titre_actus');
+            $texte = get_post_field('texte_actus');
+            ?>
+            <?php if($titre):?><span class="from-left"><?php echo $titre;?></span><?php endif;?>
+                <?php if($texte):?><span class="from-left"><?php echo $texte?></span><?php endif;?>
         </div>
         <div class="grid_articles">
             <?php 
