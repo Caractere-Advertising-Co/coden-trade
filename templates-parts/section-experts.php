@@ -12,7 +12,7 @@ $ctaExpert = get_field('cta-expert','options');
         <div class="descr">
             <?php if($txtExpert): echo $txtExpert; endif;?>
             <?php if($ctaExpert):?>
-                <a href="<?php echo $ctaExpert['url'];?>" class="cta"><?php echo $ctaExpert['title'];?></a>
+                <a href="<?php echo $ctaExpert['url'];?>" class="cta round"><?php echo $ctaExpert['title'];?></a>
             <?php endif;?>
         </div>
     </div>

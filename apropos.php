@@ -41,7 +41,7 @@ $ctaRefs = get_field('cta-refs');
     </div>
 </section>
 
-<?php get_template_part( '' );?>
+<?php get_template_part( 'templates-parts/section-naissance' );?>
 
 <section id="section-coprod">
     <?php get_template_part( 'templates-parts/section-nosproduits' );?>
