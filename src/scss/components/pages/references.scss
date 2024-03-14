@@ -10,12 +10,11 @@
 }
 
 #references {
-  margin-top: 150px;
-  padding-bottom: 100px;
-  border-bottom: 1px solid $middle-gray;
-  margin-bottom: 100px;
-
   .container {
+    margin: 150px auto;
+    padding-bottom: 150px;
+    border-bottom: 1px solid $light-gray;
+
     .grid-references {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
