@@ -92,3 +92,42 @@
     }
   }
 }
+
+#confiance {
+  background-color: $light !important;
+  background: $light !important;
+  padding-top: 0;
+  padding-bottom: 200px;
+  border-top: 1px solid $light-gray;
+  padding-top: 100px;
+
+  .container {
+    .table_qualite {
+      .card_qualite {
+        h4 {
+          font-weight: 700;
+          font-size: 1.5rem;
+          line-height: 1.8rem;
+          color: $dark-dark-gray;
+        }
+
+        p {
+          margin: 30px auto 10px auto;
+          display: block;
+          color: $dark-dark-gray;
+
+          &::after {
+            content: "→";
+            color: $primary-color;
+            display: block;
+            margin-top: 10px;
+          }
+        }
+      }
+      .card_qualite + .card_qualite {
+        border-left: 1px solid $light-gray;
+        padding-left: 50px;
+      }
+    }
+  }
+}
