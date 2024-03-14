@@ -5,19 +5,7 @@ get_header();
 
 $title = get_field('titre');
 $intro = get_field('introduction');
-$bg_header = get_field('bg_header');
-
-if(!$bg_header):
-    $bg_url = get_template_directory_uri(  ).'/assets/img/bg-default.jpg';
-else :
-    $bg_header = get_field('bg_header');
-    $bg_url = $bg_header['url'];
-endif;
-
-get_template_part( 'templates-parts/header-nav');?>
-<header id="header" style="background:url('<?php echo $bg_url;?>');">
-</header>
-
+?>
 
 <section id="introduction">
     <div class="container">
@@ -38,7 +26,7 @@ get_template_part( 'templates-parts/header-nav');?>
             <?php 
             $args = array(
                     'post_type' => 'post',
-                    'posts_per_page'=> -1,
+                    'posts_per_page'=> 9,
                     'post_statut' => 'publish'
             );
 
@@ -46,33 +34,35 @@ get_template_part( 'templates-parts/header-nav');?>
 
             if($query->have_posts()):
                 while($query->have_posts()): $query->the_post();?>
-            <a href="<?php the_permalink();?>" class="red">
-                <div class="card_article from-bottom"
-                    style="background:url('<?php if(has_post_thumbnail()) : the_post_thumbnail_url(); endif;?>');   ">
+            
+                <div class="card_article from-bottom">
+                    <a href="<?php the_permalink();?>" class="red">
+                        <div class="miniature">
+                            <img src="<?php if(has_post_thumbnail()) : the_post_thumbnail_url(); endif;?>"/>
+                        </div>
 
-                    <h3><?php the_title();?></h3>
+                        <h4><?php the_date();?></h4>
+                        <h3><?php the_title();?></h3>
 
+                        <a href="">Découvrir</a>
+                    </a>
                 </div>
-            </a><?php
+            <?php
                 endwhile;
             endif;
             
             wp_reset_postdata();?>
         </div>
+
+        <div class="load-more-container">
+            <a id="load-more-posts" class="cta" href="!#">Voir plus</a>
+        </div>
     </div>
 </section>
 
-<?php get_template_part( 'templates-parts/section-cta-contact' );?>
-<?php get_template_part( 'templates-parts/section-nosproduits' );?>
 
-<section id="assurance">
-    <div class="container">
-        <?php get_template_part( 'templates-parts/section-assurance' );?>
-    </div>
-</section>
 
-<?php
+<?php get_template_part( 'templates-parts/section-catalogue' );?>
+<?php get_template_part( 'templates-parts/section-confiance' );?>
 
-get_template_part( 'templates-parts/contact' );
-
-get_footer();
+<?php get_footer();

@@ -1,0 +1,83 @@
+#introduction-ref {
+  padding-top: 300px;
+}
+
+#references {
+  .container {
+    .grid-references {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      margin-bottom: 80px;
+      position: relative;
+
+      a {
+        background-size: cover !important;
+        background-position: center center !important;
+        text-decoration: none;
+
+        .card-projet {
+          width: 100%;
+          min-height: 550px;
+          transition: all ease-in-out 200ms;
+          background-size: cover;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          .text {
+            opacity: 0;
+            transition: all ease-in-out 300ms;
+            margin-bottom: 30px;
+            width: 70%;
+
+            h3,
+            p {
+              color: $light;
+              margin: 0;
+              text-align: center;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+
+            h3 {
+              font-weight: 600;
+            }
+          }
+
+          .plus {
+            background-color: $primary-color;
+            color: $light;
+            border-radius: 20px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 25px;
+            opacity: 0;
+          }
+        }
+
+        &:hover {
+          .card-projet {
+            backdrop-filter: brightness(0.5);
+          }
+
+          .text {
+            opacity: 1;
+            border-top: 1px solid $light;
+            border-bottom: 1px solid $light;
+            padding: 20px 0;
+          }
+
+          .plus {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

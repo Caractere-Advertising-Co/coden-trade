@@ -1,6 +1,7 @@
 .page-template-actualites {
   #introduction {
-    padding: 100px;
+    padding-top: 300px;
+
     .container {
       .colg {
         width: 60%;
@@ -35,58 +36,50 @@
         grid-column-gap: 30px;
         grid-row-gap: 30px;
 
-        a {
-          .card_article {
-            background-size: cover !important;
-            min-height: 450px;
-            position: relative;
+        .card_article {
+          min-height: 500px;
+          position: relative;
+          border-bottom: 1px solid $light-gray;
 
-            h3 {
-              position: absolute;
-              bottom: 20px;
-              left: 20px;
-              color: $light;
-              text-shadow: 0px 0px 8px rgb(0 0 0 / 82%);
-              font-size: 1.8rem;
-              line-height: 2.3rem;
-              text-transform: none;
-              letter-spacing: 0;
-            }
+          .miniature {
+            max-height: 300px;
+            width: auto;
+            overflow: hidden;
 
-            &:before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
+            img {
               width: 100%;
               height: 100%;
-              background: rgb(35, 51, 66);
-              background: -moz-linear-gradient(
-                0deg,
-                rgba(35, 51, 66, 1) 0%,
-                rgba(255, 255, 255, 0) 60%
-              );
-              background: -webkit-linear-gradient(
-                0deg,
-                rgba(35, 51, 66, 1) 0%,
-                rgba(255, 255, 255, 0) 60%
-              );
-              background: linear-gradient(
-                0deg,
-                rgba(35, 51, 66, 1) 0%,
-                rgba(255, 255, 255, 0) 60%
-              );
-              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#233342",endColorstr="#ffffff",GradientType=1);
-              z-index: 0;
+              object-fit: cover;
             }
           }
 
-          &:hover {
-            .card_article {
-              filter: blur(200%);
-            }
+          h4 {
+            font-size: 1rem;
+            text-transform: capitalize;
+            color: $middle-gray;
+            font-weight: 300;
+            letter-spacing: 1px;
+            min-height: 40px;
+          }
+
+          h3 {
+            color: $dark-gray;
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+            text-transform: none;
+            letter-spacing: 0;
+            margin: 10px 0;
+            min-height: 60px;
+          }
+
+          a {
+            color: $primary-color;
           }
         }
+      }
+
+      #load-more-posts {
+        margin: 50px auto 100px;
       }
     }
   }
@@ -97,9 +90,43 @@
     padding: 0;
   }
 
-  #assurance {
-    background-color: $light-gray !important;
-    padding-top: 80px;
+  #confiance {
+    background-color: $light !important;
+    background: $light !important;
+    padding-top: 0;
+    padding-bottom: 200px;
+    border-top: 1px solid $light-gray;
+    padding-top: 100px;
+
+    .container {
+      .table_qualite {
+        .card_qualite {
+          h4 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+            color: $dark-dark-gray;
+          }
+
+          p {
+            margin: 30px auto 10px auto;
+            display: block;
+            color: $dark-dark-gray;
+
+            &::after {
+              content: "→";
+              color: $primary-color;
+              display: block;
+              margin-top: 10px;
+            }
+          }
+        }
+        .card_qualite + .card_qualite {
+          border-left: 1px solid $light-gray;
+          padding-left: 50px;
+        }
+      }
+    }
   }
 
   #contact {

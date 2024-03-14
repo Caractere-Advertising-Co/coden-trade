@@ -44,6 +44,67 @@ function fix_svg() {
   add_filter( 'upload_mimes', 'cc_mime_types' );
   add_action( 'admin_head', 'fix_svg' );
 
+
+/*********************************
+ Custom Post Type ---- Références
+**********************************/
+
+function add_custom_post_references() {
+
+	$labels = array(
+		'name'                  => _x( 'Référence.s', 'Post Type General Name', 'custom_post_type' ),
+		'singular_name'         => _x( 'Référence', 'Post Type Singular Name', 'custom_post_type' ),
+		'menu_name'             => __( 'Références', 'custom_post_type' ),
+		'name_admin_bar'        => __( 'Référence', 'custom_post_type' ),
+		'archives'              => __( 'Archives', 'custom_post_type' ),
+		'attributes'            => __( 'Item Attributes', 'custom_post_type' ),
+		'all_items'             => __( 'Tous', 'custom_post_type' ),
+		'add_new_item'          => __( 'Ajouter nouvelle référence', 'custom_post_type' ),
+		'add_new'               => __( 'Ajouter référence', 'custom_post_type' ),
+		'new_item'              => __( 'Nouveau', 'custom_post_type' ),
+		'edit_item'             => __( 'Modifier', 'custom_post_type' ),
+		'update_item'           => __( 'Mettre à jour', 'custom_post_type' ),
+		'view_item'             => __( 'Voir', 'custom_post_type' ),
+		'view_items'            => __( 'Voir', 'custom_post_type' ),
+		'search_items'          => __( 'Recherche', 'custom_post_type' ),
+		'not_found'             => __( 'Non trouvé', 'custom_post_type' ),
+		'not_found_in_trash'    => __( 'Non trouvé', 'custom_post_type' ),
+		'featured_image'        => __( 'Photo de profil', 'custom_post_type' ),
+		'set_featured_image'    => __( 'Définir la photo de profil', 'custom_post_type' ),
+		'remove_featured_image' => __( 'Retirer la photo de profil', 'custom_post_type' ),
+		'use_featured_image'    => __( 'Utiliser comme photo de profil', 'custom_post_type' ),
+		'insert_into_item'      => __( 'Insérer', 'custom_post_type' ),
+		'uploaded_to_this_item' => __( 'Uploader', 'custom_post_type' ),
+		'items_list'            => __( 'List', 'custom_post_type' ),
+		'items_list_navigation' => __( 'Items list navigation', 'custom_post_type' ),
+		'filter_items_list'     => __( 'Filtrer', 'custom_post_type' ),
+	);
+	$args = array(
+		'label'                 => __( 'Références', 'custom_post_type' ),
+		'description'           => __( 'Références de Coden trade', 'custom_post_type' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title' ),
+		'taxonomies'            => array( 'references' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 4,
+		'menu_icon'             => 'dashicons-feedback',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'reference', $args );
+
+}
+add_action( 'init', 'add_custom_post_references', 0 );
+
+
   
 /*******************************
 Custom Post Type  ---- EMPLOYE
@@ -90,7 +151,7 @@ function add_custom_post_employe() {
 		'show_ui'               => true,
 		'show_in_menu'          => true,
 		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-category',
+		'menu_icon'             => 'dashicons-groups',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
@@ -186,3 +247,120 @@ function wc_change_number_related_products( $args ) {
 		  });
 	" );
  }
+
+/* Load more actualités */
+
+add_action('wp_ajax_load_more_posts', 'load_more_posts');
+add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
+
+function load_more_posts() {
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 9,
+        'post_status' => 'publish',
+        'offset' => $_POST['offset']
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+			$query->the_post();?>
+            
+			<div class="card_article from-bottom fade-in-bottom">
+				<a href="<?php the_permalink();?>" class="red">
+					<div class="miniature">
+						<img src="<?php if(has_post_thumbnail()) : the_post_thumbnail_url(); endif;?>"/>
+					</div>
+
+					<h4><?php the_date();?></h4>
+					<h3><?php the_title();?></h3>
+
+					<a href="">Découvrir</a>
+				</a>
+			</div>
+		<?php 
+		}
+    }
+
+    wp_die();
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+function enqueue_custom_scripts() {
+    wp_enqueue_script('custom-scripts', get_template_directory_uri() . '/src/js/loadmore.js', array('jquery'), '', true);
+
+    // Localisation du script AJAX
+    wp_localize_script('custom-scripts', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+}
+
+
+/* Lightbox - Content Ref */
+
+/* Récup infos popup */
+
+function content_popup(){
+	$ajaxposts = new WP_Query([
+		'post_type' => 'reference',
+		'p' => intval($_POST['id']),
+	]);
+  
+	if ($ajaxposts->have_posts()) {
+		while ($ajaxposts->have_posts()) : $ajaxposts->the_post();
+			$post_data = array(
+				'title' => get_the_title(),
+				'description' => get_field('description_projet'),
+				'lieu' => get_field('lieu_du_projet'),
+				'galerie' => get_field('galerie'),
+			);
+  
+			ob_start();
+			?>
+			
+			<div class="popup-content">
+			  <div class="col_details">
+				<h2><?php echo $post_data['title']; ?></h2>
+				<p>Lieu : <?php echo $post_data['lieu']; ?></p>
+				<?php echo $post_data['description']; ?>
+			  </div>
+			  
+			  <div class="col-slider">
+			  	<div class="close">X</div>
+  
+				<?php if($post_data['galerie']) : ?>
+				  <div class="swiper swiper-reference">
+					<div class="swiper-wrapper">
+					  <?php foreach($post_data['galerie'] as $img) :?>
+						<div class="swiper-slide" style="background:url('<?php echo $img['url'];?>');">
+						</div>
+					  <?php endforeach;?>
+					</div>
+  
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>  
+				  </div>
+					
+				<?php else :?>
+				  <div class="full-size" style="background:url('<?php echo $post_data['thumbnails'];?>');">
+				  </div>
+				<?php endif;?>
+			  </div>
+			</div>
+  
+			<?php
+			$response['template_content'] = ob_get_clean(); // Récupère le contenu du template après l'inclusion
+		endwhile;
+	} else {
+		$response['template_content'] = ''; // Aucun post trouvé, réponse vide
+	}
+  
+	wp_reset_postdata(); // Réinitialise les données du post
+  
+	echo json_encode($response);
+	exit;
+  }
+  
+  
+  add_action('wp_ajax_content_popup', 'content_popup');
+  add_action('wp_ajax_nopriv_content_popup', 'content_popup');
