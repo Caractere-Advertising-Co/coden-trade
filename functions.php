@@ -45,6 +45,16 @@ function fix_svg() {
   add_action( 'admin_head', 'fix_svg' );
 
 
+  add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+function enqueue_custom_scripts() {
+    wp_enqueue_script('custom-scripts', get_template_directory_uri() . '/src/js/loadmore.js', array('jquery'), '', true);
+
+    // Localisation du script AJAX
+    wp_localize_script('custom-scripts', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+}
+
+
 /*********************************
  Custom Post Type ---- Références
 **********************************/
@@ -303,14 +313,7 @@ function load_more_posts() {
     wp_die();
 }
 
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
-function enqueue_custom_scripts() {
-    wp_enqueue_script('custom-scripts', get_template_directory_uri() . '/src/js/loadmore.js', array('jquery'), '', true);
-
-    // Localisation du script AJAX
-    wp_localize_script('custom-scripts', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
-}
 
 
 /********************
