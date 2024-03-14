@@ -1,9 +1,11 @@
 $(document).ready(function () {
-  $(".card-projet").on("click", show_ref_popup);
+  $(".type-reference").on("click", show_ref_popup);
 
   function show_ref_popup(e) {
     e.preventDefault();
     var ref = $(this).data("index");
+
+    console.log(ref);
 
     $("#popup_reference").css("display", "flex");
 
@@ -46,7 +48,7 @@ $(document).ready(function () {
   $(document).on("click", function (event) {
     if (
       !$(event.target).closest(
-        ".container_popup, .card-projet, .see-details-fp"
+        ".container_popup, .type-reference, .see-details-fp"
       ).length ||
       $(event.target).hasClass("close")
     ) {

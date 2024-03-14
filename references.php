@@ -47,11 +47,11 @@ get_header();?>
                             endif;
                         ?>
                         
-                        <a href="<?php echo get_permalink();?>" data-index="<?php echo get_the_id();?>" style="background:url('<?php echo $thumbnails;?>');">
+                        <a href="<?php echo get_permalink();?>" data-index="<?php echo get_the_id();?>" style="background:url('<?php echo $thumbnails;?>');" <?php echo post_class( );?>>
                             <div class="card-projet">
                                 <div class="text">
                                     <h3><?php the_title();?></h3>
-                                    <p><?php if($lieu): echo $lieu;endif;?></p>
+                                    <p><?php if($lieu): echo 'À '.$lieu;endif;?></p>
                                 </div>
                                 <span class="plus">+</span>
                             </div>

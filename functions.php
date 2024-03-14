@@ -58,8 +58,8 @@ function add_custom_post_references() {
 		'name_admin_bar'        => __( 'Référence', 'custom_post_type' ),
 		'archives'              => __( 'Archives', 'custom_post_type' ),
 		'attributes'            => __( 'Item Attributes', 'custom_post_type' ),
-		'all_items'             => __( 'Tous', 'custom_post_type' ),
-		'add_new_item'          => __( 'Ajouter nouvelle référence', 'custom_post_type' ),
+		'all_items'             => __( 'Toute.s', 'custom_post_type' ),
+		'add_new_item'          => __( 'Ajouter une nouvelle référence', 'custom_post_type' ),
 		'add_new'               => __( 'Ajouter référence', 'custom_post_type' ),
 		'new_item'              => __( 'Nouveau', 'custom_post_type' ),
 		'edit_item'             => __( 'Modifier', 'custom_post_type' ),
@@ -100,6 +100,23 @@ function add_custom_post_references() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'reference', $args );
+
+	// Déclaration de la taxonomie
+
+	$labels = array(
+		'name' => 'Type de projet',
+		'new_item_name' => 'Nom du type de projet',
+		'parent_item' => 'Nom projet parent',
+	  );
+	
+	  $args = array(
+		'labels' => $labels,
+		'public' => true,
+		'show_in_rest' => true,
+		'hierarchical' => true,
+	  );
+	
+	  register_taxonomy( 'type-projet', 'reference', $args);
 
 }
 add_action( 'init', 'add_custom_post_references', 0 );
@@ -311,9 +328,14 @@ function content_popup(){
 			$post_data = array(
 				'title' => get_the_title(),
 				'description' => get_field('description_projet'),
+				'type' => get_terms( 'type-projet'),
 				'lieu' => get_field('lieu_du_projet'),
 				'galerie' => get_field('galerie'),
 			);
+
+			foreach($post_data['type'] as $type):
+				$t = $type->name;
+			endforeach;
   
 			ob_start();
 			?>
@@ -321,6 +343,7 @@ function content_popup(){
 			<div class="popup-content">
 			  <div class="col_details">
 				<h2><?php echo $post_data['title']; ?></h2>
+				<p>Type : <?php echo $t;?></p>
 				<p>Lieu : <?php echo $post_data['lieu']; ?></p>
 				<?php echo $post_data['description']; ?>
 			  </div>
