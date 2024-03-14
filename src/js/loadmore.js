@@ -18,4 +18,21 @@ jQuery(document).ready(function ($) {
       },
     });
   });
+
+  $("#load-more-refs").click(function (e) {
+    e.preventDefault();
+
+    $.ajax({
+      url: ajax_object.ajax_url, // Utilisation de la variable définie par wp_localize_script()
+      type: "POST",
+      data: {
+        action: "load_more_refs",
+        offset: offset,
+      },
+      success: function (response) {
+        $(".grid_references").append(response);
+        offset += 9; // Mettre à jour le décalage pour charger les prochains articles
+      },
+    });
+  });
 });

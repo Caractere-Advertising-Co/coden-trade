@@ -62,6 +62,11 @@ get_header();?>
                 wp_reset_postdata();
             ?>
         </div>
+        
+        <div class="load-more-container">
+            <a id="load-more-refs" class="cta" href="!#">Voir plus</a>
+        </div>
+
     </div>
 </section>
 

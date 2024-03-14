@@ -313,7 +313,50 @@ function enqueue_custom_scripts() {
 }
 
 
-/* Lightbox - Content Ref */
+/********************
+   *  REFERENCES * 
+*********************/ 
+
+/* Load more references */
+
+add_action('wp_ajax_load_more_posts', 'load_more_refs');
+add_action('wp_ajax_nopriv_load_more_posts', 'load_more_refs');
+
+function load_more_refs() {
+    $args = array(
+        'post_type' => 'reference',
+        'posts_per_page' => 9,
+        'post_status' => 'publish',
+        'offset' => $_POST['offset']
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()):
+        while ($query->have_posts()): $query->the_post();
+            $intro = get_field('description_projet');
+        	$lieu = get_field('lieu_du_projet');
+            $galerie = get_field('galerie');
+
+            if($galerie):
+                $thumbnails = $galerie[0]['url'];
+            endif;?>
+                        
+            <a href="<?php echo get_permalink();?>" data-index="<?php echo get_the_id();?>" style="background:url('<?php echo $thumbnails;?>');" <?php echo post_class( );?>>
+                <div class="card-projet">
+                    <div class="text">
+                        <h3><?php the_title();?></h3>
+                        <p><?php if($lieu): echo 'À '.$lieu;endif;?></p>
+                    </div>
+                    <span class="plus">+</span>
+                </div>
+            </a>
+		<?php 
+		endwhile;
+    endif;
+
+    wp_die();
+}
 
 /* Récup infos popup */
 
