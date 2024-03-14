@@ -1,14 +1,21 @@
 #introduction-ref {
   padding-top: 300px;
+
+  .container {
+    .cold {
+      padding-left: 20%;
+    }
+  }
 }
 
 #references {
+  margin-top: 150px;
   .container {
     .grid-references {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 20px;
+      grid-column-gap: 70px;
+      grid-row-gap: 70px;
       margin-bottom: 80px;
       position: relative;
 
