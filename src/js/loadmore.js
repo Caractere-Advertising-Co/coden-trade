@@ -30,7 +30,8 @@ jQuery(document).ready(function ($) {
         offset: offset,
       },
       success: function (response) {
-        $(".grid_references").append(response);
+        console.warn(response);
+        $(".grid-references").append(response);
         offset += 9; // Mettre à jour le décalage pour charger les prochains articles
       },
     });

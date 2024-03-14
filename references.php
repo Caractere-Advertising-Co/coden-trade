@@ -31,7 +31,7 @@ get_header();?>
                 $references = new WP_Query(array(
                     'post_type' => 'reference',
                     'posts_per_page' => 9,
-                    'paged' => 1,
+                    'post_statut' => 'publish',
                 ));
 
 

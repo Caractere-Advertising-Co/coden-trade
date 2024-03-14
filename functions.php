@@ -131,8 +131,6 @@ function add_custom_post_references() {
 }
 add_action( 'init', 'add_custom_post_references', 0 );
 
-
-  
 /*******************************
 Custom Post Type  ---- EMPLOYE
 /*******************************/
@@ -195,7 +193,6 @@ add_action( 'init', 'add_custom_post_employe', 0 );
 add_filter('woocommerce_resize_images', static function() {
     return false;
 });
-
 
 /********************
      WOOCOMMERCE
@@ -313,9 +310,6 @@ function load_more_posts() {
     wp_die();
 }
 
-
-
-
 /********************
    *  REFERENCES * 
 *********************/ 
@@ -329,7 +323,6 @@ function load_more_refs() {
     $args = array(
         'post_type' => 'reference',
         'posts_per_page' => 9,
-        'post_status' => 'publish',
         'offset' => $_POST['offset']
     );
 
@@ -340,6 +333,7 @@ function load_more_refs() {
             $intro = get_field('description_projet');
         	$lieu = get_field('lieu_du_projet');
             $galerie = get_field('galerie');
+			$thumbnails = null;
 
             if($galerie):
                 $thumbnails = $galerie[0]['url'];
@@ -359,6 +353,36 @@ function load_more_refs() {
     endif;
 
     wp_die();
+
+	$ajaxposts = new WP_Query([
+		'post_type' => 'chantiers',
+		'posts_per_page' => 9,
+		'orderby' => 'date',
+		'paged' => $_POST['paged'],
+	  ]);
+	
+	  $response = '';
+	  $max_pages = $ajaxposts->max_num_pages;
+	
+	  if($ajaxposts->have_posts()) {
+		ob_start();
+		  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+			$response .= get_template_part('template-parts/card-chantier');
+		  endwhile;
+	
+		  $output = ob_get_contents();
+		ob_end_clean();
+	  } else {
+		$response = '';
+	  }
+	
+	  $result = array(
+		'max' => $max_pages,
+		'html' => $output,
+	  );
+	
+	  echo json_encode($result);
+	  exit;
 }
 
 /* Récup infos popup */
