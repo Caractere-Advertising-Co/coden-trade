@@ -4,12 +4,17 @@
   .container {
     .cold {
       padding-left: 20%;
+      margin-top: 50px;
     }
   }
 }
 
 #references {
   margin-top: 150px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid $middle-gray;
+  margin-bottom: 100px;
+
   .container {
     .grid-references {
       display: grid;
