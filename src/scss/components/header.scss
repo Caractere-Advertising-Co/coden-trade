@@ -73,6 +73,7 @@
 
             &:hover {
               color: $primary-color;
+              font-weight: 600 !important;
             }
           }
         }
@@ -139,12 +140,6 @@
         list-style: none;
         gap: 20px;
 
-        li:first-child::before {
-          content: "•";
-          color: $light;
-          margin-right: 10px;
-        }
-
         li {
           text-transform: uppercase;
           font-family: "Sofia";
@@ -175,7 +170,6 @@
   }
 
   .primary-navigation {
-    margin-top: 20px;
 
     #menu-navigation-principale,
     #menu-navigation-principale-neerlandais {
@@ -195,9 +189,11 @@
         a {
           color: $light;
           transition: all ease-out 300ms;
-
+          
           &:hover {
             color: $primary-color;
+            font-weight: 600;
+
           }
         }
       }
@@ -250,6 +246,7 @@
                 display: block;
                 padding: 2% 5%;
                 margin: 0;
+                font-weight: 300;
               }
 
               &:hover {
@@ -276,7 +273,6 @@
                   a {
                     color: $secondary-color;
                     text-transform: none;
-                    font-size: 0.8rem;
                     font-weight: 300;
 
                     &:hover {

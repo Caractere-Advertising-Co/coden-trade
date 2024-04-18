@@ -14,7 +14,7 @@
         img {
           position: absolute;
           z-index: 0;
-          filter: brightness(60%);
+          filter: brightness(50%);
           width: 100%;
         }
 
@@ -161,11 +161,6 @@
 
 #section_nosproduits {
   padding-top: 100px;
-
-  .container {
-    padding-top: 100px;
-    border-top: 1px solid $light-gray;
-  }
 
   button {
     background-color: $light;
@@ -519,9 +514,6 @@
         margin: auto;
         padding: 10px 100px;
 
-        &::before {
-          margin-left: -100px;
-        }
       }
     }
   }
@@ -623,7 +615,7 @@
 #disclaimer_banner {
   background-color: $light;
   min-height: 400px;
-  padding-top: 150px;
+  padding-top: 100px;
 
   .container {
     min-height: 0px;

@@ -15,6 +15,6 @@
     </div>
     <div class="cold">
         <?php if($textApropos): echo '<span class="from-bottom">' . $textApropos . '</span>'; endif;?>
-        <?php if($btn):?><a href="<?php echo $btn['url'];?>" class="cta from-bottom"><?php echo $btn['title'];?></a><?php endif;?>
+        <?php if($btn): ?><a href="<?php echo $btn['url'];?>" class="cta from-bottom"><?php echo $btn['title'];?></a><?php endif;?>
     </div>
 </div>

@@ -28,6 +28,8 @@
 
 <?php get_template_part( 'templates-parts/section-card-services' );?>
 
+<?php get_template_part( 'templates-parts/' );?>
+
 <section id="section_nosproduits">
     <div class="container">
         <?php get_template_part( 'templates-parts/section-nosproduits' );?>

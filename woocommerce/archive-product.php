@@ -44,6 +44,11 @@ do_action( 'woocommerce_before_main_content' );
 	do_action( 'woocommerce_archive_description' );
 	?>
 </header>
+
+
+<div class="">
+ <p>test</p>
+</div>
 <?php
 if ( woocommerce_product_loop() ) {
 
