@@ -1,6 +1,6 @@
 const swiper = new Swiper(".swiper-hero", {
   loop: true,
-  autoplay: false,
+  autoplay: true,
   cssMode: true,
 
   pagination: {

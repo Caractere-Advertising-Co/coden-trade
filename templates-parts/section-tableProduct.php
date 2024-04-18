@@ -43,9 +43,10 @@
                     <?php endif;
 
                         echo '<img src="'.the_post_thumbnail( ).'"/>';
-                        foreach($cat as $c): 
-                            echo '<h4 class="cat">'.$c->slug .'</h4>';
-                        endforeach;
+                        
+                        if($cat):
+                            echo '<h4 class="cat">'.$cat[0]->slug .'</h4>';
+                        endif;
 
                         echo '<span class="title"><h3>'.get_the_title().'</h3></span>';
                         echo '<p class="price"> Àpd '.$price.' €</p>';
