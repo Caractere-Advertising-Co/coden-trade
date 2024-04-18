@@ -1,0 +1,42 @@
+#banner-fullwidth-dark{
+    background-color:$dark-dark-gray;
+    width: 96vw;
+    margin-left: 2vw;
+    padding: 30px 0;
+    margin-bottom: 100px;
+
+    .container{
+        text-align: center;
+
+        h3{
+            color:$primary-color;
+            letter-spacing: 10px;
+            font-size: 1rem;
+        }
+
+        h2{
+            color: $light;
+
+            .variable-text{
+                position: relative;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 90%;
+                    width: 100%;
+                    border-right: 2px solid $light;
+                    margin-left: 10px;
+                    animation: typing .4s infinite;
+                }
+            }
+        }
+
+        .cta{
+            margin: 20px auto;
+        }
+    }
+}

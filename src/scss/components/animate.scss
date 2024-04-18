@@ -7,6 +7,20 @@
 
 //FADE-IN
 
+@keyframes typing {
+  from{
+    opacity: 0;
+  }
+
+  50%{
+    opacity: 1;
+  }
+
+  to{
+    opacity: 0;
+  }
+}
+
 @keyframes fade-in-top {
   from {
     opacity: 0;

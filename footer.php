@@ -4,10 +4,11 @@ $titreCol2 = get_field('titre-colonne-2','options');
 $titreCol3 = get_field('titre-colonne-3','options');
 $cttCol3 = get_field('contenu_colonne_3','options');
 $form = get_field('formulaire-nl','options');
+$background = get_field('background-footer','options');
 
 ?>
 
-<footer>
+<footer <?php if($background): echo 'style="background:url(\''.$background['url'].'\');background-size:cover;+"';endif?>>
     <div class="container">
         <div class="footer-top">
             <div class="col general-infos">

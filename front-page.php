@@ -40,7 +40,7 @@
     </div>
 </section>
 
-<?php get_template_part( 'tempaltes-parts/section-bannerfullwidth' );?>
+<?php get_template_part( 'templates-parts/section-bannerfullwidth-dark' );?>
 <?php get_template_part( 'templates-parts/section-mots-president' );?>
 
 <section id="big_categories">
@@ -115,15 +115,16 @@
             $texte = get_field('texte_actus');
             $cta = get_field('cta_actus');
             ?>
+            
             <?php if($titre):?><span class="from-left"><?php echo $titre;?></span><?php endif;?>
-                <?php if($texte):?><span class="from-left"><p><?php echo $texte?></p></span><?php endif;?>
+            <?php if($texte):?><span class="from-left"><?php echo $texte?></span><?php endif;?>
         </div>
         <div class="grid_articles">
             <?php 
             $args = array(
-                    'post_type' => 'post',
-                    'posts_per_page'=> 2,
-                    'post_statut' => 'publish'
+                'post_type' => 'post',
+                'posts_per_page'=> 2,
+                'post_statut' => 'publish'
             );
 
             $query = new WP_Query( $args );

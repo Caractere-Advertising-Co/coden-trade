@@ -19,9 +19,7 @@ $bg_header = get_field('background');?>
 <?php get_template_part( 'templates-parts/contact' );?>
 
 <section id="nos_connaissances">
-    <div class="container top_content">
-        <?php get_template_part( 'templates-parts/section-citation' );?>
-    </div>
+    <?php get_template_part( 'templates-parts/section-citation' );?>
 </section>
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 

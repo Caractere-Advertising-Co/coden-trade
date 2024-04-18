@@ -1,17 +1,10 @@
 <?php
 
-    $txtPresident = get_field('texte_du_president');
-    $galerie = get_field('galerie_service');
+    $txtPresident = get_field('texte_du_president','options');
+    $galerie = get_field('galerie_service','options');
     $img = null;
-    $cta = get_field('cta_service');
-
-    if(!$txtPresident):
-        $txtPresident = get_field('texte_du_president','options');
-    endif;
-
-    if(!$galerie):
-        $img = get_field('image_nossolutions','options');
-    endif;
+    $cta = get_field('cta_service','options');
+        
 ?>
 
 <section id="mot_president">

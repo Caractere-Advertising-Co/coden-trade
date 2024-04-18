@@ -88,8 +88,6 @@
 
         .menu-item-has-children {
           &:hover {
-            min-height: 400px;
-
             .sub-menu {
               background-color: $light;
               border-bottom: 2px solid $primary-color;
@@ -170,7 +168,6 @@
   }
 
   .primary-navigation {
-
     #menu-navigation-principale,
     #menu-navigation-principale-neerlandais {
       list-style: none;
@@ -193,7 +190,6 @@
           &:hover {
             color: $primary-color;
             font-weight: 600;
-
           }
         }
       }
@@ -218,8 +214,6 @@
         }
 
         &:hover {
-          min-height: 400px;
-
           .sub-menu {
             display: block;
             position: absolute;

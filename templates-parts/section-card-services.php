@@ -9,13 +9,13 @@
                                 $img = get_sub_field('background_service');
                                 $link = get_sub_field('lien_service');?>
 
-                    <div class="swiper-slide card"
-                        style=" background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">
-                        <a href="<?php if($link):echo $link['url'];endif;?>">
-                            <h4><?php echo get_sub_field('nom_service');?></h4>
-                        </a>
-                    </div>
-                    <?php endwhile;
+                                <div class="swiper-slide card"
+                                    style=" background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">
+                                    <a href="<?php if($link):echo $link['url'];endif;?>">
+                                        <h4><?php echo get_sub_field('nom_service');?></h4>
+                                    </a>
+                                </div>
+                            <?php endwhile;
                         endif;?>
                 </div>
             </div>

@@ -104,4 +104,76 @@ $(document).ready(function () {
       }
     });
   });
+
+    
+
+    /* Text banner*/
+    let containerBanner = document.querySelector('.variable-text');
+    let wordsBanner, singleWord, z, timeoutBanner;
+    if (document.querySelector('#wordsBanner')) {
+        wordsBanner = document.querySelector('#wordsBanner').getAttribute('data-changed').split(',');
+    }
+
+    if (containerBanner) {
+        let messageBanner = containerBanner.innerHTML;
+        singleWord = '';
+        z = -1;
+        let modeBanner = 'write';
+        let delayBanner = 1000;
+
+        function updateTextBanner(txt) {
+            containerBanner.innerHTML = txt;
+        }
+
+        function tickBanner() {
+
+            if(containerBanner.innerHTML.length == 0) {
+                if(z === (wordsBanner.length - 1)){
+                    z = -1;
+                }
+
+                z++;
+                singleWord = wordsBanner[z];
+                messageBanner = '';
+                modeBanner = 'write';
+            }
+
+            switch(modeBanner) {
+                case 'write' :
+                    messageBanner += singleWord.slice(0, 1);
+                    singleWord = singleWord.substr(1);
+
+                    updateTextBanner(messageBanner);
+
+                    if(singleWord.length == 0){
+                        modeBanner = 'delete';
+                        delayBanner = 1500;
+                    } else {
+                        delayBanner = 32 + Math.round(Math.random() * 40);
+                    }
+
+                    break;
+
+                case 'delete' :
+                    messageBanner = messageBanner.slice(0, -1);
+                    updateTextBanner(messageBanner);
+
+                    if(messageBanner.length == 0)
+                    {
+                        modeBanner = 'write';
+                        delayBanner = 1500;
+                    } else {
+                        delayBanner = 32 + Math.round(Math.random() * 100);
+                    }
+                    break;
+            }
+
+            timeoutBanner = window.setTimeout(tickBanner, delayBanner);
+        }
+
+        timeoutBanner = window.setTimeout(tickBanner, delayBanner);
+    }
+
+
+
 });

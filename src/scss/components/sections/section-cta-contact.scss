@@ -1,13 +1,13 @@
 #section-cta-contact,
 #section-catalogue {
   color: $light;
-  padding-bottom: 10vh;
 
   .container {
     display: flex;
     align-items: flex-start;
     flex-direction: row-reverse;
     padding: 50px;
+    padding-bottom: 0;
     gap: 0;
     width: 60vw;
     margin: auto;

@@ -1,5 +1,5 @@
 #hero-container {
-  height: 90vh;
+  height: 85vh;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -20,7 +20,7 @@
 
         .content {
           position: relative;
-          margin-top: 250px;
+          margin-top: 200px;
           left: 5vw;
           z-index: 1;
 
@@ -101,7 +101,7 @@
       z-index: 10;
       min-height: 200px;
       margin: auto;
-      top: -150px;
+      top: -100px;
       margin-bottom: 50px;
 
       .swiper-horizontal {
@@ -111,7 +111,7 @@
       .swiper-resp {
         .swiper-slide {
           overflow: hidden;
-          height: 320px;
+          height: 400px;
           width: calc((100% - 300px) / 3) !important;
           padding: 40px;
           cursor: pointer;
@@ -134,7 +134,7 @@
             width: 100%;
             background-color: transparent;
             transition: all ease-in-out 200ms;
-            height: 400px;
+            height: 100%;
             margin-left: -40px;
             margin-top: -40px;
           }
@@ -181,10 +181,9 @@
   background-color: $light;
   width: 100vw;
   animation: slide-to-top 500ms;
-  padding-bottom: 150px;
-  border-bottom: 1px solid $light-gray;
-
   .container {
+    padding-bottom: 100px;
+    border-bottom: 1px solid $light-gray;
     .col-g {
       h3 {
         color: $secondary-color;
@@ -210,11 +209,11 @@
 }
 
 #big_categories {
-  padding: 150px 0;
+  padding: 100px 0;
   .container {
     display: flex;
     gap: 50px;
-    min-height: 800px;
+    min-height: 750px;
 
     .colg {
       width: 65%;
@@ -230,6 +229,7 @@
           -webkit-text-stroke-width: 1px;
           -webkit-text-stroke-color: $primary-color;
           cursor: pointer;
+          margin-bottom: 20px;
         }
 
         .outline.active {
@@ -250,6 +250,7 @@
         li {
           font-size: 2rem;
           cursor: pointer;
+          margin-bottom: 10px;
 
           a {
             font-size: 2rem;
@@ -281,7 +282,7 @@
 
 #confiance {
   background-color: $dark-dark-gray;
-  padding: 250px 0 150px 0;
+  padding: 250px 0 100px 0;
 
   .container {
     text-align: center;
@@ -463,7 +464,7 @@
     }
 
     .intro_actu {
-      margin-bottom: 100px;
+      margin-bottom: 50px;
 
       span {
         width: 50%;
@@ -508,7 +509,7 @@
 
     .view_more {
       text-align: center;
-      margin-top: 200px;
+      margin-top: 100px;
 
       .cta {
         margin: auto;
