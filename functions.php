@@ -413,8 +413,8 @@ function content_popup(){
 			<div class="popup-content">
 			  <div class="col_details">
 				<h2><?php echo $post_data['title']; ?></h2>
-				<p>Type : <?php echo $t;?></p>
-				<p>Lieu : <?php echo $post_data['lieu']; ?></p>
+				<p class="meta">Type : <?php echo $t;?></p>
+				<p class="meta">Lieu : <?php echo $post_data['lieu']; ?></p>
 				<?php echo $post_data['description']; ?>
 			  </div>
 			  
