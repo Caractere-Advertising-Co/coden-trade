@@ -26,8 +26,12 @@ $surRefs = get_field('surtitre-refs');
 $ctaRefs = get_field('cta-refs');
 ?>
 
+
+<?php get_template_part( 'templates-parts/popup-reference' );?>
+
 <header id="header" <?php if($bg_header):?> style="background:url('<?php echo $bg_url;?>');"<?php endif;?>></header>
 
+    
 <section id="introduction">
     <div class="container">
         <div class="colg">
@@ -67,8 +71,8 @@ $ctaRefs = get_field('cta-refs');
                         <?php endforeach;
                     endif;?>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev swiper-prev-about"></div>
+                <div class="swiper-button-next swiper-next-about"></div>
             </div>
         </div>
     </div>
@@ -171,8 +175,9 @@ $ctaRefs = get_field('cta-refs');
     <div class="container columns">
         <?php 
             $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 2
+                'post_type' => 'reference',
+                'posts_per_page' => 2,
+                'post_statut' => 'publish',
             );
 
             $query = new WP_Query($args);
@@ -183,7 +188,9 @@ $ctaRefs = get_field('cta-refs');
                     $i++;?>
 
                     <div class="<?php echo $i == 2 ? '-right' : '';?> from-bottom">
-                        <?php echo the_post_thumbnail();?>
+                        <a href="!#" data-index="<?php echo get_the_id();?>" class="type-reference">
+                            <?php echo the_post_thumbnail();?>
+                        </a>
                     </div>
                 <?php endwhile;
             endif;

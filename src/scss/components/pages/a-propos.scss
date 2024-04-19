@@ -63,7 +63,7 @@
 
     .columns {
       gap: 100px;
-      padding-bottom: 75px;
+      padding-bottom: 140px;
       border-bottom: 1px solid $light-gray;
 
       .colg {
@@ -76,8 +76,7 @@
           top: 200px;
           margin-right: 0;
           margin-left: auto;
-          width: 85%;
-          height: 650px;
+          height: 700px;
 
           .swiper-wrapper {
             .swiper-slide {
@@ -97,6 +96,10 @@
             left: 0;
             bottom: 0;
             top: auto;
+          }
+
+          .swiper-button-next{
+            left: 50px;
           }
         }
       }
@@ -156,7 +159,7 @@
   }
 
   #employes {
-    padding-bottom: 150px;
+    padding-bottom: 100px;
     border-bottom: 1px solid $light-gray;
 
     .container {
@@ -226,7 +229,7 @@
   }
 
   #references {
-    padding: 100px 0;
+    padding: 100px 0 0;
     .container {
       h3 {
         font-size: 1.2rem;
@@ -257,7 +260,15 @@
     .columns {
       justify-content: space-between;
       gap: 50px;
-      padding: 50px;
+
+      div{
+        width: 50%;
+        height: 700px;
+
+        a{
+          height: 100%;
+        }
+      }
 
       .-right {
         margin-top: 150px;

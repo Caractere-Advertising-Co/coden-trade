@@ -1,6 +1,6 @@
 const swiper = new Swiper(".swiper-hero", {
   loop: true,
-  autoplay: true,
+  autoplay: false,
   cssMode: true,
 
   pagination: {
@@ -20,6 +20,15 @@ const swiperFrontPage = new Swiper(".swiper-resp", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+const swiperService = new Swiper(".swiper-service",{
+  cssMode : true,
+  loop: true,
+  navigation : {
+    nextEl: ".swiper-next-about",
+    prevEl: ".swiper-prev-about",
+  }
+})
 
 const swiperAbout = new Swiper(".swiper-about", {
   cssMode: true,

@@ -61,7 +61,8 @@ video,
 svg {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 h1,
@@ -502,6 +503,7 @@ form {
         color: #666;
         width: 22px;
         cursor: pointer;
+        font-family: 'Montserrat',sans-serif;
         z-index: 10;
       }
 
@@ -511,10 +513,11 @@ form {
         background-color: #fff;
         padding: 5vh 2vw;
 
-        h2,h3{
+        h2,
+        h3{
           font-size: 1.8rem;
           line-height: 2rem;
-          margin-bottom: 30px;
+          margin: 30px auto;
         }
 
         p {

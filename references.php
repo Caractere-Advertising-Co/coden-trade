@@ -1,7 +1,6 @@
 <?php 
 /* Template Name: références */
 
-
 $title = get_field('titre');
 $intro = get_field('introduction');
 

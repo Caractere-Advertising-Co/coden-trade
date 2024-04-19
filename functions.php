@@ -93,7 +93,7 @@ function add_custom_post_references() {
 		'label'                 => __( 'Références', 'custom_post_type' ),
 		'description'           => __( 'Références de Coden trade', 'custom_post_type' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title' ),
+		'supports'              => array( 'title','thumbnail'),
 		'taxonomies'            => array( 'references' ),
 		'hierarchical'          => false,
 		'public'                => true,
