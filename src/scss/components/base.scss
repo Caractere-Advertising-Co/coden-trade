@@ -511,10 +511,17 @@ form {
         background-color: #fff;
         padding: 5vh 2vw;
 
+        h2,h3{
+          font-size: 1.8rem;
+          line-height: 2rem;
+          margin-bottom: 30px;
+        }
+
         p {
           width: 90%;
           font-size: 1em;
           text-align: justify;
+          font-weight: 200;
         }
 
         .meta{
@@ -522,6 +529,7 @@ form {
           font-weight: 600;
           color: $primary-color;
           font-style: italic;
+          line-height: 1.2rem;
         }
 
         .et_pb_text_inner{
