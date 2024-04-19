@@ -47,7 +47,7 @@ get_header();?>
                             endif;
                         ?>
                         
-                        <a href="<?php echo get_permalink();?>" data-index="<?php echo get_the_id();?>" style="background:url('<?php echo $thumbnails;?>');" <?php echo post_class( );?>>
+                        <a href="!#" data-index="<?php echo get_the_id();?>" style="background:url('<?php echo $thumbnails;?>');" <?php echo post_class( );?>>
                             <div class="card-projet">
                                 <div class="text">
                                     <h3><?php the_title();?></h3>

@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  $(".type-reference").on("click", show_ref_popup);
+  // Utilisation de l'événement délégué pour les éléments ".type-reference"
+  $(document).on("click", ".type-reference", show_ref_popup);
 
   function show_ref_popup(e) {
     e.preventDefault();
