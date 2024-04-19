@@ -513,8 +513,19 @@ form {
 
         p {
           width: 90%;
-          font-size: 0.7em;
+          font-size: 1em;
           text-align: justify;
+        }
+
+        .meta{
+          font-size: .9rem;
+          font-weight: 600;
+          color: $primary-color;
+          font-style: italic;
+        }
+
+        .et_pb_text_inner{
+          margin-top: 20px;
         }
       }
 
