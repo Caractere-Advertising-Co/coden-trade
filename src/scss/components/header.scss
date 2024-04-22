@@ -24,7 +24,7 @@
   justify-content: space-between;
 
   &.borBot {
-    border-bottom: 1px solid $light-gray;
+    //border-bottom: 1px solid $light-gray;
 
     .col-d {
       .secondary-navigation {
@@ -67,6 +67,7 @@
       #menu-navigation-principale,
       #menu-navigation-principale-neerlandais {
         li {
+          height: 200px;
           a {
             color: $dark-dark-gray;
             transition: all ease-out 300ms;
@@ -182,6 +183,8 @@
         font-size: 0.9rem;
         padding-top: 10px;
         position: relative;
+
+        height: 200px;
 
         a {
           color: $light;

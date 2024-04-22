@@ -1,0 +1,50 @@
+#banner-intro{
+    margin-top: 150px;
+    height: 500px;
+    display: flex;
+    background-color: $dark-dark-gray;
+
+
+    .container{
+        width: calc(50% - 10vw);
+        padding-left: 10vw;
+
+        &::after{
+            content:'';
+            height: 100%;
+            width: 80px;
+            background-color: $dark-dark-gray;
+        }
+
+        h1,
+        p{
+            color: $light;
+        }
+
+        p{
+            margin: 30px auto
+        }
+    }
+
+    .block-img{
+        width: 50%;
+        position: relative;
+        background-color: $dark-dark-gray;
+
+        .svg {
+            position: absolute;
+            width: 0;
+            height: 0;
+          }
+          .clipped {
+            margin-top: -2px;
+            width: 100%;
+            height: 502px;
+            background-size: cover;
+            -webkit-clip-path: url(#my-clip-path);
+            clip-path: url(#my-clip-path);
+          }
+    }
+
+    
+}
