@@ -1,6 +1,6 @@
 <div class="header navigation <?php if(!is_front_page(  )): echo 'borBot';endif;?>">
     <div class="col-g">
-        <a href="<?php echo home_url();?>">
+        <a href="<?php echo home_url();?>" class="logo" >
             <?php 
             
             $logo = get_field('logo-entreprise','options');
@@ -8,9 +8,9 @@
 
             if($logo || $logoBlack):
                 if(is_front_page(  )):?>
-                    <img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" class="logo" />
+                    <img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" />
                 <?php else :?>
-                    <img src="<?php echo $logoBlack['url'];?>" alt="<?php echo $logoBlack['title'];?>" class="logo" />
+                    <img src="<?php echo $logoBlack['url'];?>" alt="<?php echo $logoBlack['title'];?>"/>
                 <?php endif;
             endif;?>
         </a>

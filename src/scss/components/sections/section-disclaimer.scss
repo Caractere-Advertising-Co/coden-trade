@@ -1,0 +1,47 @@
+#disclaimer_banner {
+    background-color: $light;
+    margin: 100px auto;
+  
+    .container {
+      min-height: 0px;
+      width: 80vw;
+  
+      position: relative;
+      z-index: 2;
+      color: $light;
+      padding: 40px 100px;
+  
+      h3,
+      p {
+        color: $light;
+        margin-bottom: 0;
+      }
+  
+      h3 {
+        font-size: 2.3rem;
+        line-height: 2.5rem;
+        margin-bottom: 10px;
+      }
+  
+      h4 {
+        text-transform: uppercase;
+        color: $primary-color;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 10px;
+      }
+  
+      .cta {
+        position: absolute;
+        top: calc((100% - 44px) / 2);
+        left: 50%;
+        z-index: 10;
+        background: $primary-color;
+        border: $primary-color;
+  
+        &:hover {
+          border-color: $secondary-color;
+        }
+      }
+    }
+  }

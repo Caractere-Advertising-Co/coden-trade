@@ -42,7 +42,7 @@
                         </div>
                     <?php endif;
 
-                        echo '<img src="'.the_post_thumbnail( ).'"/>';
+                        echo '<div class="thumbs"><img src="'.get_the_post_thumbnail_url( ).'"/></div>';
                         
                         if($cat):
                             echo '<h4 class="cat">'.$cat[0]->slug .'</h4>';

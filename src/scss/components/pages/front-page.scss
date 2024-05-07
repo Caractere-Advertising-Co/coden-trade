@@ -181,13 +181,15 @@
   background-color: $light;
   width: 100vw;
   animation: slide-to-top 500ms;
+
   .container {
     padding-bottom: 100px;
     border-bottom: 1px solid $light-gray;
+
     .col-g {
       h3 {
         color: $secondary-color;
-        margin: 250px auto 50px auto;
+        margin: 200px auto 50px auto;
 
         strong {
           font-weight: 700;
@@ -205,11 +207,19 @@
         text-align: right;
       }
     }
+
+    .col-d{
+      .swiper{
+        .swiper-slide{
+          height: auto;
+        }
+      }
+    }
   }
 }
 
 #big_categories {
-  padding: 100px 0;
+  padding: 100px 0 0;
   .container {
     display: flex;
     gap: 50px;
@@ -339,6 +349,8 @@
 
         img {
           max-width: 80px;
+          height: inherit;
+          object-fit: cover;
           margin: auto;
           margin-bottom: 30px;
         }
@@ -437,6 +449,7 @@
     img {
       margin-top: 230px;
       margin-bottom: -150px;
+      height: inherit;
     }
   }
 
@@ -608,55 +621,6 @@
           text-transform: uppercase;
           font-weight: 700;
         }
-      }
-    }
-  }
-}
-
-#disclaimer_banner {
-  background-color: $light;
-  padding-top: 100px;
-  margin: 100px auto;
-
-  .container {
-    min-height: 0px;
-    width: 80vw;
-
-    position: relative;
-    z-index: 2;
-    color: $light;
-    padding: 40px 100px;
-
-    h3,
-    p {
-      color: $light;
-      margin-bottom: 0;
-    }
-
-    h3 {
-      font-size: 2.3rem;
-      line-height: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    h4 {
-      text-transform: uppercase;
-      color: $primary-color;
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 10px;
-    }
-
-    .cta {
-      position: absolute;
-      top: calc((100% - 44px) / 2);
-      left: 50%;
-      z-index: 10;
-      background: $primary-color;
-      border: $primary-color;
-
-      &:hover {
-        border-color: $secondary-color;
       }
     }
   }
