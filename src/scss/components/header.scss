@@ -184,8 +184,6 @@
         padding-top: 10px;
         position: relative;
 
-        height: 200px;
-
         a {
           color: $light;
           transition: all ease-out 300ms;
@@ -217,6 +215,8 @@
         }
 
         &:hover {
+          min-height: 400px;
+          
           .sub-menu {
             display: block;
             position: absolute;

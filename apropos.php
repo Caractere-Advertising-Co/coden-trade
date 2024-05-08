@@ -187,7 +187,7 @@ $ctaRefs = get_field('cta-refs');
                 while($query->have_posts()): $query->the_post();
                     $i++;?>
 
-                    <div class="<?php echo $i == 2 ? '-right' : '';?> from-bottom">
+                    <div class="<?php echo $i == 2 ? '-right' : '' ;?> from-bottom">
                         <a href="!#" data-index="<?php echo get_the_id();?>" class="type-reference">
                             <?php echo the_post_thumbnail();?>
                         </a>
