@@ -1,4 +1,4 @@
-<div class="header navigation <?php if(!is_front_page(  )): echo 'borBot';endif;?>">
+<div class="header navigation <?php if(!is_front_page(  ) &&  !is_page(80142)): echo 'borBot';endif;?>">
     <div class="col-g">
         <a href="<?php echo home_url();?>" class="logo" >
             <?php 
@@ -7,7 +7,7 @@
             $logoBlack = get_field('logo-negatif','options');
 
             if($logo || $logoBlack):
-                if(is_front_page(  )):?>
+                if(is_front_page(  ) && is_page(80142)):?>
                     <img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" />
                 <?php else :?>
                     <img src="<?php echo $logoBlack['url'];?>" alt="<?php echo $logoBlack['title'];?>"/>

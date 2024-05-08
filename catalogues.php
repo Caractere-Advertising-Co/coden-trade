@@ -12,12 +12,22 @@ endif;
 
 get_header();?>
 
-<header id="header" <?php if($bg_header):?> style="background:url('<?php echo $bg_url;?>');"<?php endif;?>></header>
+<section id="banner_header" <?php if($bg_header):?> style="background:url('<?php echo $bg_url;?>');"<?php endif;?>></section>
 
 <section id="catalogues-section">
     <div class="container">
-        <?php echo do_shortcode( '[dflip id="80751" type="thumb"][/dflip]');?>
+            <?php $titre = get_field('titre');?>
+            <?php if($titre): echo $titre; endif;?>
+
+    </div>
+
+    <div class="container">
+        <?php echo do_shortcode( '[dflip id="80751" type="thumb"][/dflip]' );?>
     </div>
 </section>
+
+
+<?php get_template_part( 'templates-parts/disclaimer-banner' );?>
+<?php get_template_part( 'templates-parts/contact' );?>
 
 <?php get_footer();?>
