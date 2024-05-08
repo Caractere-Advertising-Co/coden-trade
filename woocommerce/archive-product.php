@@ -42,7 +42,46 @@ get_header( 'shop' );
 
 		<div class="clipped" style="background:url('<?php echo $bg_intro['url'];?>');"></div>
 	</div>
-</section><?php
+</section>
+
+<section id="list-subcategory">
+	<?php 
+		$term_id  = get_queried_object_id();
+		$taxonomy = 'product_cat';
+	
+		// Get subcategories of the current category
+		$terms    = get_terms([
+			'taxonomy'    => $taxonomy,
+			'hide_empty'  => false,
+			'parent'      => $term_id 
+		]);
+	?>
+
+	<div class="container grid">
+		<?php
+
+		// Loop through product subcategories WP_Term Objects
+		foreach ( $terms as $term ):
+
+			$term_link = get_term_link( $term, $taxonomy );
+
+			$thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
+			$image = wp_get_attachment_url( $thumbnail_id );?>
+			
+			<a href="<?php echo $term_link;?>" class="elem-subcategory">
+				<div class="thumbnails-subcat">
+					<img src="<?php echo $image;?>" alt="miniatures"/>
+				</div>
+
+				<p><?php echo $term->name;?></p>
+			
+			</a>
+		<?php endforeach;
+		?>
+	</div>
+</section>
+
+<?php
 
 /**
  * Hook: woocommerce_before_main_content.
