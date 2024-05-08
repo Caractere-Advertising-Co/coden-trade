@@ -176,7 +176,7 @@ $ctaRefs = get_field('cta-refs');
         <?php 
             $args = array(
                 'post_type' => 'reference',
-                'posts_per_page' => 2,
+                'posts_per_page' => 4,
                 'post_statut' => 'publish',
             );
 
