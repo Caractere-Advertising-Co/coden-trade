@@ -44,7 +44,7 @@
 
 <section id="big_categories">
     <div class="container">
-        <?php $parent_categories = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false, 'parent' => 0]); 
+        <?php $parent_categories = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => true, 'parent' => 0]); 
         
         if ($parent_categories): ?>
             <div class="colg">
