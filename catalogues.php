@@ -9,7 +9,6 @@ endif;
 
 get_header();?>
 
-
 <header id="header" <?php if($bg_header):?> style="background:url('<?php echo $bg_url;?>');"<?php endif;?>></header>
 
 <section id="catalogues-section">
