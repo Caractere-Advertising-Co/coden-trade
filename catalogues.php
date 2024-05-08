@@ -21,7 +21,7 @@ get_header();?>
 
     </div>
 
-    <div class="container">
+    <div class="container content-catalogue">
         <?php echo do_shortcode( '[dflip id="80751" type="thumb"][/dflip]' );?>
     </div>
 </section>
