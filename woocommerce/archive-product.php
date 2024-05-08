@@ -44,130 +44,135 @@ get_header( 'shop' );
 	</div>
 </section>
 
-<section id="list-subcategory">
-	<?php 
-		$term_id  = get_queried_object_id();
-		$taxonomy = 'product_cat';
-	
-		// Get subcategories of the current category
-		$terms    = get_terms([
-			'taxonomy'    => $taxonomy,
-			'hide_empty'  => false,
-			'parent'      => $term_id 
-		]);
-	?>
+<?php 
+	$term_id  = get_queried_object_id();
 
-	<div class="container grid">
-		<?php
+	$term = get_queried_object();
 
-		// Loop through product subcategories WP_Term Objects
-		foreach ( $terms as $term ):
+	$children = get_terms( $term->taxonomy, array(
+		'parent'    => $term->term_id,
+		'hide_empty' => false
+	) );
+		
 
-			$term_link = get_term_link( $term, $taxonomy );
+if($children):?>
+	<section id="list-subcategory">
+		<?php 
 
-			$thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
-			$image = wp_get_attachment_url( $thumbnail_id );?>
-			
-			<a href="<?php echo $term_link;?>" class="elem-subcategory">
-				<div class="thumbnails-subcat">
-					<img src="<?php echo $image;?>" alt="miniatures"/>
-				</div>
-
-				<p><?php echo $term->name;?></p>
-			
-			</a>
-		<?php endforeach;
+			$taxonomy = 'product_cat';
+					
+			// Get subcategories of the current category
+			$terms    = get_terms([
+				'taxonomy'    => $taxonomy,
+				'hide_empty'  => false,
+				'parent'      => $term_id 
+			]);
 		?>
-	</div>
-</section>
+		
+		<div class="container grid">
+			<?php
 
-<?php
+			// Loop through product subcategories WP_Term Objects
+			foreach ( $terms as $term ):
 
-/**
- * Hook: woocommerce_before_main_content.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- * @hooked WC_Structured_Data::generate_website_data() - 30
- */
-do_action( 'woocommerce_before_main_content' );
+				$term_link = get_term_link( $term, $taxonomy );
 
+				$thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
+				$image = wp_get_attachment_url( $thumbnail_id );?>
+				
+				<a href="<?php echo $term_link;?>" class="elem-subcategory">
+					<div class="thumbnails-subcat">
+						<img src="<?php echo $image;?>" alt="miniatures"/>
+					</div>
 
-?>
-<header class="woocommerce-products-header">
-	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
+					<p><?php echo $term->name;?></p>
+				
+				</a>
+			<?php endforeach;
+			?>
+		</div>
+	</section>
 
-	<?php
-	/**
-	 * Hook: woocommerce_archive_description.
-	 *
-	 * @hooked woocommerce_taxonomy_archive_description - 10
-	 * @hooked woocommerce_product_archive_description - 10
-	 */
-	do_action( 'woocommerce_archive_description' );
-	?>
-</header>
+<?php else : ?>
+	
+	<section id="list-product-subCategory">
+		<div class="container">
+			<?php if ( woocommerce_product_loop() ) {
 
+				/**
+				 * Hook: woocommerce_before_main_content.
+				 *
+				 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+				 * @hooked woocommerce_breadcrumb - 20
+				 * @hooked WC_Structured_Data::generate_website_data() - 30
+				 */
+				do_action( 'woocommerce_before_main_content' );
 
+				/**
+				 * Hook: woocommerce_before_shop_loop.
+				 *
+				 * @hooked woocommerce_output_all_notices - 10
+				 * @hooked woocommerce_result_count - 20
+				 * @hooked woocommerce_catalog_ordering - 30
+				 */
+				do_action( 'woocommerce_before_shop_loop' );
 
-<?php
-if ( woocommerce_product_loop() ) {
+				woocommerce_product_loop_start();
 
-	/**
-	 * Hook: woocommerce_before_shop_loop.
-	 *
-	 * @hooked woocommerce_output_all_notices - 10
-	 * @hooked woocommerce_result_count - 20
-	 * @hooked woocommerce_catalog_ordering - 30
-	 */
-	do_action( 'woocommerce_before_shop_loop' );
+				if ( wc_get_loop_prop( 'total' ) ) {
+					while ( have_posts() ) {
+						the_post();
 
-	woocommerce_product_loop_start();
+						/**
+						 * Hook: woocommerce_shop_loop.
+						 */
+						do_action( 'woocommerce_shop_loop' );
 
-	if ( wc_get_loop_prop( 'total' ) ) {
-		while ( have_posts() ) {
-			the_post();
+						wc_get_template_part( 'content', 'product' );
+					}
+				}
 
-			/**
-			 * Hook: woocommerce_shop_loop.
-			 */
-			do_action( 'woocommerce_shop_loop' );
+				woocommerce_product_loop_end();
 
-			wc_get_template_part( 'content', 'product' );
-		}
-	}
+					/**
+					 * Hook: woocommerce_after_shop_loop.
+					 *
+					 * @hooked woocommerce_pagination - 10
+					 */
+					do_action( 'woocommerce_after_shop_loop' );
+				} else {
+					/**
+					 * Hook: woocommerce_no_products_found.
+					 *
+					 * @hooked wc_no_products_found - 10
+					 */
+					do_action( 'woocommerce_no_products_found' );
+				}
 
-	woocommerce_product_loop_end();
+				/**
+				 * Hook: woocommerce_after_main_content.
+				 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+				 */
+				do_action( 'woocommerce_after_main_content' );
 
-	/**
-	 * Hook: woocommerce_after_shop_loop.
-	 *
-	 * @hooked woocommerce_pagination - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop' );
-} else {
-	/**
-	 * Hook: woocommerce_no_products_found.
-	 *
-	 * @hooked wc_no_products_found - 10
-	 */
-	do_action( 'woocommerce_no_products_found' );
-}
+				/**
+				 * Hook: woocommerce_sidebar.
+				 * @hooked woocommerce_get_sidebar - 10
+				 */
+				do_action( 'woocommerce_sidebar' );
+				?>
+			</div>
+	</section>
+				<?php endif;?>
 
-/**
- * Hook: woocommerce_after_main_content.
- *
- * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
- */
-do_action( 'woocommerce_after_main_content' );
+				<section id="section-coprod">
+					<?php get_template_part( 'templates-parts/section-nosproduits' );?>
+				</section>
 
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action( 'woocommerce_sidebar' );
+				<?php get_template_part( 'templates-parts/section-catalogue' );?>
+				<?php get_template_part( 'templates-parts/section-confiance' );?>
+
+	
+			<?php
 
 get_footer( 'shop' );

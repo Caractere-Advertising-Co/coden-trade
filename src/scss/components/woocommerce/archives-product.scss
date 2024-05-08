@@ -1,3 +1,5 @@
+.archive.woocommerce-page{
+
 #banner-intro{
     margin-top: 150px;
     height: 500px;
@@ -76,4 +78,46 @@
             }
         }
     }
+}
+
+#list-product-subCategory{
+    padding:100px 0;
+}
+
+#confiance {
+    background-color: $light;
+    padding-top: 100px;
+
+    .table_qualite {
+      display: flex;
+      gap: 50px;
+      justify-content: space-around;
+      margin-bottom: 80px;
+
+      .card_qualite {
+        width: 30%;
+        text-align: center;
+
+        h4 {
+          font-weight: 700;
+          font-size: 1.5rem;
+          line-height: 1.8rem;
+          color: $dark-gray;
+        }
+
+        p {
+          color: $dark-gray;
+
+          &::after {
+            color: $dark-gray;
+          }
+        }
+      }
+
+      .card_qualite + .card_qualite {
+        border-left: 1px solid $light-gray;
+        padding-left: 50px;
+      }
+    }
+  }
 }
