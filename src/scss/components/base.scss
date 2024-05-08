@@ -76,11 +76,14 @@ li,
 td,
 input,
 label,
-a,
-.woocommerce-products-header {
+a
+{
   text-wrap: balance;
   font-family: "sofia-pro", sans-serif;
-  width: fit-content;
+}
+
+.woocommerce-products-header {
+  width:fit-content;
 }
 
 p {
