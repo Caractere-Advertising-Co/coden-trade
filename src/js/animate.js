@@ -74,106 +74,132 @@ $(document).ready(function () {
 
   // Outline
 
-  // Sélection de tous les éléments avec la classe .outline
-  const menu = document.querySelectorAll(".outline");
+// Sélection de tous les éléments avec la classe .outline
+const menu = document.querySelectorAll(".outline");
 
-  // Parcours de chaque élément .outline
-  menu.forEach(function (el) {
-    el.addEventListener("click", function () {
-      // Supprimer la classe .active de tous les éléments .outline
-      menu.forEach(function (item) {
-        item.classList.remove("active");
-      });
-
-      // Ajouter la classe .active à l'élément actuellement cliqué
-      el.classList.add("active");
-
-      const panelId = el.id.replace("cat-", "");
-      const panels = document.querySelectorAll(".cold .panel");
-
-      panels.forEach(function (panel) {
-        panel.style.display = "none";
-      });
-
-      // Afficher le panneau correspondant
-      const activePanel = document.querySelector(
-        ".cold .panel.panel" + panelId
-      );
-      if (activePanel) {
-        activePanel.style.display = "block";
-      }
+// Parcours de chaque élément .outline
+menu.forEach(function (el) {
+  el.addEventListener("click", function () {
+    // Supprimer la classe .active de tous les éléments .outline
+    menu.forEach(function (item) {
+      item.classList.remove("active");
     });
+
+    // Ajouter la classe .active à l'élément actuellement cliqué
+    el.classList.add("active");
+
+    const panelId = el.id.replace("cat-", "");
+    const panels = document.querySelectorAll(".cold .panel");
+
+    panels.forEach(function (panel) {
+      panel.style.display = "none";
+    });
+
+    // Afficher le panneau correspondant
+    const activePanel = document.querySelector(
+      ".cold .panel.panel" + panelId
+    );
+    if (activePanel) {
+      activePanel.style.display = "block";
+    }
+
+    // Arrêter le défilement automatique lorsqu'un élément est cliqué
+    clearInterval(sliderInterval);
   });
+});
 
+// Défilement automatique des éléments du menu
+let currentIndex = 0;
+const sliderInterval = setInterval(() => {
+  // Supprimer la classe .active de l'élément actuel
+  menu[currentIndex].classList.remove("active");
+  const nextIndex = (currentIndex + 1) % menu.length;
+  // Ajouter la classe .active à l'élément suivant
+  menu[nextIndex].classList.add("active");
+
+  // Afficher le panneau correspondant
+  const panelId = menu[nextIndex].id.replace("cat-", "");
+  const panels = document.querySelectorAll(".cold .panel");
+  panels.forEach(function (panel) {
+    panel.style.display = "none";
+  });
+  const activePanel = document.querySelector(
+    ".cold .panel.panel" + panelId
+  );
+  if (activePanel) {
+    activePanel.style.display = "block";
+  }
+
+  currentIndex = nextIndex;
+}, 3000); // Définir l'intervalle de temps en millisecondes (par exemple, 5000 pour 5 secondes)
+
+
+  /* Text banner*/
+  
+  let containerBanner = document.querySelector('.variable-text');
+  let wordsBanner, singleWord, z, timeoutBanner;
     
+  if (document.querySelector('#wordsBanner')) {
+    wordsBanner = document.querySelector('#wordsBanner').getAttribute('data-changed').split(',');
+  }
 
-    /* Text banner*/
-    let containerBanner = document.querySelector('.variable-text');
-    let wordsBanner, singleWord, z, timeoutBanner;
-    if (document.querySelector('#wordsBanner')) {
-        wordsBanner = document.querySelector('#wordsBanner').getAttribute('data-changed').split(',');
+  if (containerBanner) {
+    let messageBanner = containerBanner.innerHTML;
+    singleWord = '';
+    z = -1;
+    
+    let modeBanner = 'write';
+    let delayBanner = 1000;
+
+    function updateTextBanner(txt) {
+      containerBanner.innerHTML = txt;
     }
 
-    if (containerBanner) {
-        let messageBanner = containerBanner.innerHTML;
-        singleWord = '';
-        z = -1;
-        let modeBanner = 'write';
-        let delayBanner = 1000;
-
-        function updateTextBanner(txt) {
-            containerBanner.innerHTML = txt;
+    function tickBanner() {
+      if(containerBanner.innerHTML.length == 0) {
+        if(z === (wordsBanner.length - 1)){
+          z = -1;
         }
 
-        function tickBanner() {
+        z++;
+        singleWord = wordsBanner[z];
+        messageBanner = '';
+        modeBanner = 'write';
+      }
 
-            if(containerBanner.innerHTML.length == 0) {
-                if(z === (wordsBanner.length - 1)){
-                    z = -1;
-                }
+      switch(modeBanner) {
+        case 'write' :
+          messageBanner += singleWord.slice(0, 1);
+          singleWord = singleWord.substr(1);
 
-                z++;
-                singleWord = wordsBanner[z];
-                messageBanner = '';
-                modeBanner = 'write';
-            }
+          updateTextBanner(messageBanner);
 
-            switch(modeBanner) {
-                case 'write' :
-                    messageBanner += singleWord.slice(0, 1);
-                    singleWord = singleWord.substr(1);
+          if(singleWord.length == 0){
+            modeBanner = 'delete';
+            delayBanner = 1500;
+          } else {
+            delayBanner = 32 + Math.round(Math.random() * 40);
+          }
 
-                    updateTextBanner(messageBanner);
+          break;
 
-                    if(singleWord.length == 0){
-                        modeBanner = 'delete';
-                        delayBanner = 1500;
-                    } else {
-                        delayBanner = 32 + Math.round(Math.random() * 40);
-                    }
+        case 'delete' :
+          messageBanner = messageBanner.slice(0, -1);
+                
+          updateTextBanner(messageBanner);
 
-                    break;
-
-                case 'delete' :
-                    messageBanner = messageBanner.slice(0, -1);
-                    updateTextBanner(messageBanner);
-
-                    if(messageBanner.length == 0)
-                    {
-                        modeBanner = 'write';
-                        delayBanner = 1500;
-                    } else {
-                        delayBanner = 32 + Math.round(Math.random() * 100);
-                    }
-                    break;
-            }
-
-            timeoutBanner = window.setTimeout(tickBanner, delayBanner);
+          if(messageBanner.length == 0){
+            modeBanner = 'write';
+            delayBanner = 1500;
+          } else {
+            delayBanner = 32 + Math.round(Math.random() * 100);
+          }
+          
+          break;
         }
 
-        timeoutBanner = window.setTimeout(tickBanner, delayBanner);
+      timeoutBanner = window.setTimeout(tickBanner, delayBanner);
     }
-
-
-
+      timeoutBanner = window.setTimeout(tickBanner, delayBanner);
+    }
 });
