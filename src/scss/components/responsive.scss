@@ -33,8 +33,24 @@
     font-size: 3rem;
     line-height: 3.5rem;
   }
+  
+  h2{
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .top_banner_header{
+    height: 40px;
+
+    p{
+      letter-spacing: 3px;
+      line-height: 1rem;
+    }
+  }
 
   .header {
+    top: 100px;
+
     .col-g,
     .col-d {
       width: 50%;
@@ -124,9 +140,35 @@
       .footer-top {
         flex-direction: column;
 
+        .general-infos{
+          flex-direction: column;
+
+          .adresse{
+            p{
+              text-align: center;
+            }
+          }
+        }
+
         .col {
           width: 100%;
           padding-bottom: 30px;
+        }
+
+        .col-2{
+          padding-left: 0 !important;
+
+          h4{
+            text-align: center;
+            
+          
+          }
+
+         ul{
+          li{
+            text-align: center ;
+          }
+         }
         }
 
         .col + .col {
@@ -135,6 +177,13 @@
 
         .rs_footer {
           display: flex;
+          flex-direction: column;
+          padding-left: 0!important;
+
+          h4,
+          p{
+            text-align: center!important;
+          }
 
           a + a {
             margin-left: 10px;
@@ -445,6 +494,47 @@
         z-index: 3;
         padding: 30px;
         width: 75%;
+        max-height: inherit;
+      }
+    }
+  }
+  
+  #banner-fullwidth-dark {
+    margin:auto;
+    margin-bottom: 100px;
+  }
+
+  #prix-compétitifs{
+    padding-bottom: 50px;
+    .container{
+      gap: 30px;
+      width: 90vw;
+
+      .col-g{
+        width: 30%;
+
+        .content-img{
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      .col-d{
+        width: 70%;
+
+        h2{
+          font-size: 2.5rem;
+          line-height: 2.5rem;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  #nos_connaissances{
+    .top_content{
+      h3{
+        letter-spacing: 5px;
       }
     }
   }
@@ -468,8 +558,9 @@
 
       .cta{
         left: auto;
-        right: 0;
-        bottom: 0;
+        right: 30px;
+        bottom: 30px;
+        top: auto;
       }
     }
   }
@@ -479,14 +570,19 @@
       .intro_actu {
         flex-direction: column;
 
-        h2,
-        p {
+        span{
           width: 100%;
-        }
 
-        p {
-          margin-top: 0;
-          padding-top: 0;
+
+          h2,
+          p {
+            width: 100%;
+          }
+
+          p {
+            margin-top: 0;
+            padding-top: 0;
+          }
         }
       }
 
@@ -497,14 +593,19 @@
           width: 100%;
 
           .home-thumbnail {
-            max-height: 250px;
+            height: 250px;
             overflow: hidden;
 
             img {
-              display: block;
-              width: auto;
-              margin-top: -100px;
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
             }
+          }
+
+          .metaData{
+            font-size: .7rem;
+            letter-spacing: 3px;
           }
 
           h3 {
