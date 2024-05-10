@@ -503,6 +503,16 @@
     .grid_articles {
       .card_article {
         width: 50%;
+        
+        .home-thumbnail{
+          height: 600px;
+
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
 
         .metaData {
           .puntSep {
