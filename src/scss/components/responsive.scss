@@ -452,6 +452,8 @@
   #disclaimer_banner {
     .container {
       flex-direction: column;
+      width: calc(90vw - 80px);
+      padding: 40px;
 
       h4{
         font-size: .8rem;
@@ -462,6 +464,12 @@
         font-size: 1.8rem;
         line-height: 2rem;
         margin-bottom: 50px;
+      }
+
+      .cta{
+        left: auto;
+        right: 0;
+        bottom: 0;
       }
     }
   }
