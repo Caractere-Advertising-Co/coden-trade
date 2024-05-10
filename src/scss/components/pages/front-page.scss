@@ -112,20 +112,27 @@
         .swiper-slide {
           overflow: hidden;
           height: 400px;
-          width: calc((100% - 300px) / 3) !important;
-          padding: 40px;
           cursor: pointer;
 
-          h4 {
-            color: $light;
-            position: absolute;
-            z-index: 10;
-            bottom: 40px;
-            top: auto;
-            font-size: 2rem;
-            font-weight: 600;
-            text-shadow: 0px 0px 10px #000000a3;
+          a{
+            display: block;
+            padding: 40px;
+            width: calc(100% - 80px);
+            height: calc(100% - 80px);
+
+            h4 {
+              color: $light;
+              position: absolute;
+              z-index: 10;
+              top: auto;
+              font-size: 2rem;
+              font-weight: 600;
+              bottom: 40px;
+              text-shadow: 0px 0px 10px #000000a3;
+            }
           }
+
+          
 
           &::before {
             content: "";
@@ -135,8 +142,6 @@
             background-color: transparent;
             transition: all ease-in-out 200ms;
             height: 100%;
-            margin-left: -40px;
-            margin-top: -40px;
           }
 
           &:hover {

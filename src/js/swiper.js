@@ -13,7 +13,19 @@ const swiperFrontPage = new Swiper(".swiper-resp", {
   cssMode: true,
   loop: true,
   slidesPerView: 3,
-  spaceBetween: 30,
+
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 20
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  },
 
   navigation: {
     nextEl: ".swiper-button-next",

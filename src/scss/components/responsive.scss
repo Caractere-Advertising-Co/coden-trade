@@ -217,6 +217,11 @@
             left: 10vw;
             right: auto;
             margin-top: 200px;
+
+            h1{
+              font-size: 2rem;
+              line-height: 2rem;
+            }
           }
         }
       }
@@ -245,6 +250,7 @@
         .swiper-slide {
           margin: auto;
           min-height: 320px;
+          width: 100%;
           position: relative;
           overflow-y: hidden;
 
@@ -290,6 +296,12 @@
       .grid {
         display: none;
       }
+
+      .section-introduction{
+        .cold{
+          width: 90%;
+        }
+      }
     }
 
     .main-content {
@@ -322,23 +334,27 @@
   }
 
   #mot_president {
-    .columns {
-      flex-direction: column;
+    .container{
+      .columns {
+        flex-direction: column;
 
-      .col-d,
-      .col-g {
-        width: 100%;
-      }
-
-      .col-g {
-        img {
-          margin-left: -15vw;
+        .col-d,
+        .col-g {
+          width: 100%;
         }
-      }
 
-      .col-d {
-        h3 {
-          margin-top: 50px;
+        .col-g {
+          h3{
+            margin: 0 auto 50px;
+          }
+
+          img {
+            margin-left: -15vw;
+          }
+        }
+
+        .col-d {
+          margin-top: 0  !important;
         }
       }
     }
@@ -379,26 +395,31 @@
     }
   }
 
-  #statistique {
-    .container {
+  #big_categories{
+    .container{
       flex-direction: column;
+      min-height: inherit;
 
-      .col-g {
-        width: 100%;
-        padding-top: 150px;
+      .colg{
+        ul{
+          .outline{
+            font-size: 3rem;
+            line-height: 2rem;
+          }
+        }
       }
 
-      .col-d {
+      .cold{
         width: 100%;
+        margin-top: 0;
 
-        .block_stats {
-          img {
-            width: 60%;
-            margin-left: 0;
-            position: relative;
-          }
-          span {
-            margin-top: 30px;
+        .panel{
+          li{
+            margin-bottom: 0;
+
+            a{
+              font-size: 1.5rem;
+            }
           }
         }
       }
@@ -432,19 +453,15 @@
     .container {
       flex-direction: column;
 
-      .colg {
-        width: calc(100% - 60px);
-        padding: 20px 30px;
+      h4{
+        font-size: .8rem;
+        letter-spacing: 6px;
       }
-      .cold {
-        width: 100%;
-
-        .cta {
-          right: -20px;
-          left: auto;
-          top: -25px;
-          position: absolute;
-        }
+      
+      h3{
+        font-size: 1.8rem;
+        line-height: 2rem;
+        margin-bottom: 50px;
       }
     }
   }
@@ -631,16 +648,6 @@
     }
   }
 
-  #mot_president {
-    .container {
-      .columns {
-        .col-d {
-          margin-top: 180px !important;
-        }
-      }
-    }
-  }
-
   #contact {
     padding-top: 150px !important;
 
@@ -674,4 +681,21 @@
   .page-template-informations #outro .cold {
     padding-left: 10%;
   }
+
+  /* Woocommerce */
+
+  .table_product{
+    grid-template-columns: repeat(1 , 1fr);
+
+    .card_product{
+      a{
+
+        h3{
+          letter-spacing: 0 !important;
+        }
+      }
+    }
+  }
 }
+
+
