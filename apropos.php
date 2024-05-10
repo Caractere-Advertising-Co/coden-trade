@@ -33,7 +33,7 @@ $ctaRefs = get_field('cta-refs');
 
 <?php get_template_part( 'templates-parts/popup-reference' );?>
 
-<header id="header" <?php if($bg_header):?> style="background:url('<?php echo $bg_url;?>');"<?php endif;?>></header>
+<div id="header" <?php if($bg_header):?> style="background:url('<?php echo $bg_url;?>');"<?php endif;?>></div>
 
     
 <section id="introduction">
