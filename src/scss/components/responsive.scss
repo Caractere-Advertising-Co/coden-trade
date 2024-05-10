@@ -427,7 +427,7 @@
   }
 
   #section-cta-contact {
-    height: 600px;
+    height: inherit;
 
     .container {
       flex-direction: column;
@@ -593,10 +593,6 @@
     #section-cta-contact {
       margin-bottom: 0px;
     }
-  }
-
-  #section-cta-contact {
-    padding-top: 100px;
   }
 
   // A PROPOS
