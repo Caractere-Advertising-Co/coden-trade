@@ -446,10 +446,18 @@
 
 #prix-compétitifs {
   .col-g {
-    img {
+
+    .content-img{
       margin-top: 230px;
       margin-bottom: -150px;
-      height: inherit;
+      height: 600px;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 

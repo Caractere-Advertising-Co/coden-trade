@@ -93,7 +93,9 @@
     ?>
     <div class="container columns">
         <div class="col-g">
-            <?php if($img):?><img src="<?php echo $img['url'];?>" alt="<?php echo $img['title'];?>"/><?php endif;?>
+            <dvi class="content-img">
+                <?php if($img):?><img src="<?php echo $img['url'];?>" alt="<?php echo $img['title'];?>"/><?php endif;?>
+            </div>
         </div>
 
         <div class="col-d">
