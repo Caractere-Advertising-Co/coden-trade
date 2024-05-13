@@ -45,7 +45,8 @@
             background-size: cover;
             -webkit-clip-path: url(#my-clip-path);
             clip-path: url(#my-clip-path);
-            background-repeat: no-repeat;
+            background-repeat: no-repeat !important;
+            background-position: right !important;
           }
     }
 }
