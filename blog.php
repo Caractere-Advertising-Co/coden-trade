@@ -1,5 +1,5 @@
 <?php 
-/* Template Name: actualités */
+/* Template Name: page blog */
 
 get_header();
 
