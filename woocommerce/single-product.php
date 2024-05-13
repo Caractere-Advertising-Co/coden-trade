@@ -68,6 +68,6 @@ $banner = get_field('banniere_produit','options');
 
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
-<?php get_footer( 'shop' );
+<?php get_footer();
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
