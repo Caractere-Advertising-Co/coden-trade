@@ -25,10 +25,10 @@ $intro = get_field('introduction');
         <div class="grid_articles">
             <?php 
             $args = array(
-                    'post_type' => 'post',
-                    'category__not_in' => 60 ,
-                    'posts_per_page'=> 9,
-                    'post_statut' => 'publish'
+                'post_type' => 'post',
+                'category__not_in' => 60,
+                'posts_per_page'=> 9,
+                'post_statut' => 'publish'
             );
 
             $query = new WP_Query( $args );
