@@ -12,7 +12,7 @@ get_header();?>
     <div class="container">
         <div class="colg">
             <?php if($title):
-            echo $title;
+            echo '<h1>'.$title.'</h1>';
         endif;?>
         </div>
         <div class="cold">
