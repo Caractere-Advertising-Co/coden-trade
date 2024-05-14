@@ -1,3 +1,10 @@
+<?php
+
+$actifWoo = get_field('section_woo_actif');
+$actifBig = get_field('section_big_actif');
+
+?>
+
 <?php get_header();?>
 
 <section id="hero-container">
@@ -28,55 +35,59 @@
 
 <?php get_template_part( 'templates-parts/section-card-services' );?>
 
+<?php if($actifWoo):?>
+    <section id="section_nosproduits">
+        <div class="container">
+            <?php get_template_part( 'templates-parts/section-nosproduits' );?>
 
-<section id="section_nosproduits">
-    <div class="container">
-        <?php get_template_part( 'templates-parts/section-nosproduits' );?>
-
-        <div class="from-bottom">
-            <?php get_template_part( 'templates-parts/section-tableProduct' );?>
+            <div class="from-bottom">
+                <?php get_template_part( 'templates-parts/section-tableProduct' );?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif;?>
 
 <?php get_template_part( 'templates-parts/section-bannerfullwidth-dark' );?>
 <?php get_template_part( 'templates-parts/section-mots-president' );?>
 
-<section id="big_categories">
-    <div class="container">
-        <?php $parent_categories = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => true, 'parent' => 0]); 
-        
-        if ($parent_categories): ?>
-            <div class="colg">
-                <ul>
-                    <?php $i = 0;
-                    foreach ($parent_categories as $parent_cat):?>
-                        <li class="outline <?php echo $i == 0 ? 'active' : '';?>" id="cat-<?php echo $i;?>"><?php echo $parent_cat->name;?></li>
-                        <?php $i++;
-                    endforeach; ?>
-                </ul>
-            </div>
 
-            <div class="cold">
-                <?php
-                $i = 0; 
-                foreach ($parent_categories as $parent_cat):
-                    $child_categories = get_term_children($parent_cat->term_id, 'product_cat');
-                    if (!empty($child_categories)) {
-                        echo '<ul class="panel panel' . $i . '">';
-                        foreach ($child_categories as $child_id):
-                            $child_cat = get_term_by('id', $child_id, 'product_cat');
-                            echo '<li><a href="' . get_term_link($child_cat) . '">' . $child_cat->name . '</a></li>';
-                        endforeach;
-                        echo '</ul>';
-                    }
-                    $i++;
-                endforeach;?>
-                <a href="#" class="cta">Découvrir</a>
-            </div>
-        <?php endif;?> 
-    </div>
-</section>
+<?php if($actifBig):?>
+    <section id="big_categories">
+        <div class="container">
+            <?php $parent_categories = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => true, 'parent' => 0]); 
+            
+            if ($parent_categories): ?>
+                <div class="colg">
+                    <ul>
+                        <?php $i = 0;
+                        foreach ($parent_categories as $parent_cat):?>
+                            <li class="outline <?php echo $i == 0 ? 'active' : '';?>" id="cat-<?php echo $i;?>"><?php echo $parent_cat->name;?></li>
+                            <?php $i++;
+                        endforeach; ?>
+                    </ul>
+                </div>
+
+                <div class="cold">
+                    <?php
+                    $i = 0; 
+                    foreach ($parent_categories as $parent_cat):
+                        $child_categories = get_term_children($parent_cat->term_id, 'product_cat');
+                        if (!empty($child_categories)) {
+                            echo '<ul class="panel panel' . $i . '">';
+                            foreach ($child_categories as $child_id):
+                                $child_cat = get_term_by('id', $child_id, 'product_cat');
+                                echo '<li><a href="' . get_term_link($child_cat) . '">' . $child_cat->name . '</a></li>';
+                            endforeach;
+                            echo '</ul>';
+                        }
+                        $i++;
+                    endforeach;?>
+                    <a href="#" class="cta">Découvrir</a>
+                </div>
+            <?php endif;?> 
+        </div>
+    </section>
+<?php endif;?>
 
 <?php get_template_part( 'templates-parts/disclaimer-banner' );?>
 <?php get_template_part( 'templates-parts/section-cta-contact' );?>
