@@ -26,9 +26,9 @@ $args = array(
 
 /* Section black */
 
-$tirthTitre = get_field('titre_fournisseur');
-$tirthText = get_field('texte_fournisseur');
-$tirthCTA = get_field('cta_fournisseur');
+$tirthTitre = get_field('titre-fournisseur');
+$tirthText = get_field('texte-fournisseur');
+$tirthCTA = get_field('cta-fournisseur');
 $tirthGalerie = get_field('galerie_fournisseur');
 
 $args_2 = array(
