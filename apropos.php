@@ -18,18 +18,10 @@ $intro = get_field('introduction');
 $txtNaissance = get_field('txt_naissance');
 $ctaNaiss = get_field('cta_naissance');
 
-$titreService = get_field('titre_service');
-$txtService = get_field('texte_service');
-$galerie_ser = get_field('galerie_service');
-$cta_ser = get_field('cta_service');
-$bgService = get_field('background_service');
-$img = get_field('img-separator');
-
 $titrRefs = get_field('titre-refs');
 $surRefs = get_field('surtitre-refs');
 $ctaRefs = get_field('cta-refs');
 ?>
-
 
 <?php get_template_part( 'templates-parts/popup-reference' );?>
 
@@ -55,74 +47,7 @@ $ctaRefs = get_field('cta-refs');
     <?php get_template_part( 'templates-parts/section-nosproduits' );?>
 </section>
 
-<section id="service_particulier">
-    <div class="container columns">
-        <div class="colg">
-            <?php if($titreService): echo $titreService; endif;?>
-            <?php if($txtService): echo $txtService; endif;?>
-            <?php if($cta_ser):?>
-                <a href="<?php $cta_ser['url'];?>" class="cta"><?php $cta_ser['title'];?></a>
-            <?php endif;?>
-        </div>
-        <div class="cold">
-            <div class="swiper swiper-service">
-                <div class="swiper-wrapper">
-                    <?php if($galerie_ser): 
-                        foreach($galerie_ser as $gal):?>
-                            <div class="swiper-slide">
-                                <img src="<?php echo $gal['url'];?>" alt="<?php $gal['title'];?>"/>
-                            </div>
-                        <?php endforeach;
-                    endif;?>
-                </div>
-                <div class="swiper-button-prev swiper-prev-about"></div>
-                <div class="swiper-button-next swiper-next-about"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <?php if($titreService): echo $titreService; endif;?>
-    </div>
-
-    <div class="service-bottom" <?php if($bgService):?>style="background:url('<?php echo $bgService['url'];?>')no-repeat;background-position: left center;"<?php endif;?>>
-        <?php $i = 0;?>
-        <div class="container">
-            <div class="cold">
-                <div class="col col-<?php echo $i;?>">                        
-                    <?php
-                        if(have_rows('liste_services')):
-                            $count = count(get_field('liste_services'));
-
-                            while(have_rows('liste_services')) : the_row();
-                                $card = get_sub_field('carte');
-                                $i++;
-                                
-                                if($card):?>
-                                    <div class="card from-bottom">
-                                        <?php echo $card;?>
-                                    </div>
-                                <?php endif;?>
-
-                                    
-                                <?php if($i == $count /2):?>
-                                    </div><div class="col col-<?php echo $i;?>">
-                                <?php endif;
-                            endwhile;
-                        endif;
-                    ?>
-                </div>
-            </div>
-        </div>
-
-        <?php if($img):?>
-            <div class="img-separator">
-                <img src="<?php echo $img['url'];?>" alt="<?php echo $img['url'];?>"/>
-            </div>
-        <?php endif;?>
-    </div>
-</section>
-
+<?php get_template_part( 'templates-parts/section-serviceparticulier' );?>
 <?php get_template_part( 'templates-parts/section-experts' );?>
 
 <section id="employes">

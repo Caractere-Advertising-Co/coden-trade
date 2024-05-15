@@ -60,7 +60,7 @@ $args_2 = array(
 </section>
 
 <?php get_template_part( 'templates-parts/section-experts', null, $args );?>
-<?php get_template_part( 'templates-parts/section-mots-president', null , $args_2 );?>
+<?php get_template_part( 'templates-parts/section-serviceparticulier', null , $args_2 );?>
 
 <?php get_template_part( 'templates-parts/section-naissance' );?>
 

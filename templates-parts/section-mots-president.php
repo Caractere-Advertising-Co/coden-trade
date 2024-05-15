@@ -1,6 +1,6 @@
 <?php
 
-if($args['titre_tirth_para']):
+if(count($args) > 0):
 
     $titrePresident = $args['titre_tirth_para'];
     $txtPresident = $args['texte_tirth_para'];
@@ -12,9 +12,9 @@ else :
 
     $titrePresident = null;
     $txtPresident = get_field('texte_du_president','options');
-    $galerie = get_field('galerie_service','options');
+    $galerie = get_field('galerie_president','options');
     $img = null;
-    $cta = get_field('cta_service','options');
+    $cta = get_field('cta_president','options');
 
 endif;
 ?>
