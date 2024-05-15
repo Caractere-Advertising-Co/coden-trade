@@ -120,23 +120,15 @@
   #service_particulier {
     margin-top: -400px;
     background: $dark-dark-gray;
-    background: -moz-linear-gradient(
-      90deg,
-      $light 45%,
-      rgba(255, 255, 255, 0) 45%
-    );
-    background: -webkit-linear-gradient(
-      90deg,
-      $light 45%,
-      rgba(255, 255, 255, 0) 45%
-    );
+    background: -moz-linear-gradient( 90deg, $light 45%,rgba(255, 255, 255, 0) 45%);
+    background: -webkit-linear-gradient( 90deg, $light 45%, rgba(255, 255, 255, 0) 45%);
     background: linear-gradient(90deg, $light 45%, rgba(255, 255, 255, 0) 45%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1);
     border: none;
     padding-bottom: 100px;
 
     .container {
-      .col-g {
+      .colg {
         width: 40%;
 
         h2 {
@@ -163,7 +155,7 @@
         }
       }
 
-      .col-d {
+      .cold {
         width: 60%;
         padding-left: 10%;
         padding-top: 200px;
