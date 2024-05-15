@@ -1,9 +1,14 @@
 <?php 
-$titreExpert = get_field('Titre-expert','options');
-$txtExpert = get_field('texte-expert','options');
-$ctaExpert = get_field('cta-expert','options');
 
-?>
+if($args):
+    $titreExpert = $args['titre_second_para'];
+    $txtExpert = $args['texte_second_para'];
+    $ctaExpert = $args['cta_second_para'];
+else :
+    $titreExpert = get_field('Titre-expert','options');
+    $txtExpert = get_field('texte-expert','options');
+    $ctaExpert = get_field('cta-expert','options');
+endif;?>
 
 <section id="expert">
     <div class="container">

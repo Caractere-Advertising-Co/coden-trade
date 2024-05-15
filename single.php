@@ -12,6 +12,30 @@ $cta = get_field('cta');
 $outro = get_field('outro');
 $img = get_field('image-separator');
 
+/* Section black */
+
+$secondTitre = get_field('titre-expert');
+$secondText = get_field('texte-expert');
+$secondCTA = get_field('cta-expert');
+
+$args = array(
+    'titre_second_para' => $secondTitre,
+    'texte_second_para' => $secondText,
+    'cta_second_para' => $secondCTA 
+);
+
+/* Section black */
+
+$tirthTitre = get_field('titre_second_paragraph');
+$tirthText = get_field('texte_second_paragraph');
+$tirthCTA = get_field('cta_second_paragraph');
+
+$args_2 = array(
+    'titre_second_para' => $tirthTitre,
+    'texte_second_para' => $tirthText,
+    'cta_second_para' => $tirthCTA 
+);
+
 ?>
 
 <section id="simple-page">
@@ -33,8 +57,8 @@ $img = get_field('image-separator');
         <?php endif;?>
 </section>
 
-<?php get_template_part( 'templates-parts/section-experts' );?>
-<?php get_template_part( 'templates-parts/section-mots-president' );?>
+<?php get_template_part( 'templates-parts/section-experts', null, $args );?>
+<?php get_template_part( 'templates-parts/section-mots-president', null , $args_2 );?>
 
 <?php get_template_part( 'templates-parts/section-naissance' );?>
 
