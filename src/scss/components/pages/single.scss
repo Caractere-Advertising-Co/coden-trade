@@ -97,6 +97,22 @@
 
   #expert {
     padding-bottom: 500px;
+
+    .container{
+      .descr{
+        h3{
+          font-size: 1rem;
+          color: $primary-color;
+          letter-spacing: 8px;
+          text-transform: uppercase;
+          font-weight: 600;
+
+          &::before {
+            content: "→";
+          }
+        }
+      }
+    }
   }
 
   #mot_president {
