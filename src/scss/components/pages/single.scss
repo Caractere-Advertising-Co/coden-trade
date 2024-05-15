@@ -106,6 +106,8 @@
           letter-spacing: 8px;
           text-transform: uppercase;
           font-weight: 600;
+          margin: 20px 0;
+          line-height: 1.3rem;
 
           &::before {
             content: "→";
