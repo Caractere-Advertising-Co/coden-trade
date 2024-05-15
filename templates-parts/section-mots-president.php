@@ -1,16 +1,29 @@
 <?php
 
+if($args):
+
+    $titrePresident = $args['titre_tirth_para'];
+    $txtPresident = $args['texte_tirth_para'];
+    $galerie = $args['galerie_tirth_para'];
+    $img = null;
+    $cta = $args['cta_tirth_para'];
+
+else :
+
+    $titrePresident = null;
     $txtPresident = get_field('texte_du_president','options');
     $galerie = get_field('galerie_service','options');
     $img = null;
     $cta = get_field('cta_service','options');
-        
+
+endif;
 ?>
 
 <section id="mot_president">
     <div class="container">
         <div class="columns">
             <div class="col-g">
+                <?php if($titrePresident): echo $titrePresident;endif;?>
                 <?php if($txtPresident): echo $txtPresident; endif;?>
                 
             </div>

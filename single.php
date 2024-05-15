@@ -26,14 +26,16 @@ $args = array(
 
 /* Section black */
 
-$tirthTitre = get_field('titre_second_paragraph');
-$tirthText = get_field('texte_second_paragraph');
-$tirthCTA = get_field('cta_second_paragraph');
+$tirthTitre = get_field('titre_fournisseur');
+$tirthText = get_field('texte_fournisseur');
+$tirthCTA = get_field('cta_fournisseur');
+$tirthGalerie = get_field('galerie_fournisseur');
 
 $args_2 = array(
-    'titre_second_para' => $tirthTitre,
-    'texte_second_para' => $tirthText,
-    'cta_second_para' => $tirthCTA 
+    'titre_tirth_para' => $tirthTitre,
+    'texte_tirth_para' => $tirthText,
+    'galerie_tirth_para' => $tirthGalerie,
+    'cta_tirth_para' => $tirthCTA 
 );
 
 ?>
