@@ -10,7 +10,7 @@ if($args['titre_tirth_para']):
 
 else :
 
-    $titrePresident =
+    $titrePresident = null;
     $txtPresident = get_field('texte_du_president','options');
     $galerie = get_field('galerie_service','options');
     $img = null;

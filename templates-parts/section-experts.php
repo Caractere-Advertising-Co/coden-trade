@@ -1,6 +1,6 @@
 <?php 
 
-if($args):
+if($args['titre_second_para']):
     $titreExpert = $args['titre_second_para'];
     $txtExpert = $args['texte_second_para'];
     $ctaExpert = $args['cta_second_para'];
