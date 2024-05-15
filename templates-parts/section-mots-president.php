@@ -1,6 +1,6 @@
 <?php
 
-if($args):
+if($args != null):
 
     $titrePresident = $args['titre_tirth_para'];
     $txtPresident = $args['texte_tirth_para'];
