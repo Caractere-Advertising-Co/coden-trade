@@ -73,7 +73,7 @@ $args_2 = array(
                 'post_type' => 'post',
                 'posts_per_page'=> 3,
                 'post_statut' => 'publish',
-                'post__not_in' => $currentId,
+                'post__not_in' => array($currentId),
             );
 
             $query = new WP_Query( $args );
