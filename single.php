@@ -70,7 +70,7 @@ $args_2 = array(
         <?php 
             $currentId = get_the_ID();
             $args = array(
-                'post_type' => 'article',
+                'post_type' => 'post',
                 'posts_per_page'=> 3,
                 'post_statut' => 'publish',
                 'post__not_in' => $currentId,
