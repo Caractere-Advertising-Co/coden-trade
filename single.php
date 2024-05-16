@@ -98,7 +98,6 @@ $args_2 = array(
             endif;
             
             wp_reset_postdata();?>
-        ?>
     </div>
 </section>
 
