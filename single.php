@@ -38,7 +38,6 @@ $args_2 = array(
     'cta_tirth_para' => $tirthCTA 
 );
 
-$gridProduct = get_field('display_grid_product');
 
 ?>
 
@@ -66,13 +65,42 @@ $gridProduct = get_field('display_grid_product');
 
 <?php get_template_part( 'templates-parts/section-naissance' );?>
 
-<?php if($gridProduct):?>
-    <section id="section_nosproduits">
-        <div class="container from-bottom">
-            <?php get_template_part( 'templates-parts/section-tableProduct' );?>
-        </div>
-    </section>
-<?php endif;?>
+<section id="section_nosproduits">
+    <div class="container from-bottom">
+        <?php 
+            $currentId = get_the_ID();
+            $args = array(
+                'post_type' => 'article',
+                'posts_per_page'=> 3,
+                'post_statut' => 'publish',
+                'post__not_in' => $currentId,
+            );
+
+            $query = new WP_Query( $args );
+
+            if($query->have_posts()):
+                while($query->have_posts()): $query->the_post();?>
+            
+                <div class="card_article from-bottom">
+                    <a href="<?php the_permalink();?>" class="red">
+                        <div class="miniature">
+                            <img src="<?php if(has_post_thumbnail()) : the_post_thumbnail_url(); endif;?>"/>
+                        </div>
+
+                        <h4><?php the_date();?></h4>
+                        <h3><?php the_title();?></h3>
+
+                        <a href="">Découvrir</a>
+                    </a>
+                </div>
+            <?php
+                endwhile;
+            endif;
+            
+            wp_reset_postdata();?>
+        ?>
+    </div>
+</section>
 
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
