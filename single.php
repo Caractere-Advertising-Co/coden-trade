@@ -65,7 +65,7 @@ $args_2 = array(
 
 <?php get_template_part( 'templates-parts/section-naissance' );?>
 
-<section id="section_nosproduits">
+<section id="nextArticles">
     <div class="container">
         <div class="grid_articles">
             <?php 
