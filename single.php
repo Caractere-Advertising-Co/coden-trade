@@ -38,6 +38,8 @@ $args_2 = array(
     'cta_tirth_para' => $tirthCTA 
 );
 
+$gridProduct = get_field('display_grid_product');
+
 ?>
 
 <section id="simple-page">
@@ -64,11 +66,13 @@ $args_2 = array(
 
 <?php get_template_part( 'templates-parts/section-naissance' );?>
 
-<section id="section_nosproduits">
-    <div class="container from-bottom">
-        <?php get_template_part( 'templates-parts/section-tableProduct' );?>
-    </div>
-</section>
+<?php if($gridProduct):?>
+    <section id="section_nosproduits">
+        <div class="container from-bottom">
+            <?php get_template_part( 'templates-parts/section-tableProduct' );?>
+        </div>
+    </section>
+<?php endif;?>
 
 <?php get_template_part( 'templates-parts/section-confiance' );?>
 
