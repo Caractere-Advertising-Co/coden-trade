@@ -66,38 +66,40 @@ $args_2 = array(
 <?php get_template_part( 'templates-parts/section-naissance' );?>
 
 <section id="section_nosproduits">
-    <div class="container from-bottom">
-        <?php 
-            $currentId = get_the_ID();
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page'=> 3,
-                'post_statut' => 'publish',
-                'post__not_in' => array($currentId),
-            );
+    <div class="container">
+        <div class="grid_articles">
+            <?php 
+                $currentId = get_the_ID();
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page'=> 3,
+                    'post_statut' => 'publish',
+                    'post__not_in' => array($currentId),
+                );
 
-            $query = new WP_Query( $args );
+                $query = new WP_Query( $args );
 
-            if($query->have_posts()):
-                while($query->have_posts()): $query->the_post();?>
-            
-                <div class="card_article from-bottom">
-                    <a href="<?php the_permalink();?>" class="red">
-                        <div class="miniature">
-                            <img src="<?php if(has_post_thumbnail()) : the_post_thumbnail_url(); endif;?>"/>
-                        </div>
+                if($query->have_posts()):
+                    while($query->have_posts()): $query->the_post();?>
+                
+                    <div class="card_article from-bottom">
+                        <a href="<?php the_permalink();?>" class="red">
+                            <div class="miniature">
+                                <img src="<?php if(has_post_thumbnail()) : the_post_thumbnail_url(); endif;?>"/>
+                            </div>
 
-                        <h4><?php the_date();?></h4>
-                        <h3><?php the_title();?></h3>
+                            <h4><?php the_date();?></h4>
+                            <h3><?php the_title();?></h3>
 
-                        <a href="">Découvrir</a>
-                    </a>
-                </div>
-            <?php
-                endwhile;
-            endif;
-            
+                            <a href="">Découvrir</a>
+                        </a>
+                    </div>
+                <?php
+                    endwhile;
+                endif;
+                
             wp_reset_postdata();?>
+        </div>
     </div>
 </section>
 
