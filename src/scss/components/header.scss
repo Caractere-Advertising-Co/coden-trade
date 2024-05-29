@@ -336,7 +336,7 @@
               }
 
               .sub-menu {
-                display: none;
+                display: none !important;
                 position: absolute;
                 right: -300px;
                 top: 0;
