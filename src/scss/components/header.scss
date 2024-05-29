@@ -311,6 +311,10 @@
                 padding: 2% 5%;
                 margin: 0;
                 font-weight: 300;
+
+                .sub-menu{
+                  display: none;
+                }
               }
 
               &:hover {
