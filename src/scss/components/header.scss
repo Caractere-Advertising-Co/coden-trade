@@ -339,9 +339,36 @@
                       color: $secondary-color;
                       text-transform: none;
                       font-weight: 300;
+
+                      .sub-menu{
+                        display: none;
+                      }
   
                       &:hover {
                         color: $light;
+
+                        .sub-menu {
+                          display: block;
+                          position: absolute;
+                          right: -300px;
+                          top: 0;
+        
+                          li {
+                            a {
+                              color: $secondary-color;
+                              text-transform: none;
+                              font-weight: 300;
+        
+                              .sub-menu{
+                                display: none;
+                              }
+          
+                              &:hover {
+                                color: $light;
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }
