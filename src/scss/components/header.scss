@@ -264,20 +264,6 @@
         }
       }
 
-      .cta {
-        border-radius: 0;
-
-        &::after {
-          content: "→";
-          height: 30px;
-          color: $light;
-        }
-
-        &::before {
-          border-radius: 0 !important;
-        }
-      }
-
       .menu-item-has-children {
         .sub-menu {
           display: none;
@@ -335,40 +321,22 @@
                   top: 0;
 
                   li {
+                    .sub-menu{
+                      display: none;
+                    }
+
                     a {
                       color: $secondary-color;
                       text-transform: none;
                       font-weight: 300;
-
-                      .sub-menu{
-                        display: none;
-                      }
+                                    
   
                       &:hover {
                         color: $light;
 
                         .sub-menu {
                           display: block;
-                          position: absolute;
-                          right: -300px;
-                          top: 0;
-        
-                          li {
-                            a {
-                              color: $secondary-color;
-                              text-transform: none;
-                              font-weight: 300;
-        
-                              .sub-menu{
-                                display: none;
-                              }
-          
-                              &:hover {
-                                color: $light;
-                              }
-                            }
-                          }
-                        }
+                       }
                       }
                     }
                   }
@@ -376,6 +344,20 @@
               }
             }
           }
+        }
+      }
+
+      .cta {
+        border-radius: 0;
+
+        &::after {
+          content: "→";
+          height: 30px;
+          color: $light;
+        }
+
+        &::before {
+          border-radius: 0 !important;
         }
       }
     }
