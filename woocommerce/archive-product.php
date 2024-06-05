@@ -133,7 +133,6 @@ if($children):?>
 				}
 
 				woocommerce_product_loop_end();
-
 					/**
 					 * Hook: woocommerce_after_shop_loop.
 					 *
@@ -146,9 +145,8 @@ if($children):?>
 					 *
 					 * @hooked wc_no_products_found - 10
 					 */
-					do_action( 'woocommerce_no_products_found' );
+					//do_action( 'woocommerce_no_products_found' );
 				}
-
 				/**
 				 * Hook: woocommerce_after_main_content.
 				 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
@@ -163,7 +161,7 @@ if($children):?>
 				?>
 			</div>
 	</section>
-				<?php endif;?>
+<?php endif;?>
 
 				<section id="section-coprod">
 					<?php get_template_part( 'templates-parts/section-nosproduits' );?>
