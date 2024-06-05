@@ -329,15 +329,14 @@
                       color: $secondary-color;
                       text-transform: none;
                       font-weight: 300;
-                                    
-  
+                      }
+
                       &:hover {
                         color: $light;
 
                         .sub-menu {
                           display: block;
-                       }
-                      }
+                       }  
                     }
                   }
                 }
