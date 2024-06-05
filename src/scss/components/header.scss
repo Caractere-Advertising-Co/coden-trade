@@ -329,7 +329,7 @@
                       color: $secondary-color;
                       text-transform: none;
                       font-weight: 300;
-                      }
+                    }
 
                       &:hover {
                         a{
@@ -345,27 +345,7 @@
                             font-weight: 300;
                           }
 
-                          &:hover {
-                            a{
-                              color: $light;
-                            }
-    
-                            .sub-menu {
-                              display: block;
-
-                              a{
-                                color: $secondary-color;
-                                text-transform: none;
-                                font-weight: 300;
-                              }
-    
-                              &:hover {
-                                a{
-                                  color: $light;
-                                }
-                              }
-                            }
-                          }  
+                           
                        }  
                     }
                   }
