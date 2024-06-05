@@ -296,6 +296,7 @@
                 text-transform: none;
                 letter-spacing: 0;
                 width: 90%;
+                text-align: left;
                 display: block;
                 padding: 2% 5%;
                 margin: 0;
@@ -340,10 +341,12 @@
 
                         .sub-menu {
                           display: block;
+                          text-align: left;
 
                           a{
                             color: $secondary-color;
                             text-transform: none;
+                            text-align: left;
                             font-weight: 300;
                           }
 
