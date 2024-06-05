@@ -278,7 +278,7 @@
             background-color: $light;
             border-bottom: 2px solid $primary-color;
             top: 45px;
-            min-width: 300px;
+            min-width: 210px;
 
             li {
               color: $primary-color;
@@ -317,7 +317,7 @@
                 .sub-menu {
                   display: block;
                   position: absolute;
-                  right: -300px;
+                  right: -210px;
                   top: 0;
 
                   li {
