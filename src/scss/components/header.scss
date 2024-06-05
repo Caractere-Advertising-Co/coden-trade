@@ -345,7 +345,11 @@
                             font-weight: 300;
                           }
 
-                           
+                          &:hover {
+                            a{
+                              color: $light;
+                            }
+                          }  
                        }  
                     }
                   }
