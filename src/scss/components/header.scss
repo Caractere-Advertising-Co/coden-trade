@@ -345,11 +345,13 @@
                             font-weight: 300;
                           }
 
-                          &:hover {
-                            a{
-                              color: $light;
-                            }
-                          }  
+                          li{
+                            &:hover {
+                              a{
+                                color: $light;
+                              }
+                            } 
+                          }
                        }  
                     }
                   }
