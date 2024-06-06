@@ -23,9 +23,13 @@ const swiperFrontPage = new Swiper(".swiper-resp", {
     },
     // when window width is >= 640px
     640: {
-      slidesPerView: 3,
+      slidesPerView: 2.5,
       spaceBetween: 30
-    }
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
   },
 
   navigation: {
