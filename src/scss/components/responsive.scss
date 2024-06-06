@@ -870,6 +870,10 @@
     grid-template-rows: 1fr;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
+
+    .card_article{
+      min-height: 400px;
+    }
 }
 
 }
