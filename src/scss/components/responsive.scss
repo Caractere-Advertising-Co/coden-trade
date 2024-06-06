@@ -1,4 +1,4 @@
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   #hero-container {
     height: 75vh;
     .swiper {
@@ -97,73 +97,88 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-/* CSS Mobile */
-@media screen and (max-width: 768px) {
-  .container {
-    width: 80vw;
-  }
-
-  h1 {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
-  
-  h2{
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-  }
-
-  #popup_reference{
-    z-index: 9999;
-
-    .container_popup{
-      .popup-content{
-        flex-direction: column;
-
-        .col_details{
-          width: calc(100% - 4vw);
-          height: 26vh;
-          background-color: #fff;
-          padding: 2vh 2vw;
-
-          h2{
-            font-size: 1.5rem;
-            line-height: 1.8rem;
-            margin: 10px auto;
-        
-          }
-        }
-
-        .col-slider{
-          width: 100%;
-          height: 60vh;
-        }
-      }
-    }
-  }
-
-  .top_banner_header{
-    height: 40px;
-
-    p{
-      letter-spacing: 3px;
-      line-height: 1rem;
-    }
-  }
-
-
 
   .fixed {
     position: fixed;
     z-index: 16;
   }
 
-  // COMMUN
+  #actualites {
+    .container {
+      .intro_actu {
+        flex-direction: column;
 
-  #header {
-    max-height: 300px;
+        span{
+          width: 100%;
+
+
+          h2,
+          p {
+            width: 100%;
+          }
+
+          p {
+            margin-top: 0;
+            padding-top: 0;
+          }
+        }
+      }
+
+      .grid_articles {
+        flex-direction: column;
+
+        .card_article {
+          width: 100%;
+
+          .home-thumbnail {
+            height: 250px;
+            overflow: hidden;
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .metaData{
+            font-size: .7rem;
+            letter-spacing: 3px;
+          }
+
+          h3 {
+            font-size: 2rem;
+            line-height: 2.5rem;
+          }
+
+          &:last-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .view_more {
+        margin-top: 100px;
+      }
+    }
+  }
+
+  #confiance {
+    padding: 150px 0;
+    .container {
+      .table_qualite {
+        flex-direction: column;
+
+        .card_qualite {
+          width: 100%;
+        }
+
+        .card_qualite + .card_qualite {
+          border-left: 0;
+          padding-left: 0;
+        }
+      }
+    }
   }
 
   footer {
@@ -223,6 +238,10 @@
       }
     }
 
+    .footer_middle{
+      width: 80vw;
+    }
+
     .footer_bottom {
       .desktop {
         display: none;
@@ -241,72 +260,6 @@
     }
   }
 
-  .section_vosp .list-btn {
-    display: flex;
-    flex-direction: column;
-
-    a {
-      white-space: pre-wrap;
-      line-height: 1rem;
-      padding: 10px 20px;
-    }
-  }
-
-  #presa_product {
-    .content_service {
-      padding-left: 0;
-
-      p {
-        text-align: left;
-        line-height: 1.5rem;
-      }
-    }
-    .list-btn {
-      display: flex;
-      flex-direction: column;
-
-      a {
-        line-height: 1.5rem;
-        white-space: pre-wrap;
-      }
-    }
-  }
-
-  #simple-page .container .cold,
-  #section_bleue .container .cold,
-  #outro .container .cold {
-    padding-left: 10%;
-  }
-
-  // FRONT-PAGE
-
-  #hero-container {
-    height: 80vh;
-    .swiper {
-      .swiper-wrapper {
-        .swiper-slide {
-          position: relative;
-          img {
-            width: auto;
-            max-width: inherit;
-            height: 100%;
-          }
-
-          .content {
-            position: absolute;
-            left: 10vw;
-            right: auto;
-            margin-top: 200px;
-
-            h1{
-              font-size: 2rem;
-              line-height: 2rem;
-            }
-          }
-        }
-      }
-    }
-  }
 
   #aboutus {
     padding-bottom: 100px;
@@ -405,14 +358,6 @@
     }
   }
 
-  #section_nosproduits {
-    padding-top: 150px;
-
-    h3 {
-      letter-spacing: 10px;
-    }
-  }
-
   #mot_president {
     .container{
       .columns {
@@ -440,24 +385,6 @@
     }
   }
 
-  #confiance {
-    padding: 150px 0;
-    .container {
-      .table_qualite {
-        flex-direction: column;
-
-        .card_qualite {
-          width: 100%;
-        }
-
-        .card_qualite + .card_qualite {
-          border-left: 0;
-          padding-left: 0;
-        }
-      }
-    }
-  }
-
   #disclaimer {
     top: -50px;
 
@@ -474,38 +401,7 @@
       }
     }
   }
-
-  #big_categories{
-    .container{
-      flex-direction: column;
-      min-height: inherit;
-
-      .colg{
-        ul{
-          .outline{
-            font-size: 3rem;
-            line-height: 2rem;
-          }
-        }
-      }
-
-      .cold{
-        width: 100%;
-        margin-top: 0;
-
-        .panel{
-          li{
-            margin-bottom: 0;
-
-            a{
-              font-size: 1.5rem;
-            }
-          }
-        }
-      }
-    }
-  }
-
+  
   #section-cta-contact {
     height: inherit;
 
@@ -516,12 +412,12 @@
 
       .bloc_img {
         margin-top: 0;
-        width: 85%;
+        width: 70%;
       }
 
       .content_section-cta {
-        margin-left: 15%;
-        margin-top: -100px;
+        margin-left: 35%;
+        margin-top: -370px;
         z-index: 3;
         padding: 30px;
         width: 75%;
@@ -529,10 +425,49 @@
       }
     }
   }
-  
+
+  #popup_reference{
+    z-index: 9999;
+
+    .container_popup{
+      .popup-content{
+        flex-direction: column;
+
+        .col_details{
+          width: calc(100% - 4vw);
+          height: 26vh;
+          background-color: #fff;
+          padding: 2vh 2vw;
+
+          h2{
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+            margin: 10px auto;
+        
+          }
+        }
+
+        .col-slider{
+          width: 100%;
+          height: 60vh;
+        }
+      }
+    }
+  }
+
+  .top_banner_header{
+    height: 40px;
+
+    p{
+      letter-spacing: 3px;
+      line-height: 1rem;
+    }
+  }
+
   #banner-fullwidth-dark {
     margin:auto;
     margin-bottom: 100px;
+    width: calc(100% - 200px);
   }
 
   #prix-compétitifs{
@@ -558,14 +493,6 @@
           line-height: 2.5rem;
           font-weight: 300;
         }
-      }
-    }
-  }
-
-  #nos_connaissances{
-    .top_content{
-      h3{
-        letter-spacing: 5px;
       }
     }
   }
@@ -596,374 +523,234 @@
     }
   }
 
-  #actualites {
-    .container {
-      .intro_actu {
-        flex-direction: column;
-
-        span{
-          width: 100%;
-
-
-          h2,
-          p {
-            width: 100%;
-          }
-
-          p {
-            margin-top: 0;
-            padding-top: 0;
-          }
-        }
-      }
-
-      .grid_articles {
-        flex-direction: column;
-
-        .card_article {
-          width: 100%;
-
-          .home-thumbnail {
-            height: 250px;
-            overflow: hidden;
-
-            img {
-              height: 100%;
-              width: 100%;
-              object-fit: cover;
-            }
-          }
-
-          .metaData{
-            font-size: .7rem;
-            letter-spacing: 3px;
-          }
-
-          h3 {
-            font-size: 2rem;
-            line-height: 2.5rem;
-          }
-
-          &:last-child {
-            margin-top: 0;
-          }
-        }
-      }
-
-      .view_more {
-        margin-top: 100px;
-      }
-    }
-  }
-
-  #contact {
-    .container {
-      width: 80vw;
-    }
-  }
-
-  // NOS SOLUTIONS
-
-  .page-template-nosolutions {
-    #intro_service {
-      .container {
-        .title_nos {
-          width: 100%;
-
-          h2 {
-            font-size: 1rem;
-          }
-
-          h1 {
-            font-size: 2.8rem;
-            line-height: 3rem;
-          }
-        }
-      }
-    }
-  }
-
-  // SERVICES
-  #intro_service {
-    .container {
-      .block_title {
-        min-width: inherit;
-        padding: 15px 30px;
-
-        h1 {
-          font-size: 2rem;
-          line-height: 2.3rem;
-        }
-      }
-
-      .colg {
-        width: 100%;
-      }
-
-      .cold {
-        padding-left: 10%;
-      }
-    }
-  }
-
-  #nos_points_fort {
-    .container {
-      .content_service {
-        padding: 100px 0 100px 10%;
-
-        .card_pf {
-          h4 {
-            font-size: 1rem;
-            line-height: 1.5rem;
-          }
-
-          p {
-            text-align: left;
-            line-height: 1.5rem;
-          }
-          ul {
-            li {
-              text-align: left;
-            }
-          }
-        }
-      }
-    }
-
-    #section-cta-contact {
-      margin-bottom: 0px;
-    }
-  }
-
   // A PROPOS
-
   .page-template-apropos{
-    #introduction{
-      .container{
-        .colg{
-          width: 100%;
-        }
-
-        .cold{
-          padding-left: 10%;
-          margin: 100px 0 150px;
-        }
-      }
-    }
-
-    #begin_entreprise{
-      
-
-      .container{
-        flex-direction: column;
-        width: 90vw;
-        gap: 0;
-
-        .colg{
-          width: 100%;
-
-          .swiper{
-            position: relative;
-            top: -50px;
-            right: 0%;
+      #introduction{
+        .container{
+          .colg{
             width: 100%;
-            height: 500px;
           }
-
-        }
-
-        .cold{
-          background: #fff;
-          width: 80%;
-          padding: 50px 0px 100px 50px;
+  
+          .cold{
+            padding-left: 10%;
+            margin: 100px 0 150px;
+          }
         }
       }
-    }
-
-    #section-coprod{
-      background-color: #f7f8f9;
-      padding: 100px 0 400px 0;
-
-      .section_vosp{
-        h3{
-          letter-spacing: 5px !important;
-          font-size: .8rem;
+  
+      #begin_entreprise{
+        
+  
+        .container{
+          flex-direction: column;
+          width: 90vw;
+          gap: 0;
+  
+          .colg{
+            width: 100%;
+  
+            .swiper{
+              position: relative;
+              top: -50px;
+              right: 0%;
+              width: 100%;
+              height: 500px;
+            }
+  
+          }
+  
+          .cold{
+            background: #fff;
+            width: 80%;
+            padding: 50px 0px 100px 50px;
+          }
         }
       }
-
-      
-    }
-
-    #service_particulier{
-      background: linear-gradient(-90deg, transparent 50%, #fff 50%) !important;
-      margin-top: -400px;
-
-      .columns{
-        gap: 100px;
-        padding-bottom: 140px;
-        flex-direction: column;
-        border-bottom: 1px solid #f7f8f9;
-
-        .colg{
-          padding: 0;
+  
+      #section-coprod{
+        background-color: #f7f8f9;
+        padding: 100px 0 400px 0;
+  
+        .section_vosp{
+          h3{
+            letter-spacing: 5px !important;
+            font-size: .8rem;
+          }
         }
-
-        .cold{
-          .swiper-service{
-            position: relative;
-            top: auto;
-            margin-right: 0;
-            margin-left: auto;
-            height: 500px;
-
-            .swiper-wrapper{
-              .swiper-slide{
-                height: auto;
+  
+        
+      }
+  
+      #service_particulier{
+        background: linear-gradient(-90deg, transparent 50%, #fff 50%) !important;
+        margin-top: -400px;
+  
+        .columns{
+          gap: 100px;
+          padding-bottom: 140px;
+          flex-direction: column;
+          border-bottom: 1px solid #f7f8f9;
+  
+          .colg{
+            padding: 0;
+          }
+  
+          .cold{
+            .swiper-service{
+              position: relative;
+              top: auto;
+              margin-right: 0;
+              margin-left: auto;
+              height: 500px;
+  
+              .swiper-wrapper{
+                .swiper-slide{
+                  height: auto;
+                }
+              }
+            
+            }
+          }
+        }
+  
+        .container{
+          h2{
+            margin: 0;
+          }
+        }
+  
+        .service-bottom{
+          .container{
+            .cold{
+              flex-direction: column;
+              width: 90%;
+              gap: 50px;
+  
+              .col-0{
+                margin-top:100px;
               }
             }
-          
           }
-        }
-      }
-
-      .container{
-        h2{
-          margin: 0;
-        }
-      }
-
-      .service-bottom{
-        .container{
-          .cold{
-            flex-direction: column;
-            width: 90%;
-            gap: 50px;
-
-            .col-0{
-              margin-top:100px;
-            }
-          }
-        }
-
-        .img-separator{
-          width: 100%;
-          margin-bottom: 0;
-        }
-      }
-    }
-
-    #expert{
-      background-color: #202024;
-      padding: 100px 0 200px;
-      
-      .container{
-        .descr{
-          width: 90%;
-        }
-      }
-    }
-
-    #employes{
-      padding-bottom: 100px;
-
-      .container{
-        grid-template-columns: repeat(1, 1fr);
-
-        .card{
-          height: auto;
-          margin-top: 40px !important;
-
-          .content-card{
-            padding: 60px 70px;
-
-            h4{
-              font-size: 1.5rem;
-              line-height: 2rem;
-            }
-
-            p{
-              font-size: 2rem;
-              line-height: 2rem;
-              margin-bottom: 100px;
-            }
-          }
-        }
-      }
-    }
-
-    #references{
-      .container{
-        h3{
-          font-size: 1rem;
-          letter-spacing: 5px;
-        }
-      }
-
-      .columns{
-        gap: 20px;
-
-        div{
-          height: 280px;
-        }
-      }
-    }
-
-    #assurance {
-      padding-top: 50px !important;
-      padding-bottom: 50px;
-      .container {
-        .main-content {
-          flex-direction: column;
-
-          .col-g,
-          .col-d {
+  
+          .img-separator{
             width: 100%;
+            margin-bottom: 0;
           }
-
-          .col-g {
-            img {
-              margin-top: 50px;
-              bottom: 0;
-              min-height: inherit;
+        }
+      }
+  
+      #expert{
+        background-color: #202024;
+        padding: 100px 0 200px;
+        
+        .container{
+          .descr{
+            width: 90%;
+          }
+        }
+      }
+  
+      #employes{
+        padding-bottom: 100px;
+  
+        .container{
+          grid-template-columns: repeat(1, 1fr);
+  
+          .card{
+            height: auto;
+            margin-top: 40px !important;
+  
+            .content-card{
+              padding: 60px 70px;
+  
+              h4{
+                font-size: 1.5rem;
+                line-height: 2rem;
+              }
+  
+              p{
+                font-size: 2rem;
+                line-height: 2rem;
+                margin-bottom: 100px;
+              }
             }
           }
-
-          .col-d {
-            padding-top: 50px;
+        }
+      }
+  
+      #references{
+        .container{
+          h3{
+            font-size: 1rem;
+            letter-spacing: 5px;
+          }
+        }
+  
+        .columns{
+          gap: 20px;
+  
+          div{
+            height: 280px;
           }
         }
       }
-    }
-
-    #statistiques {
-      padding-top: 100px !important;
-
-      h2 {
-        margin: 50px auto !important;
-        font-size: 2rem !important;
-        line-height: 2.5rem;
-      }
-
-      .descr {
-        padding-left: 0 !important;
-      }
-
-      .grid_stats {
-        flex-wrap: wrap;
-        .block_stat {
-          width: calc((100% - 60px) / 2) !important;
+  
+      #assurance {
+        padding-top: 50px !important;
+        padding-bottom: 50px;
+        .container {
+          .main-content {
+            flex-direction: column;
+  
+            .col-g,
+            .col-d {
+              width: 100%;
+            }
+  
+            .col-g {
+              img {
+                margin-top: 50px;
+                bottom: 0;
+                min-height: inherit;
+              }
+            }
+  
+            .col-d {
+              padding-top: 50px;
+            }
+          }
         }
       }
-    }
-
-    #contact {
-      padding-top: 150px !important;
-
-      h2 {
-        font-size: 2.5rem;
-        line-height: 3rem;
+  
+      #statistiques {
+        padding-top: 100px !important;
+  
+        h2 {
+          margin: 50px auto !important;
+          font-size: 2rem !important;
+          line-height: 2.5rem;
+        }
+  
+        .descr {
+          padding-left: 0 !important;
+        }
+  
+        .grid_stats {
+          flex-wrap: wrap;
+          .block_stat {
+            width: calc((100% - 60px) / 2) !important;
+          }
+        }
       }
-    }
+  
+      #contact {
+        padding-top: 150px !important;
+  
+        h2 {
+          font-size: 2.5rem;
+          line-height: 3rem;
+        }
+      }
   } 
 
   // CONSEILS
@@ -1058,7 +845,6 @@
   }
 
   // Références 
-
   .page-template-references{
     #references{
       .container{
@@ -1067,7 +853,235 @@
         }
       }
     }
+
+    #introduction-ref{
+      .container{
+        .colg{
+          width: 100%;
+        }
+      }
+    }
   }
+}
+
+/* CSS Mobile */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80vw;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  
+  h2{
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  // COMMUN
+
+  #header {
+    max-height: 300px;
+  }
+
+  .section_vosp .list-btn {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      white-space: pre-wrap;
+      line-height: 1rem;
+      padding: 10px 20px;
+    }
+  }
+
+  #presa_product {
+    .content_service {
+      padding-left: 0;
+
+      p {
+        text-align: left;
+        line-height: 1.5rem;
+      }
+    }
+    .list-btn {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        line-height: 1.5rem;
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+  #simple-page .container .cold,
+  #section_bleue .container .cold,
+  #outro .container .cold {
+    padding-left: 10%;
+  }
+
+  // FRONT-PAGE
+
+  #hero-container {
+    height: 80vh;
+    .swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          position: relative;
+          img {
+            width: auto;
+            max-width: inherit;
+            height: 100%;
+          }
+
+          .content {
+            position: absolute;
+            left: 10vw;
+            right: auto;
+            margin-top: 200px;
+
+            h1{
+              font-size: 2rem;
+              line-height: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #section_nosproduits {
+    padding-top: 150px;
+
+    h3 {
+      letter-spacing: 10px;
+    }
+  }
+
+  #big_categories{
+    .container{
+      flex-direction: column;
+      min-height: inherit;
+
+      .colg{
+        ul{
+          .outline{
+            font-size: 3rem;
+            line-height: 2rem;
+          }
+        }
+      }
+
+      .cold{
+        width: 100%;
+        margin-top: 0;
+
+        .panel{
+          li{
+            margin-bottom: 0;
+
+            a{
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  #nos_connaissances{
+    .top_content{
+      h3{
+        letter-spacing: 5px;
+      }
+    }
+  }
+
+  #contact {
+    .container {
+      width: 80vw;
+    }
+  }
+
+  // NOS SOLUTIONS
+
+  .page-template-nosolutions {
+    #intro_service {
+      .container {
+        .title_nos {
+          width: 100%;
+
+          h2 {
+            font-size: 1rem;
+          }
+
+          h1 {
+            font-size: 2.8rem;
+            line-height: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  // SERVICES
+  #intro_service {
+    .container {
+      .block_title {
+        min-width: inherit;
+        padding: 15px 30px;
+
+        h1 {
+          font-size: 2rem;
+          line-height: 2.3rem;
+        }
+      }
+
+      .colg {
+        width: 100%;
+      }
+
+      .cold {
+        padding-left: 10%;
+      }
+    }
+  }
+
+  #nos_points_fort {
+    .container {
+      .content_service {
+        padding: 100px 0 100px 10%;
+
+        .card_pf {
+          h4 {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+
+          p {
+            text-align: left;
+            line-height: 1.5rem;
+          }
+          ul {
+            li {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+    #section-cta-contact {
+      margin-bottom: 0px;
+    }
+  }
+
+
+
+
 
   //Contact
 
