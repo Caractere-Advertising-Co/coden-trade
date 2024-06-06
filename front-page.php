@@ -21,7 +21,9 @@ $actifBig = get_field('section_big_actif');
                         <div class="content">
                             <p class="baseline"><?php echo get_sub_field('sous-titre');?></p>
                             <?php echo get_sub_field('titre');?>
-                            <a href="<?php echo $cta['url'];?>" class="cta">NOS PRODUITS</a>
+                            <?php if($cta):?>
+                                <a href="<?php echo $cta['url'];?>" class="cta">NOS PRODUITS</a>
+                            <?php endif;?>
                         </div>
                     </div>
                     <?php endif;
