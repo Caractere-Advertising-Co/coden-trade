@@ -46,8 +46,6 @@
 
       }
     }
-
-    
   }
 
   .megamenu {
@@ -438,17 +436,19 @@
       width: 80vw;
 
       .bloc_img {
-        margin-top: 0;
-        width: 70%;
+        width: 60%;
+        height: 400px;
+        margin: 0;
+    }
       }
 
       .content_section-cta {
-        margin-left: 35%;
-        margin-top: -370px;
-        z-index: 3;
-        padding: 30px;
-        width: 75%;
-        max-height: inherit;
+        width: calc(70% - 60px);
+        margin: 0;
+        padding: 50px 30px;
+        margin-left: 20%;
+        margin-top: -220px;
+        z-index: 100;
       }
     }
   }
