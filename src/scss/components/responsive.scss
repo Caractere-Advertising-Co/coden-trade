@@ -877,6 +877,19 @@
   }
 
   .archive.woocommerce-page{
+    #banner-intro {
+      height: 350px;
+
+      .container{
+        width: 90vw;
+
+        h1{
+          font-size: 3rem;
+          line-height: 3rem;
+        }
+      }
+    }
+
     #confiance{
       .container{
         width: 80vw;
@@ -895,7 +908,6 @@
       
     }
   }
-
 }
 
 /* CSS Mobile */
