@@ -17,14 +17,15 @@ const swiperFrontPage = new Swiper(".swiper-resp", {
 
   breakpoints: {
     // when window width is >= 320px
-    640: {
-      slidesPerView: 1.2,
-      spaceBetween: 20
-    },
+    
     1024: {
       slidesPerView: 3,
       spaceBetween: 30,
     },
+    640: {
+      slidesPerView: 1.2,
+      spaceBetween: 20
+    }
   },
 
   navigation: {
