@@ -260,7 +260,6 @@
     }
   }
 
-
   #aboutus {
     padding-bottom: 100px;
 
@@ -862,6 +861,17 @@
       }
     }
   }
+
+  //Blog
+  .page-template-actualites #introduction .container .grid_articles, 
+  .page-template-blog #introduction .container .grid_articles, 
+  .page-template-conseils #introduction .container .grid_articles {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
 }
 
 /* CSS Mobile */
