@@ -5,7 +5,7 @@ const swiper = new Swiper(".swiper-hero", {
     delay: 1,
   },
   cssMode: true,
-  speed: 5000,
+  speed: 3000,
 
   pagination: {
     el: ".swiper-pagination",
