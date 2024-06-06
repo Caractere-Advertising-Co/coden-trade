@@ -874,7 +874,17 @@
     .card_article{
       min-height: 400px;
     }
-}
+  }
+
+  .archive.woocommerce-page{
+    #confiance{
+      .table_qualite {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+    }
+  }
 
 }
 
