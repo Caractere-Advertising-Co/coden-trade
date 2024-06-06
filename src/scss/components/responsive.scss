@@ -878,15 +878,20 @@
 
   .archive.woocommerce-page{
     #confiance{
-      .table_qualite {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-
-        .card_qualite{
-          width: 60%;
+      .container{
+        width: 80vw;
+        
+        .table_qualite {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+  
+          .card_qualite{
+            width: 70%;
+          }
         }
       }
+      
     }
   }
 
