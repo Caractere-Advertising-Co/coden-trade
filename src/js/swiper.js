@@ -19,10 +19,6 @@ const swiperFrontPage = new Swiper(".swiper-resp", {
     // when window width is >= 320px
     
     1024: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-    640: {
       slidesPerView: 1.2,
       spaceBetween: 20
     }
