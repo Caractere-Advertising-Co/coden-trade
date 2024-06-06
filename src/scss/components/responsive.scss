@@ -437,15 +437,13 @@
 
       .bloc_img {
         margin-top: 0;
-        width: 70%;
+        width: 100%;
       }
 
       .content_section-cta {
-        margin-left: 35%;
-        margin-top: -370px;
         z-index: 3;
         padding: 30px;
-        width: 75%;
+        width: calc(100% - 60px);
         max-height: inherit;
       }
     }
