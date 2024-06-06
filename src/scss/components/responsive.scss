@@ -881,11 +881,17 @@
       height: 350px;
 
       .container{
-        width: 90vw;
+        width: 85vw;
 
         h1{
           font-size: 3rem;
           line-height: 3rem;
+        }
+
+        p{
+          font-size: .9rem;
+          line-height: 1.5rem;
+          margin-bottom: 0;
         }
       }
 
