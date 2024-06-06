@@ -57,7 +57,8 @@ $ctaRefs = get_field('cta-refs');
         // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
         $args = array(
             'post_type' => 'employe',
-            'posts_per_page' => -1
+            'posts_per_page' => -1,
+            'order' => 'DESC'
         );
 
         // 2. On exécute la WP Query
