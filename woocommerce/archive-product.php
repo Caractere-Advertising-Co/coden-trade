@@ -163,9 +163,9 @@ if($children):?>
 	</section>
 <?php endif;?>
 
-				<section id="section-coprod">
-					<?php get_template_part( 'templates-parts/section-nosproduits' );?>
-				</section>
+			<section id="nos_connaissances">
+				<?php get_template_part( 'templates-parts/section-citation' );?>
+			</section>
 
 				<?php get_template_part( 'templates-parts/section-catalogue' );?>
 				<?php get_template_part( 'templates-parts/section-confiance' );?>
