@@ -21,61 +21,6 @@
       }
     }
   }
-}
-
-/* CSS Mobile */
-@media screen and (max-width: 768px) {
-  .container {
-    width: 80vw;
-  }
-
-  h1 {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
-  
-  h2{
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-  }
-
-  #popup_reference{
-    z-index: 9999;
-
-    .container_popup{
-      .popup-content{
-        flex-direction: column;
-
-        .col_details{
-          width: calc(100% - 4vw);
-          height: 26vh;
-          background-color: #fff;
-          padding: 2vh 2vw;
-
-          h2{
-            font-size: 1.5rem;
-            line-height: 1.8rem;
-            margin: 10px auto;
-        
-          }
-        }
-
-        .col-slider{
-          width: 100%;
-          height: 60vh;
-        }
-      }
-    }
-  }
-
-  .top_banner_header{
-    height: 40px;
-
-    p{
-      letter-spacing: 3px;
-      line-height: 1rem;
-    }
-  }
 
   .header {
     top: 100px;
@@ -152,6 +97,63 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+/* CSS Mobile */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80vw;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  
+  h2{
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  #popup_reference{
+    z-index: 9999;
+
+    .container_popup{
+      .popup-content{
+        flex-direction: column;
+
+        .col_details{
+          width: calc(100% - 4vw);
+          height: 26vh;
+          background-color: #fff;
+          padding: 2vh 2vw;
+
+          h2{
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+            margin: 10px auto;
+        
+          }
+        }
+
+        .col-slider{
+          width: 100%;
+          height: 60vh;
+        }
+      }
+    }
+  }
+
+  .top_banner_header{
+    height: 40px;
+
+    p{
+      letter-spacing: 3px;
+      line-height: 1rem;
+    }
+  }
+
+
 
   .fixed {
     position: fixed;
@@ -1175,8 +1177,6 @@
       padding-top: 0;
     }
   }
-
-
 
   /* Woocommerce */
 
