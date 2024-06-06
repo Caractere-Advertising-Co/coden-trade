@@ -880,10 +880,11 @@
     #confiance{
       .container{
         width: 80vw;
-        
+
         .table_qualite {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
           gap: 40px;
   
           .card_qualite{
