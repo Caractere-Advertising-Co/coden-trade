@@ -40,7 +40,7 @@ $background = get_field('background-footer','options');
                 if($titreCol3): echo '<h4>'.$titreCol3.'</h4>';endif;
                 if($cttCol3): echo $cttCol3;endif;
 
-                if($form): echo do_shortcode($form);endif;
+                // if($form): echo do_shortcode($form);endif;
                 
                 ?>
             </div>
