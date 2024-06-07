@@ -969,6 +969,9 @@
 
   #section-catalogue {
     .container{
+      .bloc_img {
+        width: 100%;
+      }
       .content_section-cta {
         width: calc(90% - 60px);
         margin: 0;
