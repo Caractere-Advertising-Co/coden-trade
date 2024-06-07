@@ -967,6 +967,19 @@
     line-height: 2.5rem;
   }
 
+  #section-catalogue {
+    .container{
+      .content_section-cta {
+        width: calc(90% - 60px);
+        margin: 0;
+        padding: 50px 30px;
+        margin-left: 10%;
+        margin-top: -220px;
+        z-index: 100;
+      }
+    }
+  }
+
   // COMMUN
 
   #header {
@@ -1009,7 +1022,7 @@
   .page-template-conseils #introduction {
     padding-top: 150px;
   }
-  
+
   #simple-page .container .cold,
   #section_bleue .container .cold,
   #outro .container .cold {
