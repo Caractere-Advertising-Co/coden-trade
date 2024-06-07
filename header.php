@@ -13,7 +13,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="<?php echo get_template_directory_uri();?>/dist/main.js" defer></script>
+    <script src="<?php echo get_template_directory_uri();?>/dist/main.bundle.js" defer></script>
+    <script src="<?php echo get_template_directory_uri();?>/dist/style.bundle.js" defer></script>
 
     <?php wp_head(); ?>
 </head>
