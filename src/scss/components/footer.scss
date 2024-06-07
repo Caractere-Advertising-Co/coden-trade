@@ -125,7 +125,8 @@ footer {
     margin: auto;
 
     .keywords {
-      p {
+      p, 
+      a {
         color: $primary-color;
         font-size: 0.8rem;
         font-weight: 400;
