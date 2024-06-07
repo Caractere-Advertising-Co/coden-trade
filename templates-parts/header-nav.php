@@ -8,9 +8,9 @@
 
             if($logo || $logoBlack):
                 if(is_front_page(  ) || is_page(80802)):?>
-                    <img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" />
+                    <img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" width="271" height="90"/>
                 <?php else :?>
-                    <img src="<?php echo $logoBlack['url'];?>" alt="<?php echo $logoBlack['title'];?>"/>
+                    <img src="<?php echo $logoBlack['url'];?>" alt="<?php echo $logoBlack['title'];?>" width="271" height="90"/>
                 <?php endif;
             endif;?>
         </a>
