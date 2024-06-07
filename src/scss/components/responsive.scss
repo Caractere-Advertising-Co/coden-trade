@@ -1004,6 +1004,12 @@
     }
   }
 
+  .page-template-actualites #introduction, 
+  .page-template-blog #introduction, 
+  .page-template-conseils #introduction {
+    padding-top: 150px;
+  }
+  
   #simple-page .container .cold,
   #section_bleue .container .cold,
   #outro .container .cold {
