@@ -1261,6 +1261,16 @@
       }
     }
 
+    #service_particulier{
+      .container{
+        flex-direction: column;
+
+        .colg{
+          width: 100%;
+        }
+      }
+    }
+
     #begin_entreprise{
       padding-bottom: 0;
 
