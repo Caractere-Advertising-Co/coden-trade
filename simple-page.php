@@ -33,7 +33,7 @@ endif;?>
             </div>
         </div>
         <div class="cold">
-            <div class="intro from-bottom"><?php if($intro) : echo $intro;endif;?></div>
+            <div class="intro from-bottom"><?php if($intro) : echo $intro; else : the_content();endif;?></div>
             <?php if($textCta) :?>
             <div class="par_cta"><?php if($textCta) : echo $textCta;endif;?>
                 <?php if($cta) : echo '<a href="'.$cta['url'].'" class="cta bgBlue">'. $cta['title'] .'</a>';endif;?>
