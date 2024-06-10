@@ -55,21 +55,26 @@ $background = get_field('background-footer','options');
         endif;?>
     </div>
     <div class="footer_bottom">
+        <?php
+            $cookLink = get_field('lien_cookies','options');
+            $confLink = get_field('lien_confi','options');
+        ?>
+
         <div class="container desktop">
-            <a href="">Cookies</a>
+            <?php if($cookLink): echo "<a href=".$cookLink['url'].">".$cookLink['title']."</a>"; endif;?>
             <div>
                 <?php 
                     $copyright = get_field('copyright','options');
                     if($copyright): echo $copyright; endif;
                 ?>
             </div>
-            <a href="">Confidentialité</a>
+            <?php if($confLink): echo "<a href=".$confLink['url'].">".$confLink['title']."</a>"; endif;?>
         </div>
 
         <div class="container mobile">
             <div class="links">
-                <a href="">Cookies</a>
-                <a href="">Confidentialité</a>
+                <?php if($cookLink): echo "<a href=".$cookLink['url'].">".$cookLink['title']."</a>"; endif;?>
+                <?php if($confLink): echo "<a href=".$confLink['url'].">".$confLink['title']."</a>"; endif;?>
             </div>
 
             <div class="copyright">
