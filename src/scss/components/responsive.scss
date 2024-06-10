@@ -1269,6 +1269,22 @@
         .cold{
           width: 100%;
         }
+
+        .cold{
+          padding-left: 0;
+
+          .swiper-service{
+            margin:auto;
+            margin-bottom: 80px;
+            height: 450px;
+
+            .swiper-wrapper{
+              .swiper-slide{
+                height: 450px;
+              }
+            }
+          }
+        }
       }
     }
 
