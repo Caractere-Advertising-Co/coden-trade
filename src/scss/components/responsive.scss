@@ -1263,9 +1263,10 @@
 
     #service_particulier{
       .container{
-        flex-direction: column;
+        flex-direction: column-reverse;
 
-        .colg{
+        .colg,
+        .cold{
           width: 100%;
         }
       }
