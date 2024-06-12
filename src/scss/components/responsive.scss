@@ -1052,6 +1052,17 @@
   .page-template-blog #introduction, 
   .page-template-conseils #introduction {
     padding-top: 150px;
+
+    .container{
+      .colg{
+        width: 100%;
+        
+        h1{
+          font-size: 3rem;
+          line-height: 3.5rem;
+        }
+      }
+    }
   }
 
   #simple-page .container .cold,
@@ -1435,6 +1446,8 @@
     }
 
     #list-subcategory{
+      padding: 50px 0;
+
       .container{
         width: 80vw;
         grid-template-columns: repeat(1,1fr);
