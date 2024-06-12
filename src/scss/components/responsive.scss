@@ -552,22 +552,24 @@
 
   // A PROPOS
   .page-template-apropos{
-      #introduction{
-        .container{
-          .colg{
-            width: 100%;
-          }
+    #header{
+      height: 100px;
+    }
+    
+    #introduction{
+      .container{
+        .colg{
+          width: 100%;
+        }
   
-          .cold{
-            padding-left: 10%;
-            margin: 100px 0 150px;
-          }
+        .cold{
+          padding-left: 10%;
+          margin: 50px 0 150px;
         }
       }
+    }
   
-      #begin_entreprise{
-        
-  
+    #begin_entreprise{
         .container{
           flex-direction: column;
           width: 90vw;
@@ -582,6 +584,12 @@
               right: 0%;
               width: 100%;
               height: 500px;
+
+              .swiper-wrapper{
+                .swiper-slide{
+                  height: 500px;
+                }
+              }
             }
   
           }
@@ -592,9 +600,9 @@
             padding: 50px 0px 100px 50px;
           }
         }
-      }
+    }
   
-      #section-coprod{
+    #section-coprod{
         background-color: #f7f8f9;
         padding: 100px 0 400px 0;
   
@@ -606,20 +614,25 @@
         }
   
         
-      }
+    }
   
-      #service_particulier{
-        background: linear-gradient(-90deg, transparent 50%, #fff 50%) !important;
-        margin-top: -400px;
+    #service_particulier{
+        background: linear-gradient(-90deg, transparent 20%, #fff 20%) !important;
+        margin-top: -450px;
   
         .columns{
-          gap: 100px;
+          gap: 50px;
           padding-bottom: 140px;
           flex-direction: column;
           border-bottom: 1px solid #f7f8f9;
   
           .colg{
-            padding: 0;
+            padding: 10px 90px 10px 0px;
+            margin-top: 30px;
+
+            h1{
+              margin-bottom: 20px;
+            }
           }
   
           .cold{
@@ -635,7 +648,6 @@
                   height: auto;
                 }
               }
-            
             }
           }
         }
@@ -664,9 +676,9 @@
             margin-bottom: 0;
           }
         }
-      }
+    }
   
-      #expert{
+    #expert{
         background-color: #202024;
         padding: 100px 0 200px;
         
@@ -675,9 +687,9 @@
             width: 90%;
           }
         }
-      }
+    }
   
-      #employes{
+    #employes{
         padding-bottom: 100px;
   
         .container{
@@ -703,9 +715,9 @@
             }
           }
         }
-      }
+    }
   
-      #references{
+    #references{
         .container{
           h3{
             font-size: 1rem;
@@ -720,9 +732,9 @@
             height: 280px;
           }
         }
-      }
+    }
   
-      #assurance {
+    #assurance {
         padding-top: 50px !important;
         padding-bottom: 50px;
         .container {
@@ -747,9 +759,9 @@
             }
           }
         }
-      }
+    }
   
-      #statistiques {
+    #statistiques {
         padding-top: 100px !important;
   
         h2 {
@@ -768,16 +780,16 @@
             width: calc((100% - 60px) / 2) !important;
           }
         }
-      }
+    }
   
-      #contact {
+    #contact {
         padding-top: 150px !important;
   
         h2 {
           font-size: 2.5rem;
           line-height: 3rem;
         }
-      }
+    }
   } 
 
   // CONSEILS
