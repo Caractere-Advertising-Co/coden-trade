@@ -1403,7 +1403,9 @@
     }
 
     #list-subcategory{
-      grid-template-columns: repeat(1,1fr);
+      .container{
+        grid-template-columns: repeat(1,1fr);
+      }
     }
 
     #confiance{
