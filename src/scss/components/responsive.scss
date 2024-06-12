@@ -564,7 +564,13 @@
   
         .cold{
           padding-left: 10%;
-          margin: 50px 0 150px;
+          margin: 50px 0 100px;
+
+          .intro{
+            p{
+              text-align: left;
+            }
+          }
         }
       }
     }
@@ -617,7 +623,7 @@
     }
   
     #service_particulier{
-        background: linear-gradient(-90deg, transparent 20%, #fff 20%) !important;
+        background: linear-gradient(-90deg, transparent 80%, #fff 80%, #fff 20%, transparent 20%) !important;
         margin-top: -410px;
   
         .columns{
@@ -627,7 +633,7 @@
           border-bottom: 1px solid #f7f8f9;
   
           .colg{
-            padding: 10px 90px 10px 0px;
+            padding: 10px auto;
             margin-top: 30px;
 
             h1{
