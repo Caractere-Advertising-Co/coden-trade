@@ -1372,7 +1372,8 @@
   //Page Archives 
   .archive.woocommerce-page{
     #banner-intro {
-      height: 600px;
+      min-height: 600px;
+      height: auto;
 
       .container{
         width: 80vw;
@@ -1394,7 +1395,7 @@
         width: 20vw;
 
         .clipped{
-          height: 600px;
+          height: 100%;
           margin-top: 0;
         }
 
