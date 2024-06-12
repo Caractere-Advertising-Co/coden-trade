@@ -1145,11 +1145,6 @@
       .block_title {
         min-width: inherit;
         padding: 15px 30px;
-
-        h1 {
-          font-size: 2rem;
-          line-height: 2.3rem;
-        }
       }
 
       .colg {
@@ -1188,6 +1183,26 @@
 
     #section-cta-contact {
       margin-bottom: 0px;
+    }
+  }
+
+  // Page Références
+
+  .page-template-references{
+    #introduction-ref{
+      padding-top: 150px;
+
+      .container{
+        .colg{
+          h1{
+            font-size: 3rem;
+            line-height: 3.5rem;
+          }
+        }
+        .cold{
+          margin-top: 0;
+        }
+      }
     }
   }
 
