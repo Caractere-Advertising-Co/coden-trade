@@ -1233,6 +1233,16 @@
 
   /* Page blog */
 
+  .page-template-blog{
+    #introduction{
+      .container{
+        .colg{
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .single{
     #simple-page{
       padding-top: 200px;
