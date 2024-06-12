@@ -1386,7 +1386,7 @@
         p{
           font-size: .9rem;
           line-height: 1.5rem;
-          margin-bottom: 0;
+          margin-bottom: 10px;
         }
       }
 
@@ -1400,6 +1400,10 @@
           display: none;
         }
       }
+    }
+
+    #list-subcategory{
+      grid-template-columns: repeat(1,1fr);
     }
 
     #confiance{
