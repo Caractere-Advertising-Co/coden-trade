@@ -1,13 +1,14 @@
 const swiper = new Swiper(".swiper-hero", {
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 2500,
+    disableOnInteraction: true,
   },
 
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
-  },
+  }
 });
 
 const swiperFrontPage = new Swiper(".swiper-resp", {
