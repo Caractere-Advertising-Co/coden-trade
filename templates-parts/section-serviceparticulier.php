@@ -58,7 +58,7 @@ endif;
             <?php $i = 0;?>
             <div class="container">
                 <div class="cold">
-                    <div class="col col-<?php echo $i;?>">                        
+                    <div class="col col-<?php echo $i;?>" id="tableau_service">                        
                         <?php
                             if(have_rows('liste_services')):
                                 $count = count(get_field('liste_services'));
@@ -68,12 +68,9 @@ endif;
                                     $i++;
                                     
                                     if($card):?>
-                                        <div class="card from-bottom">
-                                            <?php echo $card;?>
-                                        </div>
+                                        <div class="card from-bottom"><?php echo $card;?></div>
                                     <?php endif;?>
 
-                                        
                                     <?php if($i == $count /2):?>
                                         </div><div class="col col-<?php echo $i;?>">
                                     <?php endif;
