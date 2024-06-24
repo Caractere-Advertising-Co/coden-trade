@@ -109,29 +109,29 @@ menu.forEach(function (el) {
 });
 
 // Défilement automatique des éléments du menu
-let currentIndex = 0;
-const sliderInterval = setInterval(() => {
-  // Supprimer la classe .active de l'élément actuel
-  menu[currentIndex].classList.remove("active");
-  const nextIndex = (currentIndex + 1) % menu.length;
-  // Ajouter la classe .active à l'élément suivant
-  menu[nextIndex].classList.add("active");
+// let currentIndex = 0;
+// const sliderInterval = setInterval(() => {
+//   // Supprimer la classe .active de l'élément actuel
+//   menu[currentIndex].classList.remove("active");
+//   const nextIndex = (currentIndex + 1) % menu.length;
+//   // Ajouter la classe .active à l'élément suivant
+//   menu[nextIndex].classList.add("active");
 
-  // Afficher le panneau correspondant
-  const panelId = menu[nextIndex].id.replace("cat-", "");
-  const panels = document.querySelectorAll(".cold .panel");
-  panels.forEach(function (panel) {
-    panel.style.display = "none";
-  });
-  const activePanel = document.querySelector(
-    ".cold .panel.panel" + panelId
-  );
-  if (activePanel) {
-    activePanel.style.display = "block";
-  }
+//   // Afficher le panneau correspondant
+//   const panelId = menu[nextIndex].id.replace("cat-", "");
+//   const panels = document.querySelectorAll(".cold .panel");
+//   panels.forEach(function (panel) {
+//     panel.style.display = "none";
+//   });
+//   const activePanel = document.querySelector(
+//     ".cold .panel.panel" + panelId
+//   );
+//   if (activePanel) {
+//     activePanel.style.display = "block";
+//   }
 
-  currentIndex = nextIndex;
-}, 3000); // Définir l'intervalle de temps en millisecondes (par exemple, 5000 pour 5 secondes)
+//   currentIndex = nextIndex;
+// }, 3000); // Définir l'intervalle de temps en millisecondes (par exemple, 5000 pour 5 secondes)
 
 
   /* Text banner*/
