@@ -52,13 +52,13 @@ get_header( 'shop' );
 	$children = get_terms( $term->taxonomy, array(
 		'parent'    => $term->term_id,
 		'hide_empty' => false
-	) );
+	));
 		
 
 if($children):?>
 	<section id="list-subcategory">
 		<?php 
-
+			$title = get_field('cat_title','options');
 			$taxonomy = 'product_cat';
 					
 			// Get subcategories of the current category
@@ -68,6 +68,10 @@ if($children):?>
 				'parent'      => $term_id 
 			]);
 		?>
+
+		<div class="container">
+			<?php if($title): echo $title;endif; ?>
+		</div>
 		
 		<div class="container grid">
 			<?php
