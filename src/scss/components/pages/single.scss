@@ -108,9 +108,14 @@
           font-weight: 600;
           margin: 20px 0;
           line-height: 1.3rem;
+          max-width: 70%;
 
           &::before {
             content: "→";
+          }
+
+          p{
+            text-align: left;
           }
         }
       }
