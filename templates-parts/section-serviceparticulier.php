@@ -68,7 +68,7 @@ endif;
                                     $i++;
                                     
                                     if($card):?>
-                                        <div class="card from-bottom"><?php echo $card;?></div>
+                                        <div class="card from-bottom" id="service-<?php echo $i;?>"><?php echo $card;?></div>
                                     <?php endif;?>
 
                                     <?php if($i == $count /2):?>
