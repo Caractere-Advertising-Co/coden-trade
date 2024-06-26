@@ -23,7 +23,6 @@
             endif;?>
         </div>
 
-        
         <?php if($clink):?><a href="<?php echo $clink['url'];?>" class="cta"><?php echo $clink['title'];?></a><?php endif;?>
     </div>
 </section>
