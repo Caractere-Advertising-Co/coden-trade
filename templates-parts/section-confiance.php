@@ -2,7 +2,6 @@
     <div class="container">
         <div class="table_qualite">
             <?php 
-            $clink = get_field('cta_conf','options');
 
             if(have_rows('qualites','options')) :
                 while(have_rows('qualites','options')): the_row();?>
@@ -16,13 +15,13 @@
 
                         <?php if($img):?><img src="<?php echo $img['url'];?>" alt="<?php echo $img['name'];?>" /><?php endif;?>
                         <?php if($title):?><h4><?php echo $title;?></h4><?php endif;?>
-                        <?php if($texte):?><a href="<?php echo $clink['url'];?>"><p><?php echo $texte;?></p></a><?php endif;?>
+                        <?php if($texte):?><a href="<?php echo $link['url'];?>"><p><?php echo $texte;?></p></a><?php endif;?>
                     </div>
             <?php endwhile;
             endif;?>
         </div>
 
         
-        <?php if($clink):?><a href="<?php echo $clink['url'];?>" class="cta"><?php echo $clink['title'];?></a><?php endif;?>
+        <?php if($clink):?><a href="<?php echo $link['url'];?>" class="cta"><?php echo $clink['title'];?></a><?php endif;?>
     </div>
 </section>
