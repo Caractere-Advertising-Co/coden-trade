@@ -24,6 +24,6 @@
         </div>
 
         
-        <?php if($clink):?><a href="<?php echo $link['url'];?>" class="cta"><?php echo $clink['title'];?></a><?php endif;?>
+        <?php if($clink):?><a href="<?php echo $clink['url'];?>" class="cta"><?php echo $clink['title'];?></a><?php endif;?>
     </div>
 </section>
