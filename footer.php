@@ -8,7 +8,7 @@ $background = get_field('background-footer','options');
 
 ?>
 
-<footer <?php if($background): echo 'style="background:url(\''.$background['url'].'\');background-size:cover;+"';endif?>>
+<footer <?php if($background): echo 'style="background:url(\''.$background['url'].'\');background-size:cover;"';endif?>>
     <div class="container">
         <div class="footer-top">
             <div class="col general-infos">
