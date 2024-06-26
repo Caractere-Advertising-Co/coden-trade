@@ -71,16 +71,16 @@ endif;
 
                                     switch($i){
                                         case 1 :
-                                            $idSection = "transport":
+                                            $idSection = "transport";
                                             break;
                                         case 2 : 
-                                            $idSection = "contact":
+                                            $idSection = "contact";
                                             break;
                                         case 3 : 
-                                            $idSection = "services":
+                                            $idSection = "services";
                                             break;
                                         case 4 : 
-                                            $idSection = "qualite":
+                                            $idSection = "qualite";
                                             break;
                                         }
                                     
