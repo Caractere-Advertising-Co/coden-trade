@@ -3,6 +3,8 @@
         <div class="table_qualite">
             <?php 
 
+            $clink = get_field('cta_conf','options');
+
             if(have_rows('qualites','options')) :
                 while(have_rows('qualites','options')): the_row();?>
                     <div class="card_qualite from-bottom">
