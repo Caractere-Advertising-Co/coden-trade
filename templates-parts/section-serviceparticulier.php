@@ -69,7 +69,7 @@ endif;
 
                                     $idSection;
 
-                                    switch($i):
+                                    switch($i){
                                         case 1 :
                                             $idSection = "transport":
                                             break;
@@ -82,7 +82,7 @@ endif;
                                         case 4 : 
                                             $idSection = "qualite":
                                             break;
-                                    ;
+                                        }
                                     
                                     if($card):?>
                                         <div class="card from-bottom" id="<?php echo $idSection;?>"><?php echo $card;?></div>
