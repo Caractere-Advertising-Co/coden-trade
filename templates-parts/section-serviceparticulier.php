@@ -66,9 +66,26 @@ endif;
                                 while(have_rows('liste_services')) : the_row();
                                     $card = get_sub_field('carte');
                                     $i++;
+
+                                    $idSection;
+
+                                    switch($i):
+                                        case 1 :
+                                            $idSection = "transport":
+                                            break;
+                                        case 2 : 
+                                            $idSection = "contact":
+                                            break;
+                                        case 3 : 
+                                            $idSection = "services":
+                                            break;
+                                        case 4 : 
+                                            $idSection = "qualite":
+                                            break;
+                                    ;
                                     
                                     if($card):?>
-                                        <div class="card from-bottom" id="service-<?php echo $i;?>"><?php echo $card;?></div>
+                                        <div class="card from-bottom" id="<?php echo $idSection;?>"><?php echo $card;?></div>
                                     <?php endif;?>
 
                                     <?php if($i == $count /2):?>
