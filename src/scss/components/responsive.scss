@@ -1430,6 +1430,7 @@
   .archive.woocommerce-page{
     #banner-intro {
       height: auto;
+      flex-direction: column;
 
       .container{
         width: 80vw;
@@ -1448,15 +1449,11 @@
       }
 
       .block-img{
-        width: 20vw;
+        width: 100vw;
 
         .clipped{
           height: 100%;
           margin-top: 0;
-        }
-
-        svg{
-          display: none;
         }
       }
     }
