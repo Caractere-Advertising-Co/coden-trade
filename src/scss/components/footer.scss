@@ -121,6 +121,7 @@ footer {
 
   .footer_middle {
     text-align: center;
+    
     padding: 30px 0;
     width: 70vw;
     margin: auto;
@@ -133,6 +134,9 @@ footer {
         font-weight: 400;
         line-height: .9rem;
         text-align: justify;
+        text-align-last: center;
+        -ms-text-align-last: center;
+        -moz-text-align-last: center;
 
         strong {
           font-size: 0.9rem;
