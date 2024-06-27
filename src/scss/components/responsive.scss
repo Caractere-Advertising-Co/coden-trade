@@ -1430,7 +1430,7 @@
   .archive.woocommerce-page{
     #banner-intro {
       height: auto;
-      flex-direction: column;
+      flex-direction: column-reverse;
 
       .container{
         width: 80vw;
@@ -1450,6 +1450,7 @@
 
       .block-img{
         width: 100vw;
+        height: 200px;
 
         .clipped{
           height: 100%;
