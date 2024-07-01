@@ -79,10 +79,12 @@ $ctaRefs = get_field('cta-refs');
                 <div class="card <?php if($i % 3 == 2 ): echo '-center';endif;?> from-bottom" <?php if($bg):echo 'style="background:url('.$bg['url'].')";';endif;?>>
                     <div class="content-card">
                         <h4><?php echo $nom;?></h4>
-                        <span class="ballSep"></span>
-                        <p><?php echo $role;?></p>
+                        <?php if($role):?>
+                            <span class="ballSep"></span>
+                            <p><?php echo $role;?></p>
+                        <?php endif;?>
 
-                        <a href="mailto:<?php echo $contact;?>">Contact</a>
+                        <?php if($contact):?><a href="mailto:<?php echo $contact;?>">Contact</a><?php endif;?>
                     </div>    
                 </div>
             <?php endwhile;
