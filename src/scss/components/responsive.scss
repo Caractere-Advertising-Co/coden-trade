@@ -23,6 +23,27 @@
     }
   }
 
+  #aboutus {
+    .container {
+      .swiper-content {
+        .swiper-resp {
+          .swiper-slide {
+            overflow: hidden;
+            height: 400px;
+            cursor: pointer;      
+  
+            &:hover {
+              .content_hover{
+                height: fit-content;
+                transform: translate3d(0,80px,0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .header {
     top: 100px;
 
