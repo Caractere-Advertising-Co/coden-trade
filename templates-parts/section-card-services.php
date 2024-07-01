@@ -7,12 +7,16 @@
                             while(have_rows('services','options')): the_row();
 
                                 $img = get_sub_field('background_service');
-                                $link = get_sub_field('lien_service');?>
+                                $link = get_sub_field('lien_service');
+                                $intro = get_sub_field('description_service');?>
 
                                 <div class="swiper-slide card"
                                     style=" background:url(<?php if($img): echo $img['url']; endif;?>) center;background-size:cover;">
                                     <a href="<?php if($link):echo $link['url'];endif;?>">
-                                        <h4><?php echo get_sub_field('nom_service');?></h4>
+                                        <div class="content_hover">
+                                            <h4><?php echo get_sub_field('nom_service');?></h4>
+                                            <?php if($intro): echo $intro;endif;?>
+                                        </div>
                                     </a>
                                 </div>
                             <?php endwhile;

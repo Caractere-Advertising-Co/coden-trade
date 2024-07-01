@@ -120,19 +120,29 @@
             width: calc(100% - 80px);
             height: calc(100% - 80px);
 
-            h4 {
+            .content_hover {
               color: $light;
               position: absolute;
               z-index: 10;
               top: auto;
               font-size: 2rem;
               font-weight: 600;
-              bottom: 40px;
               text-shadow: 0px 0px 10px #000000a3;
-            }
-          }
+              width: calc(100% - 80px);
+              overflow: hidden;
+              transform: translate3d(0,250px, 0);
+              transition: all ease-in 300ms;
 
-          
+
+              p{
+                color: #fff;
+                font-size: 1rem;
+                margin-top: 10px;
+                opacity: 0;
+                transition: all ease-in-out 300ms;
+              }
+            }
+          }          
 
           &::before {
             content: "";
@@ -145,8 +155,19 @@
           }
 
           &:hover {
+
             &::before {
               background-color: $hover-transparent;
+            }
+
+            .content_hover{
+              height: fit-content;
+              transform: translate3d(0,120px,0);
+
+              p{
+                opacity: 1;
+                line-height: 1.5rem;
+              }
             }
           }
         }
