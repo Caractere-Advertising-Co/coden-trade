@@ -21,4 +21,5 @@ endif;
             echo '<a class="cta-border round" value="'.$cP->name.'" data-filter="'.$cP->slug.'">'.$cP->name.'</a>';
         endforeach;
     ;endif?>
+    </div>
 </div>
