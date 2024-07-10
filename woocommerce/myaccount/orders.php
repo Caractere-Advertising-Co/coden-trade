@@ -82,7 +82,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 												$name = 'Epaisseur';
 												break;
 										}?>
-									<p><?php echo $name . ' ' . $value;?>  </p>
+									<p><?php if($name): echo $name . ' ' . $value; endif;?>  </p>
 									<?php endforeach;?>
 								</div>
 							<?php endif;?>
