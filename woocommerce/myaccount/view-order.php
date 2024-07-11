@@ -47,6 +47,36 @@ $notes = $order->get_customer_order_notes();
 	</div>
 </div>
 
+<section id="content-order">
+	<div class="container columns">
+		<div class="col col-1">
+			<h2>Mode de livraison</h2>
+			
+			<p><?php echo $order->get_shipping_method();?></br>
+			Prévue le : <?php echo $order->get_date_created();?></p>
+
+		</div>
+		<div class="col col-2">
+			<h2>Mode de facturation</h2>
+
+			<p><?php echo $order->get_payment_method_title();?></p>
+		</div>
+		<div class="col col-3">
+			<h2>Adresse de facturation</h2>
+			<p>
+				<?php echo $order->get_billing_last_name() . ' ' . $order->get_billing_first_name() . '</br>'.
+						   
+						   $order->get_billing_company() . '</br>'.
+						   $order->get_billing_address_1() . '</br>'.
+						   $order->get_billing_address_2() . '</br>'.
+					       $order->get_billing_city() . ' ' . $order->get_billing_postcode() . '</br>'.
+						   $order->get_billing_country() . '</br>'.
+						   $order->get_billing_phone();?>
+			</p>	
+		</div>
+	</div>
+</section>
+
 
 <?php if ( $notes ) : ?>
 	<h2><?php esc_html_e( 'Order updates', 'woocommerce' ); ?></h2>
