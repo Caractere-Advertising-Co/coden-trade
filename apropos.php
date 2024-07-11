@@ -72,31 +72,35 @@ $ctaRefs = get_field('cta-refs');
                 $role = get_field('role');
                 $contact = get_field('adresse_email');
                 $bg = get_field('photo');
-    
-                $i++?>
-                
 
-                <div class="card <?php if($i % 3 == 2 ): echo '-center';endif;?> from-bottom" <?php if($bg):echo 'style="background:url('.$bg['url'].')";';endif;?>>
-                    <div class="content-card">
-                        <h4><?php echo $nom;?></h4>
-                        <?php if($role):?>
-                            <span class="ballSep"></span>
-                            <p><?php echo $role;?></p>
-                        <?php endif;?>
 
-                        <?php if($contact):?><a href="mailto:<?php echo $contact;?>">Contact</a><?php endif;?>
-                    </div>    
-                </div>
-            <?php endwhile;
+            ?>
+
+                    <div class="card from-bottom <?php echo $i > 1 ? 'custom': '';?>" <?php if($bg) echo 'style="background:url('.$bg['url'].')";'; ?>>
+                        <div class="content-card">
+                            <h4><?php echo $nom; ?></h4>
+                            <?php if($role): ?>
+                                <span class="ballSep"></span>
+                                <p><?php echo $role; ?></p>
+                            <?php endif; ?>
+                            <?php if($contact): ?>
+                                <a href="mailto:<?php echo $contact; ?>">Contact</a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                <?php $i++;
+            endwhile;
         endif;
 
         // 4. On réinitialise à la requête principale (important)
         wp_reset_postdata();
-    ?>
+        ?>
     </div>
 </section>
 
-<section id="references">
+
+<section id="references">   
     <div class="container">
         <h3><?php if($surRefs): echo $surRefs; endif;?></h3>
         <?php if($titrRefs): echo $titrRefs; endif;?>
