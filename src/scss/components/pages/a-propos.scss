@@ -68,7 +68,7 @@
       .card {
         background-color: $dark-gray;
         background-size: cover !important;
-        filter: grayscale(0);
+        //filter: grayscale(0);
         text-align: center;
         height: 520px;
         margin-top: -100px;
@@ -111,7 +111,7 @@
         }
 
         &:hover {
-          filter: grayscale(1);
+          //filter: grayscale(1);
 
           .content-card {
             opacity: 1;
