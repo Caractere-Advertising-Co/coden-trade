@@ -81,6 +81,10 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 											case 'pa_diametre-fil':
 												$name = 'Epaisseur';
 												break;
+
+											default:
+												$name = $key;
+												break;
 										}?>
 									<p><?php if($name): echo $name . ' ' . $value; endif;?>  </p>
 									<?php endforeach;?>
