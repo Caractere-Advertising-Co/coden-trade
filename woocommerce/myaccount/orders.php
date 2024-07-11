@@ -47,8 +47,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 				if ( ! empty( $actions ) ) {
 					foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
-						var_dump($action);
-						echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button' . esc_attr( $wp_button_class ) . ' button ' . sanitize_html_class( $key ) . '">Détails</a>';
+						echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button' . esc_attr( $wp_button_class ) . ' button ' . sanitize_html_class( $key ) . '">'.$action['name'].'</a>';
 					}
 				}
 				?>
