@@ -12,8 +12,6 @@ get_header();?>
         <?php if(!is_user_logged_in(  )):
             if($title): echo $title;endif;
         else : 
-            echo "<h1>Bienvenue sur <br><strong>votre compte</strong></h1>";
-            
         endif;?>
 
         <div class="woocommerce-MyAccount-content">

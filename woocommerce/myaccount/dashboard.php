@@ -26,6 +26,10 @@ $allowed_html = array(
 		'href' => array(),
 	),
 );
+
+
+echo "<h1>Bienvenue sur <br><strong>votre compte</strong></h1>";
+            
 ?>
 
 <p>
