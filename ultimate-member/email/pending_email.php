@@ -28,4 +28,5 @@
         <p>Merci!<br>
         L'équipe <a style="color: #3ba1da;text-decoration: none" href="{site_url}">{site_name}</a></p>     
     </div>
+    <div style="margin:auto;width:2px;background:#a42e2b;display:block;height:30px;"></div>
 </div>
