@@ -1,3 +1,5 @@
+
+
 <div style="width:500px;text-align:center;font-family:'montserrat',sans-serif;">
     <!-- HEADER -->
     <div style="background:#a42e2b;height:30px;">
@@ -10,28 +12,26 @@
     <img src="https://coden.caractere-advertising.be/wp-content/uploads/2024/05/Calque-2.svg" width="250" style="width:200px;margin-top:30px;" alt="Logo-coden"/>
 
     <h1 style="text-transform:uppercase;font-size:2rem;color:#000;font-family:'Montserrat',sans-serif;font-weight:200">
-        Nouveau<br> compte
+        Réinitialisation de Votre <br> mot de passe
     </h1>
 
     <p style="padding: 30px 0;font-size: 1.2rem;text-align: center;line-height: 2rem;">
-        {display_name} vient de se créer un<br>
-        compte PRO sur {site_name} et<br>
-        attend d'être validé.
+        Nous avons reçu une demande pour réinitialiser votre mot de passe.
+        Utilisez le lien ci-dessous pour créer un nouveau mot de passe :
+        
     </p>
 
-    <p style="font-style:italic; font-size: .8rem;">Pour voir ce compte, veuillez cliquer sur le lien suivant :</p>
-    <a style="color: #a42e2b;text-decoration: non;margin-bottom:30px;" href="{user_profile_link}">{user_profile_link}</a>
+    <a style="color:#fff;text-transform: uppercase;background: #a42e2b;width: fit-content;padding: 10px 20px;margin: auto;margin-bottom:20px;display: block;text-decoration: none;letter-spacing: 4px;font-size: 1.2rem;" href="{password_reset_link}">Réinitialiser votre mot de passe</a>
 
-    <div style="background: #eee;padding: 12px 15px;border-radius: 3px;font-size: 1rem;">
-        Voici le formulaire d'inscription soumis :<br />
+    <p style="padding: 30px 0;font-size: 1.2rem;text-align: center;line-height: 2rem;">
+        Si vous n'êtes pas à l'origine de cette demande, ignorez cet email ou <a style="color: #a42e2b;text-decoration: none" href="mailto:{admin_email}">contactez nous</a>.
+    </p>
 
-        {submitted_registration}
-    </div></div>
-
+    <div style="display:block; width: 50px; background:#a42e2b;height:2px;margin:auto;"></div>
     <!-- FOOTER -->
     <div style="padding: 20px 30px; text-align:center;">        
+        <p>Merci!<br>
         L'équipe <a style="color:#a42e2b;text-decoration: none" href="{site_url}">{site_name}</a></p>     
     </div>
     <div style="margin:auto;width:2px;background:#a42e2b;display:block;height:30px;"></div>
 </div>
-

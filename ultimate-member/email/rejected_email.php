@@ -1,14 +1,31 @@
-<div style="max-width: 560px;padding: 20px;background: #ffffff;border-radius: 5px;margin: 40px auto;font-family: Open Sans,Helvetica,Arial;font-size: 15px;color: #666">
-<div style="color: #444444;font-weight: normal">
-<div style="text-align: center;font-weight: 600;font-size: 26px;padding: 10px 0;border-bottom: solid 3px #eeeeee">{site_name}</div>
-<div style="clear: both"> </div>
-</div>
-<div style="padding: 0 30px 30px 30px;border-bottom: 3px solid #eeeeee">
-<div style="padding: 30px 0;font-size: 24px;text-align: center;line-height: 40px">Your registration request has been rejected.</div>
-<div style="padding: 15px;background: #eee;border-radius: 3px;text-align: center">Please feel free to apply at a future date or <a style="color: #3ba1da;text-decoration: none" href="mailto:{admin_email}">contact us</a> If you want your information to be reviewed again.</div>
-</div>
-<div style="color: #999;padding: 20px 30px">
-<div>Thank you!</div>
-<div>The <a style="color: #3ba1da;text-decoration: none" href="{site_url}">{site_name}</a> Team</div>
-</div>
+<div style="width:500px;text-align:center;font-family:'montserrat',sans-serif;">
+    <!-- HEADER -->
+    <div style="background:#a42e2b;height:30px;">
+        <div style="margin:auto;width:2px;background:#fff;display:block;height:30px;"></div>
+    </div>
+
+    <div style="margin:auto;width:2px;background:#a42e2b;display:block;height:10px;"></div>
+
+    <!-- CONTENT -->
+    <img src="https://coden.caractere-advertising.be/wp-content/uploads/2024/05/Calque-2.svg" width="250" style="width:200px;margin-top:30px;" alt="Logo-coden"/>
+
+    <h1 style="text-transform:uppercase;font-size:2rem;color:#000;font-family:'Montserrat',sans-serif;font-weight:200">
+       Inscription<br> refusée
+    </h1>
+
+    <p style="padding: 30px 0;font-size: 1.2rem;text-align: center;line-height: 2rem;">
+        Votre demande d'inscription<br />
+        est rejetée<br> 
+    </p>
+
+    <p style="font-style:italic; font-size: .8rem;margin-bottom:30px;">N'hésitez pas à <a style="color:#a42e2b;text-decoration:none;" href="mailto:{admin_email}">nous contacter</a> pour obtenir des informations sur cette décision.</p>
+    <a href="http://coden.caractere-advertising.be" style="color:#fff;text-transform: uppercase;background: #a42e2b;width: fit-content;padding: 10px 20px;margin: auto;margin-bottom:20px;display: block;text-decoration: none;letter-spacing: 4px;font-size: 1.2rem;">Retourner sur le site</a>
+
+    <div style="display:block; width: 50px; background:#a42e2b;height:2px;margin:auto;"></div>
+    <!-- FOOTER -->
+    <div style="padding: 20px 30px; text-align:center;">        
+        <p>Merci!<br>
+        L'équipe <a style="color:#a42e2b;text-decoration: none" href="{site_url}">{site_name}</a></p>     
+    </div>
+    <div style="margin:auto;width:2px;background:#a42e2b;display:block;height:30px;"></div>
 </div>
