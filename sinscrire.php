@@ -15,7 +15,15 @@ if(!$bg_header):
 else :
     $bg_header = get_field('bg_header');
     $bg_url = $bg_header['url'];
-endif;?>
+endif;
+
+if($_GET):
+    $pending = $_GET['message'];
+endif;
+
+$ctaShop = get_field('ctaShop');
+
+?>
 
 
 <header id="header" style="background:url('<?php echo $bg_url;?>');">
@@ -30,7 +38,13 @@ endif;?>
             </div>
         </div>
         <div class="cold">
-            <div class="intro from-bottom"><?php if($intro) : echo $intro; else : the_content();endif;?></div>
+            <div class="intro from-bottom">
+                <?php if($intro) : echo $intro; else : the_content();endif;?>
+            
+                <?php if($pending == 'pending'):?>
+                    <a href="<?php echo $ctaShop['url'];?>" class="cta"><?php echo $ctaShop['title'];?></a>
+                <?php endif;?>
+            </div>
         </div>
     </div>
 </section>

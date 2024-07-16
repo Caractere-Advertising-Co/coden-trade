@@ -90,6 +90,10 @@
           a {
             color: $secondary-color;
           }
+
+          .cta{
+            color:$light;
+          }
         }
 
         .cta {
@@ -115,6 +119,13 @@
               letter-spacing: 3px;
               font-family: 'Sofia-pro', sans-serif;
             }
+          }
+
+          .um-postmessage{
+            font-family: 'sofia-pro',sans-serif;
+            font-size: 1rem;
+            line-height: 1.8rem;
+            font-weight: 300;
           }
         }
       }
