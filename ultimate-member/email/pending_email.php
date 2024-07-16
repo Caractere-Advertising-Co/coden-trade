@@ -7,7 +7,7 @@
     <div style="margin:auto;width:2px;background:#a42e2b;display:block;height:10px;"></div>
 
     <!-- CONTENT -->
-    <img src="https://coden.caractere-advertising.be/wp-content/uploads/2024/05/Calque-2.svg" width="250" style="width:250px;" alt="Logo-coden"/>
+    <img src="https://coden.caractere-advertising.be/wp-content/uploads/2024/05/Calque-2.svg" width="250" style="width:200px;margin-top:30px;" alt="Logo-coden"/>
 
     <h1 style="text-transform:uppercase;font-size:2rem;color:#000;font-family:'Montserrat',sans-serif;font-weight:200">
         validation<br> de votre compte
