@@ -5,6 +5,8 @@
 $title = get_field('titre-account','options');
 $content = get_the_content();
 
+$cta = get_field('cta_inscription','options');
+
 get_header();?>
 
 <section id="myaccount">
@@ -20,6 +22,7 @@ get_header();?>
                 do_action( 'woocommerce_account_navigation' );
             else : 
                 wc_get_template( 'myaccount/form-login.php' );
+                if($cta): echo '<a href="'.$cta['url'].'" class="cta-signup">'.$cta['title'].'</a>'; endif;
             endif;?>
         </div>
 
