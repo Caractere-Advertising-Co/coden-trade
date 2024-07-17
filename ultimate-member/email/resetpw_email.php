@@ -1,6 +1,6 @@
 
 
-<div style="width:500px;text-align:center;font-family:'montserrat',sans-serif;">
+<div style="width:500px;text-align:center;font-family:'montserrat',sans-serif;margin:auto;">
     <!-- HEADER -->
     <div style="background:#a42e2b;height:30px;">
         <div style="margin:auto;width:2px;background:#fff;display:block;height:30px;"></div>
