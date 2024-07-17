@@ -1448,6 +1448,38 @@
 
   /* Woocommerce */
 
+  .page-template-myaccount{
+    .woocommerce-form{
+      #btn_submit-wooform{
+        flex-direction: column;
+        justify-content: center;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+    }
+
+    #notYetClient{
+      flex-direction: column;
+      margin: 100px 0;
+
+      .colg{
+        width: 100%;
+
+        .block-img{
+          height: 300px;
+          margin-top: 0;
+        }
+      }
+
+      .cold{
+        width: calc(100% - 100px);
+
+      }
+    }
+  }
+
   //Page Archives 
   .archive.woocommerce-page{
     #banner-intro {
