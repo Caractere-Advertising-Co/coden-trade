@@ -83,6 +83,104 @@
     }
   }
 
+  .woocommerce-form{
+    input{
+      border: none;
+      border-bottom: 1px solid $light-gray;
+    }
+
+    label{
+      font-weight: 600;
+    }
+
+    .woocommerce-LostPassword{
+      a{
+        color:$light-gray;
+        font-weight: 300;
+      }
+    }
+
+    #btn_submit-wooform{
+      justify-content: center;
+      margin: 50px auto;
+
+      button{
+        border: none;
+        background-color: $primary-color;
+        color: $light;
+        text-transform: uppercase;
+        padding: 15px 40px;
+        font-weight: 300;
+        letter-spacing: 3px;
+      }
+
+      .cta-signup{
+        padding: 15px 40px;
+        text-transform: uppercase;
+        font-weight: 300;
+        color:$dark-gray;
+        letter-spacing: 3px;
+        transition: all ease-in-out 300ms;
+
+        &::before{
+          content:'>';
+          color:$primary-color;
+          margin-right: 20px;
+        }
+
+        &:hover{
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  #notYetClient{
+    gap:0;
+    margin: 150px 0;
+
+    .colg{
+      width: 50%;
+      .block-img{
+        height: 700px;
+        margin-top: 200px;
+      }
+    }
+
+    .cold{
+      width: calc(55% - 100px);
+      padding: 80px 50px;
+      margin-left: -5%;
+      background-color: $dark-dark-gray;
+      height: fit-content;
+
+      h2{
+        color:$light;
+
+        em{
+          color:$primary-color;
+        }
+      }
+
+      p{
+        margin: 20px 0;
+      }
+
+      p,
+      ul,
+      li{
+        color:$light;
+        list-style-type: disc;
+        text-align: left;
+      }
+
+      .cta{
+        margin-top: 30px;
+        color:$light;
+      }
+    }
+  }
+
   .order-resume {
     p {
       margin-bottom: 0;

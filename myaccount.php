@@ -5,6 +5,9 @@
 $title = get_field('titre-account','options');
 $content = get_the_content();
 
+$img = get_field('image_disclaimer_inscription','options');
+$content_insc = get_field('content_disclaimer_inscription','options');
+
 $cta = get_field('cta_inscription','options');
 
 get_header();?>
@@ -21,14 +24,26 @@ get_header();?>
                 do_action( 'woocommerce_account_content' );
                 do_action( 'woocommerce_account_navigation' );
             else : 
-                wc_get_template( 'myaccount/form-login.php' );
-                if($cta): echo '<a href="'.$cta['url'].'" class="cta-signup">'.$cta['title'].'</a>'; endif;
-            endif;?>
-        </div>
+                wc_get_template( 'myaccount/form-login.php' );?>
 
+                <div class="container columns" id="notYetClient">
+                        <div class="colg from-left">
+                            <?php if($img):?>
+                                <div class="block-img">
+                                    <img src="<?php echo $img['url'];?>" alt="<?php echo $img['name'];?>"/>
+                                </div>
+                            <?php endif;?>
+                        </div>
+
+                        <div class="cold from-right">
+                            <?php if($content_insc): echo $content_insc;endif;?>
+                            <?php if($cta): echo '<a href="'.$cta['url'].'" class="cta cta-signup">'.$cta['title'].'</a>'; endif;?>
+                        </div>
+                    </div>
+            <?php endif;?>
+        </div>
     </div>
 </section>
-
 <section id="nos_connaissances">
     <div class="container top_content">
         <?php get_template_part( 'templates-parts/section-citation'); ?>
