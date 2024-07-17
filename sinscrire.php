@@ -17,10 +17,12 @@ else :
     $bg_url = $bg_header['url'];
 endif;
 
-$pending;
+$pending = null;
 
 if($_GET):
-    $pending = $_GET['message'];
+    if($_GET['message']):
+        $pending = $_GET['message'];
+    endif;
 endif;
 
 $ctaShop = get_field('ctaShop');
