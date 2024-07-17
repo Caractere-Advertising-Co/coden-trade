@@ -1,23 +1,26 @@
 .error404{
-    .container{
-        margin-top: 200px;
 
-        h1{
-            font-size: 10rem;
-            line-height: 10rem;
-            font-weight: 600;
-            color: $primary-color;
-        }
+    #page_404{
+        .container{
+            margin-top: 200px;
 
-        h2{
-            font-size: 3.5rem;
-            line-height: 3.5rem;
-            margin: 20px auto;
-        }
+            h1{
+                font-size: 10rem;
+                line-height: 10rem;
+                font-weight: 600;
+                color: $primary-color;
+            }
 
-        .cta{
-            margin:auto;
-            margin-top: 50px;
+            h2{
+                font-size: 3.5rem;
+                line-height: 3.5rem;
+                margin: 20px auto;
+            }
+
+            .cta{
+                margin:auto;
+                margin-top: 50px;
+            }
         }
     }
 }
