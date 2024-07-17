@@ -17,6 +17,8 @@ else :
     $bg_url = $bg_header['url'];
 endif;
 
+$pending;
+
 if($_GET):
     $pending = $_GET['message'];
 endif;
