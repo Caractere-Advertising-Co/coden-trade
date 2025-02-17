@@ -46,15 +46,12 @@ get_header( 'shop' );
 
 <?php 
 	$term_id  = get_queried_object_id();
-
 	$term = get_queried_object();
-
 	$children = get_terms( $term->taxonomy, array(
 		'parent'    => $term->term_id,
 		'hide_empty' => false
 	));
 		
-
 if($children):?>
 	<section id="list-subcategory">
 		<?php 
@@ -97,8 +94,6 @@ if($children):?>
 		</div>
 	</section>
 
-<?php else : ?>
-	
 	<section id="list-product-subCategory">
 		<div class="container">
 			<?php if ( woocommerce_product_loop() ) {
