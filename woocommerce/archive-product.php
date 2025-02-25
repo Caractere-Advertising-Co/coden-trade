@@ -94,8 +94,6 @@ if($children):?>
 		</div>
 	</section>
 
-<?php else: ?>
-
 	<section id="list-product-subCategory">
 		<div class="container">
 			<?php if ( woocommerce_product_loop() ) {
