@@ -93,8 +93,7 @@ if($children):?>
 			?>
 		</div>
 	</section>
-
-	<?php else :?>
+<?php endif;?>
 
 	<section id="list-product-subCategory">
 		<div class="container">
@@ -162,7 +161,6 @@ if($children):?>
 				?>
 			</div>
 	</section>
-<?php endif;?>
 
 			<section id="nos_connaissances">
 				<?php get_template_part( 'templates-parts/section-citation' );?>
