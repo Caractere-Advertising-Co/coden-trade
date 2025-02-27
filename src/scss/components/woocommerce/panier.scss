@@ -1,3 +1,18 @@
 .woocommerce-cart{
-    
+    #simple-page{
+        .container{
+            .cold{
+                padding-left: 0;
+                margin: 50px 0 100px;
+
+                .wc-block-cart__submit-button{
+                    background-color: $primary-color;
+                    
+                    span{
+                        color: $light;
+                    }
+                }
+            }
+        }
+    }
 }
