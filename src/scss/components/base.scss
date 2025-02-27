@@ -601,3 +601,13 @@ form {
     }
   }
 }
+
+
+.woocommerce-message{
+  border-color: $primary-color;
+  font-family: 'sofia-pro',sans-serif;
+
+  &::before{
+    color: $primary-color;
+  }
+}
