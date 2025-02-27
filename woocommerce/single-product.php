@@ -9,11 +9,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); 
 
-$banner = get_field('banniere_produit','options');
-	
+
+global $product;
+
+$banner = array();
+$gallery_images = $product->get_gallery_image_ids();
+
+array_push($banner, wp_get_attachment_image_src($gallery_images[0], 'Large'));
+
 	if($banner):?>
 		<div class="banner" id="hero">
-			<img src="<?php echo $banner['url'];?>" style="background-size:cover;background-repeat:no-repeat;"/>
+			<img src="<?php echo $banner[0][0];?>" style="background-size:cover;background-repeat:no-repeat;"/>
 		</div>
 	<?php endif;
 		/**
