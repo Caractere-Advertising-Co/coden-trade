@@ -226,6 +226,7 @@
           a,
           span{
             color: $primary-color;
+            text-align: center;
 
             &.current{
               background-color: $primary-color !important;
