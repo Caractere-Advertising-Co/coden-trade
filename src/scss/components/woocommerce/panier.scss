@@ -17,7 +17,8 @@
         }
     }
 
-    .wc-block-components-totals-item__value{
+    .wc-block-components-totals-item__value,
+    .wc-block-checkout__shipping-option--free{
         display: none;
     }
 }
