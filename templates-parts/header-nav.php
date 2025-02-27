@@ -1,4 +1,4 @@
-é<div class="header navigation <?php if(!is_front_page(  ) &&  !is_page(80802)): echo 'borBot';endif;?>">
+<div class="header navigation <?php if(!is_front_page(  ) &&  !is_page(80802)): echo 'borBot';endif;?>">
     <div class="col-g">
         <a href="<?php echo home_url();?>" class="logo" >
             <?php 
