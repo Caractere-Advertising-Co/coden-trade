@@ -13,9 +13,9 @@ get_header( 'shop' );
 global $product;
 
 $banner = array();
-$gallery_images = $product->get_gallery_image_ids();
+$thmb_images = $product->get_image_id();
 
-array_push($banner, wp_get_attachment_image_src($gallery_images[0], 'Large'));
+array_push($banner, wp_get_attachment_image_src($thmb_images, 'Large'));
 
 	if($banner):?>
 		<div class="banner" id="hero">
