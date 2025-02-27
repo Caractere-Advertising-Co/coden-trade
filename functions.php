@@ -458,10 +458,11 @@ function content_popup(){
 add_action('wp_ajax_content_popup', 'content_popup');
 add_action('wp_ajax_nopriv_content_popup', 'content_popup');
 
-add_filter('woocommerce_cart_shipping_method_full_label', 'custom_shipping_label', 10, 2);
-function custom_shipping_label($label, $method) {
-    if ($method->id === 'flat_rate' && $method->instance_id == 7) { // Remplacez 123 par l'ID de votre méthode
-        return "Livraison sur chantier – Calculé ultérieurement";
+add_filter( 'woocommerce_cart_shipping_method_full_label', 'custom_free_shipping_label', 10, 2 );
+ 
+function custom_free_shipping_label( $label, $method ) {
+    if ( 7 === $method->method_instance_id ) {
+        $label .= '<br><small>Les frais de livraison doivent être calculé par un commercial</small>';
     }
     return $label;
 }
