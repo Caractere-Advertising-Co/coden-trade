@@ -203,3 +203,12 @@ menu.forEach(function (el) {
       timeoutBanner = window.setTimeout(tickBanner, delayBanner);
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.wc-block-checkout__shipping-option--free').forEach(function(el) {
+      if (el.closest('label').querySelector('.wc-block-components-radio-control__label').textContent.includes('Livraison sur chantier')) {
+          el.textContent = "Calculé ultérieurement";
+      }
+  });
+});

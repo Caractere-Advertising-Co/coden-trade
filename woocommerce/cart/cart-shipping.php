@@ -95,3 +95,6 @@ $calculator_text          = '';
 		<?php endif; ?>
 	</td>
 </tr>
+
+
+<?php var_dump($method)?>
