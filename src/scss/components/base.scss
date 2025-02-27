@@ -604,10 +604,10 @@ form {
 
 
 .woocommerce-message{
-  border-color: $primary-color;
+  border-top-color: $primary-color !important;
   font-family: 'sofia-pro',sans-serif;
 
   &::before{
-    color: $primary-color;
+    color: $primary-color !important;
   }
 }
