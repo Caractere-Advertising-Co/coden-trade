@@ -8,6 +8,27 @@
     margin-bottom: 50px;
   }
 
+  .badge{
+    color: $light;
+    padding: 5px 10px 5px;
+    border-radius: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .8rem;
+    line-height: .8rem;
+    margin-top: 4px;
+    display: inline-block;
+    width: fit-content;
+
+    &.on-hold{
+      background: orange;
+    }
+
+    &.completed{
+      background-color: green;
+    }
+  }
+
   .woocommerce-MyAccount-navigation {
     columns: 2;
     gap: 50px;

@@ -38,11 +38,11 @@ $notes = $order->get_customer_order_notes();
 
 			switch($statusOrder){
 				case 'processing': 
-					$valStatut = '<span ="on-hold">En cours</span>';
+					$valStatut = '<span ="badge on-hold">En cours</span>';
 					break;
 				
 				case 'completed':
-					$valStatut = '<span ="completed">Terminée</span>';
+					$valStatut = '<span ="badge completed">Terminée</span>';
 					break;
 			}
 
