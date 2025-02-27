@@ -218,4 +218,17 @@
       }
     }
   }
+
+  nav{
+    &.woocommerce-pagination{
+      ul{
+        li{
+          a,
+          span{
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
 }
