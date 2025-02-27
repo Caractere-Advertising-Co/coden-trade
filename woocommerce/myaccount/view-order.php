@@ -44,6 +44,10 @@ $notes = $order->get_customer_order_notes();
 				case 'completed':
 					$valStatut = '<span class="badge completed">Terminée</span>';
 					break;
+
+				case 'cancelled':
+					$valStatut = '<span class="badge cancelled">Terminée</span>';
+					break;
 			}
 
 			echo '<p>'.$labelDate. ' : '. wc_format_datetime( $order->get_date_created(), "d F Y" ).'</p>';

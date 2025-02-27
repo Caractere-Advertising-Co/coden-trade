@@ -27,6 +27,10 @@
     &.completed{
       background-color: green;
     }
+
+    &.cancelled{
+      background-color: red;
+    }
   }
 
   .woocommerce-MyAccount-navigation {
