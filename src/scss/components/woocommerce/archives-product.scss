@@ -226,6 +226,11 @@
           a,
           span{
             color: $primary-color;
+
+            &.current{
+              background-color: $primary-color;
+              color: $light;
+            }
           }
         }
       }
