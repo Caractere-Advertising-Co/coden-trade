@@ -38,8 +38,24 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 				$labelStatus = $orderColumns['order-status'];
 				$labelTotal = $orderColumns['order-total'];
 
+				$statusOrder = $order->get_status();
+
+				switch($statusOrder){
+					case 'processing': 
+						$valStatut = '<span class="badge on-hold">En cours</span>';
+						break;
+					
+					case 'completed':
+						$valStatut = '<span class="badge completed">Terminée</span>';
+						break;
+
+					case 'cancelled':
+						$valStatut = '<span class="badge cancelled">Terminée</span>';
+						break;
+				}
+
 				echo '<p>'.$labelDate. ' : '. wc_format_datetime( $order->get_date_created(), "d F Y" ).'</p>';
-				echo '<p>'.$labelStatus.' : '.  $order->get_status() .'</p>';
+				echo '<p>'.$labelStatus.' : '.  $valStatut .'</p>';
 				echo '<p>'.$labelNumber.' n° : '.$order->get_order_number().'</p>';
 				echo '<p>'.$labelTotal.' de la commande :' . $order->get_formatted_order_total().'</p>';
 				$actions = wc_get_account_orders_actions( $order );
