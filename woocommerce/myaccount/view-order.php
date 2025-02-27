@@ -34,8 +34,20 @@ $notes = $order->get_customer_order_notes();
 			$labelStatus = $orderColumns['order-status'];
 			$labelTotal = $orderColumns['order-total'];
 
+			$statusOrder = $order->get_status();
+
+			switch($statusOrder){
+				case 'processing': 
+					$valStatut = '<span ="on-hold">En cours</span>';
+					break;
+				
+				case 'completed':
+					$valStatut = '<span ="completed">Terminée</span>';
+					break;
+			}
+
 			echo '<p>'.$labelDate. ' : '. wc_format_datetime( $order->get_date_created(), "d F Y" ).'</p>';
-			echo '<p>'.$labelStatus.' : '.  $order->get_status() .'</p>';
+			echo '<p>'.$labelStatus.' : '.  $valStatut .'</p>';
 			echo '<p>'.$labelNumber.' n° : '.$order->get_order_number().'</p>';
 			echo '<p>'.$labelTotal.' de la commande :' . $order->get_formatted_order_total().'</p>';
 		?>
