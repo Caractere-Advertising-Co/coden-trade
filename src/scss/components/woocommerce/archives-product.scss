@@ -228,8 +228,8 @@
             color: $primary-color;
 
             &.current{
-              background-color: $primary-color;
-              color: $light;
+              background-color: $primary-color !important;
+              color: $light !important;
             }
           }
         }
