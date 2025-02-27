@@ -163,7 +163,8 @@
       }
     }
 
-    .price {
+    .price,
+    .woocommerce-Price-amount bdi {
       color: $dark-dark-gray;
       font-size: 2.5rem;
       font-weight: 400;
