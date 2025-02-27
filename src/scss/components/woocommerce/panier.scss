@@ -21,4 +21,9 @@
     .wc-block-checkout__shipping-option--free{
         display: none;
     }
+    
+    .wc-block-components-shipping-rates-control__package .wc-block-components-radio-control__label{
+        display: flex;
+        text-wrap: auto;
+    }
 }
