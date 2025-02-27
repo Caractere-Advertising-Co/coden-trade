@@ -21,6 +21,7 @@
         h1,
         p{
             color: $light;
+            text-align: left;
         }
 
         p{
@@ -139,8 +140,6 @@
     }
   }
 }
-
-
 
 .woocommerce{
   .woocommerce-result-count{
