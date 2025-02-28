@@ -66,41 +66,30 @@ if ( $upsells ) : ?>
 									
 					<li <?php wc_product_class( 'card_product', $upsell ); ?>>
 						<a href="<?php echo get_permalink($pid);?>">
-						<?php
 
-							if($tags): ?>
-								<div class="bubble <?php echo $tagClass;?>">
-									<p><?php foreach($tags as $t): echo $t->name; endforeach;?></p>
-								</div>
-							<?php endif; 
-							/**
-								 * Hook: woocommerce_before_shop_loop_item_title.
-								 *
-								 * @hooked woocommerce_show_product_loop_sale_flash - 10
-								 * @hooked woocommerce_template_loop_product_thumbnail - 10
-								 */
-								do_action( 'woocommerce_before_shop_loop_item_title' );
-								remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
-								
-
-								$thmb_images = $upsell->get_image_id();
-								$thmb = wp_get_attachment_image( $thmb_images, 'Large' );?>
-
-								<img src="<?php echo $thmb[0];?>" style="background-size:cover;background-repeat:no-repeat;"/>
-							
-
-							<div class="content-product">
-								<?php echo '<span class="title"><h3>'. get_the_title($pid).'</h3></span>';
-
-								do_action( 'woocommerce_after_shop_loop_item_title' );
-								do_action( 'woocommerce_after_shop_loop_item' ); ?>
+						<?php if($tags): ?>
+							<div class="bubble <?php echo $tagClass;?>">
+								<p><?php foreach($tags as $t): echo $t->name; endforeach;?></p>
 							</div>
-						</a>
-					</li>
+						<?php endif; 
+	
+						$thmb_images = $upsell->get_image_id();
+						$thmb = wp_get_attachment_image( $thmb_images, 'Large' );?>
+			
+						<div class="block-img">
+							<img src="<?php echo $thmb[0];?>" style="background-size:cover;background-repeat:no-repeat;"/>
+						</div>
+
+						<div class="content-product">
+							<?php echo '<span class="title"><h3>'. get_the_title($pid).'</h3></span>';
+
+							do_action( 'woocommerce_after_shop_loop_item_title' );
+							do_action( 'woocommerce_after_shop_loop_item' ); ?>
+						</div>
+					</a>
+				</li>
 			<?php endforeach; ?>
-
 		<?php woocommerce_product_loop_end(); ?>
-
 	</section>
 
 	<?php
