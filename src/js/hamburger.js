@@ -8,6 +8,6 @@ $(document).ready(function () {
     menu.classList.toggle("active-menu");
     header.classList.toggle("active-menu");
     header.classList.toggle("fixed");
-    body.classList.toggle("fixed");
+    body.classList.toggle("overflow");
   });
 });
