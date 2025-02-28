@@ -201,10 +201,14 @@
     }
 
     .up-sells {
-      padding-top: 100px;
+      padding-top: 50px;
+
+      h2{
+        font-weight: 600;
+      }
   
       .products {
-        margin-top: 100px !important;
+        margin-top: 60px !important;
   
         .card_product{
           .content-product{
