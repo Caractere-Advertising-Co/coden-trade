@@ -135,8 +135,17 @@
       }
     }
 
-    #btn_submit-wooform,
     .woocommerce-Button{
+      border: none;
+        background-color: $primary-color;
+        color: $light;
+        text-transform: uppercase;
+        padding: 15px 40px;
+        font-weight: 300;
+        letter-spacing: 3px;
+    }
+
+    #btn_submit-wooform{
       justify-content: center;
       margin: 50px auto;
 
