@@ -1728,17 +1728,33 @@
       }
     }
   }  
-}
 
-.page-template-simple-page,
-.page-template-sinscrire{
-  #simple-page,
-  #section_bleue,
-  #outro{
-    .container{
-      .cold{
-        h2{
-          letter-spacing: 4px;
+  .page-template-simple-page,
+  .page-template-sinscrire{
+    #simple-page,
+    #section_bleue,
+    #outro{
+      .container{
+        .cold{
+          h2{
+            letter-spacing: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .woocommerce-account{
+    .addresses{
+      .title{
+        h3{
+          font-size: 2rem;
+          list-style: 2rem;
+          float: inherit;
+        }
+
+        .edit{
+          float: inherit;
         }
       }
     }

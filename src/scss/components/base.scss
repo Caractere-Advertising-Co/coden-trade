@@ -103,6 +103,13 @@ a {
   }
 }
 
+address{
+  font-family: 'sofia-pro',sans-serif;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: $dark-dark-gray;
+}
+
 .round {
   border-radius: 30px;
   overflow: hidden;
