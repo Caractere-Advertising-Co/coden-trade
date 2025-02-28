@@ -82,8 +82,11 @@ if ( $upsells ) : ?>
 								do_action( 'woocommerce_before_shop_loop_item_title' );
 								remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 								
-								?>
 
+								$thmb_images = $upsell->get_image_id();
+								$thmb = wp_get_attachment_image( $thmb_images, 'Large' );?>
+
+								<img src="<?php echo $thmb[0];?>" style="background-size:cover;background-repeat:no-repeat;"/>
 							
 
 							<div class="content-product">
