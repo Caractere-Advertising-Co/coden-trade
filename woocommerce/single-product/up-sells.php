@@ -65,7 +65,7 @@ if ( $upsells ) : ?>
 					?>
 									
 					<li <?php wc_product_class( 'card_product', $upsell ); ?>>
-						<a href="<?php get_permalink($pid);?>">
+						<a href="<?php echo get_permalink($pid);?>">
 						<?php
 
 							if($tags): ?>
