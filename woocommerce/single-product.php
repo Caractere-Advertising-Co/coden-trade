@@ -29,7 +29,7 @@ array_push($banner, wp_get_attachment_image_src($thmb_images, 'Large'));
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
 		do_action( 'woocommerce_before_main_content' );
-	?>
+	?>	
 	<section id="content_product">
 		<div class="container">
 			<?php while ( have_posts() ) :the_post(); ?>
