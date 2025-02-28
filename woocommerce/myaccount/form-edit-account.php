@@ -21,7 +21,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 
 <section id="title-details-account">
 	<div class="container">
-		<h1>Détails du compte</h1>
+		<h1>Détails <strong>du compte</strong></h1>
 	</div>
 </section>
 
