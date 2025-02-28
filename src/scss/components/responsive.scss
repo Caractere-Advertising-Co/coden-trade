@@ -1687,6 +1687,10 @@
           width: 100%;
         }
       }
+
+      &::after{
+        margin-top: 50px;
+      }
     }
   }  
 }
