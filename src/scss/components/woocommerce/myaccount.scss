@@ -108,7 +108,8 @@
     }
   }
 
-  .woocommerce-form{
+  .woocommerce-form,
+  .woocommerce-EditAccountForm{
     input{
       border: none;
       border-bottom: 1px solid $light-gray;
