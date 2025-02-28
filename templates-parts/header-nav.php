@@ -58,17 +58,9 @@
 <div class="megamenu">
     <div class="primary-navigation">
         <?php wp_nav_menu(array(
-            'menu' => 'Navigation principale',
-            'theme_location' => 'main',
+            'menu' => 'Mega menu',
+            'theme_location' => 'megamenu',
             'menu_class' => 'semi-bold nav'
-        ));?>
-    </div>
-
-    <div class="secondary-navigation">
-        <?php wp_nav_menu(array(
-            'menu' => 'top-header_menu',
-            'theme_location' => 'topheader',
-            'menu_class' => 'nav'
         ));?>
     </div>
 </div>
