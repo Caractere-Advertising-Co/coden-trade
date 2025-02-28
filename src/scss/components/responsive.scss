@@ -1695,4 +1695,17 @@
   }  
 }
 
-
+.page-template-simple-page,
+.page-template-sinscrire{
+  #simple-page,
+  #section_bleue,
+  #outro{
+    .container{
+      .cold{
+        h2{
+          letter-spacing: 4px;
+        }
+      }
+    }
+  }
+}
