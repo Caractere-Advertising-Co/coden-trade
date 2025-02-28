@@ -32,11 +32,11 @@
       .secondary-navigation {
         .menu-top-header_menu-container ul,
         .menu-top-header_menu-neerlandais-container ul {
-          li:first-child::before {
-            content: "\f007";
-            font-family: "Font Awesome 6 Free";
-            color: $dark-dark-gray;
-          }
+          // li:first-child::before {
+          //   content: "\f007";
+          //   font-family: "Font Awesome 6 Free";
+          //   color: $dark-dark-gray;
+          // }
 
           li {
             a {
