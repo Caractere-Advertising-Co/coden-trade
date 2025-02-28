@@ -199,6 +199,33 @@
         }
       }
     }
+
+    .up-sells {
+      padding-top: 100px;
+  
+      .products {
+        margin-top: 100px !important;
+  
+        .card_product{
+          .content-product{
+            .price{
+              margin-top: 0;
+  
+              .woocommerce-Price-amount{
+                bdi{
+                  font-size: 1rem;
+                  font-weight: 600;
+                  margin-top: 0px;
+                  line-height: 1.8rem;
+                  color: $primary-color;
+                  margin: 20px auto;
+                }
+              } 
+            }
+          }
+        }
+      }
+    }
   }
 
   #confiance {
@@ -245,32 +272,7 @@
     border-bottom: 1px solid $light-gray;
   }
 
-  .up-sells {
-    padding-top: 100px;
-
-    .products {
-      margin-top: 100px !important;
-
-      .card_product{
-        .content-product{
-          .price{
-            margin-top: 0;
-
-            .woocommerce-Price-amount{
-              bdi{
-                font-size: 1rem;
-                font-weight: 600;
-                margin-top: 0px;
-                line-height: 1.8rem;
-                color: $primary-color;
-                margin: 20px auto;
-              }
-            } 
-          }
-        }
-      }
-    }
-  }
+  
 
   #particuliers {
     padding: 100px 0;
