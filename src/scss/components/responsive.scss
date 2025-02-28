@@ -925,7 +925,7 @@
   }
 
   #myaccount{
-    padding-top: 150px;
+    padding-top: 100px;
 
     .woocommerce-MyAccount-navigation{
       columns: 1;
@@ -1758,5 +1758,13 @@
         }
       }
     }
+  }
+
+  .title-details-account{
+    font-weight: 600;
+  }
+
+  .woocommerce-EditAccountForm{
+    padding-top: 0px;
   }
 }

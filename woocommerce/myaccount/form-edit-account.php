@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_edit_account_form' ); ?>
 
-<section>
+<section id="title-details-account">
 	<div class="container">
 		<h1>Détails du compte</h1>
 	</div>
