@@ -1670,86 +1670,17 @@
         }
       }
     }
-  
-    #confiance {
-      background: none;
-      padding: 50px 0 50px 0;
-  
-      .container {
-        h2 {
-          color: $secondary-color;
-        }
-  
-        p {
-          color: $dark-gray;
-        }
-  
-        .table_qualite {
-          .card_qualite {
-            h4 {
-              color: $secondary-color;
-            }
-  
-            img {
-              color: $primary-color;
-            }
-  
-            p {
-              color: $secondary-color;
-  
-              &::after {
-                color: $primary-color;
-              }
-            }
-          }
-  
-          .card_qualite + .card_qualite {
-            border-left: 1px solid $light-gray;
-          }
-        }
-      }
-    }
-  
-    .woocommerce-tabs {
-      padding-bottom: 100px;
-      border-bottom: 1px solid $light-gray;
-    }
-  
     
-  
     #particuliers {
-      padding: 100px 0;
+      padding: 50px 0;
   
       .container {
         gap: 70px;
+        flex-direction: column;
   
         .col-d {
-          margin-top: 200px;
-  
-          h2 {
-            color: $primary-color;
-            margin-bottom: 50px;
-  
-            strong {
-              color: $secondary-color;
-            }
-          }
-  
-          .cta {
-            margin: 50px 0 100px;
-            display: block;
-            width: fit-content;
-          }
+          margin-top: 50px;
         }
-      }
-  
-      &::after {
-        content: "";
-        width: 2px;
-        height: 50px;
-        display: block;
-        margin: auto;
-        background: $secondary-color;
       }
     }
   }  
