@@ -933,6 +933,7 @@
 
     .columns{
       flex-direction: column;
+      gap: 30px;
 
       .col-g,
       .col-d{
@@ -946,8 +947,8 @@
 
     #resume_order_details{
       .container{
-        gap: 50px;
-         
+        gap: 30px;
+
         .cold,
         .colg{
           width: 100%;
