@@ -119,6 +119,15 @@
       font-weight: 600;
     }
 
+    fieldset{
+      margin: 30px auto;
+      padding: 20px;
+
+      legend{
+        font-family: 'sofia-pro',sans-serif;
+      }
+    }
+
     .woocommerce-LostPassword{
       a{
         color:$light-gray;
@@ -126,7 +135,8 @@
       }
     }
 
-    #btn_submit-wooform{
+    #btn_submit-wooform,
+    .woocommerce-Button{
       justify-content: center;
       margin: 50px auto;
 
