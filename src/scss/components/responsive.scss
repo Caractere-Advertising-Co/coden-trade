@@ -1585,13 +1585,16 @@
   
       .woocommerce-tabs {
         h2{
-          font-size: 1.2rem;
+          font-size: 1.3rem;
         }
 
         h3{
-          font-size: 1rem;
+          font-size: 1.3rem;
           text-transform: none;
-          margin-bottom: 30px;
+          margin-bottom: 20px;
+          text-wrap: auto;
+          letter-spacing: 0;
+          line-height: 1.5rem;
         }
 
         .columns {
@@ -1599,6 +1602,12 @@
 
           .col-g{
             width: 100%;
+
+            ul{
+              li{
+                margin-top: 5px;
+              }
+            }
           }
           .col-d {
             width: 100%;
