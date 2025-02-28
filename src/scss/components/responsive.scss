@@ -1584,14 +1584,16 @@
   
   
       .woocommerce-tabs {
-        h2,
-        h3 {
-          font-size: 1rem;
-          text-transform: uppercase;
-          font-weight: 800;
-          letter-spacing: 1px;
-          margin-top: 20px;
+        h2{
+          font-size: 1.2rem;
         }
+
+        h3{
+          font-size: 1rem;
+          text-transform: none;
+          margin-bottom: 30px;
+        }
+
         .columns {
           flex-direction: column;
 
