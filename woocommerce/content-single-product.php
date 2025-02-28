@@ -61,7 +61,10 @@ if ( post_password_required() ) {
 
 		do_action( 'woocommerce_single_product_summary' );
 
-		// echo '<p class="price">'.$product->get_price_html().'</p>';
+		// Affiche le prix seulement si ce n'est pas un produit variable
+		if ( !$product->is_type('variable') ) {
+			echo '<p class="price">'.$product->get_price_html().'</p>';
+		}		
 		?>
 	</div>
 
