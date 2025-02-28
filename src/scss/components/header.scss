@@ -25,9 +25,6 @@
   display: flex;
   justify-content: space-between;
 
-  &.borBot {
-    //border-bottom: 1px solid $light-gray;
-
     .col-d {
       .secondary-navigation {
         .menu-top-header_menu-container ul,
@@ -61,120 +58,6 @@
           }
         }
       }
-    }
-
-    .primary-navigation {
-      margin-top: 20px;
-
-      #menu-navigation-principale,
-      #menu-navigation-principale-neerlandais {
-        list-style: none;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        gap: 50px;
-
-        li {
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          font-size: 0.9rem;
-          padding-top: 10px;
-          position: relative;
-
-          a {
-            color: $dark-dark-gray;
-            transition: all ease-out 300ms;
-
-            &:hover {
-              color: $primary-color;
-              font-weight: 600 !important;
-            }
-          }
-        }
-
-        .cta {
-          &::after {
-            content: "→";
-            height: 30px;
-            color: $dark-dark-gray;
-          }
-        }
-      }
-
-      .menu-item-has-children {
-        .sub-menu {
-          display: none;
-        }
-        
-        &:hover {
-          min-height: 400px;
-
-          .sub-menu {
-            background-color: $light;
-            border-bottom: 2px solid $primary-color;
-            display: block;
-            position: absolute;
-            min-width: 300px;
-            z-index: 99;
-
-            li {
-              color: $primary-color;
-              list-style: none;
-              display: block;
-              border-bottom: 1px solid $light-gray;
-              position: relative;
-              max-height: auto;
-              padding: 0;
-              margin: 0;
-
-              a {
-                color: $secondary-color;
-                text-transform: none;
-                letter-spacing: 0;
-                width: 90%;
-                display: block;
-                padding: 2% 5%;
-                margin: 0;
-
-                &:hover {
-                  background-color: $primary-color;
-                  border-color: $primary-color;
-                  min-height: auto;
-  
-                  a {
-                    color: $light;
-                  }
-  
-                  .sub-menu {
-                    display: block;
-                  }
-                }
-  
-                .sub-menu {
-                  display: none;
-                  position: absolute;
-                  right: -300px;
-                  top: 0;
-  
-                  li {
-                    a {
-                      color: $secondary-color;
-                      text-transform: none;
-                      font-size: 0.8rem;
-                      font-weight: 300;
-  
-                      &:hover {
-                        color: $light;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }  
-    
     }
 
     .hamburger-menu {
@@ -388,7 +271,6 @@
     display: none;
     stroke: #fff;
   }
-}
 
 .megamenu {
   display: none;
