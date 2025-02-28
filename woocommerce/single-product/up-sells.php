@@ -77,7 +77,7 @@ if ( $upsells ) : ?>
 						$thmb = wp_get_attachment_image( $thmb_images, 'Large' );?>
 			
 						<div class="block-img">
-							<img src="<?php echo $thmb[0];?>" style="background-size:cover;background-repeat:no-repeat;"/>
+							<img src="<?php echo $thmb;?>" style="background-size:cover;background-repeat:no-repeat;"/>
 						</div>
 
 						<div class="content-product">
