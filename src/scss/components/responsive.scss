@@ -924,6 +924,23 @@
     }
   }
 
+  #myaccount{
+    padding-top: 150px;
+
+    .woocommerce-MyAccount-navigation{
+      columns: 1;
+    }
+
+    .columns{
+      flex-direction: column;
+
+      .col-g,
+      .col-d{
+        width: 100%;
+      }
+    }
+  }
+
   // Références 
   .page-template-references{
     #references{
