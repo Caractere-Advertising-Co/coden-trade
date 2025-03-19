@@ -41,6 +41,7 @@
         grid-template-rows: 1fr;
         grid-column-gap: 30px;
         grid-row-gap: 30px;
+        justify-items: center;
 
         .card_article {
           min-height: 500px;
