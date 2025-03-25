@@ -1,12 +1,11 @@
-<section>
-    <?php
-        $popup = get_field('popup_actif','options');
-        $contentPopUp = get_field('popup_text','options');
-        $imagePu = get_field('popup_image','options');
-        $cta = get_field('lien_popup','options');
+<?php
+    $popup = get_field('popup_actif','options');
+    $contentPopUp = get_field('popup_text','options');
+    $imagePu = get_field('popup_image','options');
+    $cta = get_field('lien_popup','options');
 
-        if($popup):?>
-            <div class="modal_popup" id="modal_popup_front">
+    if($popup):?>
+        <div class="modal_popup" id="modal_popup_front">
                 <div class="content_popup">            
                     <div class="col-g">
                         <?php if($imagePu):?>
@@ -20,5 +19,4 @@
                     </div>
                 </div>
             </div>
-        <?php endif;?>
-</section>
+    <?php endif;?>
