@@ -1139,12 +1139,7 @@
     .swiper {
       .swiper-wrapper {
         .swiper-slide {
-          position: relative;
-          img {
-            width: auto;
-            max-width: inherit;
-            height: 100%;
-          }
+          position: relative; 
 
           .content {
             position: absolute;
