@@ -29,6 +29,10 @@
         </svg>
     </div>
 
+    <?php if(is_front_page()):
+        get_template_part( 'templates-parts/section-popup' );
+    endif;?>
+
     <header>
         <?php $banner = get_field('bandeau_top_header','options');
         if($banner): ?>

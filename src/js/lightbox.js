@@ -61,4 +61,20 @@ $(document).ready(function () {
     $(".container_popup").empty();
     $("#popup_reference").hide();
   }
+
+  
+  var modal = document.getElementById('#modal_popup_front');
+
+  // Fermeture de la popup lors du clic sur le bouton de fermeture
+
+  $('#close_popup').on('click',function(event){
+    $('#modal_popup_front').css("display","none");
+  });
+
+  // Fermeture de la popup lors du clic en dehors du contenu
+  $(window).on('click', function(event) {
+    if (event.target == modal) {
+      modal.css("display","none");
+    }
+  });
 });
