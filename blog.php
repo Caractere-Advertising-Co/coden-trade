@@ -24,9 +24,13 @@ $intro = get_field('introduction');
     <div class="container">
         <div class="grid_articles">
             <?php 
+            $total_posts = wp_count_posts('post')->publish; // Nombre total d'articles publiés
+            $posts_per_page = 9;
+
+
             $args = array(
                     'post_type' => 'post',
-                    'posts_per_page'=> 9,
+                    'posts_per_page'=> $posts_per_page,
                     'post_statut' => 'publish'
             );
 
@@ -44,7 +48,7 @@ $intro = get_field('introduction');
                         <h4><?php the_date();?></h4>
                         <h3><?php the_title();?></h3>
 
-                        <a href="">Découvrir</a>
+                        <a href="<?php the_permalink();?>">Découvrir</a>
                     </a>
                 </div>
             <?php
@@ -54,9 +58,11 @@ $intro = get_field('introduction');
             wp_reset_postdata();?>
         </div>
 
-        <div class="load-more-container">
-            <a id="load-more-posts" class="cta" href="!#">Voir plus</a>
-        </div>
+        <?php if ($total_posts > $posts_per_page): ?>
+            <div class="load-more-container">
+                <a id="load-more-posts" class="cta" href="!#">Voir plus</a>
+            </div>
+        <?php endif; ?>
     </div>
 </section>
 
