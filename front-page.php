@@ -3,9 +3,7 @@
 $actifWoo = get_field('section_woo_actif');
 $actifBig = get_field('section_big_actif');
 
-?>
-
-<?php get_header();?>
+get_header();?>
 
 <section id="hero-container">
     <div class="swiper swiper-hero">
@@ -169,6 +167,5 @@ $actifBig = get_field('section_big_actif');
     </div>
 </section>
 
-<?php get_template_part( 'templates-parts/contact' );?>
-
-<?php get_footer();?>
+<?php get_template_part( 'templates-parts/contact' );
+get_footer();?>
