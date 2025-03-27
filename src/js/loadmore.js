@@ -1,6 +1,6 @@
 // scripts.js (ou tout autre nom que vous avez donné à votre fichier JavaScript)
 jQuery(document).ready(function ($) {
-  var offset = 9; // Nombre d'articles déjà affichés
+  let offset = 9; // Initial offset value
 
   $("#load-more-posts").click(function (e) {
     e.preventDefault();
@@ -15,9 +15,15 @@ jQuery(document).ready(function ($) {
       success: function (response) {
         $(".grid_articles").append(response);
         offset += 9; // Mettre à jour le décalage pour charger les prochains articles
+        
+        // Vérifier s'il n'y a plus d'articles à charger
+        if (response.trim() === '') {
+          $("#load-more-posts").hide(); // Cacher le bouton s'il n'y a plus d'articles à charger
+        }
       },
     });
   });
+
 
   $("#load-more-refs").click(function (e) {
     e.preventDefault();
