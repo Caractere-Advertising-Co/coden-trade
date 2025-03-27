@@ -17,9 +17,9 @@ jQuery(document).ready(function ($) {
         offset += 9; // Mettre à jour le décalage pour charger les prochains articles
         
         // Vérifier s'il n'y a plus d'articles à charger
-        if (response.trim() === '') {
-          $("#load-more-posts").hide(); // Cacher le bouton s'il n'y a plus d'articles à charger
-        }
+        if (response.trim() === '' || offset >= total_posts) {
+          $("#load-more-posts").hide();
+      }
       },
     });
   });
