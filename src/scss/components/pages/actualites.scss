@@ -44,12 +44,12 @@
         justify-items: center;
 
         .card_article {
-          min-height: 500px;
+          min-height: 400px;
           position: relative;
           border-bottom: 1px solid $light-gray;
 
           .miniature {
-            max-height: 300px;
+            height: 200px;
             width: auto;
             overflow: hidden;
 
