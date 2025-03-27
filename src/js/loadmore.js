@@ -19,7 +19,8 @@ jQuery(document).ready(function ($) {
         // Vérifier s'il n'y a plus d'articles à charger
         if (response.trim() === '' || offset >= total_posts) {
           $("#load-more-posts").hide();
-      }
+        }
+        
       },
     });
   });
