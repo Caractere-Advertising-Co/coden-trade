@@ -63,12 +63,12 @@ $(document).ready(function () {
   }
 
   
-  var modal = document.getElementById('#modal_popup_front');
+  var modal = $('#modal_popup_front');
 
   // Fermeture de la popup lors du clic sur le bouton de fermeture
 
-  $('#close_popup').on('click',function(event){
-    $('#modal_popup_front').css("display","none");
+  $('#close_popup_front').on('click',function(event){
+    modal.css("display","none");
   });
 
   // Fermeture de la popup lors du clic en dehors du contenu

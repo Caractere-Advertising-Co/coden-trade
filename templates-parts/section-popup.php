@@ -13,7 +13,7 @@
                         <?php endif;?>    
                     </div>
                     <div class="col-d">
-                        <div class="close_popup" id="close_popup">x</div>
+                        <div class="close_popup" id="close_popup_front">x</div>
                         <?php if($contentPopUp): echo $contentPopUp; endif;?>
                         <?php if($cta): echo '<a href="'.$cta['url'].'" class="cta">'.$cta['title'].'</a>';endif;?>
                     </div>
