@@ -53,6 +53,7 @@
               color: $light !important;
             }
           }
+
           .wpml-ls-current-language {
             a {
               color: $primary-color;
@@ -72,12 +73,12 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
-        gap: 50px;
+        gap: 30px;
 
         li {
           text-transform: uppercase;
           letter-spacing: 3px;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           padding-top: 10px;
           position: relative;
 
@@ -214,7 +215,7 @@
           font-family: "Sofia";
           letter-spacing: 10px;
           font-weight: 300;
-          font-size: 0.7rem;
+          font-size: 0.8rem;
 
           a {
             display: inline !important;
@@ -224,6 +225,7 @@
             }
           }
         }
+        
         .wpml-ls-current-language {
           a {
             color: $primary-color;
