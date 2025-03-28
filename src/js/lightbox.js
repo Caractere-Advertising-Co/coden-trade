@@ -67,12 +67,15 @@ $(document).ready(function () {
 
   // Fermeture de la popup lors du clic sur le bouton de fermeture
   $('#close_popup_front').on('click', function(event) {
+    console.log('click bouton close');
     modal.css("display", "none");
   });
 
   // Fermeture de la popup lors du clic en dehors du contenu de la popup
   $(document).on('click', function(event) {
     if (!$(event.target).closest('.modal_popup').length) {
+      console.log('click everywhere');
+      
       modal.css("display", "none");
     }
   });
