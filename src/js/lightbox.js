@@ -72,9 +72,7 @@ $(document).ready(function () {
   });
 
   // Fermeture de la popup lors du clic en dehors du contenu
-  $(window).on('click', function(event) {
-    if (event.target == modal) {
+  $(modal).on('click', function(event) {
       modal.css("display","none");
-    }
   });
 });
