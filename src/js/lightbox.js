@@ -63,20 +63,23 @@ $(document).ready(function () {
   }
 
 
-  var modal = $('#modal_popup_front');
+    var modal = $('#modal_popup_front');
 
-  // Fermeture de la popup lors du clic sur le bouton de fermeture
-  $('#close_popup_front').on('click', function(event) {
-    console.log('click bouton close');
-    modal.css("display", "none");
-  });
+    // Ferme la popup avec le bouton de fermeture
+    $('#close_popup_front').on('click', function() {
+        modal.css("display", "none");
+    });
 
-  // Fermeture de la popup lors du clic en dehors du contenu de la popup
-  $(document).on('click', function(event) {
-    if (!$(event.target).closest('.modal_popup').length) {
-      console.log('click everywhere');
-      
-      modal.css("display", "none");
-    }
-  });
+    // Empêche la fermeture si on clique dans le contenu de la popup
+    $('.content_popup').on('click', function(event) {
+        event.stopPropagation();
+    });
+
+    // Ferme la popup si on clique en dehors du contenu
+    $(document).on('click', function(event) {
+        console.log("Click détecté !"); // Vérifier si ça se déclenche
+        if (!$(event.target).closest('.content_popup').length) {
+            modal.css("display", "none");
+        }
+    });
 });
