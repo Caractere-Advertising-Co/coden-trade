@@ -53,7 +53,9 @@
 }
 
 #list-subcategory{
-    padding: 100px 0 50px;
+    margin-top: 200px;
+    padding: 50px 0;
+    border-top: 1px solid $light-gray;
 
     h2{
       margin-bottom: 100px;
@@ -62,15 +64,17 @@
     
     .grid{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
         text-align: center;
 
         .elem-subcategory{
             width: 100%;
-            display: flex;
-            gap: 20px;
             align-items: center;
+            border: 1px solid $secondary-color;
+            border-radius: 25px;
+            padding: 5px 0;
+            color: $secondary-color;
 
             .thumbnails-subcat{
                 background: $secondary-color;
@@ -148,6 +152,7 @@
 
   .woocommerce-breadcrumb{
     width: fit-content;
+    font-family: "sofia-pro",sans-serif;
   }
 
   .woocommerce-ordering{

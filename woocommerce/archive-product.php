@@ -21,28 +21,6 @@ get_header( 'shop' );
 
 ?>
 
-<?php
-	$queried_object = get_queried_object();
-	$bg_intro = get_field('background','term_'.$queried_object->term_id);
-	$intro = get_field('txt-intro','term_'.$queried_object->term_id);
-	$cta = get_field('cta','term_'.$queried_object->term_id);
-?>
-
-<section id="banner-intro" >
-	<div class="container">
-		<?php if($intro): echo $intro; endif;?>
-		<?php if($cta): echo '<a href="'.$cta['url'].'" class="cta">'.$cta['title'].'</a>'; endif;?>
-	</div>
-	<div class="block-img" >
-		<svg class="svg">
-			<clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
-				<path d="M0.579,1 H1 V0.003 H0.099 S-0.012,0.635,0.57,0.901"></path>
-			</clipPath>
-		</svg>
-
-		<div class="clipped" style="background:url('<?php echo $bg_intro['url'];?>');"></div>
-	</div>
-</section>
 
 <?php 
 	$term_id  = get_queried_object_id();
@@ -81,16 +59,28 @@ if($children):?>
 				$thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
 				$image = wp_get_attachment_url( $thumbnail_id );?>
 				
-				<a href="<?php echo $term_link;?>" class="elem-subcategory">
-					<div class="thumbnails-subcat">
-						<img src="<?php echo $image;?>" alt="miniatures"/>
-					</div>
-
-					<p><?php echo $term->name;?></p>
-				
-				</a>
-			<?php endforeach;
+				<a href="<?php echo $term_link;?>" class="elem-subcategory"><?php echo $term->name;?></p></a>
+			<?php endforeach;		
 			?>
+		</div>
+		
+
+		<div class="container">
+
+		<?php foreach ($terms as $term):
+				$subTerms = get_terms([
+					'taxonomy'    => $taxonomy,
+					'hide_empty'  => false,
+					'parent'      => $term->term_id
+				]);
+				
+				echo '<div class="container columns" data-subId="'. $term->term_id.'">';
+				foreach($subTerms as $sTerm):
+					echo '<p>' . $sTerm->name . '</p>';
+				endforeach;
+
+				echo '</div>';
+			endforeach;?>
 		</div>
 	</section>
 <?php endif;?>
@@ -161,6 +151,30 @@ if($children):?>
 				?>
 			</div>
 	</section>
+
+
+<?php
+	$queried_object = get_queried_object();
+	$bg_intro = get_field('background','term_'.$queried_object->term_id);
+	$intro = get_field('txt-intro','term_'.$queried_object->term_id);
+	$cta = get_field('cta','term_'.$queried_object->term_id);
+?>
+
+<section id="banner-intro" >
+	<div class="container">
+		<?php if($intro): echo $intro; endif;?>
+		<?php if($cta): echo '<a href="'.$cta['url'].'" class="cta">'.$cta['title'].'</a>'; endif;?>
+	</div>
+	<div class="block-img" >
+		<svg class="svg">
+			<clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
+				<path d="M0.579,1 H1 V0.003 H0.099 S-0.012,0.635,0.57,0.901"></path>
+			</clipPath>
+		</svg>
+
+		<div class="clipped" style="background:url('<?php echo $bg_intro['url'];?>');"></div>
+	</div>
+</section>
 
 			<section id="nos_connaissances">
 				<?php get_template_part( 'templates-parts/section-citation' );?>
