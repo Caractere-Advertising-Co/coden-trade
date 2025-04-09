@@ -10,7 +10,7 @@ $current_term = get_term($current_term_id, $taxonomy);
 // Récupère les 4 catégories parents (niveau 0)
 $parent_terms = get_terms([
     'taxonomy' => $taxonomy,
-    'parent' => 1,
+    'parent' => 0,
     'hide_empty' => true
 ]);
 
@@ -18,7 +18,7 @@ $parent_terms = get_terms([
 $child_terms = get_terms([
     'taxonomy' => $taxonomy,
     'parent' => $current_term_id,
-    'hide_empty' => false
+    'hide_empty' => true
 ]);
 
 // Obtenir tous les IDs : catégorie active + ses enfants
