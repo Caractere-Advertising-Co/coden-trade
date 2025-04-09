@@ -16,6 +16,8 @@
     "fslightbox": "^3.4.1",
     "gsap": "^3.12.5",
     "in-view": "^0.6.1",
+    "isotope": "^1.0.0-alpha.3",
+    "isotope-layout": "^3.0.6",
     "lodash": "^4.17.21",
     "sass": "^1.70.0",
     "sass-loader": "^14.0.0",

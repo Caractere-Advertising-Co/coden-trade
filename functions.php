@@ -54,6 +54,7 @@ function enqueue_custom_scripts() {
     // Localisation du script AJAX
     wp_localize_script('custom-scripts', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 }
+  
 
 
 /*********************************

@@ -1,157 +1,147 @@
 <?php
-/**
- * The Template for displaying product archives, including the main shop page which is a post type archive
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/archive-product.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see https://woo.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 3.4.0
- */
+defined('ABSPATH') || exit;
 
-defined( 'ABSPATH' ) || exit;
+get_header('shop');
 
-get_header( 'shop' );
+$taxonomy = 'product_cat';
+$current_term_id = get_queried_object_id();
+$current_term = get_term($current_term_id, $taxonomy);
 
+// Récupère les 4 catégories parents (niveau 0)
+$parent_terms = get_terms([
+    'taxonomy' => $taxonomy,
+    'parent' => 0,
+    'hide_empty' => true
+]);
+
+// Sous-catégories de la catégorie active
+$child_terms = get_terms([
+    'taxonomy' => $taxonomy,
+    'parent' => $current_term_id,
+    'hide_empty' => false
+]);
+
+// Obtenir tous les IDs : catégorie active + ses enfants
+$term_ids = [$current_term_id];
+foreach ($child_terms as $child) {
+    $term_ids[] = $child->term_id;
+}
+
+// Query produits (catégorie + enfants)
+$args = [
+    'post_type' => 'product',
+    'posts_per_page' => -1,
+    'tax_query' => [
+        [
+            'taxonomy' => $taxonomy,
+            'field' => 'term_id',
+            'terms' => $term_ids,
+            'include_children' => true,
+        ]
+    ]
+];
+
+$products = new WP_Query($args);
 ?>
 
+<?php if (!empty($child_terms)) : ?>
+   
+<?php endif; 
 
-<?php 
-	$term_id  = get_queried_object_id();
-	$term = get_queried_object();
-	$children = get_terms( $term->taxonomy, array(
-		'parent'    => $term->term_id,
-		'hide_empty' => false
-	));
-		
-if($children):?>
+if($parent_terms):?>
 	<section id="list-subcategory">
-		<?php 
-			$title = get_field('cat_title','options');
-			$taxonomy = 'product_cat';
-					
-			// Get subcategories of the current category
-			$terms    = get_terms([
-				'taxonomy'    => $taxonomy,
-				'hide_empty'  => false,
-				'parent'      => $term_id 
-			]);
-		?>
+		<?php $title = get_field('cat_title','options');?>
 
-		<div class="container">
-			<?php if($title): echo $title;endif; ?>
-		</div>
+		<div class="container"><?php if($title): echo $title;endif; ?></div>
 		
 		<div class="container grid">
 			<?php
 
 			// Loop through product subcategories WP_Term Objects
-			foreach ( $terms as $term ):
+			foreach ( $parent_terms as $term ):
+
+				$is_active = $term->term_id === $current_term->term_id || $term->term_id === $current_term->parent;
 
 				$term_link = get_term_link( $term, $taxonomy );
 
 				$thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
 				$image = wp_get_attachment_url( $thumbnail_id );?>
 				
-				<a href="<?php echo $term_link;?>" class="elem-subcategory"><?php echo $term->name;?></p></a>
-			<?php endforeach;		
-			?>
+				<a href="<?php echo get_term_link($term);?>" data-term="<?php echo $term->term_id;?>" class="elem-subcategory <?php echo $is_active ? ' active' : ''; ?>"><?php echo $term->name;?></p></a>
+			<?php endforeach;?>
 		</div>
-		
 
-		<div class="container">
 
-		<?php foreach ($terms as $term):
-				$subTerms = get_terms([
-					'taxonomy'    => $taxonomy,
-					'hide_empty'  => false,
-					'parent'      => $term->term_id
-				]);
-				
-				echo '<div class="container columns" data-subId="'. $term->term_id.'">';
-				foreach($subTerms as $sTerm):
-					echo '<p>' . $sTerm->name . '</p>';
-				endforeach;
+		<div class="container columns resultSubitem">
+			<button class="subItem active" data-filter="*">Tous</button>
 
-				echo '</div>';
-			endforeach;?>
+			<?php foreach ($child_terms as$child):?>
+				<button class="subItem"  data-filter=".term-<?php echo $child->term_id; ?>"><?php echo $child->name;?></button>
+			<?php endforeach;?>
 		</div>
 	</section>
 <?php endif;?>
 
-	<section id="list-product-subCategory">
-		<div class="container">
-			<?php if ( woocommerce_product_loop() ) {
+<!-- GRILLE PRODUITS -->
 
-				/**
-				 * Hook: woocommerce_before_main_content.
-				 *
-				 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-				 * @hooked woocommerce_breadcrumb - 20
-				 * @hooked WC_Structured_Data::generate_website_data() - 30
-				 */
-				do_action( 'woocommerce_before_main_content' );
+<div class="container table_product">
+    <?php if ($products->have_posts()) :
+        while ($products->have_posts()) : $products->the_post();
+            global $product;
 
-				/**
-				 * Hook: woocommerce_before_shop_loop.
-				 *
-				 * @hooked woocommerce_output_all_notices - 10
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
+            $term_classes = '';
+            $terms = wp_get_post_terms(get_the_ID(), $taxonomy);
+            foreach ($terms as $term) {
+                $term_classes .= ' term-' . $term->term_id;
+            }
 
-				woocommerce_product_loop_start();
+			$pid = get_the_id();
+			$price = get_post_meta( get_the_ID(), '_price', true);
+			$cat = get_the_terms( $pid, 'product_cat' );
+			$tags = get_the_terms( $pid, 'product_tag' );
 
-				if ( wc_get_loop_prop( 'total' ) ) {
-					while ( have_posts() ) {
-						the_post();
-
-						/**
-						 * Hook: woocommerce_shop_loop.
-						 */
-						do_action( 'woocommerce_shop_loop' );
-
-						wc_get_template_part( 'content', 'product' );
+			if($tags):
+				foreach($tags as $t):
+					switch($t->name){
+						case 'Promo':
+							$tagClass = '-white';
+							break;
+						case 'New':
+							$tagClass = '-black';
+							break;
+						default:
+						$tagClass = '';
+						break;
 					}
-				}
+				endforeach;
+			endif;
 
-				woocommerce_product_loop_end();
-					/**
-					 * Hook: woocommerce_after_shop_loop.
-					 *
-					 * @hooked woocommerce_pagination - 10
-					 */
-					do_action( 'woocommerce_after_shop_loop' );
-				} else {
-					/**
-					 * Hook: woocommerce_no_products_found.
-					 *
-					 * @hooked wc_no_products_found - 10
-					 */
-					//do_action( 'woocommerce_no_products_found' );
-				}
-				/**
-				 * Hook: woocommerce_after_main_content.
-				 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-				 */
-				do_action( 'woocommerce_after_main_content' );
+            ?>
+            <div class="card_product products <?php foreach($cat as $c): echo $c->slug . ' ';endforeach; echo esc_attr($term_classes); ?>">
+                <a href="<?php echo the_permalink();?>">
+                    <?php if($tags): ?>
+                        <div class="bubble <?php echo $tagClass;?>">
+                            <p><?php foreach($tags as $t): echo $t->name; endforeach;?></p>
+                        </div>
+                    <?php endif;
 
-				/**
-				 * Hook: woocommerce_sidebar.
-				 * @hooked woocommerce_get_sidebar - 10
-				 */
-				do_action( 'woocommerce_sidebar' );
-				?>
-			</div>
-	</section>
+                        echo '<div class="thumbs"><img src="'.get_the_post_thumbnail_url( ).'"/></div>';
+                        
+                        if($cat):
+                            echo '<h4 class="cat">'.$cat[0]->slug .'</h4>';
+                        endif;
 
+                        echo '<span class="title"><h3>'.get_the_title().'</h3></span>';
+                        echo '<p class="price"> Àpd '.$price.' €</p>';
+                    ?>
+                </a>
+            </div>
+        <?php endwhile;
+        wp_reset_postdata();
+    else : ?>
+        <p>Aucun produit trouvé.</p>
+    <?php endif; ?>
+</div>
 
 <?php
 	$queried_object = get_queried_object();
@@ -176,14 +166,11 @@ if($children):?>
 	</div>
 </section>
 
-			<section id="nos_connaissances">
-				<?php get_template_part( 'templates-parts/section-citation' );?>
-			</section>
+<section id="nos_connaissances">
+	<?php get_template_part( 'templates-parts/section-citation' );?>
+</section>
 
-				<?php get_template_part( 'templates-parts/section-catalogue' );?>
-				<?php get_template_part( 'templates-parts/section-confiance' );?>
+<?php get_template_part( 'templates-parts/section-catalogue' );?>
+<?php get_template_part( 'templates-parts/section-confiance' );?>
 
-	
-			<?php
-
-get_footer( 'shop' );
+<?php get_footer( 'shop' );
