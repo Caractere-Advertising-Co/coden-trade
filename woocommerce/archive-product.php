@@ -44,6 +44,13 @@ $args = [
 $products = new WP_Query($args);
 ?>
 
+<section id="introduction">
+	<div class="container">
+		<h1><?php echo $current_term->name;?></h1>
+	</div>
+</section>
+
+
 <?php if ($parent_terms): ?>
 <section id="list-subcategory">
     <?php $title = get_field('cat_title','options'); ?>
