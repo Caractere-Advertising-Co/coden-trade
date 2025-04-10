@@ -53,8 +53,6 @@ $products = new WP_Query($args);
 
 <?php if ($parent_terms): ?>
 <section id="list-subcategory">
-    <?php $title = get_field('cat_title','options'); ?>
-    <div class="container"><?php if($title) echo $title; ?></div>
 
     <div class="container grid">
         <?php foreach ($parent_terms as $term):
@@ -125,6 +123,10 @@ $products = new WP_Query($args);
         <p>Aucun produit trouvé.</p>
     <?php endif; ?>
 </div>
+
+
+<?php $title = get_field('cat_title','options'); ?>
+    <div class="container"><?php if($title) echo $title; ?></div>
 
 <?php
 $queried_object = get_queried_object();
