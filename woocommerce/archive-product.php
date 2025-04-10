@@ -117,25 +117,60 @@ if($parent_terms):?>
 			endif;
 
             ?>
-            <div class="card_product products <?php foreach($cat as $c): echo $c->slug . ' ';endforeach; echo esc_attr($term_classes); ?>">
-                <a href="<?php echo the_permalink();?>">
-                    <?php if($tags): ?>
-                        <div class="bubble <?php echo $tagClass;?>">
-                            <p><?php foreach($tags as $t): echo $t->name; endforeach;?></p>
-                        </div>
-                    <?php endif;
 
-                        echo '<div class="thumbs"><img src="'.get_the_post_thumbnail_url( ).'"/></div>';
-                        
-                        if($cat):
-                            echo '<h4 class="cat">'.$cat[0]->slug .'</h4>';
-                        endif;
+			<li <?php wc_product_class( 'card_product', $product ); ?>><?php
 
-                        echo '<span class="title"><h3>'.get_the_title().'</h3></span>';
-                        echo '<p class="price"> Àpd '.$price.' €</p>';
-                    ?>
-                </a>
-            </div>
+	if($tags): ?>
+		<div class="bubble <?php echo $tagClass;?>">
+			<p><?php foreach($tags as $t): echo $t->name; endforeach;?></p>
+		</div>
+	<?php endif;
+	/**
+	 * Hook: woocommerce_before_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_open - 10
+	 */
+	do_action( 'woocommerce_before_shop_loop_item' );
+
+	/**
+	 * Hook: woocommerce_before_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_show_product_loop_sale_flash - 10
+	 * @hooked woocommerce_template_loop_product_thumbnail - 10
+	 */
+	do_action( 'woocommerce_before_shop_loop_item_title' );
+	
+	?>
+
+	<div class="content-product">
+	<?php 
+	/**
+	 * Hook: woocommerce_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_template_loop_product_title - 10
+	 */
+
+	 echo '<span class="title"><h3>'. get_the_title($pid).'</h3></span>';
+
+	/**
+	 * Hook: woocommerce_after_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_template_loop_rating - 5
+	 * @hooked woocommerce_template_loop_price - 10
+	 */
+	do_action( 'woocommerce_after_shop_loop_item_title' );
+
+	/**
+	 * Hook: woocommerce_after_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_close - 5
+	 * @hooked woocommerce_template_loop_add_to_cart - 10
+	 */
+	do_action( 'woocommerce_after_shop_loop_item' );
+	?>
+	</div>
+</li>
+
         <?php endwhile;
         wp_reset_postdata();
     else : ?>
