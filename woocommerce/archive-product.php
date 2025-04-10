@@ -118,9 +118,16 @@ if($parent_terms):?>
 
             ?>
 
-			<li <?php wc_product_class( 'card_product', $product ); ?>><?php
+			<?php 
+				$newClass= 'card_product';
 
-	if($tags): ?>
+				foreach($cat as $c): 
+					$newClass .= ' ' . $c->slug;
+				endforeach;
+			?>
+			<li <?php wc_product_class( $newClass , $product );?>>
+
+	<?php if($tags): ?>
 		<div class="bubble <?php echo $tagClass;?>">
 			<p><?php foreach($tags as $t): echo $t->name; endforeach;?></p>
 		</div>
