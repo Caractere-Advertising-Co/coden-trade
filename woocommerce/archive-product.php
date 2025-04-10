@@ -115,6 +115,7 @@ if($parent_terms):?>
 					}
 				endforeach;
 			endif;
+			
 
             ?>
 
