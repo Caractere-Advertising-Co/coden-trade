@@ -92,7 +92,7 @@ if($parent_terms):?>
             $term_classes = '';
             $terms = wp_get_post_terms(get_the_ID(), $taxonomy);
             foreach ($terms as $term) {
-                $term_classes .= ' term-' . $term->term_id;
+                $term_classes .= '.term-' . $term->term_id;
             }
 
 			$pid = get_the_id();
@@ -119,7 +119,7 @@ if($parent_terms):?>
 
             ?>
 
-			<?php $newClass= 'card_product ' . '.'.$term_classes;?>
+			<?php $newClass= 'card_product ' . $term_classes;?>
 			<li <?php wc_product_class( $newClass , $product );?>>
 
 	<?php if($tags): ?>
