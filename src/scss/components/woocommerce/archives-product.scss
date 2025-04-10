@@ -100,7 +100,8 @@
 
     .resultSubitem{
       margin-top: 20px;
-      gap: 30px;
+      gap: 10px 30px;
+      flex-wrap: wrap;
 
       button{
         background: none;
