@@ -125,8 +125,10 @@ $products = new WP_Query($args);
 </div>
 
 
-<?php $title = get_field('cat_title','options'); ?>
+<section id="citationTitle">
+	<?php $title = get_field('cat_title','options'); ?>
     <div class="container"><?php if($title) echo $title; ?></div>
+</section>
 
 <?php
 $queried_object = get_queried_object();
