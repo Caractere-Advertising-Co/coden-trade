@@ -118,13 +118,7 @@ if($parent_terms):?>
 
             ?>
 
-			<?php 
-				$newClass= 'card_product';
-
-				foreach($cat as $c): 
-					$newClass .= ' ' . $c->slug;
-				endforeach;
-			?>
+			<?php $newClass= 'card_product ' . $term_classes;?>
 			<li <?php wc_product_class( $newClass , $product );?>>
 
 	<?php if($tags): ?>
