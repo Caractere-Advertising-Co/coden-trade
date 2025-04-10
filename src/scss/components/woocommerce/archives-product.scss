@@ -135,13 +135,13 @@
   transition: 0.3s ease-in-out;
 
   .card_product{
-    width: calc(33.333% - 34px); // 3 colonnes avec 50px de gap
+    width: calc(25% - 34px); // 3 colonnes avec 50px de gap
     margin-bottom: 50px;
     float: left; // Important pour que Isotope fonctionne bien
     box-sizing: border-box;
     margin-right: 50px;
 
-    &:nth-child(3n){
+    &:nth-child(4n){
       margin-right: 0;
     }
   }
