@@ -24,9 +24,6 @@ module.exports = {
       {
         test: /\.js$/,    // Gestion des fichiers JS
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader", // Pour transpiler ton JS moderne (optionnel mais recommandé)
-        },
       },
     ],
   },

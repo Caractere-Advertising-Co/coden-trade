@@ -26,8 +26,6 @@ get_header();?>
     </div>
 </section>
 
-
-<?php get_template_part( 'templates-parts/disclaimer-banner' );?>
 <?php get_template_part( 'templates-parts/contact' );?>
 
 <?php get_footer();?>

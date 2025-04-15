@@ -49,11 +49,6 @@ endif;
     </div>
 
     <?php if(is_page_template( 'apropos.php' )):?>
-
-        <div class="container">
-            <?php if($titreService): echo $titreService; endif;?>
-        </div>
-
         <div class="service-bottom" <?php if($bgService):?>style="background:url('<?php echo $bgService['url'];?>')no-repeat;background-position: left center;"<?php endif;?>>
             <?php $i = 0;?>
             <div class="container">
