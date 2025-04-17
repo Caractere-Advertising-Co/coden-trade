@@ -16,9 +16,8 @@ get_header();?>
 
 <section id="catalogues-section">
     <div class="container">
-            <?php $titre = get_field('titre');?>
-            <?php if($titre): echo $titre; endif;?>
-
+        <?php $titre = get_field('titre');?>
+        <?php if($titre): echo $titre; endif;?>
     </div>
 
     <div class="container content-catalogue">
@@ -27,5 +26,4 @@ get_header();?>
 </section>
 
 <?php get_template_part( 'templates-parts/contact' );?>
-
 <?php get_footer();?>
