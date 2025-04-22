@@ -458,3 +458,45 @@ function content_popup(){
   
 add_action('wp_ajax_content_popup', 'content_popup');
 add_action('wp_ajax_nopriv_content_popup', 'content_popup');
+
+/* Custom price by role */
+
+// Ajouter un champ personnalisé dans l'édition des variations
+function add_professional_price_field_to_variations( $loop, $variation_data, $variation ) {
+    woocommerce_wp_text_input( array(
+        'id'            => '_professional_price',
+        'label'         => __( 'Prix Professionnel (€)', 'your-textdomain' ),
+        'desc_tip'      => true,
+        'description'   => __( 'Prix spécifique pour les professionnels.', 'your-textdomain' ),
+        'type'          => 'number',
+        'custom_attributes' => array(
+            'step' => '0.01',
+            'min'  => '0'
+        ),
+        'value'         => get_post_meta( $variation->ID, '_professional_price', true ),
+    ));
+}
+add_action( 'woocommerce_variation_options_pricing', 'add_professional_price_field_to_variations', 10, 3 );
+
+// Sauvegarder la valeur du prix professionnel
+function save_professional_price_field( $variation ) {
+    if ( isset( $_POST['_professional_price'][ $variation->get_id() ] ) ) {
+        $professional_price = wc_clean( $_POST['_professional_price'][ $variation->get_id() ] );
+        update_post_meta( $variation->get_id(), '_professional_price', $professional_price );
+    }
+}
+add_action( 'woocommerce_admin_process_variation_object', 'save_professional_price_field', 10, 1 );
+
+// Remplacer le prix pour les professionnels
+function override_price_for_professionals( $price, $variation ) {
+    $user = wp_get_current_user();
+    if ( in_array( 'professional', $user->roles ) ) {
+        $professional_price = get_post_meta( $variation->get_id(), '_professional_price', true );
+        if ( $professional_price !== '' ) {
+            $price = $professional_price;
+        }
+    }
+    return $price;
+}
+add_filter( 'woocommerce_product_variation_get_price', 'override_price_for_professionals', 10, 2 );
+add_filter( 'woocommerce_product_variation_get_regular_price', 'override_price_for_professionals', 10, 2 );
