@@ -491,7 +491,7 @@ add_filter( 'woocommerce_product_variation_get_regular_price', 'custom_role_base
 function custom_role_based_price( $price, $product ) {
     if ( is_user_logged_in() ) {
         $user = wp_get_current_user();
-        if ( in_array( 'professional', (array) $user->roles ) ) {
+        if ( in_array( 'um_professionnel', (array) $user->roles ) ) {
             $custom_price = get_post_meta( $product->get_id(), '_professional_price', true );
             if ( $custom_price !== '' && $custom_price !== false ) {
                 return $custom_price;
@@ -511,7 +511,7 @@ add_action( 'woocommerce_before_calculate_totals', function( $cart ) {
         $product = $cart_item['data'];
         if ( is_user_logged_in() ) {
             $user = wp_get_current_user();
-            if ( in_array( 'professionel', (array) $user->roles ) ) {
+            if ( in_array( 'um_professionnel', (array) $user->roles ) ) {
                 $custom_price = get_post_meta( $product->get_id(), '_professional_price', true );
                 if ( $custom_price !== '' && $custom_price !== false ) {
                     $product->set_price( $custom_price );
@@ -526,7 +526,7 @@ add_filter( 'woocommerce_get_price_html', 'custom_price_html_for_professionals',
 function custom_price_html_for_professionals( $price_html, $product ) {
     if ( is_user_logged_in() ) {
         $user = wp_get_current_user();
-        if ( in_array( 'professionel', (array) $user->roles ) ) {
+        if ( in_array( 'um_professionnel', (array) $user->roles ) ) {
             // Cas pour produits simples
             if ( $product->is_type( 'simple' ) ) {
                 $pro_price = get_post_meta( $product->get_id(), '_professional_price', true );
