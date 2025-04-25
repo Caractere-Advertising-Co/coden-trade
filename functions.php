@@ -520,3 +520,45 @@ add_action( 'woocommerce_before_calculate_totals', function( $cart ) {
         }
     }
 }, 10, 1 );
+
+add_filter( 'woocommerce_get_price_html', 'custom_price_html_for_professionals', 10, 2 );
+
+function custom_price_html_for_professionals( $price_html, $product ) {
+    if ( is_user_logged_in() ) {
+        $user = wp_get_current_user();
+        if ( in_array( 'professional', (array) $user->roles ) ) {
+            // Cas pour produits simples
+            if ( $product->is_type( 'simple' ) ) {
+                $pro_price = get_post_meta( $product->get_id(), '_professional_price', true );
+                if ( $pro_price !== '' && $pro_price !== false ) {
+                    return wc_price( $pro_price ) . ' <small class="pro-price-note">(Tarif professionnel)</small>';
+                }
+            }
+
+            // Cas pour les produits variables
+            if ( $product->is_type( 'variable' ) ) {
+                $prices = array();
+
+                foreach ( $product->get_children() as $variation_id ) {
+                    $variation_price = get_post_meta( $variation_id, '_professional_price', true );
+                    if ( $variation_price !== '' && $variation_price !== false ) {
+                        $prices[] = (float) $variation_price;
+                    }
+                }
+
+                if ( ! empty( $prices ) ) {
+                    $min = min( $prices );
+                    $max = max( $prices );
+
+                    if ( $min === $max ) {
+                        return wc_price( $min ) . ' <small class="pro-price-note">(Tarif professionnel)</small>';
+                    } else {
+                        return wc_price( $min ) . ' – ' . wc_price( $max ) . ' <small class="pro-price-note">(Tarifs professionnels)</small>';
+                    }
+                }
+            }
+        }
+    }
+
+    return $price_html; // fallback pour les gens banals
+}
