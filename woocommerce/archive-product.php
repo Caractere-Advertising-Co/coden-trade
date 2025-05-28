@@ -38,7 +38,8 @@ $args = [
             'terms' => $term_ids,
             'include_children' => true,
         ]
-    ]
+        ],
+    'orderby' => 'menu_order'
 ];
 
 $products = new WP_Query($args);
