@@ -39,7 +39,8 @@ $args = [
             'include_children' => true,
         ]
         ],
-    'orderby' => 'menu_order'
+    'orderby' => 'menu_order',
+    'order'   => 'desc'
 ];
 
 $products = new WP_Query($args);
