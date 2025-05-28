@@ -40,7 +40,7 @@ $args = [
         ]
         ],
     'orderby' => 'menu_order',
-    'order'   => 'desc'
+    'order'   => 'ASC'
 ];
 
 $products = new WP_Query($args);
