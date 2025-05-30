@@ -1,29 +1,25 @@
 .woocommerce-cart,
-.woocommerce-checkout{
-    #simple-page{
-        .container{
-            .cold{
-                padding-left: 0;
-                margin: 50px 0 100px;
+.woocommerce-checkout {
+  #simple-page {
+    .container {
+      .cold {
+        padding-left: 0;
+        margin: 50px 0 100px;
 
-                .wc-block-cart__submit-button{
-                    background-color: $primary-color;
-                    
-                    span{
-                        color: $light;
-                    }
-                }
-            }
+        .wc-block-cart__submit-button {
+          background-color: $primary-color;
+
+          span {
+            color: $light;
+          }
         }
+      }
     }
+  }
 
-    .wc-block-components-totals-item__value,
-    .wc-block-checkout__shipping-option--free{
-        display: none;
-    }
-    
-    .wc-block-components-shipping-rates-control__package .wc-block-components-radio-control__label{
-        display: flex;
-        text-wrap: auto;
-    }
+  .wc-block-components-shipping-rates-control__package
+    .wc-block-components-radio-control__label {
+    display: flex;
+    text-wrap: auto;
+  }
 }
