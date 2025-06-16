@@ -1,6 +1,6 @@
 #contact {
   padding: 50px 0;
-  
+
   .container {
     text-align: center;
     width: 80vw;
@@ -13,7 +13,8 @@
       font-weight: 500;
     }
 
-    h2 {
+    h2,
+    h1 {
       color: $secondary-color;
       font-weight: 200;
 
@@ -56,8 +57,8 @@
     border-bottom: 1px solid #b0b0b0;
     min-height: inherit !important;
     background: none !important;
-    
-    &:focus{
+
+    &:focus {
       outline: none;
       border-bottom: 2px solid $primary-color;
     }

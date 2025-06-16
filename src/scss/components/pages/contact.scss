@@ -11,22 +11,13 @@
       object-fit: cover;
     }
   }
+
   #contact {
     background-color: transparent !important;
     padding: 0;
     padding-top: 100px;
 
     .container {
-      .colg {
-        h1 {
-          text-align: left;
-          color: $light;
-          font-size: 3rem;
-          line-height: 3.5rem;
-          font-weight: 300;
-        }
-      }
-
       .cold {
         padding-left: 20%;
 
@@ -160,6 +151,4 @@
       }
     }
   }
-
-  
 }
