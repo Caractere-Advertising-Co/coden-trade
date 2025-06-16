@@ -10,7 +10,7 @@
         <?php if($subtitle):?><p class="subtitle"><?php echo $subtitle;?></p><?php endif;?>
         
             
-        <?php if(is_page_template('contact')):
+        <?php if(is_page(79097)):
                 if($titleContact): echo $titleContact; endif;
             else :
              if($title):?> <h2><?php echo $title;?></h2><?php endif;
